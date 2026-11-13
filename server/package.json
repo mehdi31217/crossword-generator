@@ -1,0 +1,27 @@
+{
+  "name": "crossword-server",
+  "version": "2.0.0",
+  "description": "Crossword Game Backend (Supabase + Node.js)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.106.2",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.2",
+    "helmet": "^8.2.0",
+    "ioredis": "^5.11.1",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.21.0",
+    "pino": "^9.14.0",
+    "pino-pretty": "^11.3.0",
+    "ws": "^8.21.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

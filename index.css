@@ -1,0 +1,4141 @@
+/* Fonts are self-hosted via /css/fonts.css (see public/fonts/) — no network required. */
+
+/* =====================================================================
+   Crossword Gen Pro — «خاک و کاغذ» / clay & paper design tokens
+   ---------------------------------------------------------------------
+   Two materials, one rule: whatever is a CONTAINER is clay, whatever is
+   CONTENT is paper. A clay ledge always holds the printed sheet.
+   ===================================================================== */
+:root{
+  color-scheme: light;
+
+  /* ---- paper & ink ---- */
+  --paper:#F6F1E7; --paper-2:#EFE7D8; --paper-3:#E7DCC8;
+  --ink:#241A14; --ink-2:#6B5A4D; --ink-3:#9A8879;
+  --saffron:#C8952B; --rose-dust:#D9A6AE;
+
+  /* ---- clay ---- */
+  --clay-50:#FBF4EA; --clay-100:#F3E4D2; --clay-200:#E8D9C3;
+  --clay-300:#DFC3A6; --clay-400:#D0A183; --clay-500:#C97B5A;
+  --clay-600:#B4644A; --clay-700:#944E39; --clay-800:#6E3A2C;
+  --clay-900:#4A2A21; --clay-950:#2C1913;
+  --sage:#8FA37E; --sage-deep:#5E6E52;
+  --dust-blue:#6F8FA8; --dust-blue-deep:#4A6577;
+
+  /* ---- semantic aliases (kept under the old names so every .mm-* rule,
+          every gradient stop and the whole component tree follows along) ---- */
+  --cg-ink:var(--ink); --cg-ink2:var(--ink-2); --cg-ink3:var(--ink-3);
+  --cg-blue:var(--dust-blue); --cg-violet:var(--clay-700);
+  --cg-teal:var(--sage-deep); --cg-pink:var(--rose-dust);
+  --cg-green:var(--sage-deep); --cg-amber:var(--saffron); --cg-gold:#D9B15C;
+
+  /* a slab of pale clay: soft top light, warm curl at the bottom edge.
+     It has to sit a clear step LIGHTER than the sand table (#E7D1B2) or the
+     cards dissolve into the canvas. */
+  --cg-glass:linear-gradient(158deg,#FCF7EC 0%,#F4E8D6 100%);
+  --cg-glass-2:linear-gradient(158deg,#FFFCF5 0%,#F7EEDF 100%);
+  --cg-hair:rgba(255,252,246,.92);
+  --cg-shadow:0 1px 0 rgba(255,255,255,.92) inset, 0 -2px 0 rgba(122,80,52,.10) inset,
+              0 3px 0 rgba(122,80,52,.05),
+              0 18px 30px -20px rgba(86,52,33,.62);
+  /* the fired, saturated clay — reserved for chrome that should read as an
+     OBJECT made of clay: tab bar, medallions, primary buttons. */
+  --clay-shell:linear-gradient(180deg,#D08A67 0%,#B4694B 100%);
+
+  /* procedural fibre + grain, used as low-opacity overlays.
+     The clay band is two noises at once: a broad mottle (the uneven, hand-mixed
+     patches of adobe) and a fine grit (the sand in it). One flat noise read as
+     JPEG dust and the surfaces stopped looking like fired earth. */
+  --tex-paper:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23p)' opacity='.19'/%3E%3C/svg%3E");
+  --tex-grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.032' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 .38 0 0 0 0 .19 0 0 0 0 .09 1.05 0 0 0 -.36'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23m)' opacity='.48'/%3E%3Cfilter id='b'%3E%3CfeTurbulence type='turbulence' baseFrequency='.18' numOctaves='3' stitchTiles='stitch' result='n'/%3E%3CfeDiffuseLighting in='n' lighting-color='%23FFE4C4' surfaceScale='1.4' diffuseConstant='.9'%3E%3CfeDistantLight azimuth='225' elevation='48'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23b)' opacity='.16' style='mix-blend-mode:overlay'/%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.68' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 .99 0 0 0 0 .91 0 0 0 0 .78 .92 0 0 0 -.34'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23s)' opacity='.62'/%3E%3C/svg%3E");
+
+  /* ---- the clay itself, photographed ----
+     Every clay surface in the app is cut from the supplied artwork, never drawn:
+       · --clay-photo      a flat span of the fired tray in clay-empty-tray.png
+                            (905×181, mean #B46C47, per-channel sigma ≈5) — the
+                            stock every slab of clay is stamped from.
+       · --room-photo      the whole clay-room backdrop, used as the wall the
+                            screens stand in.
+     --clay-sheen is lighting only (bright lip, shaded foot) so a stamped slab
+     still reads as bevelled the way the artwork's slabs do. */
+  --clay-photo:url('/images/game/clay-panel.webp');
+  --clay-photo-dark:url('/images/game/clay-panel-dark.webp');
+  --room-photo:url('/images/game/room-bg.webp');
+  --clay-sheen:linear-gradient(180deg, rgba(255,240,224,.26) 0%, rgba(255,240,224,.06) 32%, rgba(104,52,28,.10) 72%, rgba(104,52,28,.24) 100%);
+  --clay-sheen-dark:linear-gradient(180deg, rgba(255,226,196,.12) 0%, rgba(255,226,196,.02) 32%, rgba(0,0,0,.20) 72%, rgba(0,0,0,.34) 100%);
+
+  --cg-spring:cubic-bezier(.34,1.5,.5,1);
+  --cg-apple:cubic-bezier(.22,1,.36,1);
+
+  /* verdict inks — the colour a result is stamped in */
+  --ink-win:#9E7418; --ink-lose:#9E5A50; --ink-draw:#7A5A86;
+
+  /* a recessed well cut into a printed sheet (stat tiles inside cg-paper) */
+  --paper-well:rgba(255,252,245,.8);
+  --paper-well-2:rgba(36,26,20,.04);
+  --paper-well-hair:rgba(36,26,20,.10);
+  /* a small sheet laid ON another sheet — chips, badges, info panels.
+     distinct from a well: it sits above the page, not cut into it. */
+  --paper-lift:rgba(246,241,231,.92);
+
+  /* the gold a small factual stamp is printed in — counters, chips, icons.
+     Lives at :root so it reads the same on clay, sand and paper surfaces. */
+  --sand-stamp:#8A6415;
+
+  /* the brick accent, as ink rather than as a surface: readable on the clay
+     shell in daylight and lifted to a warm terracotta once the room is dark. */
+  --clay-ink:#8E4E37;
+}
+
+/* Night clay: the same room after dark. Not a cool slate theme — the clay
+   gets darker and warmer, the paper becomes aged parchment. */
+.dark{
+  color-scheme: dark;
+  --paper:#2A211A; --paper-2:#241C16; --paper-3:#1E1712;
+  --ink:#F1E6D6; --ink-2:#C4B4A1; --ink-3:#8E7E6D;
+  --cg-ink:#F1E6D6; --cg-ink2:#C4B4A1; --cg-ink3:#8E7E6D;
+  --cg-glass:linear-gradient(158deg,#3A2A20 0%,#2E211A 100%);
+  --cg-glass-2:linear-gradient(158deg,#43301F 0%,#352720 100%);
+  --cg-hair:rgba(255,226,190,.10);
+  --cg-blue:#8FA8BE; --cg-violet:#C9A1BA; --cg-teal:#9FBF8F;
+  --cg-green:#9FBF8F; --cg-amber:#DEB262; --cg-gold:#E2C079;
+  --cg-shadow:0 1px 0 rgba(255,232,204,.10) inset, 0 -2px 0 rgba(0,0,0,.32) inset,
+              0 20px 40px -22px rgba(0,0,0,.8);
+  --ink-win:#E3BC72; --ink-lose:#D9988A; --ink-draw:#C9A1BA;
+  --paper-well:rgba(241,230,214,.055);
+  --paper-well-2:rgba(241,230,214,.045);
+  --paper-well-hair:rgba(241,230,214,.12);
+  --paper-lift:rgba(241,230,214,.075);
+  --sand-stamp:#DEB262;
+  --clay-ink:#E3A88C;
+}
+.dark .cg-glass,
+.dark .mm-glass{ box-shadow:var(--cg-shadow); }
+
+body{ font-family:'Vazirmatn',-apple-system,BlinkMacSystemFont,'SF Pro Display',system-ui,sans-serif !important; }
+
+/* The table the whole app sits on: a warm sand slab, lit from the top-left,
+   with a terracotta pool where the light warms the clay and a fine grain.
+   Deep enough that a cream sheet laid on it reads as a separate object. */
+#root{
+  background-color:#d4ab86;
+  background-image:
+    var(--tex-grain),
+    radial-gradient(900px 640px at 50% 15%, rgba(255,240,225,.48) 0%, transparent 60%),
+    radial-gradient(880px 660px at 90% 10%, rgba(195,120,80,.38) 0%, transparent 58%),
+    radial-gradient(1000px 640px at 50% 100%, rgba(160,95,60,.42) 0%, transparent 65%),
+    linear-gradient(180deg,#e2bc98 0%,#d2a57e 50%,#be8d64 100%);
+  background-size:220px 220px, auto, auto, auto, auto;
+  background-blend-mode:multiply, normal, normal, normal, normal;
+  position:relative;
+}
+.dark #root{
+  background-color:#221912;
+  background-image:
+    var(--tex-paper),
+    radial-gradient(1100px 760px at 16% -14%, rgba(96,64,42,.55) 0%, transparent 62%),
+    radial-gradient(880px 660px at 94% 2%, rgba(120,62,40,.42) 0%, transparent 60%),
+    linear-gradient(180deg,#2A1F17 0%,#221912 55%,#191108 100%);
+  background-size:200px 200px, auto, auto, auto;
+  background-blend-mode:overlay, normal, normal, normal;
+}
+.cg-canvas{ background:transparent !important; }
+
+/* ---------- the two materials ---------- */
+
+/* a slab of clay */
+.cg-glass{
+  background-image:var(--cg-glass);
+  background-color:var(--clay-200);
+  border:1px solid var(--cg-hair);
+  box-shadow:var(--cg-shadow);
+  border-radius:22px;
+  position:relative;
+}
+/* a printed sheet laid into the clay */
+.cg-paper{
+  background-color:var(--paper);
+  background-image:var(--tex-paper);
+  background-size:200px 200px;
+  background-blend-mode:multiply;
+  color:var(--ink);
+  border-radius:4px;
+  box-shadow:
+    inset 0 0 0 1px rgba(36,26,20,.55),
+    inset 0 0 0 5px var(--paper),
+    inset 0 0 0 6px rgba(36,26,20,.30),
+    0 12px 24px -16px rgba(70,45,30,.65);
+}
+
+/* ===== the clay wall =====
+   The room the app stands in. This is the supplied backdrop photograph, not a
+   drawn wall: the app simply stands in the same room the game does. A warm
+   translucent scrim sits over it so cream ink stays legible. */
+.clay-wall{
+  background-color:#B87757;
+  background-image:
+    linear-gradient(180deg,#D18D6A 0%,#C17E5C 50%,#AA6E50 100%),
+    var(--room-photo);
+  background-size:cover, cover;
+  background-position:center, center;
+  background-repeat:no-repeat;
+  background-blend-mode:multiply, normal;
+  box-shadow:inset 0 2px 0 rgba(255,226,196,.34), inset 0 -10px 22px rgba(66,32,17,.30);
+  color:#FFF3E4;
+}
+.dark .clay-wall{
+  background-color:#33210F;
+  background-image:
+    linear-gradient(180deg,#6B4A33 0%,#553926 52%,#3E2A1B 100%),
+    var(--room-photo);
+  background-blend-mode:multiply, normal;
+  box-shadow:inset 0 2px 0 rgba(255,214,178,.14), inset 0 -10px 22px rgba(0,0,0,.5);
+  color:#EFDCC5;
+}
+/* anything printed straight onto the wall is light ink pressed into dark earth */
+.clay-wall .on-clay{ color:#FFF3E4; text-shadow:0 1px 0 rgba(84,42,24,.45); }
+.clay-wall .on-clay-2{ color:rgba(255,236,214,.78); text-shadow:0 1px 0 rgba(84,42,24,.35); }
+.dark .clay-wall .on-clay{ color:#F3E2CC; text-shadow:0 1px 0 rgba(0,0,0,.55); }
+.dark .clay-wall .on-clay-2{ color:rgba(240,220,196,.66); text-shadow:none; }
+
+/* ===== the sand table =====
+   Full-bleed backdrop for story, map and result screens. These screens print
+   ink straight onto the sand, so the sand has to follow the theme — the same
+   table after dark, not a light slab under light ink. */
+.cg-sand{
+  --sand-track:rgba(36,26,20,.10);
+  --sand-hair:rgba(142,78,55,.22);
+  --sand-hair-strong:rgba(142,78,55,.55);
+  --sand-chip:rgba(246,241,231,.94);
+  --sand-lip:rgba(255,255,255,.85);
+  background-color:#E7D3B7;
+  background-image:
+    radial-gradient(900px 700px at 88% -8%, #FDF6EA 0%, transparent 58%),
+    radial-gradient(760px 620px at 6% 106%, #E7D2B6 0%, transparent 58%),
+    linear-gradient(180deg,#F6EAD8 0%,#EFDFC7 55%,#E7D3B7 100%);
+  color:var(--ink);
+}
+.dark .cg-sand{
+  --sand-track:rgba(241,230,214,.16);
+  --sand-hair:rgba(226,192,121,.20);
+  --sand-hair-strong:rgba(226,192,121,.45);
+  --sand-chip:rgba(42,33,26,.94);
+  --sand-lip:rgba(255,240,215,.12);
+  background-color:#241A13;
+  background-image:
+    radial-gradient(900px 700px at 88% -8%, rgba(120,86,58,.34) 0%, transparent 58%),
+    radial-gradient(760px 620px at 6% 106%, rgba(96,64,42,.30) 0%, transparent 58%),
+    var(--tex-paper),
+    linear-gradient(180deg,#2A1F17 0%,#241A13 55%,#1C140E 100%);
+  background-size:auto, auto, 200px 200px, auto;
+  background-blend-mode:normal, normal, overlay, normal;
+}
+
+/* ===== the board: a printed sheet held in a fired clay frame ===== */
+
+/* the room the console stands in: the mockup's own backdrop — a potted plant and
+   a stack of clay books on the left, a cat asleep on the table, a shelf and a
+   speckled mug on the right. The artwork is the only thing behind the machine;
+   every gap between the bar, the board, the clue slip and the keys shows it. */
+.cg-playfield{
+  background-color:#C08E68;
+  background-image:
+    radial-gradient(120% 44% at 50% 0%, rgba(255,240,220,.30) 0%, rgba(255,240,220,0) 62%),
+    var(--tex-grain),
+    url('/images/game/room-bg.webp');
+  background-size:auto, 220px 220px, cover;
+  background-position:center, center, 50% 0%;
+  background-repeat:no-repeat;
+  background-blend-mode:soft-light, overlay, normal;
+}
+.dark .cg-playfield{
+  background-color:#2A1C12;
+  background-image:
+    linear-gradient(180deg, rgba(38,23,13,.72) 0%, rgba(24,15,9,.84) 100%),
+    var(--tex-grain),
+    url('/images/game/room-bg.webp');
+  background-size:auto, 220px 220px, cover;
+  background-position:center, center, 50% 0%;
+  background-repeat:no-repeat;
+  background-blend-mode:normal, overlay, normal;
+}
+
+.cg-board{
+  background-color:#B4694B;
+  background-image:var(--tex-grain), var(--clay-sheen), var(--clay-photo);
+  background-size:240px 240px, auto, cover;
+  background-blend-mode:overlay, normal, normal;
+  border:1.5px solid #86462F;
+  border-radius:22px;
+  box-shadow:
+    0 2px 0 rgba(255,232,208,.58) inset,
+    0 -3px 0 rgba(58,28,15,.44) inset,
+    0 0 0 3px rgba(212,158,118,.22) inset,
+    0 3px 0 rgba(58,30,18,.16),
+    0 22px 36px -18px rgba(70,40,25,.68);
+}
+.dark .cg-board{
+  background-color:#8A4832;
+  background-image:var(--tex-grain), var(--clay-sheen-dark), var(--clay-photo-dark);
+  background-size:240px 240px, auto, cover;
+  background-blend-mode:soft-light, normal, normal;
+  border-color:#6B3625;
+  border-radius:22px;
+  box-shadow:
+    0 2px 0 rgba(255,196,156,.34) inset,
+    0 -3px 0 rgba(18,9,5,.62) inset,
+    0 0 0 3px rgba(255,210,175,.08) inset,
+    0 22px 36px -18px rgba(0,0,0,.85);
+}
+/* the sheet the grid is printed on: its rules are ink, not a seam of clay, so
+   the squares read as drawn into paper and the black cells sit flush with them */
+.cg-board-sheet{
+  background:#2A1E16;
+  padding:1px;
+  border-radius:5px;
+  box-shadow:inset 0 2px 5px -2px rgba(18,9,5,.55);
+}
+
+/* a completed word catches the light once: one band runs its whole length */
+.cg-sweepband{
+  position:absolute;
+  z-index:25;
+  pointer-events:none;
+  overflow:hidden;
+  border-radius:3px;
+}
+.cg-sweepband::before{ content:''; position:absolute; }
+.cg-sweepband.across::before{
+  top:-30%; bottom:-30%;
+  left:0;
+  width:min(46%, 130px);
+  background:linear-gradient(90deg, rgba(255,255,255,0), rgba(255,248,218,.88) 46%, rgba(255,255,255,0));
+  transform:translateX(-150%) skewX(-12deg);
+  animation:cg-sweep-x .82s cubic-bezier(.32,.05,.2,1) var(--sd,0ms) both;
+}
+.cg-sweepband.across.rev::before{
+  animation-name:cg-sweep-x-rev;
+}
+.cg-sweepband.down::before{
+  left:-30%; right:-30%;
+  top:0;
+  height:min(46%, 130px);
+  background:linear-gradient(180deg, rgba(255,255,255,0), rgba(255,248,218,.82) 46%, rgba(255,255,255,0));
+  transform:translateY(-150%);
+  animation:cg-sweep-y .82s cubic-bezier(.32,.05,.2,1) var(--sd,0ms) both;
+}
+@keyframes cg-sweep-x{
+  0%{ transform:translateX(-150%) skewX(-12deg); opacity:0; }
+  18%{ opacity:.95; }
+  100%{ transform:translateX(340%) skewX(-12deg); opacity:0; }
+}
+@keyframes cg-sweep-x-rev{
+  0%{ transform:translateX(340%) skewX(12deg); opacity:0; }
+  18%{ opacity:.95; }
+  100%{ transform:translateX(-150%) skewX(12deg); opacity:0; }
+}
+@keyframes cg-sweep-y{
+  0%{ transform:translateY(-150%); opacity:0; }
+  18%{ opacity:.9; }
+  100%{ transform:translateY(340%); opacity:0; }
+}
+@media (prefers-reduced-motion: reduce){
+  .cg-sweepband{ display:none; }
+}
+
+/* ===== the clay console =====
+   The approved mockup's own artwork is the board's background: a fired-clay
+   frame holding a paper sheet. The painted grid was removed from the plate, and
+   the live grid is dropped into the hole it left. Both the art and the slot are
+   percentages of this one box, so the grid stays on the paper at any stretch. */
+.cg-console{
+  position:relative;
+  width:100%;
+  max-width:600px;
+  aspect-ratio:697/646;
+  max-height:100%;
+  background-image:url('/images/game/board-panel.webp');
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  filter:drop-shadow(0 20px 26px rgba(58,28,12,.34)) drop-shadow(0 2px 3px rgba(58,28,12,.18));
+}
+/* the paper plate inside the frame: left 9.61% / right 10.04% / top 6.35% / bottom 7.89% */
+.cg-console-slot{
+  position:absolute;
+  left:9.61%;
+  right:10.04%;
+  top:6.35%;
+  bottom:7.89%;
+}
+/* printed straight onto the sheet, so the rules are the mockup's own ink.
+   The mockup's grid is flat letterpress: no inner shadow at the top edge, and the
+   squares butt into square corners instead of the framed board's rounded ones. */
+.cg-console-slot .cg-board-sheet{
+  background:#26241F;
+  border-radius:2px;
+  box-shadow:none;
+}
+.cg-console-slot .cg-board-sheet > div{ border-radius:0; }
+/* the same console under low light: the artwork dims, it does not recolour.
+   The cells are painted cream, so a plain brightness cut turned the paper a
+   cold grey; the touch of sepia keeps it the same warm parchment at night. */
+.dark .cg-console{
+  filter:brightness(.74) saturate(.95) sepia(.16) contrast(1.05)
+    drop-shadow(0 20px 26px rgba(0,0,0,.62)) drop-shadow(0 2px 3px rgba(0,0,0,.4));
+}
+
+/* the clue strip under the board: a torn printed slip, not a UI card */
+.cg-cluebar{
+  background-color:var(--paper);
+  background-image:var(--tex-paper),
+    linear-gradient(180deg,#FFFDF7 0%,#F8EEDD 100%);
+  background-size:200px 200px, auto;
+  background-blend-mode:multiply, normal;
+  box-shadow:0 -1px 0 rgba(255,255,255,.7) inset, 0 -10px 22px -18px rgba(86,52,33,.6);
+}
+.dark .cg-cluebar{
+  background-color:#2A1E16;
+  background-image:var(--tex-paper),
+    linear-gradient(180deg,#33261C 0%,#2A1E16 100%);
+}
+.cg-clue-text{ color:var(--ink); }
+.cg-clue-num{ color:var(--ink-2); background:rgba(120,80,52,.13); }
+.dark .cg-clue-num{ color:#E3C9A8; background:rgba(255,220,180,.13); }
+.cg-clue-nav{ color:var(--ink-3); border-color:rgba(120,80,52,.18); }
+.cg-clue-nav:hover{ color:var(--ink-2); background:rgba(120,80,52,.07); }
+.dark .cg-clue-nav{ color:#C4B4A1; border-color:rgba(255,220,180,.14); }
+.dark .cg-clue-nav:hover{ color:#F1E6D6; background:rgba(255,220,180,.06); }
+.cg-clue-flip{ color:#8A4C33; border-color:rgba(200,149,43,.45); }
+.cg-clue-flip:hover{ background:rgba(200,149,43,.12); }
+.dark .cg-clue-flip{ color:#E9C79A; border-color:rgba(214,169,63,.42); }
+.dark .cg-clue-flip:hover{ background:rgba(214,169,63,.14); }
+
+/* the header timer sits on the pale clay ledge, so it borrows the same clay */
+.cg-timer{
+  background-image:linear-gradient(180deg,#FDF8EF,#F3E7D5);
+  border-color:rgba(120,80,52,.18);
+  box-shadow:0 1px 0 rgba(255,255,255,.85) inset, 0 8px 16px -13px rgba(86,52,33,.7);
+}
+.dark .cg-timer{
+  background-image:linear-gradient(180deg,#3C2C21,#33251C);
+  border-color:rgba(255,220,180,.13);
+  box-shadow:0 1px 0 rgba(255,220,180,.08) inset, 0 8px 16px -13px rgba(0,0,0,.9);
+}
+
+/* the keyboard: the artwork's clay tray, with thick ceramic tiles pressed in */
+.cg-keydeck{
+  background-color:#AE6C4A;
+  background-image:var(--clay-sheen), var(--clay-photo);
+  background-size:auto, cover;
+  background-position:center, center;
+  background-repeat:no-repeat;
+  border-top:1px solid rgba(88,45,28,.5);
+  box-shadow:
+    inset 0 2px 0 rgba(255,226,196,.30),
+    inset 0 10px 16px -8px rgba(74,38,22,.45),
+    0 -14px 26px -22px rgba(52,26,14,.9);
+}
+.dark .cg-keydeck{
+  background-color:#3A2313;
+  background-image:var(--clay-sheen-dark), var(--clay-photo-dark);
+  border-top-color:rgba(255,220,180,.12);
+  box-shadow:
+    inset 0 2px 0 rgba(255,220,180,.10),
+    inset 0 10px 16px -8px rgba(0,0,0,.65),
+    0 -14px 26px -22px rgba(0,0,0,1);
+}
+
+/* inside the tray, the deck sits in a well carved into the clay: the keys never
+   stand on the bare slab, they are pressed into a hollow, exactly as in the art */
+.cg-keywell{
+  padding:0 20px 34px;
+  border-radius:18px;
+  background-color:#A5623F;
+  background-image:
+    linear-gradient(180deg, rgba(62,28,13,.44) 0%, rgba(62,28,13,.20) 100%),
+    var(--clay-photo);
+  background-size:auto, cover;
+  background-position:center, center;
+  background-repeat:no-repeat;
+  box-shadow:
+    inset 0 3px 8px rgba(58,24,10,.44),
+    inset 0 -2px 0 rgba(255,226,196,.18),
+    0 1px 0 rgba(255,236,214,.20);
+}
+.dark .cg-keywell{
+  background-color:#2C1B10;
+  background-image:
+    linear-gradient(180deg, rgba(0,0,0,.52) 0%, rgba(0,0,0,.30) 100%),
+    var(--clay-photo-dark);
+  box-shadow:
+    inset 0 3px 9px rgba(0,0,0,.7),
+    inset 0 -2px 0 rgba(255,220,180,.06),
+    0 1px 0 rgba(255,220,180,.06);
+}
+
+/* A ceramic tile: flat-ish glaze, brightest at the top edge, a fired lip under
+   the front, and the letter engraved into the surface rather than printed on it.
+   The three glazes are sampled from the mockup's own keyboard. */
+.cg-key{
+  border-radius:8px;
+  border:1px solid rgba(88,52,30,.30);
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,.42),
+    inset 0 -2px 0 rgba(58,30,18,.13),
+    0 3px 0 var(--lip,#A28769),
+    0 7px 11px -7px rgba(52,26,14,.62);
+  text-shadow:0 1px 0 rgba(255,255,255,.34);
+  transition:transform .07s ease, box-shadow .07s ease, filter .12s ease;
+}
+@media (min-width:640px){
+  .cg-keywell{ padding:4px 24px 30px; }
+  .cg-key{
+    border-radius:15px;
+    box-shadow:
+      inset 0 2px 0 rgba(255,255,255,.42),
+      inset 0 -3px 0 rgba(58,30,18,.13),
+      0 4px 0 var(--lip,#A28769),
+      0 9px 13px -7px rgba(52,26,14,.62);
+  }
+}
+.cg-key.tone-cream{
+  --lip:#AB8F74;
+  background-image:linear-gradient(180deg,#E7D3BA 0%,#D3B79C 100%);
+  color:#3A2A1E;
+}
+.cg-key.tone-sage{
+  --lip:#6C7259;
+  background-image:linear-gradient(180deg,#A6AC90 0%,#8E9379 100%);
+  color:#2C3322;
+}
+.cg-key.tone-blue{
+  --lip:#48596B;
+  background-image:linear-gradient(180deg,#8093A8 0%,#66798E 100%);
+  color:#1E2C3A;
+}
+.cg-key.tone-gold{
+  --lip:#A97F22;
+  background-image:linear-gradient(180deg,#EAC36E 0%,#CD923D 100%);
+  color:#4E3408;
+}
+.cg-key:active,
+.cg-key.is-down{
+  transform:translateY(3px) scale(.97);
+  box-shadow:
+    inset 0 4px 8px rgba(58,24,10,.46),
+    inset 0 -1px 0 rgba(255,236,214,.22),
+    0 0 0 2px rgba(62,28,13,.38),
+    0 2px 4px -2px rgba(52,26,14,.55);
+  filter:brightness(.94);
+}
+@media (min-width:640px){
+  .cg-key:active,
+  .cg-key.is-down{ transform:translateY(4px) scale(.97); }
+}
+.dark .cg-key{ filter:brightness(.70) saturate(.92); }
+.dark .cg-key:active,
+.dark .cg-key.is-down{ filter:brightness(.60) saturate(.9); }
+.dark .cg-key{
+  border-color:rgba(255,220,180,.14);
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,.20),
+    inset 0 -3px 0 rgba(0,0,0,.22),
+    0 4px 0 var(--lip,#5A4632),
+    0 9px 13px -7px rgba(0,0,0,.85);
+}
+
+/* ===== claymorphism console =====
+   The approved mockup's own recipe, applied to every piece of hardware on the
+   game screen: a raised surface is lit from the top-left and casts its shadow
+   to the bottom-right; a carved recess inverts both. One vocabulary, so the
+   top bar, the board, the clue slip and the keys read as parts of one machine. */
+/* ==== the mockup is the screen ====
+   The approved artwork is the real raster: the bar is its own clay, its pills are
+   printed, its recesses are carved in the paint. Only the run's live readings
+   (clock, score, purse) and invisible hit areas sit on top, written into the
+   hollows the print left empty. Nothing here redraws the clay. */
+.cg-postbar{
+  position:relative;
+  width:100%;
+  max-width:672px;
+  aspect-ratio:768/136;
+  container-type:inline-size;
+}
+.cg-postbar-art{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:fill;
+  pointer-events:none;
+  user-select:none;
+  -webkit-user-drag:none;
+  filter:drop-shadow(0 7px 12px rgba(58,26,10,.34));
+}
+.dark .cg-postbar-art{
+  filter:brightness(.74) saturate(.95) sepia(.16) contrast(1.05) drop-shadow(0 7px 12px rgba(0,0,0,.65));
+}
+/* the printed buttons are the buttons: a press is an inset face laid 2px inside
+   the hollow, so the clay around it never moves or lights up */
+.cg-postbar-hit{
+  position:absolute;
+  background:transparent;
+  border:0;
+  padding:0;
+  border-radius:999px;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.cg-postbar-hit:focus-visible{
+  outline:2px solid rgba(200,149,43,.85);
+  outline-offset:2px;
+}
+.cg-postbar-hit:disabled{ cursor:default; }
+.cg-postbar-hit.is-off::after{
+  content:'';
+  position:absolute;
+  inset:9%;
+  border-radius:inherit;
+  background:rgba(54,28,14,.34);
+}
+.cg-postbar-val{
+  position:absolute;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  font-variant-numeric:tabular-nums;
+  line-height:1;
+  white-space:nowrap;
+  pointer-events:none;
+  /* the app root carries Tailwind's ui-sans-serif stack, and the system font
+     draws a Persian zero as a filled diamond; the declared UI font draws it as
+     the ring everybody reads as a zero, so the bar's figures ask for it by name */
+  font-family:'Vazirmatn',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+}
+/* the dial's hollow is bare clay, so the digits are printed in ink — cream on
+   clay disappeared, and a Persian zero is a small ring: it only reads at this
+   weight and size */
+/* Vazirmatn draws its tabular zero as a solid dot, and an added stroke closes
+   the proportional zero's counter — either way «۰:۰۰» read as four diamonds.
+   Proportional figures with no stroke keep the ring that makes a zero a zero. */
+.cg-postbar-clock{
+  font-size:3.35cqw;
+  color:#3B2718;
+  font-variant-numeric:normal;
+  letter-spacing:.01em;
+  text-shadow:0 1px 0 rgba(255,238,216,.35);
+}
+.dark .cg-postbar-clock{ color:#F4E3CC; text-shadow:0 1px 2px rgba(0,0,0,.55); }
+.cg-postbar-score{
+  gap:1.4cqw;
+  font-size:3.2cqw;
+  font-variant-numeric:normal;
+  color:#1F2A16;
+  pointer-events:auto;
+}
+.cg-postbar-score-icon{
+  width:3.3cqw;
+  height:3.3cqw;
+  flex-shrink:0;
+  filter:drop-shadow(0 1px 1px rgba(20,30,12,.45));
+}
+.dark .cg-postbar-score-icon{
+  filter:brightness(.82) contrast(1.1) drop-shadow(0 1px 2px rgba(0,0,0,.6));
+}
+/* the sage pill darkens with the artwork, so the ink has to lift with it */
+.dark .cg-postbar-score{ color:#EFE6D2; }
+.cg-postbar-score .is-zero{ opacity:.6; }
+.cg-postbar-dot{
+  width:.9cqw;
+  height:.9cqw;
+  border-radius:999px;
+  background:#B4553F;
+  flex:none;
+}
+.dark .cg-postbar-dot{ background:#E07B5F; }
+.cg-postbar-foe{ color:#8E3F2C; }
+.dark .cg-postbar-foe{ color:#F0B49E; }
+.cg-postbar-dash{ opacity:.5; }
+
+/* fantasy flower coin laid inside the cream purse pill */
+.cg-postbar-coin{
+  position:absolute;
+  left:7.5%;
+  top:50%;
+  transform:translateY(-50%);
+  width:26.5%;
+  height:76%;
+  pointer-events:none;
+  transition:transform .06s linear, opacity .06s linear;
+  filter:drop-shadow(0 1px 2px rgba(40,20,8,.35));
+}
+.cg-postbar-coin.is-pressed{
+  transform:translateY(calc(-50% + 1.5px)) scale(.97);
+  opacity:.92;
+}
+.dark .cg-postbar-coin{
+  filter:brightness(.78) saturate(.95) contrast(1.05) drop-shadow(0 1px 2px rgba(0,0,0,.65));
+}
+
+/* four bare digits sit comfortably alongside the flower coin */
+.cg-postbar-purse{
+  font-size:3.4cqw;
+  font-variant-numeric:normal;
+  letter-spacing:0;
+  color:#3A2A1C;
+  transition:transform .06s linear, opacity .06s linear;
+}
+.cg-postbar-purse.is-pressed{
+  transform:translateY(1.5px) scale(.97);
+  opacity:.92;
+}
+.dark .cg-postbar-purse{ color:#2A1D12; }
+
+/* ==== the deck ====
+   The clue slip and the thirty-three ceramic tiles are one printed crop
+   (`public/images/game/deck.webp`, 504x260): clay tray, parchment slip, both
+   chevron discs, the tan chip and the blue direction square are all paint. Only
+   the clue sentence, the chip digit and the direction glyph are typeset back,
+   and every control is an invisible button laid on its own painted square. */
+.cg-deck{
+  position:relative;
+  container-type:inline-size;
+}
+.cg-deck-art{
+  -webkit-user-drag:none;
+  user-select:none;
+}
+.dark .cg-deck-art{
+  filter:brightness(.78) saturate(.96) sepia(.14) contrast(1.04);
+}
+.cg-deck-hit{
+  position:absolute;
+  background:transparent;
+  border:0;
+  padding:0;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.cg-deck-hit:focus-visible{
+  outline:2px solid rgba(200,149,43,.85);
+  outline-offset:-3px;
+}
+.cg-deck-hit:disabled{ cursor:default; }
+/* a dead control keeps its print but never sinks */
+.cg-deck-hit.is-off{ cursor:not-allowed; }
+.cg-deck-hit.is-off > .cg-pressface{ display:none; }
+.cg-deck-key{ border-radius:9px; }
+.cg-deck-key > .cg-pressface{ border-radius:8px; }
+.cg-deck-dir{ border-radius:26%; }
+.cg-deck-diricon{
+  width:100%;
+  height:100%;
+  display:grid;
+  place-items:center;
+  font-size:2.7cqw;
+  color:#F7ECDD;
+  pointer-events:none;
+  transition:transform .06s linear, opacity .06s linear;
+}
+.cg-deck-dir.is-down > .cg-deck-diricon{
+  transform:translateY(1px) scale(.94);
+  opacity:.88;
+}
+/* the slip's own type sits on parchment, exactly as the lifted text did */
+.cg-deck .cg-postclue-text{
+  align-items:center;
+  color:#241A14;
+  line-height:1.3;
+}
+/* the slip's ink is centred on the parchment, and the clamp lives on an inner
+   span so two full lines sit in the middle of the printed strip instead of
+   hanging off its bottom edge */
+.cg-deck .cg-deck-clue{ display:flex; }
+.cg-deck .cg-deck-clue > span{
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+  width:100%;
+  text-align:center;
+}
+.dark .cg-deck .cg-postclue-text{ color:#241A14; }
+.cg-deck .cg-postclue-num{
+  color:#5A4732;
+}
+
+/* inside the tray the deck keeps only its padding — the tray is the material */
+.cg-keydeck.is-inset{
+  background:none;
+  border-top:0;
+  box-shadow:none;
+}
+
+/* the mockup's keyboard itself: the artwork is the tray, the lip and every
+   ceramic tile; the buttons on top are invisible hit areas, so a press is the
+   same print with that one tile sunk into the clay (see `.cg-pressart`) */
+.cg-postkbd-art{
+  -webkit-user-drag:none;
+  user-select:none;
+}
+.dark .cg-postkbd-art{
+  filter:brightness(.74) saturate(.95) sepia(.16) contrast(1.05);
+}
+.cg-postkbd-key{
+  background:transparent;
+  border:0;
+  padding:0;
+  border-radius:12px;
+  -webkit-tap-highlight-color:transparent;
+}
+.cg-postkbd-key:focus-visible{
+  outline:2px solid rgba(200,149,43,.85);
+  outline-offset:-3px;
+}
+.cg-postkbd-key.is-off{
+  cursor:not-allowed;
+}
+
+/* the pressed face of a *printed* control: the artwork itself, re-rendered with
+   that one control sunk into the clay (scripts/press-panels.py). The tile is laid
+   out in its panel's own pixel grid — the percentages come from
+   components/pressTiles.ts — so it lands on the print at every size and nothing
+   is redrawn in CSS. Every tile stays mounted at zero opacity, so the first tap
+   is not waiting on a fetch. */
+.cg-pressart{
+  position:absolute;
+  object-fit:fill;
+  opacity:0;
+  pointer-events:none;
+  user-select:none;
+  -webkit-user-drag:none;
+  transition:opacity .06s linear;
+}
+.cg-pressart.is-down{ opacity:1; }
+/* the tile is painted over the panel, so it carries the same night filter as
+   that panel's own artwork. The bar's drop-shadow is not repeated: it would draw
+   a shadow along the crop seam. */
+.dark .cg-postbar .cg-pressart,
+.dark .cg-postkbd .cg-pressart{ filter:brightness(.74) saturate(.95) sepia(.16) contrast(1.05); }
+.dark .cg-postclue .cg-pressart,
+.dark .cg-deck .cg-pressart{ filter:brightness(.78) saturate(.96) sepia(.14) contrast(1.04); }
+
+/* the emoji knob is the one printed control with no tile — it is a live button
+   hanging on the tray, so it keeps a drawn inset face */
+.cg-pressface{
+  position:absolute;
+  inset:2px;
+  border-radius:11px;
+  opacity:0;
+  pointer-events:none;
+  background:rgba(44,20,8,.26);
+  box-shadow:
+    inset 0 3px 7px rgba(38,14,4,.46),
+    inset 0 -1px 0 rgba(255,236,214,.22);
+  transition:opacity .07s ease;
+}
+.cg-pressface.is-round{ border-radius:50%; }
+.cg-pressface.is-pill{ border-radius:999px; }
+.cg-pressface.is-square{ border-radius:26%; }
+.is-down > .cg-pressface,
+.cg-postclue-knob-hit:active > .cg-pressface{
+  opacity:1;
+}
+
+/* inside the poster frame every panel already sits where the artwork put it,
+   so the clue tray keeps no lift of its own */
+.cg-postclue.is-poster{
+  margin-top:0;
+  transform:none;
+}
+
+/* the board slot: the poster's paper is one flat colour, so the live sheet only
+   supplies the printed rules and never its own frame or recess. The rule is the
+   artwork's own ink, sampled along a printed line (#1B1613 core), not a
+   half-alpha blend: at one CSS pixel the lighter brown read as a soft crease. */
+.cg-poster-grid .cg-board-sheet{
+  background:#1B1613;
+  border-radius:0;
+  box-shadow:none;
+}
+.cg-poster-grid .cg-board-sheet > div{ border-radius:0; }
+
+/* the console screen is one full-height column of three bands: the bar on the
+   top edge, the deck on the bottom edge, the board in between. Its width is
+   whichever is smallest — the viewport, the height the three sprites need
+   (0.56 of the height still leaves ~9% for the two gaps), or a comfortable
+   desktop cap — so on a phone it is edge to edge and on a desktop it is a
+   centred column instead of a stretched 1280px painting. */
+.cg-console-col{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  margin-inline:auto;
+  width:min(100%,56vh,560px);
+  width:min(100%,56dvh,560px);
+  height:100%;
+  height:100dvh;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+.cg-room-bg{ width:max(100vw,102.4vh); width:max(100vw,102.4dvh); }
+
+/* the clue tray: same rule as the bar — the artwork is the clay, the parchment
+   slip, the chevron discs, the tan chip, the blue square and the online knob;
+   the printed numbers and clue were lifted out, so only they are typeset back.
+   The tray is a container, so everything inside scales with its own width. */
+.cg-postclue-wrap{
+  position:relative;
+  z-index:1;
+  container-type:inline-size;
+}
+.cg-postclue{
+  position:relative;
+  width:100%;
+  aspect-ratio:805/168;
+  /* the board crop stops a few percent above the tray's own clay, so the tray
+     slides up under it and hides the board panel's hard bottom cut. The margin
+     takes the layout gap away, the translate carries it under the board's lip
+     without moving the board itself (the playfield is centred). */
+  margin-top:calc(-3.85cqw - 10px);
+  transform:translateY(-5cqw);
+}
+.cg-postclue-art{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:fill;
+  pointer-events:none;
+  user-select:none;
+  -webkit-user-drag:none;
+}
+.dark .cg-postclue-art{
+  filter:brightness(.78) saturate(.96) sepia(.14) contrast(1.04);
+}
+.cg-postclue-hit{
+  position:absolute;
+  background:transparent;
+  border:0;
+  padding:0;
+  border-radius:999px;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.cg-postclue-hit:focus-visible{
+  outline:2px solid rgba(200,149,43,.85);
+  outline-offset:2px;
+}
+.cg-postclue-hit:disabled{ cursor:default; opacity:.55; }
+.cg-postclue-dir{
+  display:grid;
+  place-items:center;
+  border-radius:8px;
+}
+.cg-postclue-diricon{
+  width:100%;
+  height:100%;
+  display:grid;
+  place-items:center;
+  font-size:3.35cqw;
+  color:#F7ECDD;
+  transition:transform .06s linear, opacity .06s linear;
+}
+.cg-postclue-dir.is-down > .cg-postclue-diricon{
+  transform:translateY(1px) scale(.94);
+  opacity:.88;
+}
+.cg-postclue-val{
+  position:absolute;
+  display:flex;
+  align-items:center;
+  pointer-events:none;
+}
+.cg-postclue-text{
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+  color:#241A14;
+  font-weight:700;
+  line-height:1.28;
+  text-align:start;
+}
+.dark .cg-postclue-text{ color:#1E140F; }
+.cg-postclue-text.is-blind{
+  filter:blur(4px);
+  user-select:none;
+}
+.cg-postclue-num{
+  justify-content:center;
+  font-size:2.7cqw;
+  font-weight:900;
+  color:#5A4732;
+}
+.cg-postclue-empty{
+  justify-content:center;
+  gap:.8cqw;
+  font-size:2.7cqw;
+  font-weight:800;
+  color:#8B6A4E;
+}
+.cg-postclue-blind{
+  position:absolute;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:22px;
+  background:rgba(46,28,18,.88);
+  color:#F3E7D6;
+  font-size:2.6cqw;
+  font-weight:900;
+  letter-spacing:.14em;
+}
+.cg-postclue-knob{ position:absolute; }
+.cg-postclue-knob-hit{
+  position:absolute;
+  inset:0;
+  background:transparent;
+  border:0;
+  border-radius:999px;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.cg-postclue-knob-hit.is-open{
+  box-shadow:inset 3px 4px 8px rgba(38,58,28,.38);
+}
+.cg-postclue-knob-hit:focus-visible{
+  outline:2px solid rgba(200,149,43,.85);
+  outline-offset:-3px;
+}
+
+/* battle energy + attacks live on the same clay as the room, never a paper card */
+.cg-battleslab{
+  position:relative;
+  border-radius:20px;
+  background-color:#B56C48;
+  background-image:var(--clay-sheen), var(--clay-photo);
+  background-size:auto, cover;
+  background-position:center, center;
+  background-repeat:no-repeat;
+  box-shadow:
+    inset 0 1px 0 rgba(255,232,208,.28),
+    inset 0 -2px 0 rgba(58,30,18,.35),
+    0 12px 20px -16px rgba(52,26,14,.9);
+}
+.dark .cg-battleslab{
+  background-color:#3A2415;
+  background-image:var(--clay-sheen-dark), var(--clay-photo-dark);
+  box-shadow:
+    inset 0 1px 0 rgba(255,232,208,.08),
+    inset 0 -2px 0 rgba(0,0,0,.55),
+    0 12px 20px -16px rgba(0,0,0,1);
+}
+
+
+/* the reaction tray: a small printed card, not a glass sheet */
+.cg-emoji-pop{
+  position:absolute;
+  bottom:calc(100% + 10px);
+  inset-inline-start:0;
+  z-index:60;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+  padding:6px;
+  border-radius:16px;
+  background-color:#FBF3E3;
+  background-image:var(--tex-paper), linear-gradient(180deg,#FFFDF7,#F3E5CF);
+  background-size:200px 200px, auto;
+  background-blend-mode:multiply, normal;
+  border:1px solid rgba(120,80,52,.32);
+  box-shadow:0 14px 24px -14px rgba(58,28,12,.8), inset 0 1px 0 rgba(255,255,255,.85);
+  animation:cg-emoji-in .16s ease-out both;
+}
+.dark .cg-emoji-pop{
+  background-color:#2E2119;
+  background-image:var(--tex-paper), linear-gradient(180deg,#3A2B1F,#2B1F17);
+  border-color:rgba(255,220,180,.16);
+  box-shadow:0 14px 24px -12px rgba(0,0,0,.95), inset 0 1px 0 rgba(255,220,180,.10);
+}
+.cg-emoji-pick{
+  width:38px; height:38px; border-radius:12px;
+  display:grid; place-items:center;
+  font-size:20px; line-height:1;
+}
+.cg-emoji-pick:hover{ background:rgba(120,80,52,.10); }
+.cg-emoji-pick:active{ transform:scale(.92); }
+.dark .cg-emoji-pick:hover{ background:rgba(255,220,180,.10); }
+@keyframes cg-emoji-in{
+  from{ opacity:0; transform:translateY(6px) scale(.94); }
+  to{ opacity:1; transform:translateY(0) scale(1); }
+}
+
+/* ===== app header — a fired-clay ledge with paper instruments on it ===== */
+.cg-header{
+  background-color:#C08363 !important;
+  background-image:var(--tex-grain), linear-gradient(180deg,#CB8F6D 0%,#B87A5B 100%) !important;
+  background-size:220px 220px, auto !important;
+  background-blend-mode:overlay, normal !important;
+  border-bottom:2px solid #8E4E37 !important;
+  box-shadow:
+    inset 0 2px 0 rgba(255,226,196,.35),
+    inset 0 -4px 9px rgba(68,34,19,.25),
+    0 14px 22px -18px rgba(52,26,14,.75) !important;
+  color:#FFF3E4;
+}
+.dark .cg-header{
+  background-color:#3A2619 !important;
+  background-image:var(--tex-grain), linear-gradient(180deg,#43301F 0%,#33251A 100%) !important;
+  border-bottom-color:#241810 !important;
+}
+/* every instrument on the ledge is paper, so its ink text stays readable */
+.cg-header .cg-chip,
+.cg-header .cg-timer{
+  background-image:var(--tex-paper),
+    linear-gradient(180deg,#FCF6E9,#F1E5D0) !important;
+  background-size:200px 200px, auto !important;
+  background-blend-mode:multiply, normal !important;
+  border:1px solid rgba(58,38,24,.55) !important;
+  color:var(--ink) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.75),
+    0 2px 0 -1px rgba(96,45,28,.35),
+    0 7px 12px -9px rgba(40,20,10,.7) !important;
+}
+.cg-header .cg-chip.coin{
+  background-image:var(--tex-paper),
+    linear-gradient(180deg,#F8E5B8,#EED092) !important;
+  color:#6A4A10 !important;
+}
+.dark .cg-header .cg-chip,
+.dark .cg-header .cg-timer{
+  background-image:var(--tex-paper),
+    linear-gradient(180deg,#43301F,#382820) !important;
+  border-color:rgba(255,220,180,.16) !important;
+  color:var(--ink) !important;
+}
+.dark .cg-header .cg-chip.coin{
+  background-image:var(--tex-paper),
+    linear-gradient(180deg,#4B3618,#39280F) !important;
+  color:#F0D08C !important;
+}
+/* the plain icon buttons sit straight on the clay: cream ring, cream glyph */
+.cg-header > div > button:not(.cg-chip),
+.cg-header .cg-timer{
+  background:rgba(255,243,228,.16) !important;
+  color:#FFF3E4 !important;
+  border:1px solid rgba(255,236,216,.35) !important;
+  border-radius:14px;
+}
+.cg-header > div > button:not(.cg-chip):hover{ background:rgba(255,243,228,.26) !important; }
+
+.cg-chip{
+  display:inline-flex; align-items:center; gap:6px; padding:6px 11px; border-radius:999px;
+  background-image:linear-gradient(180deg,#F7EBD9,#EAD8BF);
+  border:1px solid rgba(255,250,242,.85);
+  box-shadow:0 1px 0 rgba(255,255,255,.7) inset, 0 -1px 0 rgba(122,80,52,.16) inset,
+             0 8px 16px -12px rgba(86,52,33,.6);
+  font-weight:800; color:var(--ink);
+}
+.dark .cg-chip{
+  background-image:linear-gradient(180deg,#43301F,#352720);
+  border-color:rgba(255,226,190,.12);
+  color:var(--ink);
+}
+.cg-chip.coin{ color:#6A4A10; background-image:linear-gradient(180deg,#F7E3B4,#EFD08A); border-color:rgba(255,246,222,.9); }
+.cg-chip.trophy{ color:#3D5568; background-image:linear-gradient(180deg,#DCE8F0,#C4D6E3); border-color:rgba(246,252,255,.9); }
+.dark .cg-chip.coin{
+  color:#F0D08C; background-image:linear-gradient(180deg,#4B3618,#39280F);
+  border-color:rgba(226,192,121,.30);
+}
+.dark .cg-chip.trophy{
+  color:#BBD2E2; background-image:linear-gradient(180deg,#3B4753,#2D3841);
+  border-color:rgba(190,214,231,.22);
+}
+
+/* ===== clay controls =====
+   One pressed-clay vocabulary for the long tail of panels and modals, so a
+   screen never has to hand-roll the same gradient + inset highlight twice. */
+.cg-btn-clay{
+  background:var(--clay-shell); color:#FFF6EC; border:1px solid #8E4E37;
+  box-shadow:inset 0 1px 0 rgba(255,226,204,.5), inset 0 -2px 0 rgba(58,30,18,.3),
+             0 12px 22px -14px rgba(70,40,25,.95);
+}
+.cg-btn-cream{
+  background:rgba(246,241,231,.94); color:var(--ink); border:1px solid rgba(142,78,55,.3);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8), 0 8px 16px -12px rgba(70,40,25,.7);
+}
+/* the same cream button at night: aged parchment, not a glaring white chip */
+.dark .cg-btn-cream{
+  background:rgba(58,42,31,.94); color:var(--ink); border-color:rgba(226,192,121,.28);
+  box-shadow:inset 0 1px 0 rgba(255,232,204,.12), 0 8px 16px -12px rgba(0,0,0,.8);
+}
+.cg-btn-sage{ background:#5E6E52; color:#F6F1E7; border:1px solid #46543C;
+  box-shadow:inset 0 1px 0 rgba(226,240,220,.28), inset 0 -2px 0 rgba(30,45,25,.35); }
+.cg-btn-brick{ background:#9E5A50; color:#FBF1E4; border:1px solid #7E453D;
+  box-shadow:inset 0 1px 0 rgba(255,226,214,.28), inset 0 -2px 0 rgba(60,25,20,.35); }
+.cg-btn-clay:disabled,.cg-btn-cream:disabled,.cg-btn-sage:disabled,.cg-btn-brick:disabled{
+  opacity:.45; box-shadow:none;
+}
+/* a price you cannot pay yet is an empty slot in the tray, not a faded button:
+   the clay recipes above dim to a pale salmon with white type on top */
+.cg-price-off{
+  background-color:var(--paper-well-2);
+  background-image:none;
+  border:1px solid var(--paper-well-hair);
+  color:var(--ink-3);
+  box-shadow:inset 0 1px 2px rgba(70,45,30,.10);
+}
+.cg-price-off:disabled{ opacity:1; }
+
+/* a scrap of paper laid on a clay panel — an inset note, not a raised sheet.
+   Cream in daylight; warm parchment once the room is dark. */
+.cg-note{
+  background:rgba(250,245,235,.92);
+  border:1px solid rgba(142,78,55,.22);
+}
+.dark .cg-note{
+  background:rgba(241,230,214,.065);
+  border-color:rgba(226,192,121,.20);
+}
+
+/* ===== main menu ===== */
+.cg-menu{
+  display:flex; flex-direction:column; height:100%; min-height:0;
+  width:100%; max-width:520px; margin:0 auto;
+  position:relative; overflow:hidden;
+}
+.cg-menu-body{
+  flex:1; min-height:0; display:flex; flex-direction:column; gap:10px;
+  padding:12px 14px 8px; overflow-y:auto;
+}
+.cg-menu-body::-webkit-scrollbar{ width:0; }
+
+/* tiles fill the space left over, but never balloon into empty boxes */
+.cg-grid{
+  flex:1 1 auto; min-height:0; max-height:322px;
+  display:grid; grid-template-columns:1fr 1fr; grid-auto-rows:minmax(0,1fr); gap:10px;
+}
+
+.cg-tile{
+  position:relative; overflow:hidden; text-align:start; cursor:pointer; font-family:inherit;
+  border-radius:20px; padding:12px; min-height:0; color:var(--cg-ink);
+  display:flex; flex-direction:column; justify-content:center; gap:10px;
+  transition:transform .24s var(--cg-spring), box-shadow .3s var(--cg-apple);
+}
+/* icon + corner tag share one row so they can never overlap (RTL-safe) */
+.cg-tile-top{ display:flex; align-items:flex-start; justify-content:space-between; gap:8px; }
+.cg-tile:hover{ transform:translateY(-4px); }
+.cg-tile:active{ transform:scale(.97); }
+.cg-tile b{ display:block; font-size:14px; font-weight:800; line-height:1.25; }
+.cg-tile small{ display:block; font-size:11px; color:var(--cg-ink2); margin-top:2px; }
+
+.cg-ic{
+  width:44px; height:44px; border-radius:14px; display:grid; place-items:center; color:#fff; flex:0 0 auto;
+  box-shadow:0 10px 20px -10px rgba(20,30,70,.5), inset 0 1.5px 0 rgba(255,255,255,.45);
+  animation:cgFloat 4.2s ease-in-out infinite;
+}
+.cg-ic svg{ width:23px; height:23px; }
+@keyframes cgFloat{ 0%,100%{ transform:translateY(0) rotate(0) } 50%{ transform:translateY(-3px) rotate(-3deg) } }
+.cg-tile:hover .cg-ic{ animation:cgWiggle .55s ease-in-out; }
+@keyframes cgWiggle{ 0%,100%{ transform:rotate(0) scale(1) } 25%{ transform:rotate(-8deg) scale(1.07) } 75%{ transform:rotate(8deg) scale(1.07) } }
+
+.cg-badge{
+  flex:0 0 auto; font-size:10px; font-weight:800; white-space:nowrap;
+  padding:3px 8px; border-radius:999px; background:rgba(255,255,255,.78);
+  border:1px solid rgba(255,255,255,.95); color:#3c4256;
+}
+.cg-lock{
+  flex:0 0 auto; display:inline-flex; align-items:center; gap:4px; white-space:nowrap;
+  font-size:10px; font-weight:800; padding:3px 8px; border-radius:999px;
+  color:#a32a45; background:rgba(255,55,95,.15); border:1px solid rgba(255,55,95,.32);
+}
+.cg-lock svg{ width:11px; height:11px; }
+
+.cg-blue .cg-ic{ background:linear-gradient(150deg,#64d2ff,#0a84ff); }
+.cg-violet .cg-ic{ background:linear-gradient(150deg,#bf5af2,#5e5ce6); }
+.cg-teal .cg-ic{ background:linear-gradient(150deg,#7ce8d8,#32c5d6); }
+.cg-pink .cg-ic{ background:linear-gradient(150deg,#ff7a9c,#ff375f); }
+.cg-green .cg-ic{ background:linear-gradient(150deg,#7ae0a0,#30d158); }
+.cg-tile.cg-locked .cg-ic{ background:linear-gradient(150deg,#c9cdd8,#9aa0b0); box-shadow:none; animation:none; }
+
+.cg-daily{
+  flex:0 0 auto; display:flex; align-items:center; justify-content:space-between; gap:10px;
+  width:100%; padding:12px 14px; border-radius:20px; cursor:pointer; font-family:inherit; text-align:start;
+  transition:transform .22s var(--cg-spring);
+}
+.cg-daily:hover{ transform:translateY(-2px); }
+.cg-daily .left{ display:flex; align-items:center; gap:10px; min-width:0; }
+.cg-daily.is-done{ opacity:.75; }
+.cg-cta{
+  background:linear-gradient(135deg,#0a84ff,#5e5ce6); color:#fff; border:0; border-radius:12px;
+  padding:8px 14px; font-family:inherit; font-weight:800; font-size:12px; white-space:nowrap;
+  box-shadow:0 10px 20px -10px rgba(10,132,255,.8);
+}
+
+.cg-actions{ display:flex; gap:10px; flex:0 0 auto; }
+.cg-action{
+  flex:1; display:flex; align-items:center; justify-content:center; gap:7px; padding:11px;
+  border-radius:16px; cursor:pointer; font-family:inherit; font-size:12px; font-weight:800; color:#3c4256;
+  transition:transform .22s var(--cg-spring);
+}
+.cg-action:hover{ transform:translateY(-2px); }
+
+/* ===== bottom sheet (quick play) ===== */
+.cg-sheet{
+  flex:0 0 auto; padding:10px 14px calc(12px + env(safe-area-inset-bottom,0px));
+  border-radius:24px 24px 0 0;
+  background:rgba(255,255,255,.74);
+  backdrop-filter:blur(24px) saturate(180%);
+  -webkit-backdrop-filter:blur(24px) saturate(180%);
+  border-top:1px solid rgba(255,255,255,.95);
+  box-shadow:0 -12px 34px -20px rgba(28,36,80,.4);
+}
+.cg-seg{
+  display:flex; align-items:center; justify-content:center; gap:4px; flex-shrink:0;
+  min-width:40px; height:34px; padding:0 10px; border-radius:12px; cursor:pointer; font-family:inherit;
+  font-size:12px; font-weight:800; border:1px solid rgba(20,30,70,.08); background:rgba(255,255,255,.7);
+  color:var(--cg-ink2); transition:transform .18s var(--cg-spring), background .2s;
+}
+.cg-seg:hover{ transform:translateY(-2px); }
+.cg-seg.is-on{ color:#fff; border-color:transparent; }
+.cg-seg.is-on.blue{ background:linear-gradient(150deg,#3aa0ff,#0a84ff); box-shadow:0 10px 20px -10px rgba(10,132,255,.85); }
+.cg-seg.is-on.amber{ background:linear-gradient(150deg,#ffb84d,#ff9f0a); box-shadow:0 10px 20px -10px rgba(255,159,10,.85); }
+.cg-seg.is-locked{ background:rgba(255,255,255,.45); color:#c3c8d4; }
+.cg-sheet-label{ font-size:10px; font-weight:800; color:var(--cg-ink3); letter-spacing:.4px; }
+
+.cg-start{
+  width:100%; border:0; border-radius:16px; padding:13px; cursor:pointer; font-family:inherit;
+  font-size:14px; font-weight:800; color:#fff; display:flex; align-items:center; justify-content:center; gap:8px;
+  background:linear-gradient(135deg,#0a84ff,#5e5ce6);
+  box-shadow:0 14px 28px -14px rgba(10,132,255,.85);
+  transition:transform .2s var(--cg-spring), filter .2s;
+}
+.cg-start:hover{ transform:translateY(-2px); filter:brightness(1.05); }
+.cg-start:active{ transform:scale(.97); }
+
+/* ===== entrance ===== */
+@keyframes cgRise{ from{ opacity:0; transform:translateY(18px) scale(.97) } to{ opacity:1; transform:none } }
+.cg-rise{ animation:cgRise .62s var(--cg-spring) both; }
+
+/* ===== Clay & paper translation for screens tagged `.cg-dark` =====
+   These screens were authored with a dark-glass vocabulary (bg-slate-900,
+   bg-white/5, text-slate-300, slate-900/xx scrims…). Rather than rewriting
+   every one of them, the vocabulary is translated to the clay & paper rule:
+
+     · a full-bleed surface falls away, so the sand table shows through
+     · a container  (bg-slate-8xx / 9xx panel)  → a slab of clay
+     · content      (bg-white/5…15, chips, rows) → a printed sheet
+     · a control    (bg-slate-7xx)              → a raised clay button
+
+   Applied only when <html> is NOT .dark; the night theme keeps its own warm
+   dark ramp defined above. Each dark screen opts in with `cg-dark`. */
+
+/* root surface becomes transparent so the sand table shows through */
+:root:not(.dark) .cg-dark{
+  background-color:transparent !important;
+  color:var(--ink) !important;
+}
+
+/* full-screen gradient backdrops (MergeLobby, CoinFlip, Matchmaking) → drop */
+:root:not(.dark) .cg-dark[class*="via-purple-900"],
+:root:not(.dark) .cg-dark[class*="via-purple-950"],
+:root:not(.dark) .cg-dark[class*="from-indigo-950"]{
+  background-image:none !important;
+}
+
+/* MergeLobby is a real OVERLAY on top of the mounted board: dropping its
+   backdrop lets the game bleed through, so paint an opaque sand slab. */
+:root:not(.dark) .cg-dark.cg-merge-overlay{
+  background-color:#F3E3CD !important;
+  background-image:
+    radial-gradient(900px 700px at 88% -8%, #FDF6EA 0%, transparent 58%),
+    radial-gradient(760px 620px at 6% 106%, #E7D2B6 0%, transparent 58%),
+    linear-gradient(180deg,#F6EAD8 0%,#EFDFC7 55%,#E7D3B7 100%) !important;
+}
+
+/* ---- containers → clay slabs ---- */
+:root:not(.dark) .cg-dark [class~="bg-slate-800"],
+:root:not(.dark) .cg-dark [class~="bg-slate-800/80"],
+:root:not(.dark) .cg-dark [class~="bg-slate-900/80"],
+:root:not(.dark) .cg-dark [class~="bg-slate-900/85"],
+:root:not(.dark) .cg-dark [class~="bg-slate-900/95"]{
+  background-color:#E8D6BC !important;
+  background-image:linear-gradient(158deg,#F2E4D0 0%,#E5D2B8 100%) !important;
+  border:1px solid rgba(255,248,238,.7) !important;
+  box-shadow:0 1px 0 rgba(255,253,247,.85) inset, 0 -2px 0 rgba(122,80,52,.16) inset,
+             0 18px 32px -20px rgba(86,52,33,.55) !important;
+  color:var(--ink) !important;
+}
+
+/* ---- content fills → printed sheets (flat, with a printed hairline) ---- */
+:root:not(.dark) .cg-dark [class~="bg-white/5"],
+:root:not(.dark) .cg-dark [class~="bg-white/10"],
+:root:not(.dark) .cg-dark [class~="bg-white/15"]{
+  background-color:var(--paper) !important;
+  background-image:var(--tex-paper) !important;
+  background-size:200px 200px !important;
+  border-color:rgba(36,26,20,.16) !important;
+  color:var(--ink) !important;
+  box-shadow:0 1px 0 rgba(255,255,255,.75) inset, 0 10px 20px -16px rgba(70,45,30,.55) !important;
+}
+
+/* translucent-dark scrims → warm shadow over the clay */
+:root:not(.dark) .cg-dark [class~="bg-slate-900/60"],
+:root:not(.dark) .cg-dark [class~="bg-slate-900/50"],
+:root:not(.dark) .cg-dark [class~="bg-slate-900/70"],
+:root:not(.dark) .cg-dark [class~="bg-slate-950/70"]{
+  background-color:rgba(58,34,22,.42) !important;
+}
+
+/* white-on-dark secondary text → ink greys */
+:root:not(.dark) .cg-dark [class~="text-white/30"],
+:root:not(.dark) .cg-dark [class~="text-white/40"],
+:root:not(.dark) .cg-dark [class~="text-white/50"],
+:root:not(.dark) .cg-dark [class~="text-white/60"],
+:root:not(.dark) .cg-dark [class~="text-white/70"]{
+  color:var(--ink-2) !important;
+}
+:root:not(.dark) .cg-dark [class~="text-slate-300"],
+:root:not(.dark) .cg-dark [class~="text-slate-400"],
+:root:not(.dark) .cg-dark [class~="text-slate-500"]{
+  color:var(--ink-2) !important;
+}
+:root:not(.dark) .cg-dark [class~="text-slate-600"]{ color:var(--ink) !important; }
+
+/* accent text authored for a dark panel → its ink-weight counterpart */
+:root:not(.dark) .cg-dark [class~="text-rose-200/80"],
+:root:not(.dark) .cg-dark [class~="text-rose-300"],
+:root:not(.dark) .cg-dark [class~="text-rose-400"]{
+  color:#8E5862 !important;
+}
+:root:not(.dark) .cg-dark [class~="text-amber-300"],
+:root:not(.dark) .cg-dark [class~="text-amber-400"]{
+  color:#8A6415 !important;
+}
+
+/* white hairline borders → printed ink hairline */
+:root:not(.dark) .cg-dark [class~="border-white/10"],
+:root:not(.dark) .cg-dark [class~="border-white/5"],
+:root:not(.dark) .cg-dark [class~="border-white/15"],
+:root:not(.dark) .cg-dark [class~="border-white/20"]{
+  border-color:rgba(36,26,20,.16) !important;
+}
+
+/* ---- controls → raised clay ---- */
+:root:not(.dark) .cg-dark [class~="bg-slate-700"],
+:root:not(.dark) .cg-dark [class~="bg-slate-700/50"],
+:root:not(.dark) .cg-dark [class~="bg-slate-800/80"],
+:root:not(.dark) .cg-dark [class~="bg-slate-800/70"],
+:root:not(.dark) .cg-dark [class~="bg-slate-800/50"]{
+  background-color:#E9D8C0 !important;
+  background-image:linear-gradient(180deg,#F4E7D5 0%,#E6D3B9 100%) !important;
+  color:var(--ink) !important;
+  box-shadow:0 1px 0 rgba(255,253,247,.9) inset, 0 -2px 0 rgba(122,80,52,.18) inset !important;
+}
+
+/* dark-slate gradient stops (e.g. Tower ticket `from-slate-800 to-slate-900`)
+   → paper gradient, keeping the direction. */
+:root:not(.dark) .cg-dark [class*="from-slate-700"]{ --tw-gradient-from:#F7EEDF !important; }
+:root:not(.dark) .cg-dark [class*="from-slate-800"],
+:root:not(.dark) .cg-dark [class*="from-slate-900"]{ --tw-gradient-from:#FBF4E8 !important; }
+:root:not(.dark) .cg-dark [class*="to-slate-700"]{ --tw-gradient-to:#EEE1CC !important; }
+:root:not(.dark) .cg-dark [class*="to-slate-800"],
+:root:not(.dark) .cg-dark [class*="to-slate-900"]{ --tw-gradient-to:#E7D6BC !important; }
+
+/* Plain white text on non-coloured surfaces → ink. Coloured/gradient buttons
+   keep their white labels (explicitly excluded). */
+:root:not(.dark) .cg-dark [class~="text-white"]:not([class*="bg-gradient"]):not([class*="bg-indigo"]):not([class*="bg-amber"]):not([class*="bg-blue"]):not([class*="bg-emerald"]):not([class*="bg-rose"]):not([class*="bg-red"]):not([class*="bg-orange"]):not([class*="bg-yellow"]):not([class*="bg-pink"]):not([class*="bg-purple"]):not([class*="bg-violet"]):not([class*="bg-cyan"]):not([class*="bg-fuchsia"]):not([class*="bg-teal"]):not([class*="bg-green"]):not([class*="bg-black"]){
+  color:var(--ink) !important;
+}
+
+/* ===== wide screens: keep the phone-like column, just give it more room ===== */
+@media (min-width:900px){
+  .cg-menu{ max-width:460px; }
+  .mm-scroll{ padding-left:18px; padding-right:18px; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .cg-rise,.cg-ic{ animation:none !important; }
+}
+
+/* =====================================================================
+   MAIN MENU — redesigned to match design-proposal/main-menu-glass-v3.html
+   All classes are prefixed `mm-` so they never collide with Tailwind
+   utilities (e.g. `.grid`, `.label`, `.hero`, `.tile`, `.glass`, `.pill`).
+   ===================================================================== */
+.mm-bg{ position:absolute; inset:0; overflow:hidden; pointer-events:none; }
+.mm-orb{ position:absolute; border-radius:50%; filter:blur(44px); opacity:.75; }
+.mm-o1{ width:280px;height:280px;background:#8fc7ff;top:-90px;right:-80px;animation:mm-float1 13s ease-in-out infinite; }
+.mm-o2{ width:250px;height:250px;background:#9df0d5;bottom:60px;left:-100px;animation:mm-float2 17s ease-in-out infinite; }
+.mm-o3{ width:220px;height:220px;background:#ffc7de;top:42%;right:-90px;opacity:.6;animation:mm-float3 20s ease-in-out infinite; }
+.mm-o4{ width:190px;height:190px;background:#d8c9ff;bottom:-70px;right:20%;opacity:.6;animation:mm-float2 15s ease-in-out infinite reverse; }
+@keyframes mm-float1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-22px,26px) scale(1.12)}}
+@keyframes mm-float2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(26px,-20px) scale(1.1)}}
+@keyframes mm-float3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-16px,-24px) scale(1.14)}}
+
+.mm-screen{ position:relative; z-index:2; flex:1; display:flex; flex-direction:column; min-height:0; }
+.mm-scroll{ flex:1; overflow-y:auto; padding:16px 16px 116px; display:flex; flex-direction:column; gap:14px; }
+.mm-scroll::-webkit-scrollbar{ width:0; }
+.mm-scroll > *{ flex-shrink:0; }
+
+.mm-glass{
+  background:var(--cg-glass);
+  backdrop-filter:blur(22px) saturate(180%);
+  -webkit-backdrop-filter:blur(22px) saturate(180%);
+  border:1px solid var(--cg-hair);
+  box-shadow:var(--cg-shadow), inset 0 1px 0 rgba(255,255,255,.95);
+  border-radius:24px;
+}
+
+.mm-hello{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.mm-hello h1{ font-size:23px; font-weight:800; letter-spacing:-.4px; line-height:1.25; }
+.mm-hello p{ font-size:12.5px; color:var(--cg-ink2); margin-top:3px; }
+.mm-avatar{ width:48px;height:48px;border-radius:50%;flex:0 0 48px;display:grid;place-items:center;
+  background:linear-gradient(150deg,#8fc7ff,#bf5af2);color:#fff;font-weight:800;font-size:17px;
+  border:2px solid rgba(255,255,255,.9);box-shadow:0 8px 20px -8px rgba(94,92,230,.6); }
+
+.mm-stats{ display:flex; gap:9px; }
+/* Counters are stamped clay tiles: a small medallion and a number, nothing
+   glossy. The glyph lives inside the disc, so the disc is the icon. */
+.mm-pill{ flex:1; display:flex; align-items:center; justify-content:center; gap:8px;
+  padding:9px 10px; border-radius:18px; font-size:14px; font-weight:800; }
+.mm-pill .mm-ic{ display:grid; place-items:center; flex:0 0 auto; }
+.mm-pill.c{ color:#6A4A10; }
+.mm-pill.g{ color:#3D5568; }
+.mm-pill.s{ color:#8E4B33; }
+
+/* Next-unlock ladder under the stat pills: the only place that says what the
+   next score milestone actually buys (a bigger board / more subjects). */
+.mm-goal{ position:relative; display:flex; align-items:center; gap:10px; padding:10px 12px 13px;
+  border-radius:18px; overflow:hidden;
+  background:linear-gradient(135deg,rgba(94,92,230,.12),rgba(191,90,242,.1));
+  border:1px solid rgba(94,92,230,.18); }
+.mm-goal-ic{ width:30px;height:30px;border-radius:11px;display:grid;place-items:center;flex:0 0 30px;
+  color:#fff; background:linear-gradient(150deg,#5e5ce6,#bf5af2);
+  box-shadow:0 6px 14px -6px rgba(94,92,230,.85); }
+.mm-goal-ic svg{ width:16px;height:16px; }
+.mm-goal-txt{ display:flex; flex-direction:column; gap:2px; min-width:0; flex:1; }
+.mm-goal-txt b{ font-size:12.5px; font-weight:900; color:var(--cg-ink);
+  display:flex; align-items:baseline; gap:6px; }
+.mm-goal-left{ font-style:normal; font-size:11px; font-weight:900; color:#8a5a00;
+  background:rgba(255,159,10,.2); padding:1px 7px; border-radius:999px; }
+.mm-goal-txt > span{ font-size:11.5px; font-weight:700; color:var(--cg-ink3);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.mm-goal-meter{ position:absolute; inset-inline:0; bottom:0; height:3px; background:rgba(94,92,230,.14); }
+.mm-goal-meter i{ position:absolute; inset-inline-start:0; top:0; bottom:0; display:block;
+  background:linear-gradient(90deg,#5e5ce6,#bf5af2); transition:width .5s ease; }
+.mm-goal-done .mm-goal-ic{ background:linear-gradient(150deg,#30d158,#1aa84a); }
+.mm-goal-done{ background:linear-gradient(135deg,rgba(48,209,88,.13),rgba(26,168,74,.08));
+  border-color:rgba(48,209,88,.24); }
+
+/* Inside the quick-play box the ladder drops its own card and becomes a slim
+   strip above the pickers it explains. */
+.mm-goal-inline{ margin-bottom:11px; padding:8px 10px 10px; border-radius:14px; gap:8px;
+  background:rgba(94,92,230,.08); border-color:rgba(94,92,230,.16); }
+.mm-goal-inline .mm-goal-ic{ width:24px;height:24px;border-radius:8px;flex:0 0 24px; }
+.mm-goal-inline .mm-goal-ic svg{ width:13px;height:13px; }
+.mm-goal-inline .mm-goal-txt b{ font-size:11.5px; gap:5px; }
+.mm-goal-inline .mm-goal-left{ font-size:10px; padding:1px 6px; }
+.mm-goal-inline .mm-goal-txt > span{ font-size:10.5px; }
+.mm-goal-inline.mm-goal-done{ padding-bottom:8px;
+  background:linear-gradient(135deg,rgba(48,209,88,.14),rgba(26,168,74,.06)); border-color:rgba(48,209,88,.26); }
+.mm-quick{ padding:14px; border-radius:22px; }
+
+/* Daily puzzle — a one-row strip. It used to be a full hero card with the
+   loudest gradient in the app and a moving sheen, which made an optional
+   once-a-day puzzle read as the main event. */
+.mm-daily{ position:relative; display:flex; align-items:center; gap:10px; padding:9px 11px;
+  border-radius:18px; cursor:pointer; font-family:inherit; text-align:start; color:var(--cg-ink);
+  background:rgba(255,255,255,.5); border:1px solid rgba(255,255,255,.85);
+  box-shadow:0 10px 24px -22px rgba(28,36,80,.5);
+  transition:transform .2s var(--cg-spring), border-color .2s ease; }
+.mm-daily:hover{ transform:translateY(-1px); }
+.mm-daily:active{ transform:scale(.99); }
+.mm-daily-ic{ width:32px;height:32px;border-radius:11px;display:grid;place-items:center;flex:0 0 32px;color:#fff;
+  background:linear-gradient(150deg,#64d2ff,#0a84ff); box-shadow:0 8px 16px -10px rgba(10,132,255,.8); }
+.mm-daily-ic svg{ width:16px;height:16px; }
+.mm-daily-txt{ display:flex; flex-direction:column; gap:2px; flex:1; min-width:0; }
+.mm-daily-txt b{ display:flex; align-items:center; gap:6px; font-size:12.5px; font-weight:900; color:var(--cg-ink); }
+.mm-daily-txt > span{ font-size:10.5px; font-weight:700; color:var(--cg-ink3); }
+.mm-daily-prize{ font-style:normal; font-size:10px; font-weight:900; color:#8a5a00; white-space:nowrap;
+  background:rgba(255,214,10,.26); border:1px solid rgba(255,214,10,.5); padding:1px 6px; border-radius:999px; }
+.mm-daily-prize.is-done{ color:#1f6b48; background:rgba(48,209,88,.16); border-color:rgba(48,209,88,.35); }
+.mm-daily-streak{ display:inline-flex; align-items:center; gap:3px; flex:0 0 auto; font-size:10.5px; font-weight:900;
+  color:#a33400; background:rgba(255,159,10,.18); border:1px solid rgba(255,159,10,.35);
+  padding:3px 7px; border-radius:999px; }
+.mm-daily-streak svg{ width:11px;height:11px; }
+.mm-daily-go{ flex:0 0 auto; border:0; cursor:pointer; font-family:inherit; font-size:11.5px; font-weight:900; color:#fff;
+  padding:8px 14px; border-radius:12px; background:linear-gradient(135deg,#0a84ff,#5e5ce6);
+  box-shadow:0 10px 20px -12px rgba(10,132,255,.9); transition:transform .2s var(--cg-spring); }
+.mm-daily-go:hover{ transform:translateY(-1px); }
+.mm-daily-go:active{ transform:scale(.96); }
+/* Played today: the CTA is a status, not an action. */
+.mm-daily-go:disabled{ cursor:not-allowed; color:#1f6b48; background:rgba(255,255,255,.78);
+  border:1px solid rgba(52,199,89,.45); box-shadow:none; transform:none; }
+/* Played: a settled status row, not a second call to action. The filled green
+   badge and gradient it used to carry made a finished daily the loudest thing
+   on the page. */
+.mm-daily.is-done{ background:rgba(255,255,255,.42); border-color:rgba(52,199,89,.28); }
+.mm-daily.is-done .mm-daily-ic{ background:rgba(52,199,89,.14); color:#248a4c; box-shadow:none; }
+.mm-daily.is-locked{ opacity:.92; }
+
+/* Tables, cards and tiles wear a printed hairline frame. The approved design
+   gets its life from ornaments and a stamped border, not from a travelling
+   glow, so the light sweep and the rim beam are gone. */
+.mm-tile::before{ content:""; position:absolute; inset:6px; z-index:1; pointer-events:none;
+  border-radius:17px; border:1px solid rgba(36,26,20,.14);
+  transition:border-color .25s ease, box-shadow .25s ease; }
+.mm-tile:hover::before{ border-color:rgba(200,149,43,.55);
+  box-shadow:inset 0 0 0 1px rgba(200,149,43,.16); }
+.dark .mm-tile::before{ border-color:rgba(241,230,214,.14); }
+.dark .mm-tile:hover::before{ border-color:rgba(222,178,98,.55); }
+/* A locked battle tile is an invitation to log in, not a live door. */
+.mm-tile.locked::before{ border-color:rgba(36,26,20,.08); box-shadow:none; }
+
+.mm-label{ display:flex; align-items:center; gap:9px; margin-top:2px; }
+.mm-label h3{ font-size:13.5px; font-weight:800; color:#2a2f3f; }
+.mm-label i{ flex:1; height:1px; background:linear-gradient(90deg,rgba(20,30,70,.14),transparent); }
+
+.mm-grid{ display:grid; grid-template-columns:1fr 1fr; gap:11px; }
+.mm-tile{ position:relative; overflow:hidden; cursor:pointer; font-family:inherit; text-align:right; color:var(--cg-ink);
+  border-radius:22px; padding:14px; min-height:124px; display:flex; flex-direction:column; justify-content:space-between;
+  transition:transform .24s var(--cg-spring),box-shadow .3s var(--cg-apple); }
+.mm-tile:hover{ transform:translateY(-5px); }
+.mm-tile:active{ transform:scale(.97); }
+.mm-tile-wide{ grid-column:1/-1; min-height:112px; flex-direction:row; align-items:center; gap:14px;
+  background-image:linear-gradient(135deg,rgba(191,90,242,.16),rgba(94,92,230,.05)); }
+/* The two play modes share the second row, so they carry the height the old
+   three-row stack used to spread across an extra tile. */
+.mm-grid .mm-tile:not(.mm-tile-wide){ min-height:152px; }
+.mm-tile-wide .mm-txt{ flex:1; min-width:0; }
+.mm-tile-wide .mm-txt b{ font-size:16.5px; }
+.mm-tile-wide .mm-txt span{ font-size:11px; }
+.mm-tile .mm-ic{ width:46px;height:46px;border-radius:15px;display:grid;place-items:center;
+  box-shadow:0 10px 20px -10px rgba(20,30,70,.5), inset 0 1.5px 0 rgba(255,255,255,.4);
+  animation:mm-floaty 4.2s ease-in-out infinite; }
+.mm-tile .mm-ic svg{ width:26px;height:26px;display:block; }
+.mm-tile:hover .mm-ic svg{ animation:mm-wiggle .55s ease-in-out; }
+@keyframes mm-floaty{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-4px) rotate(-3deg)}}
+@keyframes mm-wiggle{0%,100%{transform:rotate(0) scale(1)}25%{transform:rotate(-9deg) scale(1.08)}75%{transform:rotate(9deg) scale(1.08)}}
+.mm-tile .mm-txt b{ display:block; font-size:14.5px; font-weight:800; line-height:1.25; }
+.mm-tile .mm-txt span{ display:block; font-size:11.5px; color:var(--cg-ink2); margin-top:2px; }
+.mm-tile .mm-corner{ position:absolute; top:13px; left:13px; font-size:10.5px; font-weight:800; padding:4px 9px; border-radius:999px; background:rgba(255,255,255,.7); border:1px solid rgba(255,255,255,.9); color:#3c4256; }
+/* Unanswered duel challenges: a count on the tile icon, so an invitation cannot
+   sit unseen in the inbox. */
+.mm-tile .mm-dot{ position:absolute; top:-5px; right:-6px; min-width:19px; height:19px; padding:0 5px;
+  border-radius:999px; display:grid; place-items:center; font-size:10.5px; font-weight:900; line-height:1;
+  color:#fff; background:linear-gradient(150deg,#ff9f0a,#ff375f); border:2px solid #fff;
+  box-shadow:0 4px 10px -3px rgba(255,55,95,.7); animation:mm-dot-pulse 1.8s ease-in-out infinite; }
+@keyframes mm-dot-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.14)}}
+.mm-tile.t-blue .mm-ic{ background:linear-gradient(150deg,#64d2ff,#0a84ff); }
+.mm-tile.t-violet .mm-ic{ background:linear-gradient(150deg,#bf5af2,#5e5ce6); }
+.mm-tile.t-teal .mm-ic{ background:linear-gradient(150deg,#7ce8d8,#32c5d6); }
+.mm-tile.t-pink .mm-ic{ background:linear-gradient(150deg,#ff7a9c,#ff375f); }
+/* Accent used by the sheen band (see .mm-sheen). */
+.mm-tile.t-violet{ --sheen:191,90,242; }
+.mm-tile.t-blue{ --sheen:10,132,255; }
+.mm-tile.t-teal{ --sheen:50,197,214; }
+.mm-tile.t-pink{ --sheen:255,55,95; }
+.mm-tile.locked{ opacity:.92; }
+.mm-tile.locked .mm-ic{ background:linear-gradient(150deg,#c9cdd8,#9aa0b0); box-shadow:none; animation:none; }
+.mm-tile .mm-lock{ position:absolute; top:13px; left:13px; display:inline-flex; align-items:center; gap:4px; font-size:10.5px; font-weight:800; padding:4px 9px; border-radius:999px; color:#a32a45; background:rgba(255,55,95,.14); border:1px solid rgba(255,55,95,.3); }
+.mm-tile .mm-lock svg{ width:11px;height:11px; }
+.mm-shake{ animation:mm-shake .42s cubic-bezier(.36,.07,.19,.97); }
+@keyframes mm-shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-7px)}40%{transform:translateX(7px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+
+.mm-strip{ display:flex; gap:11px; overflow-x:auto; padding:2px 16px 6px; margin:0 -16px; }
+.mm-strip::-webkit-scrollbar{ height:0; }
+.mm-lcard{ flex:0 0 94px; height:128px; border-radius:18px; position:relative; overflow:hidden; padding:9px;
+  display:flex; flex-direction:column; justify-content:flex-end; transition:transform .26s var(--cg-spring); }
+.mm-lcard:hover{ transform:translateY(-6px) scale(1.02); }
+.mm-lcard .mm-top{ position:absolute; inset:0 0 auto; height:52%; opacity:.9; }
+.mm-lcard .mm-n{ position:relative; font-size:12px; font-weight:800; }
+.mm-lcard .mm-c{ position:relative; font-size:10px; color:var(--cg-ink2); margin-top:1px; }
+.mm-lcard .mm-rar{ position:absolute; top:8px; right:8px; font-size:9.5px; font-weight:800; color:#7a5200; background:rgba(255,214,10,.85); padding:2px 7px; border-radius:7px; }
+.mm-lcard.locked{ filter:grayscale(.55) opacity(.7); }
+.mm-lcard.locked .mm-top{ background:#c9cdd8!important; }
+
+.mm-tabbar{ position:absolute; left:12px; right:12px; bottom:12px; z-index:6; border-radius:26px; padding:8px; display:flex;
+  background:rgba(255,255,255,.6); backdrop-filter:blur(26px) saturate(200%); -webkit-backdrop-filter:blur(26px) saturate(200%);
+  border:1px solid rgba(255,255,255,.9);
+  box-shadow:0 18px 40px -18px rgba(28,36,80,.5), inset 0 1px 0 rgba(255,255,255,.95); }
+.mm-slide{ position:absolute; left:0; top:8px; bottom:8px; width:0; border-radius:19px; background:rgba(255,255,255,.95); box-shadow:0 8px 18px -8px rgba(28,36,80,.35); transition:transform .5s var(--cg-spring), width .5s var(--cg-spring); pointer-events:none; }
+.mm-tabbar button{ flex:1; position:relative; z-index:2; background:0; border:0; cursor:pointer; font-family:inherit; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; padding:8px 0; border-radius:18px; color:#98a0b3; font-size:10px; font-weight:700; line-height:1; text-align:center; transition:color .25s; }
+.mm-icwrap{ position:relative; display:grid; place-items:center; width:26px;height:26px; }
+.mm-icwrap svg{ width:26px;height:26px;display:block;animation:mm-bob 3.4s ease-in-out infinite; }
+@keyframes mm-bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-2.4px) rotate(-2.5deg)}}
+.mm-tabbar button:hover .mm-icwrap svg{ animation:mm-wiggle .55s ease-in-out; }
+.mm-tabbar button.on{ color:var(--cg-blue); }
+.mm-spark{ position:absolute; top:-4px; left:-5px; width:11px;height:11px;background:#ffd60a;pointer-events:none;opacity:0;transform:scale(.4); clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%); }
+.mm-tabbar button.on .mm-spark{ animation:mm-twinkle 1.9s ease-in-out infinite; }
+@keyframes mm-twinkle{0%,100%{opacity:0;transform:scale(.4) rotate(0)}50%{opacity:1;transform:scale(1) rotate(140deg)}}
+
+.mm-toast{ position:absolute; left:50%; bottom:104px; transform:translate(-50%,26px); z-index:9; display:flex; align-items:center; gap:8px; padding:11px 15px; border-radius:16px; font-size:12.5px; font-weight:700; color:#8f2338; background:rgba(255,255,255,.85); border:1px solid rgba(255,55,95,.35); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); box-shadow:0 14px 30px -14px rgba(255,55,95,.5); opacity:0; pointer-events:none; transition:all .38s var(--cg-spring); white-space:nowrap; }
+.mm-toast.show{ opacity:1; transform:translate(-50%,0); }
+.mm-toast svg{ width:15px;height:15px; }
+
+.mm-rise{ animation:mm-rise .68s var(--cg-spring) both; }
+@keyframes mm-rise{ from{ opacity:0; transform:translateY(22px) scale(.965); } to{ opacity:1; transform:none; } }
+
+@media (prefers-reduced-motion:reduce){
+  .mm-orb,.mm-sheen,.mm-tile .mm-ic,.mm-tile .mm-dot,.mm-icwrap svg,.mm-tabbar button.on .mm-spark,.mm-tstat.on .mm-tstat-ic,
+  .mm-glance-dot,.mm-glance.has-ready .mm-glance-item.gift > svg,.mm-sheet-wrap,.mm-sheet,
+  .mm-tile:not(.mm-tile-wide)::before,.mm-tile:not(.mm-tile-wide)::after{ animation:none !important; }
+}
+
+/* =====================================================================
+   PROGRESSION SURFACES — title chip, avatar frames, level-up, XP curve,
+   the "today" strip, season footer and the daily-quest card.
+   ===================================================================== */
+
+/* Equipped title sits under the greeting; plain text so it reads as a name,
+   not as a button. */
+.mm-title-chip{ display:inline-flex; align-items:center; margin-top:7px; padding:3px 10px; border-radius:999px;
+  font-size:10.5px; font-weight:900; letter-spacing:.2px; color:#5b3a9e;
+  background:linear-gradient(135deg,rgba(191,90,242,.18),rgba(94,92,230,.14));
+  border:1px solid rgba(94,92,230,.28); }
+
+/* Avatar frames — cosmetics only, so each one is a ring, never a size change. */
+.mm-avatar.mm-frame-gold{ border-color:#ffd60a; box-shadow:0 0 0 3px rgba(255,214,10,.35),0 10px 22px -10px rgba(180,124,0,.75); }
+.mm-avatar.mm-frame-mint{ border-color:#7ce8d8; box-shadow:0 0 0 3px rgba(50,197,214,.3),0 10px 22px -10px rgba(20,140,160,.7); }
+.mm-avatar.mm-frame-royal{ border-color:#bf5af2; box-shadow:0 0 0 3px rgba(94,92,230,.32),0 10px 22px -10px rgba(94,92,230,.75); }
+.mm-avatar.mm-frame-history{ border-color:#c8a165; box-shadow:0 0 0 3px rgba(200,161,101,.32),0 10px 22px -10px rgba(150,110,50,.7); }
+.mm-avatar.mm-frame-epic{ border-color:#ff9f0a; box-shadow:0 0 0 3px rgba(255,159,10,.32),0 10px 22px -10px rgba(190,110,0,.7); }
+.mm-avatar.mm-frame-folklore{ border-color:#ff7a9c; box-shadow:0 0 0 3px rgba(255,55,95,.3),0 10px 22px -10px rgba(200,40,80,.7); }
+.mm-avatar.mm-frame-football{ border-color:#30d158; box-shadow:0 0 0 3px rgba(48,209,88,.3),0 10px 22px -10px rgba(20,150,60,.7); }
+
+/* Level-up banner — the reward is announced once, on the screen the player
+   lands on after the match that granted it. */
+.mm-levelup{ display:flex; align-items:center; gap:11px; padding:12px 13px; border-radius:20px; position:relative;
+  background:linear-gradient(135deg,rgba(255,214,10,.3),rgba(255,159,10,.16));
+  border:1px solid rgba(255,187,10,.55);
+  box-shadow:0 14px 30px -18px rgba(190,120,0,.75), inset 0 1px 0 rgba(255,255,255,.9); }
+.mm-levelup-ic{ width:36px;height:36px;border-radius:13px;display:grid;place-items:center;flex:0 0 36px;color:#fff;
+  background:linear-gradient(150deg,#ffd60a,#ff9f0a); box-shadow:0 8px 18px -8px rgba(200,130,0,.9); }
+.mm-levelup-ic svg{ width:19px;height:19px; }
+.mm-levelup-txt{ display:flex; flex-direction:column; gap:2px; min-width:0; flex:1; }
+.mm-levelup-txt b{ font-size:13.5px; font-weight:900; color:#7a4a00; }
+.mm-levelup-txt > span{ font-size:11.5px; font-weight:700; color:#8a5a00; }
+.mm-levelup-x{ flex:0 0 26px; width:26px;height:26px;border-radius:50%; border:0; cursor:pointer; font-family:inherit;
+  font-size:16px; line-height:1; font-weight:800; color:#8a5a00; background:rgba(255,255,255,.7); }
+
+/* XP curve: the only readout that answers "how far to the next level". */
+.mm-xp{ padding:11px 13px; border-radius:18px;
+  background:rgba(255,255,255,.5); border:1px solid rgba(255,255,255,.85);
+  box-shadow:0 10px 24px -20px rgba(28,36,80,.5); }
+.mm-xp-top{ display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:7px; }
+.mm-xp-lvl{ display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:900; color:#0a5f9e; }
+.mm-xp-lvl svg{ width:13px;height:13px; }
+.mm-xp-num{ font-size:11px; font-weight:800; color:var(--cg-ink3); }
+.mm-xp-bar{ display:block; height:7px; border-radius:999px; overflow:hidden; background:rgba(20,30,70,.1); }
+.mm-xp-bar i{ display:block; height:100%; border-radius:999px; background:linear-gradient(90deg,#0a84ff,#5e5ce6 55%,#bf5af2); transition:width .6s var(--cg-apple); }
+
+/* "Today at a glance" — one row that stands in for the XP bar, the streak and
+   ticket tiles, the win-streak chip and the season row. Those five blocks made
+   the home page ~1890px tall and pushed the play tiles below the fold, so the
+   numbers stayed here and every detail moved into the sheet below. */
+.mm-glance{ position:relative; display:flex; align-items:center; gap:8px; width:100%;
+  padding:10px 12px 13px; border-radius:20px; font-family:inherit; text-align:start;
+  color:var(--cg-ink); cursor:pointer; -webkit-tap-highlight-color:transparent;
+  transition:transform .2s var(--cg-spring), box-shadow .2s ease, border-color .2s ease; }
+.mm-glance:hover{ transform:translateY(-1px); }
+.mm-glance:active{ transform:scale(.985); }
+/* Unclaimed quests are the only tappable reward in here, so the whole row
+   glows instead of adding a second badge on top of the numbers. */
+.mm-glance.has-ready{ border-color:rgba(48,209,88,.45);
+  box-shadow:0 14px 30px -22px rgba(26,168,74,.85), inset 0 0 0 1px rgba(48,209,88,.18); }
+.mm-glance.has-ready .mm-glance-item.gift > svg{ animation:mm-dot-pulse 2.2s ease-in-out infinite; }
+.mm-glance-stats{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4px; flex:1; min-width:0; }
+.mm-glance-item{ position:relative; display:grid; grid-template-columns:15px minmax(0,1fr);
+  grid-template-rows:auto auto; column-gap:5px; align-items:center; min-width:0; }
+.mm-glance-item > svg{ grid-row:1 / span 2; width:15px;height:15px; color:#5e5ce6; }
+.mm-glance-item.fire > svg{ color:#c2410c; }
+.mm-glance-item.fire.on > svg{ color:#ff5a1f; }
+.mm-glance-item.gift > svg{ color:#8b5cf6; }
+/* A reward waiting to be collected: the row border already turns green, but
+   the number itself has to say "claim me" without opening the sheet. */
+.mm-glance-item.gift.ready b{ color:#1f6b48; }
+.mm-glance-item.gift.ready i{ color:#1aa84a; font-weight:900; }
+.mm-glance-item b{ font-size:11px; font-weight:900; line-height:1.2; color:var(--cg-ink);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.mm-glance-item i{ font-style:normal; font-size:9px; font-weight:700; line-height:1.2; color:var(--cg-ink3);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+/* A hairline between the three stats, so they read as one strip and not as a
+   cluster of loose pairs. */
+.mm-glance-item + .mm-glance-item::before{ content:''; position:absolute; inset-inline-start:-2px;
+  top:1px; bottom:1px; width:1px; background:rgba(20,30,70,.1); }
+.mm-glance-chev{ position:relative; display:inline-flex; align-items:center; flex:0 0 auto; color:var(--cg-ink3); }
+.mm-glance-chev svg{ width:15px;height:15px; }
+.cg-menu[dir="ltr"] .mm-glance-chev svg{ transform:scaleX(-1); }
+.mm-glance-dot{ position:absolute; top:-4px; inset-inline-end:-2px; width:8px;height:8px; border-radius:50%;
+  background:linear-gradient(150deg,#ffd60a,#ff9f0a); box-shadow:0 0 0 2px rgba(255,255,255,.85);
+  animation:mm-dot-pulse 2.2s ease-in-out infinite; }
+.mm-glance-xp{ position:absolute; left:12px; right:12px; bottom:6px; height:3px; border-radius:999px;
+  overflow:hidden; background:rgba(20,30,70,.09); }
+.mm-glance-xp i{ display:block; height:100%; border-radius:999px;
+  background:linear-gradient(90deg,#0a84ff,#5e5ce6 55%,#bf5af2); transition:width .6s var(--cg-apple); }
+.mm-glance-guest{ gap:11px; padding:12px; }
+.mm-glance-ic{ width:34px;height:34px;border-radius:12px;display:grid;place-items:center;flex:0 0 34px;color:#fff;
+  box-shadow:0 8px 18px -10px rgba(200,80,0,.8); }
+.mm-glance-ic svg{ width:18px;height:18px; }
+.mm-glance-ic.fire{ background:linear-gradient(150deg,#ffb340,#ff6a3d); }
+.mm-glance-txt{ display:flex; flex-direction:column; gap:2px; min-width:0; flex:1; }
+.mm-glance-txt b{ font-size:12.5px; font-weight:900; color:var(--cg-ink); }
+.mm-glance-txt > span{ font-size:10.5px; font-weight:700; color:var(--cg-ink3); line-height:1.35; }
+
+/* Streak and ticket tiles — only rendered inside the sheet now. */
+.mm-today-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.mm-tstat{ position:relative; display:flex; flex-direction:column; align-items:center; gap:4px; padding:9px 6px 10px;
+  border-radius:16px; text-align:center; background:rgba(255,255,255,.55); border:1px solid rgba(255,255,255,.85); }
+.mm-tstat.on{ background:linear-gradient(160deg,rgba(255,214,10,.24),rgba(255,159,10,.14)); border-color:rgba(255,187,10,.5); }
+.mm-tstat-ic{ width:28px;height:28px;border-radius:10px;display:grid;place-items:center;color:#fff;
+  box-shadow:0 6px 14px -8px rgba(20,30,70,.65); }
+.mm-tstat-ic svg{ width:15px;height:15px; }
+.mm-tstat-ic.fire{ background:linear-gradient(150deg,#ffb340,#ff6a3d); }
+.mm-tstat.on .mm-tstat-ic.fire{ animation:mm-dot-pulse 2.2s ease-in-out infinite; }
+.mm-tstat-ic.gift{ background:linear-gradient(150deg,#bf5af2,#5e5ce6); }
+.mm-tstat-ic.clock{ background:linear-gradient(150deg,#64d2ff,#0a84ff); }
+.mm-tstat b{ font-size:12.5px; font-weight:900; color:var(--cg-ink); line-height:1.2; }
+.mm-tstat > span{ font-size:10.5px; font-weight:700; color:var(--cg-ink3); line-height:1.3; }
+.mm-tstat-shield{ position:absolute; top:5px; inset-inline-end:5px; font-style:normal; font-size:9px; font-weight:900;
+  padding:1px 5px; border-radius:999px; color:#0a5f9e; background:rgba(10,132,255,.16); }
+
+.mm-season{ display:flex; align-items:center; justify-content:space-between; gap:9px; flex-wrap:wrap;
+  margin-top:10px; padding:9px 2px 11px; border-top:1px dashed rgba(20,30,70,.14); }
+.mm-season-id{ display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:800; color:var(--cg-ink2); }
+.mm-season-id svg{ width:13px;height:13px; color:#b8860b; }
+.mm-season-id i{ font-style:normal; opacity:.5; }
+.mm-season-reward{ font-size:10.5px; font-weight:700; color:var(--cg-ink3); }
+.mm-winstreak{ display:inline-flex; align-items:center; gap:5px; font-size:10.5px; font-weight:800; color:#7a3d00;
+  padding:4px 9px; border-radius:999px; background:rgba(255,159,10,.18); border:1px solid rgba(255,159,10,.35); }
+.mm-winstreak svg{ width:12px;height:12px; }
+.mm-winstreak i{ font-style:normal; font-weight:900; color:#b04a00; }
+.dark .mm-winstreak{ color:#ffcf8a; }
+.dark .mm-winstreak i{ color:#ffb340; }
+.mm-season-claim{ border:0; cursor:pointer; font-family:inherit; font-size:11.5px; font-weight:900; color:#fff;
+  padding:7px 12px; border-radius:12px; background:linear-gradient(135deg,#ffd60a,#ff9f0a);
+  box-shadow:0 10px 20px -12px rgba(200,130,0,.9); transition:transform .2s var(--cg-spring); }
+.mm-season-claim:hover{ transform:translateY(-1px); }
+.mm-season-claim:active{ transform:scale(.96); }
+.mm-season-claim:disabled{ opacity:.6; cursor:progress; transform:none; }
+
+/* Daily quests: three concrete objectives with a claim button each. */
+.mm-quests{ padding:13px 13px 10px; border-radius:24px; }
+.mm-quests-head{ display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:9px; }
+.mm-quests-title{ display:flex; align-items:center; gap:7px; min-width:0; }
+.mm-quests-head h3{ font-size:13px; font-weight:900; color:var(--cg-ink); }
+.mm-quest-count{ flex:0 0 auto; font-size:10px; font-weight:900; padding:2px 7px; border-radius:999px;
+  color:#5b3a9e; background:rgba(94,92,230,.13); border:1px solid rgba(94,92,230,.22); }
+.mm-quest-count.all{ color:#1f6b48; background:rgba(48,209,88,.18); border-color:rgba(48,209,88,.4); }
+.mm-quest-reroll{ display:inline-flex; align-items:center; gap:5px; border:0; cursor:pointer; font-family:inherit;
+  font-size:10.5px; font-weight:800; color:#5b3a9e; padding:5px 9px; border-radius:999px;
+  background:rgba(94,92,230,.12); border:1px solid rgba(94,92,230,.22); }
+.mm-quest-reroll svg{ width:12px;height:12px; }
+.mm-quest-reroll:disabled{ opacity:.5; cursor:default; }
+.mm-quest-list{ display:flex; flex-direction:column; gap:7px; }
+.mm-quest{ display:flex; align-items:center; gap:9px; padding:8px 10px; border-radius:15px;
+  background:rgba(255,255,255,.5); border:1px solid rgba(255,255,255,.8); }
+.mm-quest.is-ready{ background:linear-gradient(135deg,rgba(48,209,88,.16),rgba(50,197,214,.1)); border-color:rgba(48,209,88,.4); }
+.mm-quest.is-done{ opacity:.62; }
+/* Unticked → ticked → claimed. The border stays visible in the first state so it
+   reads as a box to fill, which is the whole point of a checklist. */
+.mm-quest-box{ width:24px;height:24px;border-radius:8px;display:grid;place-items:center;flex:0 0 24px;
+  border:2px solid rgba(20,30,70,.2); background:rgba(255,255,255,.6); color:#fff;
+  transition:background .3s ease, border-color .3s ease, transform .3s var(--cg-spring); }
+.mm-quest-box svg{ width:14px;height:14px; stroke-width:3; }
+.mm-quest.is-ready .mm-quest-box{ border-color:#1aa84a; background:linear-gradient(150deg,#34c759,#1aa84a);
+  transform:scale(1.06); box-shadow:0 6px 12px -8px rgba(26,168,74,.9); }
+.mm-quest.is-done .mm-quest-box{ border-color:rgba(48,209,88,.45); background:rgba(48,209,88,.22); color:#1f6b48; transform:none; box-shadow:none; }
+.mm-quest.is-done .mm-quest-txt b{ text-decoration:line-through; text-decoration-thickness:1.5px;
+  text-decoration-color:rgba(31,107,72,.45); }
+.mm-quest-txt{ display:flex; flex-direction:column; gap:5px; flex:1; min-width:0; }
+.mm-quest-txt b{ font-size:11.5px; font-weight:800; color:var(--cg-ink); line-height:1.35; }
+.mm-quest-bar{ display:block; height:4px; border-radius:999px; overflow:hidden; background:rgba(20,30,70,.1); }
+.mm-quest-bar i{ display:block; height:100%; border-radius:999px; background:linear-gradient(90deg,#5e5ce6,#0a84ff); transition:width .5s ease; }
+.mm-quest.is-ready .mm-quest-bar i{ background:linear-gradient(90deg,#30d158,#1aa84a); }
+.mm-quest-claim{ flex:0 0 auto; font-size:11px; font-weight:900; color:var(--cg-ink3); }
+.mm-quest-claim.is-ready{ border:0; cursor:pointer; font-family:inherit; color:#fff; padding:6px 11px; border-radius:11px;
+  background:linear-gradient(135deg,#34c759,#1aa84a); box-shadow:0 8px 16px -10px rgba(26,168,74,.9);
+  transition:transform .2s var(--cg-spring); }
+.mm-quest-claim.is-ready:hover{ transform:translateY(-1px); }
+.mm-quest-claim.is-ready:active{ transform:scale(.95); }
+.mm-quest-claim.is-claimed{ color:#1f6b48; }
+
+/* ===== "My today" sheet =====
+   Bottom sheet over the menu, above the tabbar (6) and the toast (9). It is
+   absolutely positioned, not fixed: the menu is already a phone-width column on
+   desktop, so the sheet must stay inside it. */
+.mm-screen.sheet-open .mm-scroll{ overflow:hidden; }
+.mm-sheet-wrap{ position:absolute; inset:0; z-index:12; display:flex; align-items:flex-end;
+  background:rgba(10,16,36,.42); backdrop-filter:blur(2px); -webkit-backdrop-filter:blur(2px);
+  animation:mm-sheet-fade .22s ease both; }
+@keyframes mm-sheet-fade{ from{ opacity:0; } to{ opacity:1; } }
+.mm-sheet{ position:relative; display:flex; flex-direction:column; width:100%; max-height:86%;
+  border-radius:26px 26px 0 0; background:rgba(255,255,255,.95);
+  border-top:1px solid rgba(255,255,255,.95);
+  box-shadow:0 -24px 54px -20px rgba(12,20,50,.5);
+  backdrop-filter:blur(24px) saturate(180%); -webkit-backdrop-filter:blur(24px) saturate(180%);
+  animation:mm-sheet-up .34s var(--cg-spring) both; }
+@keyframes mm-sheet-up{ from{ transform:translateY(100%); } to{ transform:none; } }
+.mm-sheet-grab{ display:block; width:38px;height:4px;border-radius:999px; margin:8px auto 0;
+  background:rgba(20,30,70,.18); }
+.mm-sheet-head{ display:flex; align-items:center; justify-content:space-between; gap:8px; padding:8px 16px 4px; }
+.mm-sheet-head h3{ font-size:15px; font-weight:900; color:var(--cg-ink); }
+.mm-sheet-x{ flex:0 0 30px; width:30px;height:30px;border:0;border-radius:50%; cursor:pointer; font-family:inherit;
+  font-size:17px; line-height:1; font-weight:800; color:var(--cg-ink2); background:rgba(20,30,70,.08); }
+.mm-sheet-x:active{ transform:scale(.94); }
+.mm-sheet-body{ display:flex; flex-direction:column; gap:12px; overflow-y:auto; overscroll-behavior:contain;
+  padding:6px 16px calc(20px + env(safe-area-inset-bottom)); }
+.mm-sheet-body::-webkit-scrollbar{ width:0; }
+/* Inside the sheet the sections lose their own card chrome: the sheet is the
+   card now, and stacked panels inside a panel read as clutter again. */
+.mm-quests.in-sheet{ padding:0; border:0; border-radius:0; background:none; box-shadow:none; }
+.mm-today-grid.in-sheet{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+.mm-today-grid.in-sheet .mm-tstat{ padding:11px 6px 12px; }
+.mm-winstreak.in-sheet{ align-self:flex-start; }
+.mm-season.in-sheet{ margin:0; padding:11px 12px; border:1px solid var(--cg-hair); border-radius:16px;
+  background:rgba(255,255,255,.55); }
+
+/* Rewards read green; the default toast is a lock warning. */
+.mm-toast.good{ color:#1f6b48; border-color:rgba(48,209,88,.4); box-shadow:0 14px 30px -14px rgba(26,168,74,.55); }
+
+.dark .mm-title-chip{ color:#d9c7ff; }
+.dark .mm-levelup-txt b{ color:#ffe08a; }
+.dark .mm-levelup-txt > span{ color:#ffd07a; }
+.dark .mm-levelup-x{ color:#ffd07a; background:rgba(255,255,255,.14); }
+.dark .mm-xp,
+.dark .mm-tstat,
+.dark .mm-quest{ background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.1); }
+.dark .mm-xp-lvl{ color:#8fd0ff; }
+.dark .mm-xp-bar,
+.dark .mm-quest-bar{ background:rgba(255,255,255,.14); }
+.dark .mm-season{ border-top-color:rgba(255,255,255,.14); }
+.dark .mm-tstat-shield{ color:#8fd0ff; background:rgba(10,132,255,.22); }
+.dark .mm-daily{ background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.1); }
+.dark .mm-daily-prize{ color:#ffe08a; }
+.dark .mm-daily-prize.is-done{ color:#9ef0b8; }
+.dark .mm-daily-streak{ color:#ffcf8a; }
+.dark .mm-daily-go:disabled{ color:#9ef0b8; background:rgba(255,255,255,.1); }
+.dark .mm-daily.is-done{ background:rgba(255,255,255,.05); }
+.dark .mm-daily.is-done .mm-daily-ic{ background:rgba(52,199,89,.2); color:#9ef0b8; }
+.dark .mm-goal-inline{ background:rgba(94,92,230,.16); border-color:rgba(94,92,230,.3); }
+.dark .mm-quest-reroll{ color:#d9c7ff; background:rgba(94,92,230,.2); border-color:rgba(94,92,230,.35); }
+.dark .mm-quest-box{ border-color:rgba(255,255,255,.26); background:rgba(255,255,255,.08); }
+.dark .mm-quest-count{ color:#d9c7ff; }
+.dark .mm-toast.good{ color:#9ef0b8; }
+.dark .mm-season-claim,
+.dark .mm-levelup-ic,
+.dark .mm-levelup{ border-color:rgba(255,187,10,.4); }
+.dark .mm-glance-item + .mm-glance-item::before{ background:rgba(255,255,255,.12); }
+.dark .mm-glance-item > svg{ color:#a99bff; }
+.dark .mm-glance-item.fire > svg{ color:#ff9a6b; }
+.dark .mm-glance-item.fire.on > svg{ color:#ffb340; }
+.dark .mm-glance-item.gift > svg{ color:#c9b6ff; }
+/* #1f6b48 on a dark card is unreadable; lift the ready state instead. */
+.dark .mm-glance-item.gift.ready b{ color:#9bf0b7; }
+.dark .mm-glance-item.gift.ready i{ color:#5fe08c; }
+.dark .mm-glance-xp{ background:rgba(255,255,255,.14); }
+/* On a dark glass tile the tint has to add light, not paint over it. */
+.dark .mm-sheen{ mix-blend-mode:screen; }
+.dark .mm-glance-dot{ box-shadow:0 0 0 2px rgba(22,27,46,.9); }
+.dark .mm-sheet{ background:rgba(20,25,44,.96); border-top-color:rgba(255,255,255,.13); }
+.dark .mm-sheet-grab{ background:rgba(255,255,255,.24); }
+.dark .mm-sheet-x{ color:#e6e9f2; background:rgba(255,255,255,.1); }
+.dark .mm-season.in-sheet{ background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.1); }
+
+/* =====================================================================
+   CLAY & PAPER — the menu shell
+   The rules above own layout and motion; this block only swaps material:
+   glass → clay, white fills → printed sheets, glossy icons → matte clay.
+   ===================================================================== */
+
+/* warm light pools instead of the cool blurred orbs */
+:root:not(.dark) .mm-orb{ opacity:.38; filter:blur(62px); }
+:root:not(.dark) .mm-o1{ background:#EDC29B; }
+:root:not(.dark) .mm-o2{ background:#C9A98D; }
+:root:not(.dark) .mm-o3{ background:#D8AF99; }
+:root:not(.dark) .mm-o4{ background:#BFA88A; }
+.dark .mm-orb{ opacity:.2; }
+.dark .mm-o1{ background:#7A4A32; }
+.dark .mm-o2{ background:#5E4A3A; }
+.dark .mm-o3{ background:#6B4234; }
+.dark .mm-o4{ background:#4C3B2E; }
+
+/* a slab of clay */
+:root:not(.dark) .mm-glass{
+  background-image:var(--cg-glass); background-color:var(--clay-200);
+  backdrop-filter:none; -webkit-backdrop-filter:none;
+  border:1px solid var(--cg-hair); box-shadow:var(--cg-shadow);
+}
+.dark .mm-glass{
+  background-image:var(--cg-glass); background-color:#3A2A20;
+  backdrop-filter:none; -webkit-backdrop-filter:none;
+  border:1px solid var(--cg-hair); box-shadow:var(--cg-shadow);
+}
+
+/* avatar → a stamped clay medallion */
+.mm-avatar{
+  background-image:linear-gradient(155deg,#D38F6C,#A6573F); border-color:#FBF1E4;
+  box-shadow:0 1px 0 rgba(255,255,255,.55) inset, 0 -2px 0 rgba(80,45,30,.3) inset,
+             0 10px 20px -12px rgba(86,52,33,.85);
+}
+.dark .mm-avatar{ border-color:#5A4030; }
+
+/* stat pills → pressed clay counters */
+:root:not(.dark) .mm-pill{ background-image:linear-gradient(180deg,#FDF8EF,#F3E7D5);
+  border-color:rgba(255,252,246,.9);
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 -1px 0 rgba(122,80,52,.12) inset,
+             0 8px 16px -14px rgba(86,52,33,.6); }
+.dark .mm-pill{ background-image:linear-gradient(180deg,rgba(255,226,190,.09),rgba(0,0,0,.16)); }
+.mm-pill.c{ color:#6A4A10; }
+.mm-pill.g{ color:#3D5568; }
+.mm-pill.s{ color:#8E4B33; }
+.mm-pill.c .mm-ic{ background:linear-gradient(155deg,#E3BE68,#C8952B); }
+.mm-pill.g .mm-ic{ background:linear-gradient(155deg,#9FBBCE,#6F8FA8); }
+.mm-pill.s .mm-ic{ background:linear-gradient(155deg,#D8AF99,#B4644A); }
+.mm-pill .mm-ic{ box-shadow:0 1px 0 rgba(255,255,255,.45) inset, 0 -1px 0 rgba(80,45,30,.25) inset; }
+.dark .mm-pill{ background-image:linear-gradient(180deg,rgba(255,226,190,.07),rgba(0,0,0,.14)); }
+.dark .mm-pill.c{ color:#EBC97F; } .dark .mm-pill.g{ color:#AEC6D8; } .dark .mm-pill.s{ color:#E2A88F; }
+
+/* the "next unlock" ladder → a pressed groove with a saffron meter */
+:root:not(.dark) .mm-goal{
+  background-image:linear-gradient(135deg,rgba(200,149,43,.14),rgba(201,123,90,.10));
+  border-color:rgba(160,110,45,.28);
+  box-shadow:0 1px 0 rgba(255,255,255,.6) inset, 0 -1px 0 rgba(122,80,52,.12) inset;
+}
+.mm-goal-ic{ background-image:linear-gradient(155deg,#D6A93F,#AC7C1E); box-shadow:0 1px 0 rgba(255,255,255,.45) inset, 0 -2px 0 rgba(90,55,15,.35) inset; }
+.mm-goal-left{ color:#6A4A10; background:rgba(200,149,43,.22); }
+.mm-goal-meter{ background:rgba(120,80,40,.16); }
+.mm-goal-meter i{ background:linear-gradient(90deg,#C8952B,#B4644A); }
+.mm-goal-done{ background-image:linear-gradient(135deg,rgba(143,163,126,.20),rgba(94,110,82,.12)); border-color:rgba(94,110,82,.32); }
+.mm-goal-done .mm-goal-ic{ background-image:linear-gradient(155deg,#A8C09B,#5E6E52); }
+:root:not(.dark) .mm-goal-inline{ background:rgba(200,149,43,.10); border-color:rgba(160,110,45,.24); }
+
+/* the daily strip → a plain printed sheet, no gloss */
+:root:not(.dark) .mm-daily{
+  background-color:var(--paper); background-image:var(--tex-paper); background-size:200px 200px;
+  background-blend-mode:multiply;
+  border-color:rgba(36,26,20,.16);
+  box-shadow:0 1px 0 rgba(255,255,255,.7) inset, 0 10px 20px -18px rgba(70,45,30,.6);
+}
+.mm-daily-ic{ background-image:linear-gradient(155deg,#8FA8BE,#5A768D); box-shadow:0 1px 0 rgba(255,255,255,.4) inset, 0 -2px 0 rgba(40,60,75,.3) inset; }
+.mm-daily-prize{ color:#6A4A10; background:rgba(200,149,43,.20); border-color:rgba(160,110,45,.4); }
+.mm-daily-prize.is-done{ color:#3E4B32; background:rgba(143,163,126,.22); border-color:rgba(94,110,82,.38); }
+.mm-daily-streak{ color:#8E4B33; background:rgba(201,123,90,.16); border-color:rgba(180,100,74,.36); }
+.mm-daily-go{ background-image:linear-gradient(180deg,#D38F6C,#A6573F);
+  box-shadow:0 1px 0 rgba(255,255,255,.4) inset, 0 -2px 0 rgba(80,45,30,.3) inset, 0 10px 18px -12px rgba(86,52,33,.75); }
+.mm-daily-go:disabled{ color:#3E4B32; background-image:none; background-color:rgba(255,252,245,.7); border-color:rgba(94,110,82,.4); }
+:root:not(.dark) .mm-daily.is-done{ background-color:#F3EEDF; border-color:rgba(94,110,82,.32); }
+.mm-daily.is-done .mm-daily-ic{ background:rgba(143,163,126,.22); color:#3E4B32; }
+
+/* tiles — cream clay pads with a tinted foot, so each mode is recognisable
+   before you read its label */
+:root:not(.dark) .mm-tile{
+  background-image:linear-gradient(158deg,#FDFAF3 0%,#F6ECDC 46%,#E8D7BC 100%);
+  border:1px solid rgba(132,92,62,.18);
+  box-shadow:0 1px 0 rgba(255,255,255,.92) inset, 0 -2px 0 rgba(122,80,52,.10) inset,
+             0 3px 0 rgba(122,80,52,.05), 0 18px 30px -20px rgba(86,52,33,.62);
+}
+:root:not(.dark) .mm-tile.t-violet{ background-image:linear-gradient(158deg,#FDFAF3 0%,#F6ECDC 46%,#E3C9D2 100%); }
+:root:not(.dark) .mm-tile.t-blue{ background-image:linear-gradient(158deg,#FDFAF3 0%,#F6ECDC 46%,#D2E0E9 100%); }
+:root:not(.dark) .mm-tile.t-teal{ background-image:linear-gradient(158deg,#FDFAF3 0%,#F6ECDC 46%,#D8E0C6 100%); }
+:root:not(.dark) .mm-tile.t-pink{ background-image:linear-gradient(158deg,#FDFAF3 0%,#F6ECDC 46%,#EDD3C6 100%); }
+/* wide tiles are read along their length, so the tint runs sideways */
+:root:not(.dark) .mm-tile-wide.t-violet{ background-image:linear-gradient(100deg,#FDFAF3 0%,#F6ECDC 38%,#E3C9D2 100%); }
+:root:not(.dark) .mm-tile-wide.t-blue{ background-image:linear-gradient(100deg,#FDFAF3 0%,#F6ECDC 38%,#D2E0E9 100%); }
+:root:not(.dark) .mm-tile-wide.t-teal{ background-image:linear-gradient(100deg,#FDFAF3 0%,#F6ECDC 38%,#D8E0C6 100%); }
+:root:not(.dark) .mm-tile-wide.t-pink{ background-image:linear-gradient(100deg,#FDFAF3 0%,#F6ECDC 38%,#EDD3C6 100%); }
+/* a locked door is an empty socket: dashed edge, pale interior */
+:root:not(.dark) .mm-tile.locked{
+  background-image:linear-gradient(158deg,#FAF5EB 0%,#F2E7D6 100%);
+  border:1.5px dashed rgba(150,110,80,.45);
+  box-shadow:0 1px 0 rgba(255,255,255,.8) inset, 0 10px 20px -18px rgba(86,52,33,.5);
+}
+.mm-tile.t-violet .mm-ic{ background-image:linear-gradient(155deg,#B8858F,#7A4D6D); }
+.mm-tile.t-blue .mm-ic{ background-image:linear-gradient(155deg,#9FBBCE,#5A768D); }
+.mm-tile.t-teal .mm-ic{ background-image:linear-gradient(155deg,#A8C09B,#5E6E52); }
+.mm-tile.t-pink .mm-ic{ background-image:linear-gradient(155deg,#D8AF99,#A6573F); }
+.mm-tile .mm-ic{ box-shadow:0 1px 0 rgba(255,255,255,.45) inset, 0 -2px 0 rgba(60,40,25,.28) inset; }
+.mm-tile.locked .mm-ic{ background-image:linear-gradient(155deg,#D9C3A6,#B99C7C); }
+.mm-tile .mm-corner{ background:rgba(255,251,243,.82); border-color:rgba(36,26,20,.16); color:var(--ink-2); }
+.mm-tile .mm-lock{ color:#8E5862; background:rgba(196,140,150,.20); border-color:rgba(174,111,121,.4); }
+.mm-tile .mm-dot{ background-image:linear-gradient(155deg,#C9793F,#A34A3A); border-color:#FBF4EA; }
+.mm-label h3{ color:var(--ink); }
+.mm-label i{ background:linear-gradient(90deg,rgba(36,26,20,.17),rgba(36,26,20,.02)); }
+/* clay accents for the two moving lights */
+.mm-tile.t-violet{ --sheen:122,77,109; }
+.mm-tile.t-blue{ --sheen:90,118,141; }
+.mm-tile.t-teal{ --sheen:94,110,82; }
+.mm-tile.t-pink{ --sheen:166,87,63; }
+
+/* bottom navigation → a fired clay bar lifted off the table */
+:root:not(.dark) .mm-tabbar{
+  background-image:var(--clay-shell);
+  background-color:var(--clay-500);
+  backdrop-filter:none; -webkit-backdrop-filter:none;
+  border:1px solid rgba(255,238,220,.55);
+  box-shadow:0 1px 0 rgba(255,228,204,.45) inset, 0 -2px 0 rgba(70,40,25,.24) inset,
+             0 20px 34px -20px rgba(86,52,33,.8);
+}
+.dark .mm-tabbar{ background-image:linear-gradient(180deg,#4A3526,#352419); background-color:#3A2A20; border-color:rgba(255,226,190,.10); }
+.mm-slide{ background:#FCF7EC; box-shadow:inset 0 0 0 1px rgba(90,50,30,.16), 0 6px 14px -8px rgba(70,45,30,.55); }
+.dark .mm-slide{ background:#58402D; box-shadow:inset 0 0 0 1px rgba(255,226,190,.14); }
+.mm-tabbar button{ color:rgba(255,247,238,.74); }
+.mm-tabbar button.on{ color:#A9553A; }
+.dark .mm-tabbar button{ color:rgba(241,230,214,.55); }
+.dark .mm-tabbar button.on{ color:#E2A88F; }
+.mm-spark{ background:#C8952B; }
+
+/* toast → a slip of paper */
+:root:not(.dark) .mm-toast{
+  background-color:var(--paper); background-image:var(--tex-paper); background-size:200px 200px;
+  background-blend-mode:multiply;
+  color:#8E5862; border-color:rgba(174,111,121,.45);
+  box-shadow:0 14px 30px -16px rgba(86,52,33,.6);
+}
+.mm-toast.good{ color:#3E4B32; border-color:rgba(94,110,82,.45); }
+
+/* progression surfaces → paper inside the clay */
+:root:not(.dark) .mm-xp,
+:root:not(.dark) .mm-tstat,
+:root:not(.dark) .mm-quest,
+:root:not(.dark) .mm-season.in-sheet,
+:root:not(.dark) .mm-glance{
+  background-color:var(--paper); background-image:var(--tex-paper); background-size:200px 200px;
+  background-blend-mode:multiply;
+  border-color:rgba(36,26,20,.15);
+  box-shadow:0 1px 0 rgba(255,255,255,.7) inset, 0 10px 20px -18px rgba(70,45,30,.5);
+}
+.mm-xp-bar,.mm-glance-xp,.mm-quest-bar{ background:rgba(120,80,40,.18); box-shadow:0 1px 2px rgba(90,55,30,.25) inset; }
+.mm-xp-bar i,.mm-glance-xp i{ background-image:linear-gradient(90deg,#C8952B,#B4644A); }
+.mm-quest-bar i{ background-image:linear-gradient(90deg,#B4644A,#944E39); }
+.mm-xp-lvl{ color:#8E4B33; }
+.mm-tstat-ic.fire{ background-image:linear-gradient(155deg,#D88F55,#B4644A); }
+.mm-tstat-ic.gift{ background-image:linear-gradient(155deg,#CFA5AF,#87545F); }
+.mm-tstat-ic.clock{ background-image:linear-gradient(155deg,#9FBBCE,#5A768D); }
+.mm-tstat.on{ background-color:#F8EFD9; background-image:linear-gradient(160deg,rgba(200,149,43,.20),rgba(201,123,90,.12)); border-color:rgba(160,110,45,.4); }
+.mm-glance-item > svg{ color:#944E39; }
+.mm-glance-item.fire > svg{ color:#B4644A; }
+.mm-glance-item.gift > svg{ color:#87545F; }
+.mm-glance-item.gift.ready b{ color:#3E4B32; }
+.mm-glance-item.gift.ready i{ color:#5E6E52; }
+.mm-quest-box{ border-color:rgba(36,26,20,.28); background:var(--paper-2); }
+.mm-quest.is-ready{ background-color:#F4F1E2; background-image:linear-gradient(135deg,rgba(143,163,126,.20),rgba(200,149,43,.08)); border-color:rgba(94,110,82,.42); }
+.mm-quest.is-ready .mm-quest-box{ background-image:linear-gradient(155deg,#93AE85,#5E6E52); border-color:#5E6E52; }
+.mm-quest.is-done .mm-quest-box{ background:rgba(143,163,126,.28); color:#3E4B32; border-color:rgba(94,110,82,.45); }
+.mm-quest-claim.is-ready{ background-image:linear-gradient(180deg,#93AE85,#5E6E52); box-shadow:0 1px 0 rgba(255,255,255,.4) inset, 0 8px 16px -10px rgba(60,80,55,.8); }
+.mm-quest-count{ color:#6A4A10; background:rgba(200,149,43,.18); border-color:rgba(160,110,45,.34); }
+.mm-quest-count.all{ color:#3E4B32; background:rgba(143,163,126,.22); border-color:rgba(94,110,82,.4); }
+.mm-quest-reroll{ color:#8E4B33; background:rgba(201,123,90,.14); border-color:rgba(180,100,74,.3); }
+.mm-title-chip{ color:#6A4A10; background-image:linear-gradient(135deg,rgba(200,149,43,.22),rgba(201,123,90,.16)); border-color:rgba(160,110,45,.36); }
+.mm-winstreak{ color:#8E4B33; background:rgba(201,123,90,.16); border-color:rgba(180,100,74,.36); }
+.mm-winstreak i{ color:#944E39; }
+.mm-season-id svg{ color:#C8952B; }
+.mm-season-claim{ background-image:linear-gradient(180deg,#D6A93F,#AC7C1E); }
+
+/* the bottom sheet → a clay tray with printed rows inside */
+:root:not(.dark) .mm-sheet{
+  background-image:linear-gradient(180deg,#F7EBD9 0%,#EDDCC3 100%);
+  background-color:var(--clay-200);
+  backdrop-filter:none; -webkit-backdrop-filter:none;
+  border-top:2px solid rgba(255,250,242,.85);
+  box-shadow:0 -26px 54px -22px rgba(86,52,33,.7), inset 0 -2px 0 rgba(122,80,52,.16);
+}
+.mm-sheet-grab{ background:rgba(120,80,40,.28); }
+.mm-sheet-x{ color:var(--ink-2); background:rgba(255,251,243,.7); box-shadow:0 1px 0 rgba(255,255,255,.8) inset; }
+.mm-sheet-wrap{ background:rgba(58,34,22,.42); }
+
+/* cosmetics: rings read as stamped bands, not neon */
+.mm-avatar.mm-frame-gold{ border-color:#D6A93F; box-shadow:0 0 0 3px rgba(200,149,43,.30),0 10px 22px -12px rgba(120,80,20,.8); }
+.mm-avatar.mm-frame-mint{ border-color:#8FA37E; box-shadow:0 0 0 3px rgba(94,110,82,.28),0 10px 22px -12px rgba(60,80,55,.7); }
+.mm-avatar.mm-frame-royal{ border-color:#AE80A0; box-shadow:0 0 0 3px rgba(122,77,109,.28),0 10px 22px -12px rgba(90,50,80,.7); }
+.mm-avatar.mm-frame-history{ border-color:#C0A277; box-shadow:0 0 0 3px rgba(160,120,70,.28),0 10px 22px -12px rgba(120,85,45,.7); }
+.mm-avatar.mm-frame-epic{ border-color:#C8952B; box-shadow:0 0 0 3px rgba(200,149,43,.28),0 10px 22px -12px rgba(140,95,20,.7); }
+.mm-avatar.mm-frame-folklore{ border-color:#C48C96; box-shadow:0 0 0 3px rgba(174,111,121,.26),0 10px 22px -12px rgba(130,70,80,.7); }
+/* football keeps its own olive: it shared the sage of the mint frame, so the
+   two shelves' rewards looked identical in the shop */
+.mm-avatar.mm-frame-football{ border-color:#7C8C55; box-shadow:0 0 0 3px rgba(96,110,62,.28),0 10px 22px -12px rgba(55,70,30,.75); }
+
+:root:not(.dark) .mm-levelup{
+  background-image:linear-gradient(135deg,rgba(200,149,43,.26),rgba(201,123,90,.16));
+  border-color:rgba(160,110,45,.48);
+  box-shadow:0 1px 0 rgba(255,255,255,.7) inset, 0 14px 30px -20px rgba(120,80,20,.7);
+}
+.mm-levelup-ic{ background-image:linear-gradient(155deg,#D6A93F,#AC7C1E); }
+.mm-levelup-txt b{ color:#6A4A10; }
+.mm-levelup-txt > span{ color:#8A6415; }
+.mm-levelup-x{ color:#6A4A10; background:rgba(255,251,243,.8); }
+
+/* legacy shells still in use */
+.cg-start{ background-image:linear-gradient(180deg,#D38F6C,#A6573F);
+  box-shadow:0 1px 0 rgba(255,255,255,.4) inset, 0 -3px 0 rgba(80,45,30,.3) inset,
+             0 16px 28px -16px rgba(86,52,33,.8); }
+.cg-sheet{ background-color:var(--clay-100); background-image:linear-gradient(180deg,#F7EBD9,#EDDCC3);
+  border-top:1px solid rgba(255,250,242,.9); backdrop-filter:none; -webkit-backdrop-filter:none;
+  box-shadow:0 -12px 34px -22px rgba(86,52,33,.6); }
+.cg-seg{ background-image:linear-gradient(180deg,#F7EBD9,#EBD9C0); border-color:rgba(255,250,242,.8);
+  color:var(--ink-2); box-shadow:0 1px 0 rgba(255,255,255,.6) inset, 0 -1px 0 rgba(122,80,52,.14) inset; }
+.cg-seg.is-on.blue{ background-image:linear-gradient(180deg,#9FBBCE,#5A768D); }
+.cg-seg.is-on.amber{ background-image:linear-gradient(180deg,#D6A93F,#AC7C1E); }
+.dark .cg-sheet{ background-image:linear-gradient(180deg,#3A2A20,#2E211A); border-top-color:rgba(255,226,190,.1); }
+.dark .cg-seg{ background-image:linear-gradient(180deg,#43301F,#352720); border-color:rgba(255,226,190,.12); }
+
+@media (prefers-reduced-motion:reduce){
+  .mm-sheen{ display:none; }
+}
+
+/* =====================================================================
+   CLAY DIORAMA — the approved mockup, built for real
+   ---------------------------------------------------------------------
+   Two materials, strictly separated:
+     · CLAY  — a fired terracotta body. Everything that is structure (the
+               page, the bars, the keys, the shelf boards) is a slab of it,
+               bevelled so the light comes from the top-left.
+     · PAPER — cream stock laid into the clay: every panel of content is a
+               printed sheet with a double ink hairline (edge line, 4px of
+               paper, inner line), a soft cast shadow and no gloss.
+   Ornament is printed, never animated: florets, diamond rules, hairline
+   frames. The old sheen/beam/sparkle vocabulary is gone.
+   ===================================================================== */
+
+/* ---- 1. the clay body ----
+   The menu does not paint a wall: it stands in the photographed clay room, the
+   same backdrop the console uses. A clay-coloured multiply pass keeps the wall
+   the same terracotta as every slab while the room's plant, books, cat and mug
+   read through as soft shadows. */
+.cg-menu{
+  background-color:#B87757;
+  background-image:
+    linear-gradient(180deg,#D28E6B 0%,#C27F5D 46%,#AC7052 100%),
+    var(--room-photo);
+  background-size:cover, cover;
+  background-position:center, center;
+  background-repeat:no-repeat;
+  background-blend-mode:multiply, normal;
+  box-shadow:inset 0 2px 0 rgba(255,226,196,.38), inset 0 -8px 18px rgba(68,34,19,.30);
+  color:#FFF3E4;
+}
+.dark .cg-menu{
+  background-color:#3A2619;
+  background-image:
+    linear-gradient(180deg,#6E4C34 0%,#573B27 50%,#412C1C 100%),
+    var(--room-photo);
+  background-blend-mode:multiply, normal;
+}
+
+.cg-menu .mm-scroll{ padding:14px 15px 128px; gap:13px; }
+.cg-menu .mm-hello h1{ color:#FFF4E6; text-shadow:0 1px 0 rgba(84,42,24,.5); }
+.cg-menu .mm-hello p{ color:rgba(255,238,220,.76); }
+.cg-menu .mm-label h3{ color:#FFF1DF; letter-spacing:.1px; }
+.cg-menu .mm-label i{ background:linear-gradient(90deg,rgba(255,238,218,.42),rgba(255,238,218,0)); }
+.cg-menu .mm-quick .mm-label h3{ color:var(--ink); }
+.cg-menu .mm-quick .mm-label i{ background:linear-gradient(90deg,rgba(58,38,24,.22),rgba(58,38,24,0)); }
+
+/* avatar → a paper portrait in a fired ring */
+.cg-menu .mm-avatar{
+  background-image:linear-gradient(160deg,#FBF2E2,#EADCC4);
+  color:#8E4E37;
+  border:2px solid #F8EEDC;
+  box-shadow:0 0 0 3px rgba(96,46,28,.28), 0 5px 10px -4px rgba(52,26,14,.6),
+             inset 0 0 0 1px rgba(58,38,24,.35);
+}
+.cg-menu .mm-title-chip{
+  color:#5A3C10; background:#F2E4C6; border:1px solid rgba(58,38,24,.35);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+}
+
+/* ---- 2. the paper panel ---- */
+.cg-menu .mm-glass,
+.cg-menu .mm-pill,
+.cg-menu .mm-glance,
+.cg-menu .mm-daily,
+.cg-menu .mm-tile,
+.cg-menu .mm-quick,
+.cg-menu .mm-levelup{
+  background-color:#F6EEDF !important;
+  background-image:var(--tex-paper) !important;
+  background-size:200px 200px !important;
+  background-blend-mode:multiply !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+  border:1px solid rgba(58,38,24,.58) !important;
+  border-radius:14px !important;
+  color:var(--ink);
+  box-shadow:
+    inset 0 0 0 3px #F6EEDF,
+    inset 0 0 0 4px rgba(58,38,24,.16),
+    0 1px 0 rgba(255,236,212,.5),
+    0 6px 0 -2px rgba(112,56,36,.34),
+    0 14px 20px -12px rgba(52,26,14,.6) !important;
+}
+/* Night paper. These panels are printed sheets, so after dark they age into the
+   same warm parchment as the rest of the app instead of staying daylight cream
+   underneath cream ink. The level-up slip is deliberately left out: it is a note
+   laid on the wall and its whole job is to be the bright thing you read. */
+.dark .cg-menu .mm-glass,
+.dark .cg-menu .mm-glance,
+.dark .cg-menu .mm-daily,
+.dark .cg-menu .mm-tile,
+.dark .cg-menu .mm-quick{
+  background-color:#2B211A !important;
+  border-color:rgba(10,6,4,.78) !important;
+  box-shadow:
+    inset 0 0 0 3px #2B211A,
+    inset 0 0 0 4px rgba(255,226,190,.14),
+    0 1px 0 rgba(255,226,190,.10),
+    0 6px 0 -2px rgba(0,0,0,.42),
+    0 14px 20px -12px rgba(0,0,0,.72) !important;
+}
+.dark .cg-menu .mm-pill{
+  background-color:#2B211A !important;
+  border-color:rgba(10,6,4,.78) !important;
+  box-shadow:
+    inset 0 0 0 2px #2B211A,
+    inset 0 0 0 3px rgba(255,226,190,.12),
+    0 1px 0 rgba(255,226,190,.10),
+    0 5px 0 -2px rgba(0,0,0,.38),
+    0 10px 16px -10px rgba(0,0,0,.7) !important;
+}
+/* the quick-action keys carry their own daylight-paper frame, so they need the
+   night sheet spelled out at the same weight */
+.dark .cg-menu .mm-keys .mm-pill{
+  background-color:#2B211A !important;
+  border-color:rgba(10,6,4,.78) !important;
+  color:var(--ink) !important;
+  box-shadow:
+    inset 0 0 0 3px #2B211A,
+    inset 0 0 0 4px rgba(255,226,190,.13),
+    0 3px 0 rgba(0,0,0,.42),
+    0 9px 13px -9px rgba(0,0,0,.7) !important;
+}
+/* the printed extras inside those sheets: cream chips become films of lamplight
+   so the cream ink on them still has something to sit on */
+.dark .cg-menu .mm-hero-foot{ background:rgba(255,240,220,.05); border-top-color:rgba(255,226,190,.16); }
+.dark .cg-menu .mm-band{ background:rgba(14,9,6,.5);
+  box-shadow:inset 0 0 0 1px rgba(255,226,190,.20), inset 0 -1px 0 rgba(0,0,0,.35); }
+.dark .cg-menu .mm-band i{ background:rgba(255,226,190,.30); }
+.dark .cg-menu .mm-dots i:nth-child(n+2){ background:rgba(255,226,190,.26); }
+/* the corner stamp always sits on the picture plate, not on the sheet, so it
+   keeps its daylight paper chip in both themes — cream ink on it would vanish
+   into the artwork */
+.dark .cg-menu .mm-tile .mm-corner{ background:#F1E5CF !important;
+  border-color:rgba(58,38,24,.35) !important; color:#6B5A4D !important; }
+.dark .cg-menu .mm-glance-xp{ background:rgba(255,238,216,.16); }
+.dark .cg-menu .mm-glance-dot{ box-shadow:0 0 0 2px #2B211A; }
+.dark .cg-menu .mm-glance-item.fire > svg{ color:#E2A88F !important; }
+.dark .cg-menu .mm-glance-item.gift > svg{ color:#D9A6AE !important; }
+.dark .cg-menu .mm-quick .mm-goal-inline{ background:rgba(255,238,216,.05);
+  border-color:rgba(255,226,190,.22); }
+.dark .cg-menu .mm-goal-meter{ background:rgba(255,238,216,.16); }
+.dark .cg-menu .mm-daily-prize{ color:#F1D08A; background:rgba(255,214,10,.16);
+  border-color:rgba(255,214,10,.38); }
+.dark .cg-menu .mm-daily-prize.is-done{ color:#9FE3B4; background:rgba(48,209,88,.16);
+  border-color:rgba(48,209,88,.34); }
+.dark .cg-menu .mm-daily-streak{ color:#FFC08A; background:rgba(255,159,10,.16);
+  border-color:rgba(255,159,10,.34); }
+.dark .cg-menu .mm-daily-go:disabled{ background-color:rgba(255,238,216,.08); color:#C8CBB0;
+  border-color:rgba(255,226,190,.22); }
+
+/* the printed panels keep their own hairline: the tile frame pseudo is now
+   redundant, and the two moving lights no longer exist at all. */
+.cg-menu .mm-tile::before{ display:none; }
+.cg-menu .mm-sheen{ display:none; }
+
+.cg-menu .mm-pill{
+  border-radius:999px !important;
+  padding:8px 12px;
+  box-shadow:
+    inset 0 0 0 2px #F6EEDF,
+    inset 0 0 0 3px rgba(58,38,24,.14),
+    0 1px 0 rgba(255,236,212,.5),
+    0 5px 0 -2px rgba(112,56,36,.30),
+    0 10px 16px -10px rgba(52,26,14,.55) !important;
+}
+/* the counter's medallion is already a disc; the old square plate underneath it
+   showed as a coloured chip of a second hue at the corners */
+.cg-menu .mm-pill .mm-ic{ background:none !important; box-shadow:none !important; }
+.cg-menu .mm-tile .mm-corner{
+  background:#F1E5CF !important; border:1px solid rgba(58,38,24,.35) !important;
+  color:var(--ink-2) !important; border-radius:999px;
+}
+.cg-menu .mm-tile .mm-corner{
+  top:11px; inset-inline-start:11px; left:auto;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6);
+}
+
+/* MEDALLION — a pressed-clay disc with a hairline inner ring. The disc is the
+   unit of ornament all over the approved layout: tabs, tiles, stat pills. */
+.ink-medallion{
+  position:relative; display:inline-grid; place-items:center; flex:0 0 auto;
+  border-radius:50%; line-height:0; vertical-align:middle;
+}
+.ink-medallion > svg{ position:relative; z-index:1; }
+.ink-medallion-ring{
+  position:absolute; inset:3px; border-radius:50%;
+  border:1px solid; opacity:.42; pointer-events:none;
+}
+.ink-rule{ display:flex; align-items:center; gap:6px; color:currentColor; opacity:.5; }
+.ink-rule > i{ flex:1; height:1px; background:currentColor; }
+
+/* ---- 3. the mode cards ---- */
+.cg-menu .mm-tile{
+  padding:14px 14px 0;
+  justify-content:flex-start;
+  gap:9px;
+  overflow:hidden;
+}
+.cg-menu .mm-grid .mm-tile:not(.mm-tile-wide){ min-height:168px; }
+.cg-menu .mm-tile .mm-ic{
+  width:auto; height:auto; border-radius:0; background:none !important;
+  box-shadow:none !important; animation:none !important;
+  align-self:flex-start;
+}
+.cg-menu .mm-tile .mm-ic .ink-medallion{ width:46px; height:46px; }
+.cg-menu .mm-tile .mm-txt b{ font-size:14px; color:var(--ink); }
+.cg-menu .mm-tile .mm-txt span{ font-size:10.5px; color:var(--ink-2); }
+
+/* the printed rarity strip along the foot of a plate: a cream inlay with one
+   filled dot and three pips — the mode cards read as collectible plates */
+.cg-menu .mm-band{
+  margin:auto 8px 7px; height:18px; flex:0 0 18px;
+  display:flex; align-items:center; gap:3px;
+  padding:0 7px; border-radius:9px;
+  background:rgba(241,229,207,.92);
+  box-shadow:inset 0 0 0 1px rgba(58,38,24,.22), inset 0 -1px 0 rgba(58,38,24,.10);
+}
+.cg-menu .mm-band i{ width:4px; height:4px; border-radius:50%; background:rgba(58,38,24,.22); }
+.cg-menu .mm-band i:first-child{ width:9px; height:9px; margin-inline-end:2px; }
+.cg-menu .mm-band i:nth-child(2){ margin-inline-start:auto; }
+.cg-menu .mm-band.tone-sage i:first-child{ background:#879878; box-shadow:inset 0 1px 0 rgba(255,255,255,.45); }
+.cg-menu .mm-band.tone-rose i:first-child{ background:#C08B7F; box-shadow:inset 0 1px 0 rgba(255,255,255,.45); }
+.cg-menu .mm-band.tone-ochre i:first-child{ background:#C1913C; box-shadow:inset 0 1px 0 rgba(255,255,255,.45); }
+
+/* ---- 4. the treasure hero ---- */
+.cg-menu .mm-hero{ grid-column:1/-1; min-height:0; flex-direction:column; align-items:stretch; gap:0; padding:0; }
+.cg-menu .mm-hero-art{
+  display:block; margin:7px 7px 0; height:132px; border-radius:8px;
+  background-color:#EDE2CD;
+  background-image:url('/images/ui/hero-treasure.jpg');
+  background-size:cover; background-position:center 62%;
+  box-shadow:inset 0 0 0 1px rgba(58,38,24,.5);
+}
+.cg-menu .mm-hero-foot{
+  display:flex; align-items:center; gap:10px; padding:9px 12px 10px;
+  margin-top:7px; border-top:1px solid rgba(58,38,24,.22);
+  background:rgba(241,229,207,.55);
+}
+.cg-menu .mm-hero-foot .mm-txt{ flex:1; min-width:0; }
+.cg-menu .mm-hero-foot .mm-txt b{ font-size:15px; font-weight:900; color:var(--ink); }
+.cg-menu .mm-hero-foot .mm-txt span{ font-size:10.5px; color:var(--ink-2); }
+.cg-menu .mm-dots{ display:flex; gap:4px; flex:0 0 auto; }
+.cg-menu .mm-dots i{ width:6px; height:6px; border-radius:50%; background:#C99A3B; box-shadow:inset 0 1px 0 rgba(255,255,255,.4); }
+.cg-menu .mm-dots i:nth-child(n+2){ background:rgba(58,38,24,.22); }
+
+/* the two half-height mode plates: printed ink scene, caption, rarity band */
+.cg-menu .mm-mode{ padding:0; gap:0; justify-content:flex-start; min-height:0; }
+.cg-menu .mm-mode .mm-art{
+  display:block; margin:7px 7px 0; height:88px; border-radius:8px;
+  background-color:#EDE2CD; background-size:cover; background-position:center 52%;
+  box-shadow:inset 0 0 0 1px rgba(58,38,24,.5);
+}
+.cg-menu .mm-mode .mm-art-tower{ background-image:url('/images/ui/hero-tower.jpg'); background-position:center 46%; }
+.cg-menu .mm-mode .mm-art-battle{ background-image:url('/images/ui/hero-battle.jpg'); background-position:center 46%; }
+.cg-menu .mm-mode-foot{ display:flex; align-items:center; gap:8px; padding:8px 11px 9px; }
+.cg-menu .mm-mode-foot .mm-txt{ flex:1; min-width:0; }
+.cg-menu .mm-mode-foot .mm-txt b{ font-size:13.5px; font-weight:900; color:var(--ink); }
+.cg-menu .mm-mode-foot .mm-txt span{ font-size:10px; color:var(--ink-2); }
+.cg-menu .mm-mode .mm-band{ margin:auto 8px 7px; }
+.cg-menu .mm-mode.locked .mm-art{ filter:grayscale(.5) brightness(.98); opacity:.8; }
+
+/* the duel row is a printed scroll: a rolled core at the free end */
+.cg-menu .mm-tile-wide.t-teal{ padding:14px 16px; min-height:92px; }
+.cg-menu .mm-tile-wide.t-teal::after{
+  content:""; position:absolute; inset-block:10px; inset-inline-end:7px; width:7px;
+  border-radius:4px; pointer-events:none;
+  background:linear-gradient(90deg,#CBBA9C,#EADFC7 45%,#C2AF90);
+  box-shadow:inset 0 0 0 1px rgba(58,38,24,.3), -2px 0 4px -2px rgba(58,38,24,.35);
+  opacity:.85;
+}
+.cg-menu .mm-tile-wide.t-teal .mm-ic{ margin-inline-start:12px; }
+.cg-menu .mm-tile-wide.t-teal .mm-corner{ inset-inline-start:auto; inset-inline-end:22px; top:9px; }
+
+/* ---- 5. paper keys (quick actions) ---- */
+.cg-menu .mm-keys{ gap:10px; }
+.cg-menu .mm-keys .mm-pill{
+  background-image:var(--tex-paper) !important;
+  background-color:#F6EEDF !important;
+  background-size:200px 200px !important;
+  background-blend-mode:multiply !important;
+  border:1px solid rgba(58,38,24,.5) !important;
+  color:var(--ink) !important;
+  border-radius:12px !important;
+  padding:10px 12px;
+  box-shadow:
+    inset 0 0 0 3px #F6EEDF,
+    inset 0 0 0 4px rgba(58,38,24,.13),
+    0 3px 0 rgba(112,56,36,.30),
+    0 9px 13px -9px rgba(52,26,14,.6) !important;
+}
+.cg-menu .mm-keys .mm-pill:active{
+  transform:translateY(2px);
+  box-shadow:
+    inset 0 0 0 3px #F0E4CE,
+    inset 0 2px 4px rgba(80,36,20,.24) !important;
+}
+.cg-menu .mm-keys .mm-pill b{ color:var(--ink); font-weight:900; }
+
+/* ---- 6. quick play: a well cut into the clay ---- */
+.cg-menu .mm-quick{ padding:12px; }
+.cg-menu .mm-quick .mm-goal-inline{
+  background:rgba(58,38,24,.055); border:1px dashed rgba(58,38,24,.22); border-radius:10px;
+  box-shadow:none;
+}
+.cg-menu .mm-goal-ic{ background:none !important; box-shadow:none !important; color:var(--ink-2); }
+.cg-menu .mm-goal-meter{ background:rgba(58,38,24,.12); }
+.cg-menu .mm-goal-meter i{ background:linear-gradient(90deg,#C99A3B,#B4644A); }
+
+/* ---- 7. the daily strip ---- */
+.cg-menu .mm-daily{ border-radius:14px !important; padding:9px 11px; }
+.cg-menu .mm-daily-ic{ background:none !important; box-shadow:none !important; width:34px;height:34px;color:inherit; }
+.cg-menu .mm-daily-ic svg{ width:100%; height:100%; }
+.cg-menu .mm-daily-go{
+  background-image:var(--clay-shell); color:#FFF3E4; border-radius:10px;
+  box-shadow:inset 0 1px 0 rgba(255,226,196,.5), inset 0 -2px 0 rgba(96,45,28,.4), 0 4px 8px -4px rgba(52,26,14,.6);
+}
+.cg-menu .mm-daily-go:disabled{ background-image:none; background-color:#E4D6BE; color:#6E6B52; border:1px solid rgba(58,38,24,.3); box-shadow:none; }
+
+/* ---- 8. the bottom rail: slate clay, coloured discs, cream active tab ---- */
+.cg-menu .mm-tabbar{
+  left:12px; right:12px; bottom:11px; padding:7px 8px;
+  border-radius:22px;
+}
+/* the rail is fired clay in daylight (painted by :root:not(.dark)) and night
+   clay after dark — it used to fall back to a cool slate here, which was the
+   only grey object left in the room. */
+.dark .cg-menu .mm-tabbar{
+  background-image:linear-gradient(180deg,#4A3526 0%,#352419 100%);
+  background-color:#3A2A20;
+  border-color:rgba(255,226,190,.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255,228,204,.16),
+    inset 0 -3px 0 rgba(0,0,0,.34),
+    0 14px 26px -12px rgba(0,0,0,.78);
+}
+.cg-menu .mm-tabbar button{ color:rgba(255,246,235,.82); gap:3px; }
+.cg-menu .mm-icwrap{
+  width:38px; height:38px; border-radius:50%;
+  background-image:linear-gradient(180deg,#93A681,#7B8F6B);
+  color:#FFF6E8;
+  border:1px solid rgba(46,56,38,.45);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.45),
+    inset 0 -3px 0 rgba(46,56,38,.28),
+    0 4px 6px -3px rgba(30,20,12,.55);
+  transition:background .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.cg-menu .mm-tabbar button:nth-child(even) .mm-icwrap{
+  background-image:linear-gradient(180deg,#8FA6B7,#6E8597);
+  border-color:rgba(40,52,62,.45);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.45),
+    inset 0 -3px 0 rgba(40,52,62,.3),
+    0 4px 6px -3px rgba(30,20,12,.55);
+}
+.cg-menu .mm-icwrap svg{ width:20px; height:20px; animation:none !important; }
+/* the active tab is a fired-clay disc on the slate rail — the same disc the
+   row of medallions uses, only lit; a cream tick sits under it. */
+.cg-menu .mm-tabbar button.on .mm-icwrap{
+  background-image:linear-gradient(180deg,#E4A986,#C67F5F);
+  color:#FFF6E8;
+  border-color:rgba(96,50,32,.55);
+  box-shadow:
+    inset 0 2px 0 rgba(255,228,204,.75),
+    inset 0 -3px 0 rgba(96,45,28,.38),
+    0 0 0 3px rgba(246,238,223,.9),
+    0 6px 12px -5px rgba(30,20,12,.62);
+}
+.cg-menu .mm-tabbar button.on{ color:#FFF6E8; font-weight:900; }
+.cg-menu .mm-tabbar button.on .mm-icwrap svg{ stroke-width:1.9; }
+.cg-menu .mm-tick{
+  display:block; width:20px; height:3px; border-radius:2px;
+  background:rgba(40,48,56,.30); margin-top:1px;
+  transition:background .2s ease, width .2s ease;
+}
+.cg-menu .mm-tabbar button.on .mm-tick{ background:#F6EEDF; width:26px; }
+
+/* glance strip: keep it paper and quiet, retint the icons to ink */
+.cg-menu .mm-glance{ padding:10px 12px 13px; }
+.cg-menu .mm-glance-item > svg{ color:var(--ink-2) !important; }
+.cg-menu .mm-glance-item.fire > svg{ color:#9E5A50 !important; }
+.cg-menu .mm-glance-item.gift > svg{ color:#8E4E37 !important; }
+.cg-menu .mm-glance-xp{ background:rgba(58,38,24,.12); }
+.cg-menu .mm-glance-xp i{ background:linear-gradient(90deg,#C99A3B,#B4644A); }
+.cg-menu .mm-glance-dot{ background:#C99A3B; box-shadow:0 0 0 2px #F6EEDF; }
+
+/* level-up slip + sheet keep the paper language */
+.cg-menu .mm-levelup{ background-color:#F5E9CF !important; }
+.cg-menu .mm-levelup-txt b{ color:#6A4A10; }
+.cg-menu .mm-levelup-txt > span{ color:#8A6415; }
+
+/* ============================================================
+   TREASURE — a clay shelf wall
+   The four shelves are plaques cut into one clay board; the books
+   are printed plates standing in rows on continuous clay boards.
+   ============================================================ */
+
+.ink-back-flip{ display:inline-flex; transform:scaleX(-1); }
+
+/* ---- shelf plaques ---- */
+.treasure-tray{
+  display:flex; gap:5px; padding:5px; border-radius:14px;
+  background-color:#BE7B5C;
+  background-image:var(--tex-grain), linear-gradient(180deg,#CB8F6D 0%,#B0745A 100%);
+  background-size:220px 220px, auto;
+  background-blend-mode:overlay, normal;
+  border:1px solid #8E4E37;
+  box-shadow:
+    inset 0 2px 0 rgba(255,228,204,.42),
+    inset 0 -3px 6px rgba(64,32,18,.32),
+    0 10px 18px -14px rgba(52,26,14,.9);
+}
+.dark .treasure-tray{
+  background-color:#6E3D2B;
+  background-image:var(--tex-grain), linear-gradient(180deg,#7B4632 0%,#613324 100%);
+  border-color:#4E2A1C;
+}
+.treasure-tab{
+  flex:1 1 0; min-width:0;
+  display:flex; flex-direction:column; align-items:center; gap:1px;
+  padding:4px 2px 3px; border-radius:9px;
+  color:rgba(255,243,228,.9);
+  border:1px solid transparent;
+  background:rgba(58,30,18,.10);
+  box-shadow:inset 0 2px 3px rgba(58,30,18,.18);
+  transition:transform .2s ease, background .2s ease, color .2s ease;
+}
+.treasure-tab.on{
+  color:var(--ink);
+  background-color:#F7EFE0;
+  background-image:var(--tex-paper);
+  background-size:200px 200px;
+  background-blend-mode:multiply;
+  border-color:rgba(58,38,24,.5);
+  transform:translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.9),
+    inset 0 0 0 3px #F7EFE0,
+    inset 0 0 0 4px rgba(58,38,24,.16),
+    0 3px 0 rgba(124,66,45,.9),
+    0 9px 14px -9px rgba(52,26,14,.9);
+}
+.dark .treasure-tab.on{
+  background-color:#2E241C;
+  border-color:rgba(255,220,180,.28);
+  box-shadow:
+    inset 0 1px 0 rgba(255,232,208,.16),
+    inset 0 0 0 3px #2E241C,
+    inset 0 0 0 4px rgba(255,220,180,.12),
+    0 3px 0 rgba(24,13,8,.9),
+    0 9px 14px -9px rgba(0,0,0,.95);
+}
+.treasure-tab-head{ display:flex; align-items:center; gap:4px; }
+.treasure-tab-label{ font-size:11px; font-weight:900; }
+.treasure-tab-line{
+  font-size:8px; font-weight:700; opacity:.86;
+  max-width:100%; padding:0 2px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+
+/* ---- the shelf wall ---- */
+.shelf-stack{ display:flex; flex-direction:column; gap:10px; padding-bottom:6px; }
+
+/* One row is a bay cut into the clay: the wall frames it, the books stand in
+   the recess, and the plank in front is the lip that holds them up. */
+.shelf-line{
+  position:relative;
+  padding:8px 8px 0;
+  border-radius:15px;
+  background-color:#BE7B5C;
+  background-image:var(--tex-grain), linear-gradient(180deg,#CE8C6B 0%,#B87857 58%,#A5674A 100%);
+  background-size:220px 220px, auto;
+  background-blend-mode:overlay, normal;
+  box-shadow:
+    inset 0 2px 0 rgba(255,232,208,.5),
+    inset 0 -3px 0 rgba(64,32,18,.3),
+    0 12px 20px -15px rgba(52,26,14,.9);
+}
+.dark .shelf-line{
+  background-color:#6E3D2B;
+  background-image:var(--tex-grain), linear-gradient(180deg,#7F4A35 0%,#653826 60%,#552D1E 100%);
+  background-blend-mode:soft-light, normal;
+  box-shadow:
+    inset 0 2px 0 rgba(255,214,178,.2),
+    inset 0 -3px 0 rgba(0,0,0,.42),
+    0 12px 20px -15px rgba(0,0,0,.95);
+}
+.shelf-line-books{
+  position:relative; z-index:1;
+  display:grid;
+  grid-template-columns:repeat(var(--cols), minmax(0,1fr));
+  gap:8px;
+  padding:7px 7px 10px;
+  border-radius:11px 11px 0 0;
+  background-color:#A96A4C;
+  background-image:var(--tex-grain), linear-gradient(180deg,#9C5F44 0%,#B0745A 100%);
+  background-size:220px 220px, auto;
+  background-blend-mode:overlay, normal;
+  /* the recess: darkest under the shelf above, with lit cut edges at the sides */
+  box-shadow:
+    inset 0 9px 15px -9px rgba(40,17,6,.85),
+    inset 2px 0 0 rgba(255,226,198,.18),
+    inset -2px 0 0 rgba(255,226,198,.18);
+}
+.dark .shelf-line-books{
+  background-color:#4A2E1F;
+  background-image:var(--tex-grain), linear-gradient(180deg,#3E2618 0%,#4E3122 100%);
+  background-blend-mode:soft-light, normal;
+  box-shadow:
+    inset 0 8px 13px -8px rgba(0,0,0,.95),
+    inset 2px 0 0 rgba(255,214,178,.1),
+    inset -2px 0 0 rgba(255,214,178,.1);
+}
+.shelf-board{
+  position:relative; z-index:2;
+  height:17px; margin:-13px -8px 0;
+  border-radius:0 0 15px 15px;
+  background-color:#BE8060;
+  background-image:var(--tex-grain), linear-gradient(180deg,#D79F7C 0%,#BE8060 46%,#9C6046 100%);
+  background-size:220px 220px, auto;
+  background-blend-mode:overlay, normal;
+  /* the lip is lit along its top edge and throws a shadow back on the books */
+  box-shadow:
+    inset 0 2px 0 rgba(255,236,214,.62),
+    inset 0 -3px 0 rgba(64,32,18,.34),
+    0 -8px 11px -8px rgba(34,14,5,.8),
+    0 9px 14px -11px rgba(52,26,14,.85);
+}
+.dark .shelf-board{
+  background-color:#6E3D2B;
+  background-image:var(--tex-grain), linear-gradient(180deg,#824C37 0%,#6E3D2B 46%,#4E2A1C 100%);
+  box-shadow:
+    inset 0 2px 0 rgba(255,214,178,.24),
+    inset 0 -3px 0 rgba(0,0,0,.45),
+    0 -8px 11px -8px rgba(0,0,0,.9),
+    0 9px 14px -11px rgba(0,0,0,.95);
+}
+
+/* ---- one book plate ---- */
+.shelf-book{
+  position:relative; min-width:0;
+  display:flex; flex-direction:column; align-items:stretch;
+  padding:6px 6px 0;
+  border:0; border-radius:7px;
+  background-color:var(--paper);
+  background-image:var(--tex-paper);
+  background-size:200px 200px;
+  background-blend-mode:multiply;
+  color:var(--ink);
+  text-align:center;
+  box-shadow:
+    inset 0 0 0 1px rgba(36,26,20,.42),
+    inset 0 0 0 4px var(--paper),
+    inset 0 0 0 5px rgba(36,26,20,.22),
+    0 3px 7px -3px rgba(24,10,3,.6),
+    0 12px 16px -11px rgba(24,10,3,.55);
+  transition:transform .16s ease, box-shadow .16s ease;
+}
+.dark .shelf-book{
+  box-shadow:
+    inset 0 0 0 1px rgba(255,226,190,.20),
+    inset 0 0 0 4px var(--paper),
+    inset 0 0 0 5px rgba(255,226,190,.10),
+    0 3px 7px -3px rgba(0,0,0,.75),
+    0 12px 16px -11px rgba(0,0,0,.7);
+}
+.shelf-book:hover{ transform:translateY(-2px); }
+.shelf-book:active{ transform:translateY(1px); }
+
+/* the plate window: the scene is mounted on a paper mat, the way a print is
+   laid inside its mount, not bled to the edge of the card. */
+.shelf-book-art{
+  position:relative; display:block; overflow:hidden;
+  aspect-ratio:5/4; border-radius:3px;
+  margin:1px 1px 0; padding:4px;
+  background-color:var(--paper-2);
+  background-image:var(--tex-paper);
+  background-size:200px 200px;
+  background-blend-mode:multiply;
+  box-shadow:inset 0 0 0 1px rgba(36,26,20,.40), 0 3px 7px -5px rgba(52,26,14,.7);
+}
+.shelf-book-art img{
+  display:block; width:100%; height:100%; object-fit:cover;
+  border-radius:2px;
+  box-shadow:0 0 0 1px rgba(36,26,20,.38);
+  filter:saturate(.94) contrast(1.02) sepia(.05);
+  transition:transform .5s ease;
+}
+.shelf-book:hover .shelf-book-art img{ transform:scale(1.04); }
+.shelf-book-art::after{
+  content:''; position:absolute; inset:4px; border-radius:2px;
+  background-image:var(--tex-paper); background-size:200px 200px;
+  mix-blend-mode:multiply; opacity:.5; pointer-events:none; z-index:1;
+}
+
+.shelf-book-diff{
+  position:absolute; top:3px; inset-inline-start:3px; z-index:2;
+  display:inline-flex; align-items:center; gap:2px;
+  padding:1px 4px; border-radius:4px;
+  background:rgba(246,241,231,.94);
+  box-shadow:0 0 0 1px rgba(36,26,20,.24), 0 1px 2px rgba(26,15,9,.3);
+  font-size:8px; font-weight:900; line-height:1.5;
+}
+.shelf-book-diff.tone-ochre{ color:#9E7418; }
+.shelf-book-diff.tone-rose{ color:#9E5A50; }
+.shelf-book-diff.tone-sage{ color:#5E6E52; }
+
+.shelf-book-done{
+  position:absolute; bottom:3px; inset-inline-end:3px; z-index:2;
+  width:16px; height:16px; border-radius:50%;
+  display:grid; place-items:center;
+  background:#5E6E52; color:#F3F7EC;
+  box-shadow:0 0 0 2px rgba(246,241,231,.9), 0 2px 4px -2px rgba(20,26,14,.7);
+}
+
+.shelf-book-name{
+  display:block; margin-top:5px; padding:0 2px;
+  font-size:11.5px; font-weight:900; line-height:1.3;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.shelf-book-meta{
+  display:block; margin:1px 0 0;
+  font-size:8.5px; font-weight:700; color:var(--ink-3);
+}
+
+/* the progress channel: a groove cut into the foot of the plate, not a strip
+   pasted over it. The fill sits inside the cut. */
+.shelf-book-band{ display:block; margin:7px 3px 9px; }
+.shelf-bar{
+  position:relative; display:block; width:100%; height:7px;
+  border-radius:4px; overflow:hidden;
+  background:rgba(58,38,24,.13);
+  box-shadow:inset 0 1px 2px rgba(58,38,24,.3), 0 1px 0 rgba(255,255,255,.65);
+}
+.dark .shelf-bar{
+  background:rgba(0,0,0,.34);
+  box-shadow:inset 0 1px 2px rgba(0,0,0,.6), 0 1px 0 rgba(255,226,190,.08);
+}
+.shelf-bar::after{
+  content:''; position:absolute; top:0; bottom:0; inset-inline-start:0;
+  width:var(--p, 0%); border-radius:3px; background:currentColor;
+}
+.shelf-book.tone-ochre .shelf-bar{ color:#C1913C; }
+.shelf-book.tone-rose .shelf-bar{ color:#C08B7F; }
+.shelf-book.tone-sage .shelf-bar{ color:#879878; }
+
+/* ---- the small paper note pinned on a wall map ---- */
+.map-hint{
+  position:absolute; top:10px; right:12px; z-index:30;
+  display:flex; align-items:center; gap:6px;
+  padding:4px 10px; border-radius:999px;
+  background-color:rgba(246,241,231,.93);
+  color:var(--ink-2);
+  font-size:9px; font-weight:800;
+  box-shadow:0 0 0 1px rgba(36,26,20,.22), 0 2px 6px -3px rgba(70,40,25,.7);
+  pointer-events:none;
+}
+.dark .map-hint{
+  background-color:rgba(42,33,26,.94);
+  box-shadow:0 0 0 1px rgba(255,220,180,.18), 0 2px 6px -3px rgba(0,0,0,.85);
+}
+
+/* ============================================================
+   ATLAS — the two map plates of the clay shelves
+   A printed sheet laid into the clay frame: paper ground, a double
+   hairline rule, a corner cartouche, clay pins pressed through the
+   land and an index strip that never stands empty.
+   ============================================================ */
+.iran-map{
+  position:relative;
+  display:flex; flex-direction:column; min-height:0; height:100%;
+  background-color:var(--paper);
+  background-image:var(--tex-paper);
+  background-size:200px 200px;
+  background-blend-mode:multiply;
+  color:var(--ink);
+}
+.iran-map-stage{
+  position:relative; flex:1 1 auto; min-height:0;
+  display:grid; place-items:center;
+  padding:16px 14px 8px;
+}
+.iran-map-svg{ display:block; width:100%; height:auto; max-height:100%; }
+/* the plate is the approved artwork: its own coast shadow is baked in, so no
+   CSS filter here — a drop-shadow would trace the rectangle, not the land */
+.iran-map-land{ display:block; }
+
+/* ---- living water: ripples on the painted anchors + mist that lifts ---- */
+.map-sheet-wash{
+  position:absolute; inset:-28px; pointer-events:none;
+  background-image:url('/images/map-world-clay.webp');
+  background-size:cover;
+  background-position:center;
+  filter:blur(18px) saturate(.85) brightness(.82);
+  transform:scale(1.04);
+}
+/* the plate floats over that wash instead of ending on a hard cut */
+.map-plate-img{ filter:drop-shadow(0 10px 20px rgba(8,16,24,.45)); }
+.cg-sea-ripple{
+  opacity:0;
+  animation:cg-sea-rise 5.4s ease-in-out infinite;
+  transform-box:fill-box;
+  transform-origin:center bottom;
+}
+.cg-sea-ripple path{
+  fill:none;
+  stroke:#dceaf5;
+  stroke-width:1.15;
+  stroke-linecap:round;
+}
+.cg-sea-ripple path:last-child{ stroke-width:.85; opacity:.72; }
+.cg-mist-bank{ animation:cg-mist-drift 44s ease-in-out infinite alternate; }
+.cg-mist-bank.b2{ animation-duration:61s; animation-delay:-14s; }
+.cg-mist-bank.b3{ animation-duration:53s; animation-delay:-31s; }
+.cg-mist-glow{
+  opacity:0;
+  transition:opacity .5s ease-out;
+  animation:cg-mist-breathe 9s ease-in-out infinite;
+}
+@keyframes cg-sea-rise{
+  0%   { opacity:0;   transform:translate(0, 2.2px) scale(.86); }
+  22%  { opacity:.55; }
+  62%  { opacity:.30; }
+  100% { opacity:0;   transform:translate(0, -3.4px) scale(1.14); }
+}
+@keyframes cg-mist-drift{
+  0%   { transform:translate(-16px, 4px)  scale(1); }
+  50%  { transform:translate(10px, -7px)  scale(1.09); }
+  100% { transform:translate(20px, 6px)   scale(.97); }
+}
+@keyframes cg-mist-breathe{
+  0%,100% { transform:scale(1); }
+  50%     { transform:scale(1.08); }
+}
+@media (prefers-reduced-motion: reduce){
+  .cg-sea-ripple{ animation:none; opacity:.34; transform:none; }
+  .cg-mist-bank{ animation:none; }
+  .cg-mist-glow{ animation:none; }
+}
+/* the double rule an atlas plate is printed inside */
+.iran-map-frame{
+  position:absolute; inset:8px; pointer-events:none; z-index:4;
+  border:1px solid rgba(36,26,20,.26);
+  box-shadow:inset 0 0 0 3px var(--paper), inset 0 0 0 4px rgba(36,26,20,.14);
+}
+.dark .iran-map-frame{
+  border-color:rgba(255,226,190,.18);
+  box-shadow:inset 0 0 0 3px var(--paper), inset 0 0 0 4px rgba(255,226,190,.09);
+}
+.map-cartouche{
+  position:absolute; top:18px; right:22px; z-index:6;
+  display:flex; flex-direction:column; gap:1px; max-width:52%;
+  padding:6px 11px 7px;
+  border:1px solid rgba(36,26,20,.26);
+  background-color:rgba(246,241,231,.82);
+  box-shadow:inset 0 0 0 2px rgba(246,241,231,.75), 0 2px 5px -3px rgba(60,32,18,.55);
+}
+.dark .map-cartouche{
+  border-color:rgba(255,226,190,.18);
+  background-color:rgba(42,33,26,.8);
+  box-shadow:inset 0 0 0 2px rgba(42,33,26,.7), 0 2px 5px -3px rgba(0,0,0,.8);
+}
+.map-cartouche-kicker{ font-size:8.5px; font-weight:800; letter-spacing:.05em; color:var(--ink-3); }
+.map-cartouche-title{ font-size:13.5px; font-weight:900; line-height:1.3; }
+.map-cartouche-note{ font-size:8.5px; font-weight:700; color:var(--ink-2); }
+
+/* ---- pins: a clay disc pressed through a paper ring ---- */
+.map-pin-ring{ fill:var(--paper); stroke:rgba(36,26,20,.24); stroke-width:.9; }
+.dark .map-pin-ring{ stroke:rgba(0,0,0,.45); }
+.map-pin-dot{ fill:var(--paper); opacity:.9; }
+
+/* ---- the index strip: never empty, and it is the book list too ---- */
+.map-index{
+  flex:0 0 auto; min-height:40px; z-index:20;
+  display:flex; align-items:center; gap:9px;
+  padding:6px 10px;
+  border-top:1px solid rgba(36,26,20,.16);
+  background-color:rgba(58,38,24,.05);
+}
+.dark .map-index{
+  border-top-color:rgba(255,226,190,.12);
+  background-color:rgba(0,0,0,.24);
+}
+.map-index-label{
+  flex:0 0 auto; padding-inline-end:9px;
+  border-inline-end:1px solid rgba(36,26,20,.14);
+  font-size:8.5px; font-weight:900; letter-spacing:.03em; color:var(--ink-3);
+}
+.dark .map-index-label{ border-inline-end-color:rgba(255,226,190,.12); }
+.map-index-chips{
+  display:flex; align-items:center; gap:5px;
+  min-width:0; overflow-x:auto; padding:2px 1px;
+  scrollbar-width:none;
+  /* the strip scrolls in RTL, so its far end fades instead of chopping a chip */
+  -webkit-mask-image:linear-gradient(to right, transparent 0, #000 22px);
+  mask-image:linear-gradient(to right, transparent 0, #000 22px);
+}
+.map-index-chips::-webkit-scrollbar{ display:none; }
+.map-index-arrow{ flex:0 0 auto; font-size:11px; line-height:1; opacity:.7; }
+.map-chip{
+  flex:0 0 auto; padding:3px 10px; border:0; border-radius:999px;
+  font-size:9.5px; font-weight:800; white-space:nowrap; text-align:center;
+  color:var(--ink-2);
+  background-color:var(--paper);
+  box-shadow:inset 0 0 0 1px rgba(36,26,20,.22), 0 1px 0 rgba(255,255,255,.45);
+  transition:transform .12s ease, color .12s ease;
+}
+.dark .map-chip{ box-shadow:inset 0 0 0 1px rgba(255,226,190,.16); }
+.map-chip.done{ color:#4C5A42; }
+.dark .map-chip.done{ color:#A9BE99; }
+.map-chip.on{
+  color:#FFF6EC;
+  background-color:#B4694B;
+  background-image:var(--clay-shell);
+  box-shadow:inset 0 1px 0 rgba(255,226,204,.45), inset 0 -2px 0 rgba(58,30,18,.26),
+             0 3px 6px -3px rgba(60,32,18,.75);
+}
+.map-chip:active{ transform:translateY(1px); }
+
+/* ---- the map tray: a moulded clay slab laid over the sea ----
+   The legend sheet is not paper — it is a slab of the same fired clay the whole
+   app is built from, with the chapter plates laid into a pocket cut in its face. */
+.map-tray{
+  position:relative; flex:0 0 auto;
+  padding:9px 12px 11px;
+  background-color:#B87757;
+  background-image:var(--clay-sheen), var(--clay-photo);
+  background-size:auto, cover;
+  background-position:center, center;
+  background-repeat:no-repeat;
+  border-top:1px solid rgba(255,226,196,.42);
+  box-shadow:
+    inset 0 -8px 16px -10px rgba(52,24,10,.75),
+    inset 0 2px 0 rgba(255,232,206,.30),
+    0 -14px 26px -20px rgba(30,12,4,.9);
+}
+.dark .map-tray{
+  background-color:#3A2517;
+  background-image:var(--clay-sheen-dark), var(--clay-photo-dark);
+  background-size:auto, cover;
+  background-position:center, center;
+  background-repeat:no-repeat;
+  border-top-color:rgba(255,214,178,.16);
+  box-shadow:
+    inset 0 -8px 16px -10px rgba(0,0,0,.85),
+    inset 0 2px 0 rgba(255,226,196,.10),
+    0 -14px 26px -20px rgba(0,0,0,.9);
+}
+/* a chapter that has never been won is still bare clay — no paper plate has
+   been laid into the bay for it yet, so its name is pressed into the wall */
+.map-plate-locked{
+  background-color:rgba(255,226,196,.07);
+  background-image:var(--tex-grain);
+  background-size:220px 220px;
+  border:1px dashed rgba(255,232,206,.34);
+  color:#FFF3E4;
+  text-shadow:0 1px 0 rgba(84,42,24,.45);
+}
+.map-plate-locked > div{ color:rgba(255,236,214,.74); }
+.dark .map-plate-locked{ color:#F3E2CC; text-shadow:0 1px 0 rgba(0,0,0,.55); }
+.dark .map-plate-locked > div{ color:rgba(240,220,196,.62); }
+/* a printed plate — the hairline is ink in daylight and a lit edge at night */
+.map-plate{
+  background-color:var(--paper);
+  border:1px solid rgba(36,26,20,.22);
+}
+.dark .map-plate{ border-color:rgba(255,226,190,.20); }
+/* the next chapter to play wears an ochre rim so it is never mistaken for clay */
+.map-plate.now{
+  border:1px dashed rgba(142,78,55,.8);
+  box-shadow:0 0 0 2px rgba(200,149,43,.26), 0 4px 9px -6px rgba(60,32,18,.8);
+}
+.dark .map-plate.now{
+  border-color:rgba(233,199,154,.7);
+  box-shadow:0 0 0 2px rgba(214,169,63,.24), 0 4px 9px -6px rgba(0,0,0,.9);
+}
+
+/* the bay the chapter plates stand in */
+.map-tray-bay{
+  margin-top:8px; padding:7px; border-radius:11px;
+  background-color:#A26446;
+  background-image:var(--tex-grain), linear-gradient(180deg,#94583E 0%,#AC7055 100%);
+  background-size:220px 220px, auto;
+  background-blend-mode:overlay, normal;
+  box-shadow:
+    inset 0 7px 12px -8px rgba(36,14,4,.85),
+    inset 2px 0 0 rgba(255,226,198,.15),
+    inset -2px 0 0 rgba(255,226,198,.15),
+    inset 0 -1px 0 rgba(255,232,206,.20);
+}
+.dark .map-tray-bay{
+  background-color:#241609;
+  background-image:var(--tex-grain), linear-gradient(180deg,#1E1208 0%,#2C1C11 100%);
+  background-blend-mode:soft-light, normal;
+  box-shadow:
+    inset 0 7px 12px -8px rgba(0,0,0,.9),
+    inset 2px 0 0 rgba(255,214,178,.09),
+    inset -2px 0 0 rgba(255,214,178,.09);
+}
+/* drilled progress holes — one per chapter, gold for the ones already won */
+.map-tray-holes{ display:flex; align-items:center; gap:6px; }
+.map-hole{
+  width:9px; height:9px; border-radius:999px;
+  background:rgba(58,28,14,.34);
+  box-shadow:inset 0 1.5px 2.5px rgba(40,16,4,.75), 0 1px 0 rgba(255,232,206,.34);
+}
+.map-hole.won{
+  background:radial-gradient(circle at 34% 28%, #F0C868 0%, #C1913C 55%, #9A6E22 100%);
+  box-shadow:inset 0 1px 1px rgba(255,244,214,.6), inset 0 -1px 1px rgba(88,58,10,.6),
+             0 1px 0 rgba(255,232,206,.34);
+}
+.dark .map-hole{
+  background:rgba(0,0,0,.5);
+  box-shadow:inset 0 1.5px 2.5px rgba(0,0,0,.9), 0 1px 0 rgba(255,226,196,.10);
+}
+.dark .map-hole.won{
+  background:radial-gradient(circle at 34% 28%, #D9AE52 0%, #A67C28 55%, #7A5716 100%);
+  box-shadow:inset 0 1px 1px rgba(255,236,190,.45), inset 0 -1px 1px rgba(0,0,0,.5),
+             0 1px 0 rgba(255,226,196,.10);
+}
+.map-tray-slot{
+  flex:1 1 auto; min-width:18px; height:7px; border-radius:999px;
+  background:rgba(58,28,14,.30);
+  box-shadow:inset 0 1.5px 2.5px rgba(40,16,4,.7), 0 1px 0 rgba(255,232,206,.32);
+}
+.dark .map-tray-slot{
+  background:rgba(0,0,0,.48);
+  box-shadow:inset 0 1.5px 2.5px rgba(0,0,0,.85), 0 1px 0 rgba(255,226,196,.09);
+}
+/* the tray is its own clay body, so it carries the wall's engraved ink too */
+.map-tray .on-clay{ color:#FFF3E4; text-shadow:0 1px 0 rgba(84,42,24,.45); }
+.map-tray .on-clay-2{ color:rgba(255,236,214,.78); text-shadow:0 1px 0 rgba(84,42,24,.35); }
+.dark .map-tray .on-clay{ color:#F3E2CC; text-shadow:0 1px 0 rgba(0,0,0,.55); }
+.dark .map-tray .on-clay-2{ color:rgba(240,220,196,.66); text-shadow:none; }
+
+/* ============================================================
+   COLLECTION — a tray of printed card plates
+   ============================================================ */
+
+/* the plates sit in a pocket cut into the wall — the same cut as a shelf bay,
+   minus the board, because a tray of cards has nothing to rest on */
+.coll-bay{
+  padding:8px; border-radius:12px;
+  background-color:#A96A4C;
+  background-image:var(--tex-grain), linear-gradient(180deg,#9C5F44 0%,#B0745A 100%);
+  background-size:220px 220px, auto;
+  background-blend-mode:overlay, normal;
+  box-shadow:
+    inset 0 8px 14px -9px rgba(40,17,6,.8),
+    inset 2px 0 0 rgba(255,226,198,.16),
+    inset -2px 0 0 rgba(255,226,198,.16),
+    inset 0 -1px 0 rgba(255,232,206,.22);
+}
+.dark .coll-bay{
+  background-color:#5C3624;
+  background-image:var(--tex-grain), linear-gradient(180deg,#4E2D1E 0%,#623B29 100%);
+  background-blend-mode:soft-light, normal;
+  box-shadow:
+    inset 0 8px 14px -9px rgba(0,0,0,.85),
+    inset 2px 0 0 rgba(255,214,178,.10),
+    inset -2px 0 0 rgba(255,214,178,.10);
+}
+
+/* running total on a printed slip, not a floating bar */
+.coll-progress{
+  display:flex; align-items:center; gap:8px;
+  padding:5px 10px; border-radius:999px;
+  background-color:#F7EFE0;
+  background-image:var(--tex-paper);
+  background-size:200px 200px;
+  background-blend-mode:multiply;
+  box-shadow:
+    inset 0 0 0 1px rgba(58,38,24,.24),
+    0 2px 0 rgba(150,108,74,.35),
+    0 6px 10px -8px rgba(52,26,14,.6);
+}
+.dark .coll-progress{
+  background-color:#2E241C;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,220,180,.18),
+    0 2px 0 rgba(0,0,0,.5),
+    0 6px 10px -8px rgba(0,0,0,.9);
+}
+.coll-progress-label{
+  flex:0 0 auto; font-size:9.5px; font-weight:900;
+  color:var(--ink-2); white-space:nowrap;
+}
+.coll-progress-track{
+  flex:1 1 auto; min-width:0; height:6px; border-radius:3px; overflow:hidden;
+  background:rgba(58,38,24,.14);
+}
+.dark .coll-progress-track{ background:rgba(255,226,190,.14); }
+.coll-progress-track i{
+  display:block; height:100%; border-radius:3px;
+  background:linear-gradient(90deg,#B4644A,#D9A64A);
+}
+.coll-progress-pct{
+  flex:0 0 auto; font-size:9.5px; font-weight:900;
+  color:var(--sand-stamp); font-variant-numeric:tabular-nums;
+}
+
+/* ---- set header ---- */
+.coll-set-head{ display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+.coll-set-btn{
+  flex:1 1 auto; min-width:0;
+  display:flex; align-items:center; gap:8px; text-align:start;
+}
+.coll-set-cover{
+  flex:0 0 auto; width:30px; height:40px; overflow:hidden; border-radius:3px;
+  background:var(--paper-2);
+  box-shadow:0 0 0 1px rgba(36,26,20,.42), 0 0 0 3px var(--paper), 0 4px 8px -6px rgba(70,45,30,.7);
+}
+.coll-set-cover img{ display:block; width:100%; height:100%; object-fit:cover; }
+.coll-set-cover.is-emblem{
+  width:32px; height:32px; border-radius:6px;
+  display:grid; place-items:center; font-size:16px;
+  background-color:#F6F1E7;
+}
+.coll-set-txt{ flex:1 1 auto; min-width:0; display:block; }
+.coll-set-txt b{
+  display:block; font-size:12.5px; font-weight:900; line-height:1.25;
+  color:#FFF3E4; text-shadow:0 1px 0 rgba(84,42,24,.45);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.coll-set-txt i{
+  display:block; margin-top:1px; font-style:normal;
+  font-size:9.5px; font-weight:700; color:rgba(255,236,214,.72);
+  text-shadow:0 1px 0 rgba(84,42,24,.35);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.dark .coll-set-txt b{ color:#EFDCC5; text-shadow:0 1px 0 rgba(0,0,0,.55); }
+.dark .coll-set-txt i{ color:rgba(240,220,196,.66); text-shadow:none; }
+.coll-set-bar{
+  flex:0 0 auto; width:52px; height:5px; border-radius:3px; overflow:hidden;
+  background:rgba(58,30,18,.34);
+  box-shadow:inset 0 1px 2px rgba(40,17,6,.55), 0 1px 0 rgba(255,226,196,.22);
+}
+.coll-set-bar i{
+  display:block; height:100%; border-radius:3px;
+  background:linear-gradient(90deg,#B07F22,#E2C079);
+}
+
+.coll-reward{
+  flex:0 0 auto;
+  display:inline-flex; align-items:center; gap:4px;
+  padding:3px 9px; border-radius:999px;
+  font-size:9px; font-weight:900;
+  color:#FFF6EC;
+  background:var(--clay-shell);
+  border:1px solid #8E4E37;
+  box-shadow:
+    inset 0 1px 0 rgba(255,226,204,.45),
+    inset 0 -2px 0 rgba(58,30,18,.26),
+    0 4px 8px -6px rgba(70,40,25,.85);
+  transition:transform .12s ease;
+}
+.coll-reward:active{ transform:translateY(1px); }
+.coll-reward:disabled{ opacity:.6; }
+.coll-claimed{
+  flex:0 0 auto;
+  display:inline-flex; align-items:center; gap:3px;
+  padding:3px 8px; border-radius:999px;
+  font-size:9px; font-weight:900;
+  color:#41503A;
+  background:#EFE7D6;
+  box-shadow:inset 0 0 0 1px rgba(76,90,66,.34), 0 2px 5px -3px rgba(52,26,14,.7);
+}
+.dark .coll-claimed{ color:#B9CDA7; background:rgba(241,230,214,.10); }
+
+/* ---- one chapter plate ---- */
+.coll-card{
+  position:relative; min-width:0;
+  display:flex; flex-direction:column;
+  padding:5px 5px 0; border:0; border-radius:6px;
+  background-color:var(--paper);
+  background-image:var(--tex-paper);
+  background-size:180px 180px;
+  background-blend-mode:multiply;
+  color:var(--ink);
+  text-align:center;
+  box-shadow:
+    inset 0 0 0 1px rgba(36,26,20,.42),
+    inset 0 0 0 4px var(--paper),
+    inset 0 0 0 5px rgba(36,26,20,.20),
+    0 2px 0 rgba(150,108,74,.45),
+    0 8px 14px -11px rgba(52,26,14,.85);
+  transition:transform .16s ease, box-shadow .16s ease;
+}
+.dark .coll-card{
+  box-shadow:
+    inset 0 0 0 1px rgba(255,226,190,.20),
+    inset 0 0 0 4px var(--paper),
+    inset 0 0 0 5px rgba(255,226,190,.10),
+    0 2px 0 rgba(0,0,0,.5),
+    0 8px 14px -11px rgba(0,0,0,.95);
+}
+.coll-card:hover{ transform:translateY(-2px); }
+.coll-card:active{ transform:translateY(1px); }
+
+.coll-card-win{
+  position:relative; display:block; overflow:hidden;
+  aspect-ratio:4/5; margin:1px 1px 0; border-radius:3px;
+  background:var(--paper-2);
+  box-shadow:0 0 0 1px rgba(36,26,20,.40), 0 3px 7px -5px rgba(52,26,14,.7);
+}
+.coll-card-win img{
+  display:block; width:100%; height:100%; object-fit:cover;
+  filter:saturate(.94) contrast(1.02) sepia(.05);
+}
+.coll-card-win::after{
+  content:''; position:absolute; inset:0;
+  background-image:var(--tex-paper); background-size:180px 180px;
+  mix-blend-mode:multiply; opacity:.45; pointer-events:none;
+}
+
+/* the unopened plate: one drawn arch and a question mark, nothing else */
+.coll-arch{
+  position:absolute; inset:9px;
+  display:grid; place-items:center;
+  border:1px solid rgba(58,38,24,.30);
+  border-radius:50% 50% 5px 5px / 46% 46% 3px 3px;
+}
+.coll-arch-q{
+  font-size:24px; font-weight:900; line-height:1;
+  color:rgba(58,38,24,.30);
+}
+.dark .coll-arch{ border-color:rgba(255,226,190,.24); }
+.dark .coll-arch-q{ color:rgba(255,226,190,.28); }
+
+.coll-card-name{
+  display:block; margin:4px 1px 0; padding:3px 4px;
+  border-radius:3px;
+  background:#2A1E16; color:#F8EFE0;
+  font-size:7.5px; font-weight:800; line-height:1.4;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.coll-card.locked .coll-card-name{
+  background:rgba(58,38,24,.09);
+  color:var(--ink-3);
+}
+.dark .coll-card-name{ background:#120C08; color:#F3E7D5; }
+.dark .coll-card.locked .coll-card-name{ background:rgba(255,226,190,.08); }
+
+/* the ownership channel: a groove cut into the foot of the plate, same cut as
+   the shelf books. Gold means the chapter is won; bare clay means it is shut. */
+.coll-card-band{
+  display:block;
+  height:7px; margin:5px 3px 8px; border-radius:4px;
+  background:rgba(58,38,24,.13);
+  box-shadow:inset 0 1px 2px rgba(58,38,24,.3), 0 1px 0 rgba(255,255,255,.65);
+}
+.coll-card.owned .coll-card-band{
+  background:linear-gradient(180deg,#D8A848,#B58330);
+  box-shadow:inset 0 1px 0 rgba(255,236,190,.55), inset 0 -1px 0 rgba(90,60,12,.4),
+             0 1px 0 rgba(255,255,255,.65);
+}
+.dark .coll-card-band{
+  background:rgba(0,0,0,.34);
+  box-shadow:inset 0 1px 2px rgba(0,0,0,.6), 0 1px 0 rgba(255,226,190,.08);
+}
+.dark .coll-card.owned .coll-card-band{
+  background:linear-gradient(180deg,#A8792F,#7C5720);
+  box-shadow:inset 0 1px 0 rgba(255,226,180,.3), inset 0 -1px 0 rgba(0,0,0,.45),
+             0 1px 0 rgba(255,226,190,.08);
+}
+
+.coll-card-no{
+  position:absolute; top:8px; inset-inline-start:8px;
+  min-width:14px; height:14px; padding:0 3px; border-radius:7px;
+  display:grid; place-items:center;
+  background-color:rgba(246,241,231,.94);
+  color:var(--clay-ink);
+  font-size:8px; font-weight:900;
+  box-shadow:0 0 0 1px rgba(36,26,20,.25);
+}
+
+/* night: the numeral discs must not glow like lamps on a dark plate */
+.dark .coll-card-no{
+  background-color:rgba(46,36,28,.95);
+  color:#E8D6BE;
+  box-shadow:0 0 0 1px rgba(255,226,190,.22);
+}
+/* the shelf edge has to read as a lit ledge in the dark room too */
+.dark .shelf-board{
+  background-image:var(--tex-grain), linear-gradient(180deg,#8B5339 0%,#663A27 62%,#552C1D 100%);
+  box-shadow:
+    inset 0 2px 0 rgba(255,214,178,.30),
+    inset 0 -3px 0 rgba(0,0,0,.5),
+    0 7px 12px -8px rgba(0,0,0,.95);
+}
+
+/* =====================================================================
+   CROSSWORD CLAY CONSOLE — MAIN MENU UNIFIED THEME
+   Every surface on the home screen uses the exact same 3D kiln-fired
+   terracotta clay (`clay-panel.webp` + `--tex-grain`), recessed parchment
+   wells (`#E6D4BC` + `--tex-paper`), and 3D glazed ceramic keycaps
+   (Cream, Sage-Green, Dusty-Blue, Saffron-Gold) as the Crossword Game page
+   (`topbar.webp`, `board-frame.webp`, `clue-panel.webp`, `deck.webp`).
+   ===================================================================== */
+
+/* 1. Natural sunlit clay room backdrop (matching .cg-playfield on GameView) */
+.cg-menu {
+  background-color: #C4926C !important;
+  background-image:
+    radial-gradient(120% 46% at 50% 0%, rgba(255, 242, 224, 0.34) 0%, rgba(255, 242, 224, 0) 64%),
+    var(--tex-grain),
+    var(--room-photo) !important;
+  background-size: auto, 240px 240px, cover !important;
+  background-position: center, center, 50% 0% !important;
+  background-repeat: no-repeat !important;
+  background-blend-mode: soft-light, overlay, normal !important;
+  box-shadow: inset 0 2px 0 rgba(255, 232, 206, 0.42), inset 0 -10px 24px rgba(58, 28, 14, 0.28) !important;
+}
+.dark .cg-menu {
+  background-color: #2A1C12 !important;
+  background-image:
+    linear-gradient(180deg, rgba(38, 23, 13, 0.72) 0%, rgba(24, 15, 9, 0.84) 100%),
+    var(--tex-grain),
+    var(--room-photo) !important;
+  background-size: auto, 240px 240px, cover !important;
+  background-blend-mode: normal, overlay, normal !important;
+}
+.cg-menu .mm-bg {
+  display: none !important;
+}
+
+/* 2. Top Hello Console Slab — sculpted terracotta bar matching topbar.webp */
+.cg-menu .mm-hello {
+  position: relative;
+  padding: 11px 15px !important;
+  border-radius: 26px !important;
+  background-color: #B86B49 !important;
+  background-image: var(--tex-grain), var(--clay-sheen), var(--clay-photo) !important;
+  background-size: 240px 240px, auto, cover !important;
+  background-position: center, center, center !important;
+  background-blend-mode: overlay, normal, normal !important;
+  border: 1.5px solid #86452B !important;
+  box-shadow:
+    inset 0 2.5px 0 rgba(255, 232, 206, 0.58),
+    inset 0 -3px 0 rgba(58, 26, 12, 0.48),
+    inset 0 0 0 3px rgba(218, 156, 114, 0.18),
+    0 4px 0 #743922,
+    0 12px 22px -10px rgba(46, 20, 8, 0.68) !important;
+}
+.dark .cg-menu .mm-hello {
+  background-color: #4A2B1C !important;
+  background-image: var(--tex-grain), var(--clay-sheen-dark), var(--clay-photo-dark) !important;
+  border-color: #361E13 !important;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 214, 178, 0.22),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.58),
+    0 4px 0 #22120B,
+    0 12px 22px -10px rgba(0, 0, 0, 0.88) !important;
+}
+.cg-menu .mm-hello h1 {
+  color: #FFF5E8 !important;
+  text-shadow: 0 1.5px 0 rgba(72, 32, 14, 0.68) !important;
+}
+.cg-menu .mm-hello p {
+  color: rgba(255, 238, 218, 0.88) !important;
+  text-shadow: 0 1px 0 rgba(72, 32, 14, 0.45) !important;
+}
+
+/* Dusty-Blue sculpted clay avatar medallion (matching right side of topbar.webp) */
+.cg-menu .mm-avatar {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  background-image:
+    var(--tex-grain),
+    radial-gradient(circle at 35% 30%, #8CA6B8 0%, #6D8799 58%, #52697A 100%) !important;
+  background-size: 200px 200px, auto !important;
+  background-blend-mode: soft-light, normal !important;
+  color: #FFF6E9 !important;
+  font-weight: 900 !important;
+  text-shadow: 0 1.5px 0 rgba(32, 44, 54, 0.7) !important;
+  border: 2.5px solid #DFCBB2 !important;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -3px 0 rgba(32, 46, 56, 0.55),
+    0 0 0 3px #7E4028,
+    0 5px 10px -2px rgba(42, 18, 8, 0.65) !important;
+}
+
+/* 3. Stat Pills — 3D Glazed Ceramic Pills inside a Terracotta Console Tray (matching topbar.webp) */
+.cg-menu .mm-stats:not(.mm-keys) {
+  padding: 8px 9px !important;
+  border-radius: 24px !important;
+  gap: 8px !important;
+  background-color: #B66947 !important;
+  background-image: var(--tex-grain), var(--clay-sheen), var(--clay-photo) !important;
+  background-size: 240px 240px, auto, cover !important;
+  background-blend-mode: overlay, normal, normal !important;
+  border: 1.5px solid #84432A !important;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 232, 206, 0.52),
+    inset 0 -3px 0 rgba(58, 26, 12, 0.45),
+    0 4px 0 #743922,
+    0 12px 20px -10px rgba(46, 20, 8, 0.62) !important;
+}
+.dark .cg-menu .mm-stats:not(.mm-keys) {
+  background-color: #46281A !important;
+  background-image: var(--tex-grain), var(--clay-sheen-dark), var(--clay-photo-dark) !important;
+  border-color: #341D12 !important;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 214, 178, 0.2),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.58),
+    0 4px 0 #20110A,
+    0 12px 20px -10px rgba(0, 0, 0, 0.85) !important;
+}
+
+/* Coins Pill: Warm Cream Ceramic Purse Pill (left pill of topbar.webp) */
+.cg-menu .mm-stats:not(.mm-keys) .mm-pill.c {
+  border-radius: 999px !important;
+  padding: 6px 12px 6px 10px !important;
+  background-color: #DFCBB2 !important;
+  background-image:
+    var(--tex-paper),
+    linear-gradient(180deg, #EAD9C3 0%, #D8C1A4 62%, #C7AD8E 100%) !important;
+  background-size: 200px 200px, auto !important;
+  background-blend-mode: multiply, normal !important;
+  border: 1.5px solid #6E3922 !important;
+  color: #382618 !important;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 250, 240, 0.82),
+    inset 0 -2.5px 0 rgba(112, 82, 52, 0.42),
+    0 3px 0 #61301C,
+    0 5px 9px -3px rgba(36, 14, 5, 0.55) !important;
+}
+.cg-menu .mm-stats:not(.mm-keys) .mm-pill.c b {
+  color: #382618 !important;
+  font-size: 14px !important;
+  font-weight: 900 !important;
+}
+
+/* Level Pill: Sage-Green Ceramic Pill (middle pill of topbar.webp) */
+.cg-menu .mm-stats:not(.mm-keys) .mm-pill.g {
+  border-radius: 999px !important;
+  padding: 6px 12px !important;
+  background-color: #8E9B78 !important;
+  background-image:
+    var(--tex-grain),
+    linear-gradient(180deg, #9DAA86 0%, #899673 62%, #768360 100%) !important;
+  background-size: 240px 240px, auto !important;
+  background-blend-mode: soft-light, normal !important;
+  border: 1.5px solid #4A5439 !important;
+  color: #1E2815 !important;
+  box-shadow:
+    inset 0 2px 0 rgba(238, 246, 224, 0.58),
+    inset 0 -2.5px 0 rgba(48, 58, 34, 0.48),
+    0 3px 0 #61301C,
+    0 5px 9px -3px rgba(36, 14, 5, 0.55) !important;
+}
+.cg-menu .mm-stats:not(.mm-keys) .mm-pill.g b {
+  color: #1E2815 !important;
+  font-size: 14px !important;
+  font-weight: 900 !important;
+}
+
+/* Record Pill: Dusty-Blue Ceramic Pill (matching blue ceramic of topbar.webp & deck.webp) */
+.cg-menu .mm-stats:not(.mm-keys) .mm-pill.s {
+  border-radius: 999px !important;
+  padding: 6px 12px !important;
+  background-color: #728B9D !important;
+  background-image:
+    var(--tex-grain),
+    linear-gradient(180deg, #869FB1 0%, #6E8799 62%, #5A7182 100%) !important;
+  background-size: 240px 240px, auto !important;
+  background-blend-mode: soft-light, normal !important;
+  border: 1.5px solid #394A57 !important;
+  color: #FFF6E8 !important;
+  box-shadow:
+    inset 0 2px 0 rgba(226, 240, 250, 0.52),
+    inset 0 -2.5px 0 rgba(34, 46, 56, 0.52),
+    0 3px 0 #61301C,
+    0 5px 9px -3px rgba(36, 14, 5, 0.55) !important;
+}
+.cg-menu .mm-stats:not(.mm-keys) .mm-pill.s b {
+  color: #FFF6E8 !important;
+  text-shadow: 0 1px 0 rgba(28, 38, 48, 0.65) !important;
+  font-size: 14px !important;
+  font-weight: 900 !important;
+}
+
+/* 4. Today Glance & Daily Puzzle — Terracotta Clay Rim + Recessed Parchment Slip (matching clue-panel.webp) */
+.cg-menu .mm-glance,
+.cg-menu .mm-daily {
+  position: relative;
+  border-radius: 24px !important;
+  border: 8px solid transparent !important;
+  background-image:
+    var(--tex-paper),
+    linear-gradient(180deg, #EADBC5 0%, #DFCCB2 100%),
+    var(--tex-grain),
+    var(--clay-sheen),
+    var(--clay-photo) !important;
+  background-origin: padding-box, padding-box, border-box, border-box, border-box !important;
+  background-clip: padding-box, padding-box, border-box, border-box, border-box !important;
+  background-size: 200px 200px, auto, 240px 240px, auto, cover !important;
+  background-blend-mode: multiply, normal, overlay, normal, normal !important;
+  box-shadow:
+    inset 0 3px 6px rgba(48, 22, 10, 0.45),
+    inset 0 0 0 1.5px rgba(78, 38, 18, 0.42),
+    0 2px 0 rgba(255, 232, 206, 0.55),
+    0 4.5px 0 #743922,
+    0 14px 24px -10px rgba(46, 20, 8, 0.68) !important;
+}
+.dark .cg-menu .mm-glance,
+.dark .cg-menu .mm-daily {
+  background-image:
+    var(--tex-paper),
+    linear-gradient(180deg, #32251B 0%, #271C14 100%),
+    var(--tex-grain),
+    var(--clay-sheen-dark),
+    var(--clay-photo-dark) !important;
+  box-shadow:
+    inset 0 3px 6px rgba(0, 0, 0, 0.68),
+    inset 0 0 0 1.5px rgba(255, 220, 180, 0.16),
+    0 4.5px 0 #1E1009,
+    0 14px 24px -10px rgba(0, 0, 0, 0.88) !important;
+}
+
+.cg-menu .mm-daily-prize {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  padding: 2px 8px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(180deg, #F4E3C3 0%, #E4CA9C 100%) !important;
+  border: 1px solid rgba(138, 86, 28, 0.45) !important;
+  color: #5A3810 !important;
+  font-weight: 900 !important;
+}
+
+/* Daily Start Button — 3D Saffron-Gold Ceramic Keycap (matching gold key on deck.webp) */
+.cg-menu .mm-daily-go {
+  border-radius: 12px !important;
+  padding: 7px 14px !important;
+  font-weight: 900 !important;
+  color: #2A1908 !important;
+  background-color: #DDA440 !important;
+  background-image:
+    var(--tex-grain),
+    linear-gradient(180deg, #ECC062 0%, #DDA440 58%, #C48825 100%) !important;
+  background-size: 200px 200px, auto !important;
+  background-blend-mode: soft-light, normal !important;
+  border: 1.5px solid #784E10 !important;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 246, 214, 0.78),
+    inset 0 -2px 0 rgba(108, 66, 12, 0.45),
+    0 3px 0 #6A3D12,
+    0 5px 10px -3px rgba(42, 18, 8, 0.55) !important;
+  transition: transform 0.08s ease, box-shadow 0.08s ease !important;
+}
+.cg-menu .mm-daily-go:active:not(:disabled) {
+  transform: translateY(2px) !important;
+  box-shadow:
+    inset 0 2px 4px rgba(82, 48, 8, 0.45),
+    0 1px 0 #6A3D12 !important;
+}
+
+/* Section Labels — sculpted terracotta badge bar */
+.cg-menu .mm-label h3 {
+  color: #422314 !important;
+  text-shadow: 0 1px 0 rgba(255, 238, 216, 0.65) !important;
+  font-weight: 900 !important;
+}
+.dark .cg-menu .mm-label h3 {
+  color: #F5E4CE !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7) !important;
+}
+.cg-menu .mm-label i {
+  background: linear-gradient(90deg, rgba(116, 57, 34, 0.38), rgba(116, 57, 34, 0)) !important;
+}
+.dark .cg-menu .mm-label i {
+  background: linear-gradient(90deg, rgba(245, 228, 206, 0.32), rgba(245, 228, 206, 0)) !important;
+}
+
+/* 5. Game Mode Tablets (گنجینه، برج بی‌نهایت، نبرد آنلاین، چالش دوئل) — Twin of board-frame.webp */
+.cg-menu .mm-grid-breakout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 38px 12px;
+  margin-top: 32px;
+}
+
+.cg-menu .mm-tile {
+  position: relative;
+  border-radius: 24px !important;
+  background-color: #B86B49 !important;
+  background-image: var(--tex-grain), var(--clay-sheen), var(--clay-photo) !important;
+  background-size: 240px 240px, auto, cover !important;
+  background-position: center, center, center !important;
+  background-blend-mode: overlay, normal, normal !important;
+  border: 2px solid #84432A !important;
+  box-shadow:
+    inset 0 2.5px 0 rgba(255, 232, 206, 0.58),
+    inset 0 -3px 0 rgba(56, 24, 11, 0.48),
+    inset 0 0 0 4px rgba(218, 160, 118, 0.2),
+    0 5px 0 #703620,
+    0 16px 28px -12px rgba(46, 20, 8, 0.72) !important;
+  transition: transform 0.26s var(--cg-spring), box-shadow 0.28s var(--cg-apple);
+}
+.dark .cg-menu .mm-tile {
+  background-color: #482A1B !important;
+  background-image: var(--tex-grain), var(--clay-sheen-dark), var(--clay-photo-dark) !important;
+  border-color: #341D12 !important;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 214, 178, 0.22),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.6),
+    0 5px 0 #1F1009,
+    0 16px 28px -12px rgba(0, 0, 0, 0.9) !important;
+}
+
+.cg-menu .mm-tile-breakout {
+  overflow: visible !important;
+  z-index: 1;
+}
+.cg-menu .mm-tile:hover {
+  transform: translateY(-4px);
+  z-index: 10;
+}
+
+/* Carved terracotta corner rosettes on mode tablets (matching board-frame.webp corners) */
+.cg-menu .mm-tile::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 18px;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 7px calc(100% - 7px), #D8946E 0, #9E5538 3.5px, #68321D 4.5px, transparent 5.5px),
+    radial-gradient(circle at calc(100% - 7px) calc(100% - 7px), #D8946E 0, #9E5538 3.5px, #68321D 4.5px, transparent 5.5px);
+  opacity: 0.85;
+}
+
+/* Recessed parchment caption well inside Treasure & Mode tablets (matching board-frame.webp well) */
+.cg-menu .mm-hero-foot,
+.cg-menu .mm-mode-foot {
+  margin: 7px 8px 8px !important;
+  padding: 9px 11px !important;
+  border-radius: 15px !important;
+  border: 1.5px solid rgba(78, 38, 18, 0.45) !important;
+  background-color: #E6D4BC !important;
+  background-image:
+    var(--tex-paper),
+    linear-gradient(180deg, #EDE0CC 0%, #DFCCB2 100%) !important;
+  background-size: 200px 200px, auto !important;
+  background-blend-mode: multiply, normal !important;
+  box-shadow:
+    inset 0 2.5px 5px rgba(48, 22, 10, 0.38),
+    0 1.5px 0 rgba(255, 236, 212, 0.48) !important;
+}
+.dark .cg-menu .mm-hero-foot,
+.dark .cg-menu .mm-mode-foot {
+  background-color: #2D2118 !important;
+  background-image:
+    var(--tex-paper),
+    linear-gradient(180deg, #34261C 0%, #281D15 100%) !important;
+  border-color: rgba(255, 220, 180, 0.16) !important;
+  box-shadow:
+    inset 0 2.5px 5px rgba(0, 0, 0, 0.65),
+    0 1px 0 rgba(255, 220, 180, 0.12) !important;
+}
+
+.cg-menu .mm-mode .mm-band {
+  margin: 0 10px 9px !important;
+  background: rgba(68, 30, 14, 0.34) !important;
+  box-shadow:
+    inset 0 1.5px 3px rgba(34, 14, 5, 0.65),
+    0 1px 0 rgba(255, 232, 206, 0.32) !important;
+}
+.cg-menu .mm-mode .mm-band i {
+  background: rgba(255, 236, 214, 0.32) !important;
+}
+
+/* Classic (non-popout) artwork framed inside the carved clay recess */
+.cg-menu .mm-hero-art,
+.cg-menu .mm-mode .mm-art {
+  margin: 8px 8px 0 !important;
+  border-radius: 16px !important;
+  border: 2px solid #6E3720 !important;
+  box-shadow:
+    inset 0 3px 7px rgba(36, 14, 5, 0.52),
+    0 1.5px 0 rgba(255, 234, 208, 0.48) !important;
+}
+
+/* 2.5D Pop-out artwork framed in a sculpted terracotta & sandstone double bezel */
+.cg-menu .mm-tile-breakout .mm-hero-art {
+  margin: -28px 6px 0 !important;
+  height: 144px !important;
+  border-radius: 20px 20px 14px 14px !important;
+  border: 3px solid #DFC5A6 !important;
+  outline: 2.5px solid #8E4B30 !important;
+  box-shadow:
+    0 14px 24px -6px rgba(42, 18, 8, 0.62),
+    inset 0 2px 0 rgba(255, 248, 234, 0.72),
+    inset 0 -2px 0 rgba(68, 32, 16, 0.48) !important;
+  transition: transform 0.3s var(--cg-spring);
+}
+.cg-menu .mm-tile-breakout .mm-art {
+  margin: -28px 6px 0 !important;
+  height: 116px !important;
+  border-radius: 19px 19px 13px 13px !important;
+  border: 3px solid #DFC5A6 !important;
+  outline: 2.5px solid #8E4B30 !important;
+  box-shadow:
+    0 12px 22px -6px rgba(42, 18, 8, 0.6),
+    inset 0 2px 0 rgba(255, 248, 234, 0.72),
+    inset 0 -2px 0 rgba(68, 32, 16, 0.48) !important;
+  transition: transform 0.3s var(--cg-spring);
+}
+.cg-menu .mm-tile-breakout:hover .mm-art,
+.cg-menu .mm-tile-breakout:hover .mm-hero-art {
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Corner stamp — 3D Cream Ceramic Chip */
+.cg-menu .mm-tile .mm-corner {
+  background-color: #E5D3BC !important;
+  background-image: linear-gradient(180deg, #F0E2CE 0%, #D7C0A2 100%) !important;
+  border: 1.5px solid #743B22 !important;
+  color: #3A2718 !important;
+  font-weight: 900 !important;
+  border-radius: 10px !important;
+  padding: 2px 8px !important;
+  box-shadow:
+    inset 0 1.5px 0 rgba(255, 252, 244, 0.8),
+    0 2.5px 0 #5E2E19,
+    0 5px 10px -2px rgba(38, 16, 6, 0.55) !important;
+}
+.cg-menu .mm-tile-breakout .mm-corner {
+  top: -17px !important;
+  inset-inline-end: 13px !important;
+  z-index: 6 !important;
+}
+
+/* Async Duel Wide Tile — Terracotta Clay Tablet with Recessed Parchment Well */
+.cg-menu .mm-tile-wide.t-teal {
+  padding: 11px 14px !important;
+  border: 8px solid transparent !important;
+  background-image:
+    var(--tex-paper),
+    linear-gradient(180deg, #EADBC5 0%, #DFCCB2 100%),
+    var(--tex-grain),
+    var(--clay-sheen),
+    var(--clay-photo) !important;
+  background-origin: padding-box, padding-box, border-box, border-box, border-box !important;
+  background-clip: padding-box, padding-box, border-box, border-box, border-box !important;
+  background-size: 200px 200px, auto, 240px 240px, auto, cover !important;
+  background-blend-mode: multiply, normal, overlay, normal, normal !important;
+  box-shadow:
+    inset 0 3px 6px rgba(48, 22, 10, 0.44),
+    inset 0 0 0 1.5px rgba(78, 38, 18, 0.4),
+    0 2px 0 rgba(255, 232, 206, 0.55),
+    0 5px 0 #703620,
+    0 15px 26px -12px rgba(46, 20, 8, 0.7) !important;
+}
+.dark .cg-menu .mm-tile-wide.t-teal {
+  background-image:
+    var(--tex-paper),
+    linear-gradient(180deg, #32251B 0%, #271C14 100%),
+    var(--tex-grain),
+    var(--clay-sheen-dark),
+    var(--clay-photo-dark) !important;
+}
+.cg-menu .mm-tile-wide.t-teal .mm-corner {
+  top: 8px !important;
+  inset-inline-end: 18px !important;
+}
+
+/* 6. Shop & Invite Keys — 3D Glazed Ceramic Console Buttons (matching deck.webp keys) */
+.cg-menu .mm-keys {
+  padding: 8px !important;
+  border-radius: 22px !important;
+  gap: 10px !important;
+  background-color: #B66947 !important;
+  background-image: var(--tex-grain), var(--clay-sheen), var(--clay-photo) !important;
+  background-size: 240px 240px, auto, cover !important;
+  background-blend-mode: overlay, normal, normal !important;
+  border: 1.5px solid #84432A !important;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 232, 206, 0.52),
+    inset 0 -3px 0 rgba(58, 26, 12, 0.45),
+    0 4px 0 #743922,
+    0 12px 20px -10px rgba(46, 20, 8, 0.64) !important;
+}
+.dark .cg-menu .mm-keys {
+  background-color: #46281A !important;
+  background-image: var(--tex-grain), var(--clay-sheen-dark), var(--clay-photo-dark) !important;
+  border-color: #341D12 !important;
+}
+.cg-menu .mm-keys .mm-pill {
+  border-radius: 15px !important;
+  padding: 8px 12px !important;
+  background-color: #E3D1B8 !important;
+  background-image:
+    var(--tex-paper),
+    linear-gradient(180deg, #EDE0CC 0%, #D8C2A5 65%, #C7AE8F 100%) !important;
+  background-size: 200px 200px, auto !important;
+  background-blend-mode: multiply, normal !important;
+  border: 1.5px solid #6E3922 !important;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 250, 240, 0.85),
+    inset 0 -2.5px 0 rgba(110, 80, 50, 0.42),
+    0 3.5px 0 #61301C,
+    0 6px 10px -3px rgba(36, 14, 5, 0.55) !important;
+}
+.cg-menu .mm-keys .mm-pill b {
+  color: #2C1D11 !important;
+}
+
+/* 7. Quick Play Console — Twin of deck.webp (Sculpted Terracotta Tray + 3D Ceramic Keycaps) */
+.cg-menu .mm-quick {
+  padding: 14px !important;
+  border-radius: 26px !important;
+  background-color: #B66947 !important;
+  background-image: var(--tex-grain), var(--clay-sheen), var(--clay-photo) !important;
+  background-size: 240px 240px, auto, cover !important;
+  background-position: center, center, center !important;
+  background-blend-mode: overlay, normal, normal !important;
+  border: 2px solid #84432A !important;
+  box-shadow:
+    inset 0 2.5px 0 rgba(255, 232, 206, 0.58),
+    inset 0 -3.5px 0 rgba(56, 24, 11, 0.5),
+    inset 0 0 0 4px rgba(218, 160, 118, 0.18),
+    0 5px 0 #703620,
+    0 18px 30px -12px rgba(46, 20, 8, 0.74) !important;
+}
+.dark .cg-menu .mm-quick {
+  background-color: #46281A !important;
+  background-image: var(--tex-grain), var(--clay-sheen-dark), var(--clay-photo-dark) !important;
+  border-color: #341D12 !important;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 214, 178, 0.2),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.6),
+    0 5px 0 #1E1009,
+    0 18px 30px -12px rgba(0, 0, 0, 0.9) !important;
+}
+.cg-menu .mm-quick .mm-label h3,
+.cg-menu .mm-quick .cg-sheet-label {
+  color: #FFF4E6 !important;
+  text-shadow: 0 1.5px 0 rgba(68, 30, 14, 0.65) !important;
+  font-weight: 900 !important;
+}
+.cg-menu .mm-quick .mm-label i {
+  background: linear-gradient(90deg, rgba(255, 238, 218, 0.45), rgba(255, 238, 218, 0)) !important;
+}
+
+/* Goal strip inside Quick Play — Recessed Parchment Slip (matching clue slip in deck.webp) */
+.cg-menu .mm-quick .mm-goal-inline {
+  background-color: #E6D4BC !important;
+  background-image:
+    var(--tex-paper),
+    linear-gradient(180deg, #EDE0CC 0%, #DFCCB2 100%) !important;
+  background-size: 200px 200px, auto !important;
+  background-blend-mode: multiply, normal !important;
+  border: 1.5px solid #6E3720 !important;
+  border-radius: 14px !important;
+  padding: 8px 11px !important;
+  margin-bottom: 10px !important;
+  box-shadow:
+    inset 0 2.5px 5px rgba(48, 22, 10, 0.42),
+    0 1.5px 0 rgba(255, 234, 208, 0.45) !important;
+}
+.dark .cg-menu .mm-quick .mm-goal-inline {
+  background-color: #2E2219 !important;
+  background-image:
+    var(--tex-paper),
+    linear-gradient(180deg, #35271D 0%, #281D15 100%) !important;
+  border-color: rgba(255, 220, 180, 0.18) !important;
+}
+
+/* Size & Category buttons (.cg-seg) — 3D Glazed Ceramic Keycaps (matching deck.webp keys!) */
+.cg-menu .mm-quick .cg-seg {
+  border-radius: 11px !important;
+  background-color: #E3D1B8 !important;
+  background-image:
+    var(--tex-paper),
+    linear-gradient(180deg, #EFE2CE 0%, #DAC4A7 64%, #C9B091 100%) !important;
+  background-size: 200px 200px, auto !important;
+  background-blend-mode: multiply, normal !important;
+  border: 1.5px solid #6B361F !important;
+  color: #241A14 !important;
+  font-weight: 900 !important;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 252, 244, 0.85),
+    inset 0 -2px 0 rgba(108, 78, 48, 0.42),
+    0 3.5px 0 #5E2E19,
+    0 6px 9px -3px rgba(36, 14, 5, 0.55) !important;
+  transition: transform 0.07s ease, box-shadow 0.07s ease !important;
+}
+.cg-menu .mm-quick .cg-seg:active:not(.is-locked) {
+  transform: translateY(2.5px) !important;
+  box-shadow:
+    inset 0 2px 4px rgba(68, 32, 16, 0.38),
+    0 1px 0 #5E2E19 !important;
+}
+
+/* Selected Size Keycap — Dusty-Blue Ceramic Glaze (matching blue keys on deck.webp) */
+.cg-menu .mm-quick .cg-seg.is-on.blue {
+  background-color: #728B9D !important;
+  background-image:
+    var(--tex-grain),
+    linear-gradient(180deg, #88A1B3 0%, #6E8799 62%, #597081 100%) !important;
+  background-size: 200px 200px, auto !important;
+  background-blend-mode: soft-light, normal !important;
+  border-color: #364754 !important;
+  color: #FFF6E8 !important;
+  text-shadow: 0 1px 0 rgba(28, 38, 48, 0.65) !important;
+  box-shadow:
+    inset 0 2px 0 rgba(226, 240, 250, 0.55),
+    inset 0 -2px 0 rgba(34, 46, 56, 0.52),
+    0 3.5px 0 #344450,
+    0 6px 9px -3px rgba(36, 14, 5, 0.55) !important;
+}
+
+/* Selected Category Keycap — Sage-Green Ceramic Glaze (matching green keys on deck.webp) */
+.cg-menu .mm-quick .cg-seg.is-on.amber {
+  background-color: #8E9B78 !important;
+  background-image:
+    var(--tex-grain),
+    linear-gradient(180deg, #A0AD89 0%, #899673 62%, #75825F 100%) !important;
+  background-size: 200px 200px, auto !important;
+  background-blend-mode: soft-light, normal !important;
+  border-color: #465036 !important;
+  color: #1D2714 !important;
+  text-shadow: 0 1px 0 rgba(235, 244, 220, 0.45) !important;
+  box-shadow:
+    inset 0 2px 0 rgba(238, 246, 224, 0.62),
+    inset 0 -2px 0 rgba(48, 58, 34, 0.48),
+    0 3.5px 0 #444E34,
+    0 6px 9px -3px rgba(36, 14, 5, 0.55) !important;
+}
+
+/* Locked Key Socket — carved hollow inside the terracotta tray */
+.cg-menu .mm-quick .cg-seg.is-locked {
+  background-color: rgba(68, 30, 14, 0.34) !important;
+  background-image: none !important;
+  border: 1px dashed rgba(255, 232, 206, 0.38) !important;
+  color: rgba(255, 236, 214, 0.78) !important;
+  box-shadow:
+    inset 0 2px 5px rgba(34, 14, 5, 0.65),
+    0 1px 0 rgba(255, 232, 206, 0.25) !important;
+}
+
+/* Quick Play Start Button — 3D Saffron-Gold Ceramic Master Keycap (matching bottom-left gold key on deck.webp) */
+.cg-menu .mm-quick .cg-start {
+  border-radius: 15px !important;
+  background-color: #DDA440 !important;
+  background-image:
+    var(--tex-grain),
+    linear-gradient(180deg, #EEC365 0%, #DDA440 58%, #C38724 100%) !important;
+  background-size: 220px 220px, auto !important;
+  background-blend-mode: soft-light, normal !important;
+  border: 2px solid #744A0E !important;
+  color: #281707 !important;
+  font-weight: 900 !important;
+  text-shadow: 0 1px 0 rgba(255, 244, 210, 0.55) !important;
+  box-shadow:
+    inset 0 2.5px 0 rgba(255, 248, 220, 0.82),
+    inset 0 -3px 0 rgba(108, 66, 12, 0.48),
+    0 4.5px 0 #663B0E,
+    0 10px 18px -4px rgba(38, 16, 6, 0.62) !important;
+}
+.cg-menu .mm-quick .cg-start:active:not(:disabled) {
+  transform: translateY(3px) !important;
+  box-shadow:
+    inset 0 2px 5px rgba(82, 48, 8, 0.45),
+    0 1.5px 0 #663B0E !important;
+}
+
+/* 8. Bottom Navigation Rail — Sculpted Terracotta Clay Bar */
+.cg-menu .mm-tabbar {
+  background-color: #B66947 !important;
+  background-image: var(--tex-grain), var(--clay-sheen), var(--clay-photo) !important;
+  background-size: 240px 240px, auto, cover !important;
+  background-blend-mode: overlay, normal, normal !important;
+  border: 2px solid #824229 !important;
+  box-shadow:
+    inset 0 2.5px 0 rgba(255, 232, 206, 0.58),
+    inset 0 -3px 0 rgba(56, 24, 11, 0.5),
+    0 5px 0 #6C331D,
+    0 18px 30px -10px rgba(38, 16, 6, 0.78) !important;
+}
+.dark .cg-menu .mm-tabbar {
+  background-color: #46281A !important;
+  background-image: var(--tex-grain), var(--clay-sheen-dark), var(--clay-photo-dark) !important;
+  border-color: #341D12 !important;
+}
+
+/* Tower flame beacon directly on the popped-out tower image */
+.cg-menu .mm-tile-breakout .mm-art-tower::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle, #FFF4A3 20%, #FF9020 70%, transparent 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 12px #FFA834;
+  animation: mm-flame-pulse 1.8s ease-in-out infinite;
+}
+@keyframes mm-flame-pulse {
+  0%, 100% { transform: translateX(-50%) scale(0.9); opacity: 0.85; }
+  50% { transform: translateX(-50%) scale(1.25); opacity: 1; }
+}
+
+/* Style Selector Switcher inside Main Menu */
+.mm-style-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #B66947;
+  background-image: var(--tex-grain), var(--clay-sheen);
+  padding: 3px;
+  border-radius: 999px;
+  border: 1.5px solid #824229;
+  box-shadow: inset 0 1.5px 3px rgba(48, 20, 8, 0.45), 0 1px 0 rgba(255, 232, 206, 0.45);
+}
+.dark .mm-style-toggle {
+  background: #46281A;
+  border-color: #341D12;
+}
+.mm-style-btn {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 900;
+  color: rgba(255, 244, 230, 0.85);
+  padding: 3px 9px;
+  border-radius: 999px;
+  transition: all 0.18s ease;
+}
+.mm-style-btn.on {
+  background: linear-gradient(180deg, #EFE2CE 0%, #D8C1A3 100%);
+  color: #382516;
+  box-shadow: 0 2px 4px rgba(38, 16, 6, 0.45), inset 0 1px 0 rgba(255, 252, 244, 0.8);
+}
+.dark .mm-style-btn.on {
+  background: #2E2219;
+  color: #F2D594;
+}
+
+
+

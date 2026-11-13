@@ -1,0 +1,23 @@
+node_modules/
+/build
+/dist
+/.cache
+/public/build
+.env
+.env.local
+.env.*.local
+.DS_Store
+*.log
+npm-debug.log*
+.claude/
+.aistudio/
+.mcp.json
+GEMINI.md
+.obsidian/
+.vscode/
+.idea/
+data/backups/
+*.backup
+# Backups
+بک‌آپ*/
+backup*/

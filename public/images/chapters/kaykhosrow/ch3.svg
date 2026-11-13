@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#aa0000"/>
+<stop offset="100%" stop-color="#8c0000"/>
+</linearGradient></defs>
+<rect width="500" height="600" fill="url(#bg)"/>
+<rect x="8" y="8" width="484" height="584" rx="12.5" fill="none" stroke="#991b1b" stroke-width="6.25" opacity="0.7"/>
+<path d="M 250 20.5 L 250 33 M 20.5 300 L 33 300 M 479.5 300 L 467 300" fill="none" stroke="#991b1b" stroke-width="3.75" opacity="0.4"/>
+<circle cx="150" cy="343" r="7.000000000000001" fill="#1a1a1a"/>
+<ellipse cx="150" cy="364" rx="10" ry="16" fill="#1a1a1a"/>
+<line x1="144" y1="352" x2="135" y2="370" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="156" y1="352" x2="165" y2="370" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="142" y1="380" x2="150" y2="390" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="158" y1="380" x2="150" y2="390" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M 290 100 Q 350 65 410 100" fill="#991b1b" opacity="0.8" stroke="#710000" stroke-width="1.5"/>
+<rect x="290" y="100" width="120" height="5.25" fill="#850707" opacity="0.6" stroke="#710000" stroke-width="1"/>
+<circle cx="150" cy="300" r="4" fill="#ef4444"/>
+<circle cx="350" cy="200" r="4" fill="#ef4444"/>
+<polygon points="237.5,480 237.71642136747406,470 241.79351009059485,460 243.38921646186807,450 243.71537837405648,440 246.25,430 253.75,430 256.2846216259435,440 256.61078353813195,450 258.20648990940515,460 262.2835786325259,470 262.5,480" fill="#dc2626" opacity="0.8"/>
+<ellipse cx="250" cy="460" rx="3" ry="10" fill="#fde047" opacity="0.6"/>
+<polygon points="55,530 56.5,520 58,510 59.5,500 61,490 62.5,480 64,470 65.5,460 67,450 68.5,440 70,430 70,430 71.5,440 73,450 74.5,460 76,470 77.5,480 79,490 80.5,500 82,510 83.5,520 85,530" fill="#2a1a1a" opacity="0.8"/>
+<polygon points="415,530 416.5,520 418,510 419.5,500 421,490 422.5,480 424,470 425.5,460 427,450 428.5,440 430,430 430,430 431.5,440 433,450 434.5,460 436,470 437.5,480 439,490 440.5,500 442,510 443.5,520 445,530" fill="#2a1a1a" opacity="0.8"/>
+<rect x="100" y="520" width="300" height="36" rx="18" fill="#991b1b" opacity="0.85"/>
+<text x="250" y="543" text-anchor="middle" fill="#fff" font-family="serif" font-size="16" font-weight="bold">نبرد با افراسیاب</text>
+</svg>

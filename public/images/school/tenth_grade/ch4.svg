@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+<defs><linearGradient id="cg103" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#0c0a1f"/><stop offset="100%" stop-color="#6366f122"/></linearGradient></defs>
+<rect width="300" height="200" rx="20" fill="url(#cg103)"/>
+<rect x="3" y="3" width="294" height="194" rx="18" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+<rect x="0" y="0" width="300" height="6" fill="#6366f1" rx="3"/>
+<path d="M100,80 Q125,60 150,80 Q175,100 200,80" fill="none" stroke="#6366f130" stroke-width="2"/><path d="M100,80 Q125,100 150,80 Q175,60 200,80" fill="none" stroke="#6366f120" stroke-width="1.5"/>
+<text x="150" y="165" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="14" font-weight="bold" font-family="sans-serif">مولانا</text>
+<text x="150" y="183" text-anchor="middle" fill="rgba(255,255,255,0.2)" font-size="9" font-family="sans-serif">پایه 10 - مولانا</text>
+</svg>

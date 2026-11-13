@@ -1,0 +1,63 @@
+/* Night clay — activated when <html class="dark"> is present.
+   Same materials as the day theme, just after sunset: darker terracotta,
+   aged parchment instead of ivory. The utilities below cover the handful of
+   surfaces that were authored with literal white / light-slate fills and so
+   cannot follow the palette remap in tailwind.config.js. */
+
+html.dark { background: #1B1310; }
+html.dark body { background: #1B1310 !important; }
+
+html.dark .bg-white\/90,
+html.dark .bg-white\/80 { background-color: #3A2A20 !important; }
+html.dark .bg-white { background-color: #33251C !important; }
+html.dark .bg-slate-100\/50,
+html.dark .bg-slate-50 { background: #241A13 !important; }
+html.dark .bg-slate-200\/50,
+html.dark .bg-slate-100\/80 { background: #2E211A !important; }
+
+html.dark .border-slate-200\/60,
+html.dark .border-slate-200,
+html.dark .border-slate-100,
+html.dark .border-slate-300\/50 { border-color: #4A3526 !important; }
+
+/* the old parchment constant, now the night sheet */
+html.dark .bg-\[\#fdf6e3\] { background: #2A211A !important; }
+
+html.dark .text-slate-900 { color: #F1E6D6 !important; }
+html.dark .text-slate-800 { color: #EFE2D0 !important; }
+html.dark .text-slate-700 { color: #D9C8B4 !important; }
+html.dark .text-slate-500 { color: #A79784 !important; }
+html.dark .text-slate-400 { color: #8E7E6D !important; }
+html.dark .text-slate-300 { color: #6E5E4F !important; }
+html.dark .text-\[\#5e4b40\] { color: #DFD0BC !important; }
+html.dark .text-\[\#8c6b5d\] { color: #B9A48F !important; }
+html.dark .text-\[\#2e7d32\] { color: #A8C09B !important; }
+html.dark .text-emerald-800 { color: #9FBF8F !important; }
+html.dark .text-amber-900 { color: #EBC97F !important; }
+html.dark .text-amber-700,
+html.dark .text-amber-600 { color: #D6A93F !important; }
+
+html.dark .shadow-\[0_2px_20px_-4px_rgba\(0\,0\,0\,0\.08\)\],
+html.dark .shadow-\[0_2px_20px_-4px_rgba\(0\,0\,0\,0\.06\)\] { box-shadow: 0 2px 20px -4px rgba(0,0,0,0.45) !important; }
+html.dark .shadow-\[0_-4px_30px_-8px_rgba\(0\,0\,0\,0\.08\)\] { box-shadow: 0 -4px 30px -8px rgba(0,0,0,0.45) !important; }
+html.dark .shadow-\[0_-10px_40px_rgba\(0\,0\,0\,0\.08\)\] { box-shadow: 0 -10px 40px rgba(0,0,0,0.45) !important; }
+
+html.dark .shadow-indigo-200 { box-shadow: 0 4px 6px -1px rgba(90,45,25,0.55) !important; }
+html.dark .shadow-amber-200 { box-shadow: 0 4px 6px -1px rgba(120,85,20,0.45) !important; }
+html.dark .shadow-rose-200 { box-shadow: 0 4px 6px -1px rgba(110,55,65,0.45) !important; }
+html.dark .shadow-emerald-200 { box-shadow: 0 4px 6px -1px rgba(55,70,45,0.45) !important; }
+
+html.dark .hover\:shadow-amber-100:hover { box-shadow: 0 10px 15px -3px rgba(120,85,20,0.45) !important; }
+html.dark .hover\:shadow-rose-100:hover { box-shadow: 0 10px 15px -3px rgba(110,55,65,0.45) !important; }
+html.dark .hover\:shadow-emerald-100:hover { box-shadow: 0 10px 15px -3px rgba(55,70,45,0.45) !important; }
+
+html.dark .hover\:border-amber-300:hover { border-color: #C8952B !important; }
+html.dark .hover\:border-rose-300:hover { border-color: #AE6F79 !important; }
+html.dark .hover\:border-emerald-300:hover { border-color: #7F9469 !important; }
+
+html.dark .from-amber-50,
+html.dark .to-amber-100\/50 { --tw-gradient-from: rgb(200 149 43/0.12) !important; --tw-gradient-to: rgb(200 149 43/0.05) !important; }
+html.dark .bg-amber-50\/80 { background: rgb(58 42 32/0.5) !important; }
+html.dark .bg-amber-50 { background: rgb(200 149 43/0.16) !important; }
+html.dark .bg-indigo-50 { background: rgb(201 123 90/0.16) !important; }
+html.dark .border-slate-900 { border-color: #6E5E4F !important; }

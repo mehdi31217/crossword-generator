@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="mbg" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#1a0f0f" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" fill="#1a0f0f" rx="40" opacity="0.25"/>
+  <circle cx="100" cy="84" r="92" fill="url(#mbg)" stroke="#c2410c" stroke-width="1.5" opacity="0.5"/>
+  
+  <ellipse cx="100" cy="95" rx="40" ry="30" fill="#c2410c" opacity="0.1"/>
+  <circle cx="85" cy="90" r="9" fill="#fb923c" opacity="0.7"/>
+    <circle cx="85" cy="90" r="3.15" fill="black"/>
+  <circle cx="115" cy="90" r="9" fill="#fb923c" opacity="0.7"/>
+    <circle cx="115" cy="90" r="3.15" fill="black"/>
+  <ellipse cx="100" cy="110" rx="25" ry="8" fill="#c2410c" opacity="0.4"/>
+  <circle cx="92" cy="105" r="2.5" fill="#fef08a" opacity="0.35"/>
+  <circle cx="108" cy="105" r="2.5" fill="#fef08a" opacity="0.35"/>
+  <path d="M70 85 Q100 68 130 85" fill="none" stroke="#c2410c" stroke-width="3" stroke-linecap="round"/>
+
+  <rect x="0" y="176" width="200" height="24" fill="#c2410c" opacity="0.8" rx="0"/>
+  <text x="100" y="193" text-anchor="middle" fill="#fff" font-family="serif" font-size="10" font-weight="bold" dir="rtl">شیر دروازه‌بان</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#005a2d"/>
+<stop offset="100%" stop-color="#004114"/>
+</linearGradient></defs>
+<rect width="500" height="600" fill="url(#bg)"/>
+<rect x="8" y="8" width="484" height="584" rx="15" fill="none" stroke="#064e3b" stroke-width="7.5" opacity="0.7"/>
+<polygon points="280,300 262.9903810567666,307.5 265,325.98076211353316 250,315 235,325.98076211353316 237.00961894323342,307.5 220,300 237.00961894323342,292.5 235,274.01923788646684 250,285 265,274.01923788646684 262.9903810567666,292.5 " fill="none" stroke="#064e3b" stroke-width="4.5" opacity="0.4" transform="translate(0,0)"/>
+<rect x="100" y="100" width="300" height="350" rx="5" fill="#0a0a0a" opacity="0.8"/>
+<rect x="150" y="100" width="200" height="350" rx="3" fill="#000" opacity="0.5"/>
+<line x1="150" y1="100" x2="150" y2="450" stroke="#333" stroke-width="2"/>
+<line x1="350" y1="100" x2="350" y2="450" stroke="#333" stroke-width="2"/>
+<circle cx="250" cy="315.8" r="7.2" fill="#1a3a2a"/>
+<ellipse cx="250" cy="339.2" rx="10.799999999999999" ry="20.25" fill="#1a3a2a"/>
+<line x1="242.8" y1="325" x2="232" y2="347.3" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<line x1="257.2" y1="325" x2="268" y2="347.3" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<line x1="244.6" y1="350" x2="244.6" y2="363.5" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<line x1="255.4" y1="363.5" x2="255.4" y2="350" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<circle cx="250" cy="160" r="2" fill="#fde047"/>
+<circle cx="250" cy="170" r="2" fill="#fde047"/>
+<rect x="100" y="520" width="300" height="36" rx="18" fill="#064e3b" opacity="0.85"/>
+<text x="250" y="543" text-anchor="middle" fill="#fff" font-family="serif" font-size="16" font-weight="bold">خوان ششم: تنگه مرگ</text>
+</svg>

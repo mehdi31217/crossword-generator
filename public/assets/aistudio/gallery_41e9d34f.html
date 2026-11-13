@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>گالری طرح‌های ظاهری — جدول کلمات</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px 28px 72px;
+    background: radial-gradient(1200px 700px at 20% -10%, #1d2433 0%, #0c0f16 60%), #0c0f16;
+    color: #e9edf5;
+    font-family: "Vazirmatn", "IRANSans", -apple-system, "Segoe UI", Tahoma, sans-serif;
+    line-height: 1.9;
+  }
+  header { max-width: 1400px; margin: 0 auto 34px; }
+  h1 { font-size: 26px; margin: 0 0 6px; font-weight: 800; letter-spacing: -.2px; }
+  .sub { color: #93a0b8; font-size: 14px; margin: 0; }
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px; font-size: 13px; color: #93a0b8; }
+  .legend b { color: #d7dfee; font-weight: 600; }
+
+  .row {
+    max-width: 1400px; margin: 0 auto 46px;
+    display: grid; grid-template-columns: 300px 1fr; gap: 26px;
+    align-items: start;
+  }
+  .row.flip { grid-template-columns: 1fr 300px; }
+  .row.flip .meta { order: 2; }
+  .row.flip .shots { order: 1; }
+
+  .meta h2 { font-size: 19px; margin: 0 0 2px; }
+  .meta .num {
+    display: inline-block; width: 26px; height: 26px; line-height: 26px; text-align: center;
+    border-radius: 9px; background: #ffffff12; color: #a9b6cc; font-size: 13px; margin-left: 8px;
+    border: 1px solid #ffffff14;
+  }
+  .meta p { margin: 6px 0 0; font-size: 13.5px; color: #9aa7bd; }
+  .palette { display: flex; gap: 7px; margin-top: 12px; }
+  .palette span { width: 26px; height: 26px; border-radius: 8px; border: 1px solid #ffffff22; }
+  .tag {
+    display: inline-block; margin-top: 12px; font-size: 12px; padding: 3px 10px; border-radius: 999px;
+    background: #ffffff0d; border: 1px solid #ffffff17; color: #b6c2d6;
+  }
+
+  .shots { display: flex; gap: 18px; align-items: flex-start; flex-wrap: wrap; }
+  figure { margin: 0; }
+  figure img {
+    display: block; width: 100%; height: auto; border-radius: 16px;
+    border: 1px solid #ffffff1a; box-shadow: 0 22px 50px -24px #000, 0 0 0 1px #00000055 inset;
+    background: #10141c;
+  }
+  figcaption { font-size: 12px; color: #8c99b0; margin-top: 8px; text-align: center; }
+  .phone { width: 330px; max-width: 100%; }
+  .wide { flex: 1 1 520px; }
+  .old .phone { width: 268px; }
+  hr.sep { max-width: 1400px; margin: 8px auto 40px; border: 0; border-top: 1px dashed #ffffff1c; }
+  @media (max-width: 980px) {
+    .row, .row.flip { grid-template-columns: 1fr; }
+    .row.flip .meta, .row.flip .shots { order: 0; }
+    .phone { width: 260px; }
+  }
+
+  /* ---- hybrid pick ---- */
+  .pick {
+    max-width: 1400px; margin: 0 auto 54px; padding: 26px 26px 22px;
+    border-radius: 24px;
+    background:
+      radial-gradient(900px 420px at 88% -20%, #c97b5a2e 0%, transparent 70%),
+      linear-gradient(180deg, #f6f1e70a, #1b1b1f00);
+    border: 1px solid #c97b5a4d;
+    box-shadow: 0 30px 70px -40px #000, 0 0 0 1px #f6f1e70d inset;
+  }
+  .pick-top { display: flex; gap: 22px; align-items: flex-start; flex-wrap: wrap; }
+  .pick-top h2 { margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -.2px; }
+  .pick-top h2 em { font-style: normal; color: #e2a184; }
+  .pick-top p { margin: 6px 0 0; font-size: 13.5px; color: #a5b0c4; max-width: 60ch; }
+  .split { display: flex; gap: 12px; flex-wrap: wrap; margin-inline-start: auto; }
+  .split div {
+    min-width: 210px; flex: 1 1 210px; padding: 12px 14px; border-radius: 14px;
+    background: #ffffff08; border: 1px solid #ffffff14; font-size: 12.5px; color: #a9b5c9;
+  }
+  .split b { display: block; font-size: 13px; margin-bottom: 4px; }
+  .split .a b { color: #e2a184; }
+  .split .b b { color: #efe6d4; }
+  .split .chips { display: flex; gap: 6px; margin-top: 8px; }
+  .split .chips span { width: 20px; height: 20px; border-radius: 6px; border: 1px solid #ffffff22; }
+  .strip { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
+  .strip figure { width: 232px; max-width: 100%; }
+  .strip img { border-radius: 14px; }
+  @media (max-width: 980px) { .strip figure { width: calc(50% - 8px); } }
+  @media (max-width: 520px) { .strip figure { width: 100%; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>ده طرح برای ظاهر بازی — با نمای نقشه و کارت‌ها</h1>
+  <p class="sub">ردیف‌های ۱ تا ۵ طرح‌های قبلی‌اند (فقط صفحهٔ خانه). ردیف‌های ۶ تا ۱۰ طرح‌های تازه‌اند و هر کدام یک شیت «نقشهٔ جهان + کالکشن کارت» هم دارند تا هم‌خوانی کل برنامه دیده شود. بخش اولِ صفحه، ترکیبِ انتخابیِ شماست.</p>
+  <div class="legend">
+    <span><b>چیدمان ثابت:</b> نوار بالا (آواتار + سکه + سطح) ← بنر بزرگ ← دو کاشی مربع ← کاشی پهن ← قفسهٔ دسته‌ها ← دکمهٔ اصلی ← نوار پایین</span>
+  </div>
+</header>
+
+<!-- ============ PICK: 9 x 6 ============ -->
+<section class="pick">
+  <div class="pick-top">
+    <div>
+      <h2><em>شهر سفالی</em> × <em>کاغذ و مرکب</em> — ترکیب انتخابی</h2>
+      <p>قاعدهٔ ترکیب یک جمله است: <b>هرچه «ظرف» است سفالی، هرچه «محتوا» است کاغذی.</b> منو، دکمه‌ها، قفسه‌ها، قاب‌ها، نوارها و ناوبری از سفال ساخته می‌شوند؛ کارت‌ها، پرتره‌ها، آواتارها و تصویر فصل‌ها روی کاغذ استخوانی چاپ می‌شوند و داخل حفره‌های سفال می‌نشینند. هیچ‌جا کاغذ و سفال با هم قاطی نمی‌شوند: مرزشان همیشه یک لبهٔ سفالی است.</p>
+    </div>
+    <div class="split">
+      <div class="a">
+        <b>بدنه — از «۹ شهر سفالی»</b>
+        <span>سفال مات، فرم‌های گرد و حجیم، سایهٔ نرم، نور از بالا-چپ، دکمه‌های برجسته، شیارهای فشرده‌شده برای نوار پیشرفت.</span>
+        <div class="chips">
+          <span style="background:#C97B5A"></span><span style="background:#8FA37E"></span><span style="background:#E8D9C3"></span><span style="background:#6F8FA8"></span>
+        </div>
+      </div>
+      <div class="b">
+        <b>محتوا — از «۶ کاغذ و مرکب»</b>
+        <span>کاغذ دست‌ساز استخوانی با رگهٔ الیاف، خط مرکب مویی، کادر دولایهٔ چاپی، لهجهٔ اندک زعفرانی، چاپ تخت و بدون براقی.</span>
+        <div class="chips">
+          <span style="background:#F6F1E7"></span><span style="background:#1B1B1F"></span><span style="background:#C8952B"></span><span style="background:#D9A6AE"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="strip">
+    <figure><img src="hybrid-clay-paper-home_1793126504768_d3eb2651.png" alt=""><figcaption>خانه — بدنهٔ سفالی، بنر و آیکون‌ها کاغذی</figcaption></figure>
+    <figure><img src="hybrid-clay-paper-map_1793126535539_338dd63e.png" alt=""><figcaption>نقشهٔ جهان — برجستهٔ سفالی، مدال پرتره‌ها کاغذی</figcaption></figure>
+    <figure><img src="hybrid-clay-paper-cards_1793126565633_04ecba19.png" alt=""><figcaption>کالکشن — قفسهٔ سفالی، کارت‌ها کاغذی</figcaption></figure>
+    <figure><img src="hybrid-clay-paper-library_1793126592719_ab3307da.png" alt=""><figcaption>گنجینه — چهار قفسهٔ سفالی، جلدها کاغذی</figcaption></figure>
+    <figure><img src="hybrid-clay-paper-game_1793126620731_b5419988.png" alt=""><figcaption>بازی — جدول روی کاغذ، HUD و کیبورد سفالی</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ NEW: 6 ============ -->
+<div class="row">
+  <div class="meta">
+    <h2><span class="num">۶</span>کاغذ و مرکب</h2>
+    <p>مینیمالِ چاپی و آرام. کاغذ استخوانی، خط مرکب، تنها یک لهجهٔ زعفرانی. بی‌ترین شلوغی، بیشترین وقار؛ شبیه کتاب خوب. مناسب کسی که «بازی» را جدی و بالغ می‌خواهد.</p>
+    <div class="palette">
+      <span style="background:#F6F1E7"></span><span style="background:#1B1B1F"></span>
+      <span style="background:#C8952B"></span><span style="background:#8FA37E"></span><span style="background:#D9A6AE"></span>
+    </div>
+    <span class="tag">نقشه: اطلس خط‌چین · کارت: کارت چاپی</span>
+  </div>
+  <div class="shots">
+    <figure class="phone"><img src="design-6-paper-ink_1793121713932_ecdbe9ba.png" alt=""><figcaption>صفحهٔ خانه</figcaption></figure>
+    <figure class="wide"><img src="design-6-sections_1793121927190_7413961c.png" alt=""><figcaption>نقشهٔ جهان + کالکشن کارت‌ها</figcaption></figure>
+  </div>
+</div>
+
+<!-- ============ NEW: 7 ============ -->
+<div class="row flip">
+  <div class="meta">
+    <h2><span class="num">۷</span>شیشه و شفق</h2>
+    <p>گلَس‌مورفیزم مدرن روی آسمان شفقی. پنل‌های شیشه‌ای با لبهٔ نور، گرادیان نعنایی-فیروزه‌ای. حس اپلیکیشن روز، نه بازی رومیزی؛ روی موبایل خیلی سریع «به‌روز» به نظر می‌رسد.</p>
+    <div class="palette">
+      <span style="background:#101A3A"></span><span style="background:#0E6F6B"></span>
+      <span style="background:#57E0B0"></span><span style="background:#4FC3E8"></span><span style="background:#B9C6FF"></span>
+    </div>
+    <span class="tag">نقشه: قاره‌های نورانی · کارت: کارت شیشه‌ای</span>
+  </div>
+  <div class="shots">
+    <figure class="phone"><img src="design-7-glass-aurora_1793121742856_03dadaae.png" alt=""><figcaption>صفحهٔ خانه</figcaption></figure>
+    <figure class="wide"><img src="design-7-sections_1793121956853_714b9d83.png" alt=""><figcaption>نقشهٔ جهان + کالکشن کارت‌ها</figcaption></figure>
+  </div>
+</div>
+
+<!-- ============ NEW: 8 ============ -->
+<div class="row">
+  <div class="meta">
+    <h2><span class="num">۸</span>پرده‌خانهٔ قاجار</h2>
+    <p>نقاشی روغنی و پرده‌ای قاجاری: کرم گرم، سرخ گل، پیستهای، طلاکاری. شاد و تزئینی و بسیار ایرانی، ولی صاف و نقاشی‌شده (نه سه‌بعدی براق). درست نقطهٔ مقابل طرح ۲ است: همان شکوه، با گل و بلبل نه کاشی.</p>
+    <div class="palette">
+      <span style="background:#F7E6D0"></span><span style="background:#C2455A"></span>
+      <span style="background:#7FA86A"></span><span style="background:#C9A227"></span><span style="background:#2F3B4C"></span>
+    </div>
+    <span class="tag">نقشه: نقشهٔ پرده‌ای · کارت: قاب طلاکوب</span>
+  </div>
+  <div class="shots">
+    <figure class="phone"><img src="design-8-qajar-rose_1793121782833_b2a18c57.png" alt=""><figcaption>صفحهٔ خانه</figcaption></figure>
+    <figure class="wide"><img src="design-8-sections_1793121988195_3fa4d965.png" alt=""><figcaption>نقشهٔ جهان + کالکشن کارت‌ها</figcaption></figure>
+  </div>
+</div>
+
+<!-- ============ NEW: 9 ============ -->
+<div class="row flip">
+  <div class="meta">
+    <h2><span class="num">۹</span>شهر سفالی</h2>
+    <p>دیورامای خاک‌رس مات: تِراکوتا، مریم‌گلی، شنی و آبی خاکی. فرم‌های گرد و چشم‌نواز، نور استودیویی نرم. همان جذابیت «اسباب‌بازی» طرح ۳، ولی بالغ و کم‌شیطنت — مناسب مخاطب بزرگ‌تر.</p>
+    <div class="palette">
+      <span style="background:#C97B5A"></span><span style="background:#8FA37E"></span>
+      <span style="background:#E8D9C3"></span><span style="background:#6F8FA8"></span><span style="background:#F2E7D6"></span>
+    </div>
+    <span class="tag">نقشه: برجستهٔ سفالی · کارت: کاشی حجیم</span>
+  </div>
+  <div class="shots">
+    <figure class="phone"><img src="design-9-clay-diorama_1793121826448_5ad4eaf0.png" alt=""><figcaption>صفحهٔ خانه</figcaption></figure>
+    <figure class="wide"><img src="design-9-sections_1793122025457_38ff8591.png" alt=""><figcaption>نقشهٔ جهان + کالکشن کارت‌ها</figcaption></figure>
+  </div>
+</div>
+
+<!-- ============ NEW: 10 ============ -->
+<div class="row">
+  <div class="meta">
+    <h2><span class="num">۱۰</span>نقشهٔ آبی تخت جمشید</h2>
+    <p>کاغذ نقشه‌کشی معماری: لاجوردی تیره، خطوط موی‌باریک کرم، یک لهجهٔ اُخرایی. دقیق، فنی و شدیداً متمایز؛ برای بخش نقشه و تاریخ بی‌نظیر است و از هر بازی دیگری جدا می‌افتد.</p>
+    <div class="palette">
+      <span style="background:#0B2C4A"></span><span style="background:#EAF2F8"></span>
+      <span style="background:#E0A03C"></span><span style="background:#123C63"></span><span style="background:#7FA6C4"></span>
+    </div>
+    <span class="tag">نقشه: چارت نقشه‌کشی · کارت: پلاک فنی</span>
+  </div>
+  <div class="shots">
+    <figure class="phone"><img src="design-10-blueprint_1793121851670_d1a6f897.png" alt=""><figcaption>صفحهٔ خانه</figcaption></figure>
+    <figure class="wide"><img src="design-10-sections_1793122051852_f3f00e44.png" alt=""><figcaption>نقشهٔ جهان + کالکشن کارت‌ها</figcaption></figure>
+  </div>
+</div>
+
+<hr class="sep">
+
+<!-- ============ OLD: 1-5 ============ -->
+<div class="row old">
+  <div class="meta">
+    <h2><span class="num">۱</span>شب شاهنامه</h2>
+    <p>حماسی تیره: آبی نیمه‌شب، طلا، مشعل و دژ. پرجزئیات و سینمایی؛ قوی‌ترین حس «حماسه» را می‌دهد.</p>
+  </div>
+  <div class="shots"><figure class="phone"><img src="design-1-shahnameh-night_1793097067855_6cd8775c.png" alt=""><figcaption>صفحهٔ خانه</figcaption></figure></div>
+</div>
+
+<div class="row flip old">
+  <div class="meta">
+    <h2><span class="num">۲</span>کاشی فیروزه‌ای</h2>
+    <p>باغ ایرانی و کاشی‌کاری: فیروزه‌ای روشن، سرو، گل و باغ. شاد، ایرانی و خوانا در نور روز.</p>
+  </div>
+  <div class="shots"><figure class="phone"><img src="design-2-turquoise-tilework_1793097103479_09650fc7.png" alt=""><figcaption>صفحهٔ خانه</figcaption></figure></div>
+</div>
+
+<div class="row old">
+  <div class="meta">
+    <h2><span class="num">۳</span>آب‌نبات سه‌بعدی</h2>
+    <p>کارتونی و براق: ابر، قلعه، رنگ‌های شاد. بیشترین جذابیت برای مخاطب کم‌سن.</p>
+  </div>
+  <div class="shots"><figure class="phone"><img src="design-3-candy-3d_1793097167108_07f9ce83.png" alt=""><figcaption>صفحهٔ خانه</figcaption></figure></div>
+</div>
+
+<div class="row flip old">
+  <div class="meta">
+    <h2><span class="num">۴</span>نقش‌برجستهٔ کهن</h2>
+    <p>سنگ و آتش: خاکستری گرم، طلای سوخته، مجسمهٔ لماسو. سنگین، تاریخی و باوقار.</p>
+  </div>
+  <div class="shots"><figure class="phone"><img src="design-4-ancient-relief_1793097198181_0f07aed8.png" alt=""><figcaption>صفحهٔ خانه</figcaption></figure></div>
+</div>
+
+<div class="row old">
+  <div class="meta">
+    <h2><span class="num">۵</span>کیهان جادویی</h2>
+    <p>نئون بنفش و کهکشان: دروازهٔ نور، جزیره‌های شناور. مدرن و پرانرژی، نزدیک به بازی‌های موبایلی رایج.</p>
+  </div>
+  <div class="shots"><figure class="phone"><img src="design-5-magic-cosmos_1793097276103_c39ac23b.png" alt=""><figcaption>صفحهٔ خانه</figcaption></figure></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" fill="#0f0a09" rx="6"/>
+  <rect x="6" y="6" width="388" height="388" fill="none" stroke="#f59e0b" stroke-width="1.5" rx="4" opacity="0.4"/>
+  <path d="M310 46 A14 14 0 1 1 310 74 A10.5 10.5 0 1 0 310 46Z" fill="#e2e8f0" opacity="0.85"/>
+    <circle cx="310" cy="54.4" r="0.84" fill="white" opacity="0.3"/>
+    <circle cx="314.9" cy="60" r="0.56" fill="white" opacity="0.2"/><circle cx="260.317956095161" cy="50" r="2.1167840348163685" fill="#fff" opacity="0.5241029435951379"/><circle cx="220.74970155859137" cy="113.86101488817636" r="2.3954460594380707" fill="#fff" opacity="0.5734551363356233"/><circle cx="136.81952712632068" cy="95.9033004822171" r="2.3501881897940153" fill="#fff" opacity="0.6587955431254766"/><circle cx="155.20554786420905" cy="17.45492550464732" r="2.24343624164246" fill="#fff" opacity="0.5418203367452935"/><circle cx="223.60795979318658" cy="-22.657829201785688" r="1.4448377590802057" fill="#fff" opacity="0.6815100372812586"/><path d="M150 235 L150 187 Q200 155 250 187 L250 235Z" fill="#cbd5e1" opacity="0.6"/>
+    <rect x="150" y="187" width="100" height="1.6" fill="#cbd5e1" opacity="0.7"/>
+    <line x1="185" y1="169.4" x2="215" y2="169.4" stroke="#cbd5e1" stroke-width="1.5" opacity="0.5"/><path d="M70 205 Q51.8 231 59.08 257 Q67.27 270 70 273.25 Q72.73 270 80.92 257 Q88.2 231 70 205Z" fill="#15803d" opacity="0.9"/>
+    <path d="M70 227.75 L66.36 247.25" stroke="#15803d" stroke-width="1" fill="none" opacity="0.3"/>
+    <path d="M70 240.75 L73.64 257" stroke="#15803d" stroke-width="1" fill="none" opacity="0.3"/><path d="M330 205 Q311.8 231 319.08 257 Q327.27 270 330 273.25 Q332.73 270 340.92 257 Q348.2 231 330 205Z" fill="#15803d" opacity="0.9"/>
+    <path d="M330 227.75 L326.36 247.25" stroke="#15803d" stroke-width="1" fill="none" opacity="0.3"/>
+    <path d="M330 240.75 L333.64 257" stroke="#15803d" stroke-width="1" fill="none" opacity="0.3"/>
+  <rect x="0" y="362" width="400" height="38" fill="rgba(0,0,0,0.5)"/>
+  <text x="200" y="386" text-anchor="middle" fill="#fff" font-family="serif" font-size="16" font-weight="bold" dir="rtl">جوانی کوروش</text>
+</svg>

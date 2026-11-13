@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#005a2d"/>
+<stop offset="100%" stop-color="#004114"/>
+</linearGradient></defs>
+<rect width="500" height="600" fill="url(#bg)"/>
+<rect x="8" y="8" width="484" height="584" rx="15" fill="none" stroke="#064e3b" stroke-width="7.5" opacity="0.7"/>
+<polygon points="280,300 262.9903810567666,307.5 265,325.98076211353316 250,315 235,325.98076211353316 237.00961894323342,307.5 220,300 237.00961894323342,292.5 235,274.01923788646684 250,285 265,274.01923788646684 262.9903810567666,292.5 " fill="none" stroke="#064e3b" stroke-width="4.5" opacity="0.4" transform="translate(0,0)"/>
+<ellipse cx="250" cy="200" rx="80" ry="100" fill="#111" opacity="0.9"/>
+<circle cx="210" cy="160" r="5" fill="#ef4444"/>
+<circle cx="290" cy="160" r="5" fill="#ef4444"/>
+<circle cx="250" cy="365.8" r="7.2" fill="#1a3a2a"/>
+<ellipse cx="250" cy="389.2" rx="10.799999999999999" ry="20.25" fill="#1a3a2a"/>
+<line x1="242.8" y1="375" x2="232" y2="397.3" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<line x1="257.2" y1="375" x2="268" y2="397.3" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<line x1="244.6" y1="400" x2="244.6" y2="413.5" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<line x1="255.4" y1="413.5" x2="255.4" y2="400" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<path d="M 180 300 Q 200 280 220 300" fill="none" stroke="#ef4444" stroke-width="2" opacity="0.5"/>
+<path d="M 280 300 Q 300 280 320 300" fill="none" stroke="#ef4444" stroke-width="2" opacity="0.5"/>
+<path d="M 42 520 L 43.8 512 L 45.6 504 L 47.4 496 L 49.2 488 L 51 480 L 52.8 472 L 54.6 464 L 56.4 456 L 58.2 448 L 60 440 L 60 440 L 61.8 448 L 63.6 456 L 65.4 464 L 67.2 472 L 69 480 L 70.8 488 L 72.6 496 L 74.4 504 L 76.2 512 L 78 520 Z" fill="#0f3a2a" opacity="0.8"/>
+<path d="M 422 520 L 423.8 512 L 425.6 504 L 427.4 496 L 429.2 488 L 431 480 L 432.8 472 L 434.6 464 L 436.4 456 L 438.2 448 L 440 440 L 440 440 L 441.8 448 L 443.6 456 L 445.4 464 L 447.2 472 L 449 480 L 450.8 488 L 452.6 496 L 454.4 504 L 456.2 512 L 458 520 Z" fill="#0f3a2a" opacity="0.8"/>
+<rect x="100" y="520" width="300" height="36" rx="18" fill="#064e3b" opacity="0.85"/>
+<text x="250" y="543" text-anchor="middle" fill="#fff" font-family="serif" font-size="16" font-weight="bold">خوان هفتم: دیو بزرگ</text>
+</svg>

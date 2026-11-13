@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#0a0f0e"/>
+  <rect x="8" y="8" width="384" height="284" rx="8" fill="none" stroke="#14b8a6" stroke-width="1" opacity="0.3"/>
+  <circle cx="200" cy="120" r="36" fill="none" stroke="#14b8a6" stroke-width="1.5" opacity="0.18"/>
+<line x1="175" y1="100" x2="225" y2="140" stroke="#14b8a6" stroke-width="1" opacity="0.2"/>
+<text x="200" y="80" text-anchor="middle" fill="#14b8a6" font-family="serif" font-size="12" opacity="0.4">بخش 4</text>
+  <text x="200" y="270" text-anchor="middle" fill="#14b8a6" font-family="serif" font-size="14" font-weight="bold" opacity="0.8">داریوش و تخت جمشید</text>
+</svg>

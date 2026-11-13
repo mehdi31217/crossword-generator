@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs><linearGradient id="cg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0f0a1a"/><stop offset="100%" stop-color="#0f0a1aCC"/></linearGradient></defs>
+  <rect width="400" height="300" fill="url(#cg)" rx="8"/>
+  <rect x="8" y="8" width="384" height="284" fill="none" stroke="#8b5cf6" stroke-width="2" rx="6" opacity="0.6"/>
+  <rect x="16" y="16" width="368" height="268" fill="none" stroke="#8b5cf6" stroke-width="1" rx="5" opacity="0.3"/>
+  
+      <circle cx="200" cy="115" r="55" fill="none" stroke="#8b5cf6" stroke-width="3" opacity="0.35"/>
+      <circle cx="200" cy="115" r="40" fill="none" stroke="#8b5cf6" stroke-width="2" opacity="0.25"/>
+      <path d="M175 95 L200 70 L225 95 L225 145 Q200 158 175 145Z" fill="#8b5cf6" opacity="0.65"/>
+      <circle cx="200" cy="108" r="16" fill="#fbbf24" opacity="0.85"/>
+      <circle cx="200" cy="108" r="5" fill="#000"/>
+      <path d="M178 132 Q200 150 222 132" fill="none" stroke="#8b5cf6" stroke-width="2.5" stroke-linecap="round"/>
+      <polygon points="10,145 70,90 130,145" fill="#8b5cf6" opacity="0.4"/>
+      <polygon points="200,145 260,90 320,145" fill="#8b5cf6" opacity="0.4"/>
+      <path d="M50 108 Q36 128 41.6 148 Q47.9 158 50 160.5 Q52.1 158 58.4 148 Q64 128 50 108Z" fill="#15803d" opacity="0.9"/>
+    <path d="M50 125.5 L47.2 140.5" stroke="#15803d" stroke-width="1" fill="none" opacity="0.3"/>
+    <path d="M50 135.5 L52.8 148" stroke="#15803d" stroke-width="1" fill="none" opacity="0.3"/>
+      <path d="M350 108 Q336 128 341.6 148 Q347.9 158 350 160.5 Q352.1 158 358.4 148 Q364 128 350 108Z" fill="#15803d" opacity="0.9"/>
+    <path d="M350 125.5 L347.2 140.5" stroke="#15803d" stroke-width="1" fill="none" opacity="0.3"/>
+    <path d="M350 135.5 L352.8 148" stroke="#15803d" stroke-width="1" fill="none" opacity="0.3"/>
+    
+  <rect x="48" y="235" width="304" height="45" rx="5" fill="black" opacity="0.45"/>
+  <text x="200" y="262" text-anchor="middle" fill="#fff" font-family="serif" font-size="20" font-weight="bold" dir="rtl">زال و رودابه</text>
+  <rect x="0" y="296" width="400" height="4" fill="#8b5cf6"/><rect x="0" y="0" width="400" height="4" fill="#8b5cf6"/>
+</svg>

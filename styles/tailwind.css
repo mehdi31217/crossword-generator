@@ -1,0 +1,6 @@
+/* Tailwind entry point — compiled at build time by PostCSS.
+   Replaces the runtime <script src="https://cdn.tailwindcss.com"> so the app
+   is fully self-contained and renders with no network access. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

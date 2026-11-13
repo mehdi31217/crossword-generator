@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#005a2d"/>
+<stop offset="100%" stop-color="#004114"/>
+</linearGradient></defs>
+<rect width="500" height="600" fill="url(#bg)"/>
+<rect x="8" y="8" width="484" height="584" rx="15" fill="none" stroke="#064e3b" stroke-width="7.5" opacity="0.7"/>
+<polygon points="280,300 262.9903810567666,307.5 265,325.98076211353316 250,315 235,325.98076211353316 237.00961894323342,307.5 220,300 237.00961894323342,292.5 235,274.01923788646684 250,285 265,274.01923788646684 262.9903810567666,292.5 " fill="none" stroke="#064e3b" stroke-width="4.5" opacity="0.4" transform="translate(0,0)"/>
+<polygon points="50,320 250,170 450,320" fill="#0a2a1a" opacity="0.7"/>
+<polygon points="110,305 250,147.5 390,305" fill="#fff" opacity="0.3"/>
+<polygon points="50,350 150,270 250,350" fill="#0f3a2a" opacity="0.7"/>
+<polygon points="80,342 150,258 220,342" fill="#fff" opacity="0.3"/>
+<polygon points="250,350 350,270 450,350" fill="#0f3a2a" opacity="0.7"/>
+<polygon points="280,342 350,258 420,342" fill="#fff" opacity="0.3"/>
+<circle cx="250" cy="342" r="8" fill="#1a3a2a"/>
+<ellipse cx="250" cy="368" rx="12" ry="22.5" fill="#1a3a2a"/>
+<line x1="242" y1="352" x2="230" y2="377" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<line x1="258" y1="352" x2="270" y2="377" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<line x1="244" y1="380" x2="244" y2="395" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<line x1="256" y1="395" x2="256" y2="380" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<ellipse cx="180" cy="300" rx="8" ry="5" fill="#ef4444" opacity="0.7"/>
+<ellipse cx="320" cy="280" rx="8" ry="5" fill="#ef4444" opacity="0.7"/>
+<circle cx="180" cy="298" r="2" fill="#fde047"/>
+<circle cx="320" cy="278" r="2" fill="#fde047"/>
+<path d="M 52 520 L 53.8 512 L 55.6 504 L 57.4 496 L 59.2 488 L 61 480 L 62.8 472 L 64.6 464 L 66.4 456 L 68.2 448 L 70 440 L 70 440 L 71.8 448 L 73.6 456 L 75.4 464 L 77.2 472 L 79 480 L 80.8 488 L 82.6 496 L 84.4 504 L 86.2 512 L 88 520 Z" fill="#0f3a2a" opacity="0.8"/>
+<path d="M 412 520 L 413.8 512 L 415.6 504 L 417.4 496 L 419.2 488 L 421 480 L 422.8 472 L 424.6 464 L 426.4 456 L 428.2 448 L 430 440 L 430 440 L 431.8 448 L 433.6 456 L 435.4 464 L 437.2 472 L 439 480 L 440.8 488 L 442.6 496 L 444.4 504 L 446.2 512 L 448 520 Z" fill="#0f3a2a" opacity="0.8"/>
+<circle cx="400" cy="55" r="20" fill="#fde047" opacity="0.8"/>
+<circle cx="406" cy="51" r="17" fill="#1a1a2e" opacity="0.9"/>
+<rect x="100" y="520" width="300" height="36" rx="18" fill="#064e3b" opacity="0.85"/>
+<text x="250" y="543" text-anchor="middle" fill="#fff" font-family="serif" font-size="16" font-weight="bold">خوان اول: نبرد با گرگان</text>
+</svg>

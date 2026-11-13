@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+<defs><linearGradient id="cg60" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1f0a14"/><stop offset="100%" stop-color="#ec489922"/></linearGradient></defs>
+<rect width="300" height="200" rx="20" fill="url(#cg60)"/>
+<rect x="3" y="3" width="294" height="194" rx="18" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+<rect x="0" y="0" width="300" height="6" fill="#ec4899" rx="3"/>
+<circle cx="150" cy="80" r="30" fill="none" stroke="#ec489930" stroke-width="2"/><circle cx="150" cy="80" r="15" fill="#ec489915"/><line x1="120" y1="80" x2="180" y2="80" stroke="#ec489920" stroke-width="1"/><line x1="150" y1="50" x2="150" y2="110" stroke="#ec489920" stroke-width="1"/>
+<text x="150" y="165" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="14" font-weight="bold" font-family="sans-serif">فرهنگ</text>
+<text x="150" y="183" text-anchor="middle" fill="rgba(255,255,255,0.2)" font-size="9" font-family="sans-serif">پایه 6 - فرهنگ</text>
+</svg>

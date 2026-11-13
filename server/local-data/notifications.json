@@ -1,0 +1,23 @@
+[
+  {
+    "user_id": "test456",
+    "sender_id": "admin",
+    "type": "test",
+    "payload": {},
+    "id": "a40154f8-54ff-4d11-81df-ffb000e22095",
+    "created_at": "2026-05-31T19:33:20.570Z"
+  },
+  {
+    "user_id": "user_2",
+    "sender_id": "user_1",
+    "type": "challenge",
+    "payload": {
+      "roomId": "123456",
+      "senderName": "User 1",
+      "size": 5,
+      "category": "knowledge"
+    },
+    "id": "3a9180c4-11ad-4032-93e0-5659a3be1948",
+    "created_at": "2026-05-31T21:13:07.967Z"
+  }
+]

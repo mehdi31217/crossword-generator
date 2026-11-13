@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" fill="#0f0a1a" rx="6"/>
+  <rect x="6" y="6" width="388" height="388" fill="none" stroke="#8b5cf6" stroke-width="1.5" rx="4" opacity="0.4"/>
+  <polygon points="-10,230 60,165 130,230" fill="#8b5cf6" opacity="0.4"/><polygon points="270,230 340,165 410,230" fill="#8b5cf6" opacity="0.4"/><circle cx="200" cy="60" r="24" fill="#fbbf24" opacity="0.9"/>
+    <circle cx="200" cy="60" r="19.200000000000003" fill="none" stroke="#fbbf24" stroke-width="0.5" opacity="0.5"/>
+    <circle cx="200" cy="60" r="6" fill="white" opacity="0.3"/><ellipse cx="200" cy="238" rx="24" ry="12" fill="#cbd5e1" opacity="0.8"/>
+    <rect x="180" y="222" width="16" height="24" rx="6" fill="#cbd5e1" opacity="0.8"/>
+    <rect x="204" y="222" width="16" height="24" rx="6" fill="#cbd5e1" opacity="0.8"/>
+    <path d="M172 234 Q160 222 164 234" fill="none" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
+    <line x1="220" y1="238" x2="228" y2="226" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/><circle cx="200" cy="169" r="12" fill="#fca5a5"/>
+    <path d="M184 181 L216 181 L224 201 L176 201Z" fill="#fca5a5"/>
+    <path d="M194 201 L194 225" stroke="#fca5a5" stroke-width="6" stroke-linecap="round"/>
+    <path d="M206 201 L206 225" stroke="#fca5a5" stroke-width="6" stroke-linecap="round"/>
+    <path d="M180 207 L220 207" stroke="#fca5a5" stroke-width="4" stroke-linecap="round"/><path d="M70 200 Q50.4 228 58.24 256 Q67.06 270 70 273.5 Q72.94 270 81.76 256 Q89.6 228 70 200Z" fill="#15803d" opacity="0.9"/>
+    <path d="M70 224.5 L66.08 245.5" stroke="#15803d" stroke-width="1" fill="none" opacity="0.3"/>
+    <path d="M70 238.5 L73.92 256" stroke="#15803d" stroke-width="1" fill="none" opacity="0.3"/><path d="M330 200 Q310.4 228 318.24 256 Q327.06 270 330 273.5 Q332.94 270 341.76 256 Q349.6 228 330 200Z" fill="#15803d" opacity="0.9"/>
+    <path d="M330 224.5 L326.08 245.5" stroke="#15803d" stroke-width="1" fill="none" opacity="0.3"/>
+    <path d="M330 238.5 L333.92 256" stroke="#15803d" stroke-width="1" fill="none" opacity="0.3"/>
+  <rect x="0" y="362" width="400" height="38" fill="rgba(0,0,0,0.5)"/>
+  <text x="200" y="386" text-anchor="middle" fill="#fff" font-family="serif" font-size="16" font-weight="bold" dir="rtl">ازدواج و تولد رستم</text>
+</svg>

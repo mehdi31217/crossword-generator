@@ -1,0 +1,1332 @@
+[
+  {
+    "id": "rostam_7",
+    "genre": "epic",
+    "title": "هفت خوان رستم",
+    "author": "فردوسی",
+    "description": "سفر پرخطر رستم برای نجات کیکاووس از بند دیوان مازندران.",
+    "cover_image": "/images/covers/rostam7.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#d97706",
+      "secondaryColor": "#78350f",
+      "backgroundColor": "#1a1614",
+      "textColor": "#fdf6e3",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-02-15T16:21:49.274576+00:00"
+  },
+  {
+    "id": "hassan_kachal",
+    "genre": "folklore",
+    "title": "حسن کچل",
+    "author": "افسانه قدیمی",
+    "description": "ماجراهای خنده‌دار حسن که از حمام رفتن فراری بود!",
+    "cover_image": "/images/covers/hassan-kachal.jpg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#db2777",
+      "secondaryColor": "#fce7f3",
+      "backgroundColor": "#fff1f2",
+      "textColor": "#881337",
+      "fontFamily": "sans",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/cubes.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-02-15T16:21:50.54193+00:00"
+  },
+  {
+    "id": "rostam_sohrab",
+    "genre": "epic",
+    "title": "رستم و سهراب",
+    "author": "فردوسی",
+    "description": "تراژدی غم‌انگیز نبرد ناخواسته پدر و پسر، رستم و سهراب، در میدان جنگ.",
+    "cover_image": "/images/covers/rostam-sohrab.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#b91c1c",
+      "secondaryColor": "#7f1d1d",
+      "backgroundColor": "#1a0f0f",
+      "textColor": "#fef2f2",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-01 15:13:01.442+00:00"
+  },
+  {
+    "id": "rostam_afrasiab",
+    "genre": "epic",
+    "title": "رستم و افراسیاب",
+    "author": "فردوسی",
+    "description": "نبرد سرنوشت‌ساز رستم با افراسیاب، شاه اهریمنی توران، از پیمان‌شکنی تا کیفر نهایی.",
+    "cover_image": "/images/covers/rostam-afrasiab.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#4f46e5",
+      "secondaryColor": "#1e1b4b",
+      "backgroundColor": "#0a0a1a",
+      "textColor": "#eef2ff",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-01 15:13:01.442+00:00"
+  },
+  {
+    "id": "siavoshan",
+    "genre": "epic",
+    "title": "سیاوش",
+    "author": "فردوسی",
+    "description": "داستان غم‌انگیز شاهزاده سیاوش، از تولد و تعلیم تا عبور از آتش، عشق به فرنگیس، و شهادت مظلومانه در توران.",
+    "cover_image": "/images/covers/siavoshan.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#e63946",
+      "secondaryColor": "#6d0f1a",
+      "backgroundColor": "#1a0a0f",
+      "textColor": "#ffeedd",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T04:54:51.612Z"
+  },
+  {
+    "id": "bizhan",
+    "genre": "epic",
+    "title": "بیژن و منیژه",
+    "author": "فردوسی",
+    "description": "داستان عشق دلیرانه بیژن پهلوان و منیژه دختر افراسیاب، زندان بیژن در چاه تاریک و نجات او به دست رستم.",
+    "cover_image": "/images/covers/bizhan.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#2d6a4f",
+      "secondaryColor": "#0b3322",
+      "backgroundColor": "#0a140f",
+      "textColor": "#e8f5e9",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T04:54:51.619Z"
+  },
+  {
+    "id": "zal_rudabeh",
+    "genre": "epic",
+    "title": "زال و رودابه",
+    "author": "فردوسی",
+    "description": "داستان عشق زال سپیدموی پهلوان و رودابه دختر مهراب، از تولد زال در آشیانه سیمرغ تا ازدواج و تولد رستم پهلوان.",
+    "cover_image": "/images/covers/zal-rudabeh.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#d97706",
+      "secondaryColor": "#78350f",
+      "backgroundColor": "#1a1614",
+      "textColor": "#fdf6e3",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T05:38:56.685Z"
+  },
+  {
+    "id": "arash",
+    "genre": "epic",
+    "title": "آرش کمانگیر",
+    "author": "اسطوره کهن",
+    "description": "حماسه آرش کمانگیر که با پرتاب تیر و فدا کردن جان خود، مرز ایران را تا کنار جیحون کشاند و وطن را از چنگ توران رهانید.",
+    "cover_image": "/images/covers/arash.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#f59e0b",
+      "secondaryColor": "#92400e",
+      "backgroundColor": "#1c1917",
+      "textColor": "#fffbeb",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T05:38:56.691Z"
+  },
+  {
+    "id": "khosrow_shirin",
+    "genre": "epic",
+    "title": "خسرو و شیرین",
+    "author": "نظامی",
+    "description": "عاشقانه جاودان خسروپرویز و شیرین زیبا، رقابت با فرهاد کوه‌کن و پایان تراژیک این مثلث عشقی در شاهکار نظامی گنجوی.",
+    "cover_image": "/images/covers/khosrow.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#ec4899",
+      "secondaryColor": "#9d174d",
+      "backgroundColor": "#140a0f",
+      "textColor": "#fdf2f8",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T05:38:56.691Z"
+  },
+  {
+    "id": "haft_peykar",
+    "genre": "epic",
+    "title": "هفت پیکر",
+    "author": "نظامی",
+    "description": "داستان بهرام گور، پادشاه دادگر ایران، که هفت گنبد به هفت رنگ برای هفت شاهزاده از هفت اقلیم ساخت و هر شب داستانی شنید.",
+    "cover_image": "/images/covers/peykar.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#06b6d4",
+      "secondaryColor": "#0e7490",
+      "backgroundColor": "#0a0f14",
+      "textColor": "#ecfeff",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T05:38:56.691Z"
+  },
+  {
+    "id": "kurosh",
+    "genre": "history",
+    "title": "کوروش بزرگ",
+    "author": "تاریخ ایران باستان",
+    "description": "زندگی کوروش بزرگ از تولد تا فتح بابل و نگارش منشور حقوق بشر، بنیان‌گذار شاهنشاهی هخامنشی.",
+    "cover_image": "/images/covers/kurosh.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#f59e0b",
+      "secondaryColor": "#b45309",
+      "backgroundColor": "#0f0a09",
+      "textColor": "#fffbeb",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T05:38:56.692Z"
+  },
+  {
+    "id": "mosaddegh",
+    "genre": "history",
+    "title": "مصدق و نفت",
+    "author": "تاریخ معاصر",
+    "description": "نهضت ملی شدن نفت ایران به رهبری دکتر مصدق، از تصویب قانون ملی شدن تا کودتای ۲۸ مرداد و میراث ماندگارش.",
+    "cover_image": "/images/covers/mosaddegh.jpg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#10b981",
+      "secondaryColor": "#065f46",
+      "backgroundColor": "#0a0f0c",
+      "textColor": "#ecfdf5",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T05:38:56.692Z"
+  },
+  {
+    "id": "zahhak",
+    "genre": "epic",
+    "title": "ضحاک و کاوه آهنگر",
+    "author": "فردوسی",
+    "description": "داستان ضحاک ماروش که اهریمن بر دوشش بوسه زد و کاوه آهنگر که علیه ظلم قیام کرد.",
+    "cover_image": "/images/covers/zahhak.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#7c3aed",
+      "secondaryColor": "#2e1065",
+      "backgroundColor": "#0f0a14",
+      "textColor": "#f5f3ff",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T22:00:00.000Z"
+  },
+  {
+    "id": "medes",
+    "genre": "history",
+    "title": "مادها",
+    "author": "تاریخ ایران باستان",
+    "description": "از دیاکو تا آستیاگ، نخستین شهریاران آریایی در هگمتانه و بنیان‌گذاران اولین امپراتوری ایران.",
+    "cover_image": "/images/covers/medes.jpg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#14b8a6",
+      "secondaryColor": "#0f766e",
+      "backgroundColor": "#0a0f0e",
+      "textColor": "#f0fdfa",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T22:00:01.000Z"
+  },
+  {
+    "id": "achaemenids",
+    "genre": "history",
+    "title": "هخامنشیان",
+    "author": "تاریخ ایران باستان",
+    "description": "از کوروش بزرگ تا داریوش و خشایارشا، بزرگترین امپراتوری جهان باستان و شکوه تخت جمشید.",
+    "cover_image": "/images/covers/achaemenids.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#14b8a6",
+      "secondaryColor": "#0f766e",
+      "backgroundColor": "#0a0f0e",
+      "textColor": "#f0fdfa",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T22:00:02.000Z"
+  },
+  {
+    "id": "parthians",
+    "genre": "history",
+    "title": "اشکانیان",
+    "author": "تاریخ ایران باستان",
+    "description": "از شورش ارشک علیه سلوکیان تا شکست روم در حران و پایان کار اشکانیان.",
+    "cover_image": "/images/covers/parthians.jpg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#14b8a6",
+      "secondaryColor": "#0f766e",
+      "backgroundColor": "#0a0f0e",
+      "textColor": "#f0fdfa",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T22:00:03.000Z"
+  },
+  {
+    "id": "sassanids",
+    "genre": "history",
+    "title": "ساسانیان",
+    "author": "تاریخ ایران باستان",
+    "description": "از اردشیر بابکان تا شاپور و انوشیروان، شکوه ایرانشهر و تمدن درخشان ساسانی.",
+    "cover_image": "/images/covers/sassanids.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#14b8a6",
+      "secondaryColor": "#0f766e",
+      "backgroundColor": "#0a0f0e",
+      "textColor": "#f0fdfa",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T22:00:04.000Z"
+  },
+  {
+    "id": "seljuks",
+    "genre": "history",
+    "title": "سلجوقیان",
+    "author": "تاریخ ایران میانه",
+    "description": "از ورود طغرل به ایران تا نبرد ملازگرد و حکومت خواجه نظام‌الملک، عصر زرین ادب فارسی.",
+    "cover_image": "/images/covers/seljuks.jpg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#14b8a6",
+      "secondaryColor": "#0f766e",
+      "backgroundColor": "#0a0f0e",
+      "textColor": "#f0fdfa",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T22:00:05.000Z"
+  },
+  {
+    "id": "safavids",
+    "genre": "history",
+    "title": "صفویان",
+    "author": "تاریخ ایران مدرن",
+    "description": "از شاه اسماعیل و شیخ صفی تا شاه عباس و اصفهان، ایران یکپارچه و شکوه نصف جهان.",
+    "cover_image": "/images/covers/safavids.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#14b8a6",
+      "secondaryColor": "#0f766e",
+      "backgroundColor": "#0a0f0e",
+      "textColor": "#f0fdfa",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T22:00:06.000Z"
+  },
+  {
+    "id": "qajars",
+    "genre": "history",
+    "title": "قاجار",
+    "author": "تاریخ ایران معاصر",
+    "description": "از آغا محمدخان تا انقلاب مشروطه، تهران پایتخت می‌شود و ایران وارد عصر مدرن.",
+    "cover_image": "/images/covers/qajars.jpg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#14b8a6",
+      "secondaryColor": "#0f766e",
+      "backgroundColor": "#0a0f0e",
+      "textColor": "#f0fdfa",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T22:00:07.000Z"
+  },
+  {
+    "id": "kaveh",
+    "genre": "epic",
+    "title": "کاوه آهنگر",
+    "author": "فردوسی",
+    "description": "قیام مردانه کاوه آهنگر علیه ضحاک ماردوش و به اهتزاز درآمدن درفش آزادی در ایران.",
+    "cover_image": "/images/covers/kaveh.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#e11d48",
+      "secondaryColor": "#881337",
+      "backgroundColor": "#0f0a0c",
+      "textColor": "#fff1f2",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T22:00:00.000Z"
+  },
+  {
+    "id": "esfandiyar",
+    "genre": "epic",
+    "title": "اسفندیار",
+    "author": "فردوسی",
+    "description": "سفر پرمخاطره اسفندیار رویین‌تن در هفت خوان برای نجات خواهرانش از بند دشمن.",
+    "cover_image": "/images/covers/esfandiyar.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#059669",
+      "secondaryColor": "#064e3b",
+      "backgroundColor": "#0a0f0c",
+      "textColor": "#ecfdf5",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T22:00:00.000Z"
+  },
+  {
+    "id": "rostam_esfandiyar",
+    "genre": "epic",
+    "title": "رستم و اسفندیار",
+    "author": "فردوسی",
+    "description": "نبرد تراژیک دو پهلوان بزرگ ایران که به تیر نگاه رستم به چشم اسفندیار انجامید.",
+    "cover_image": "/images/covers/rostam-esfandiyar.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#b45309",
+      "secondaryColor": "#78350f",
+      "backgroundColor": "#0f0a09",
+      "textColor": "#fef3c7",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T22:00:00.000Z"
+  },
+  {
+    "id": "tahmineh",
+    "genre": "epic",
+    "title": "تهمینه",
+    "author": "فردوسی",
+    "description": "داستان عشق تهمینه و رستم در سمنگان و تولد سهراب از نگاه مادرش.",
+    "cover_image": "/images/covers/tahmineh.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#d946ef",
+      "secondaryColor": "#86198f",
+      "backgroundColor": "#0f0a11",
+      "textColor": "#fdf4ff",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T22:00:00.000Z"
+  },
+  {
+    "id": "zal_simorgh",
+    "genre": "epic",
+    "title": "زال و سیمرغ",
+    "author": "فردوسی",
+    "description": "داستان زال سپیدمو که در کوه البرز رها شد و سیمرغ افسانه‌ای او را پرورش داد.",
+    "cover_image": "/images/covers/zal-simorgh.jpg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#0ea5e9",
+      "secondaryColor": "#075985",
+      "backgroundColor": "#0a0f14",
+      "textColor": "#f0f9ff",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T22:00:00.000Z"
+  },
+  {
+    "id": "kaykhosrow",
+    "genre": "epic",
+    "title": "کیخسرو و کین سیاوش",
+    "author": "فردوسی",
+    "description": "کیخسرو برای انتقام خون پدرش سیاوش به جنگ افراسیاب رفت و او را در دریا غرق کرد.",
+    "cover_image": "/images/covers/kaykhosrow.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#dc2626",
+      "secondaryColor": "#991b1b",
+      "backgroundColor": "#0f0a0a",
+      "textColor": "#fef2f2",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T22:00:00.000Z"
+  },
+  {
+    "id": "rostam_death",
+    "genre": "epic",
+    "title": "مرگ رستم",
+    "author": "فردوسی",
+    "description": "خیانت شغاد نابرادر رستم و مرگ غمناک بزرگ‌ترین پهلوان ایران در چاه نیزه.",
+    "cover_image": "/images/covers/rostam-death.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#4a4a4a",
+      "secondaryColor": "#1a1a1a",
+      "backgroundColor": "#0a0a0a",
+      "textColor": "#f5f5f5",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T22:00:00.000Z"
+  },
+  {
+    "id": "rostam_akvan",
+    "genre": "epic",
+    "title": "رستم و اکوان دیو",
+    "author": "فردوسی",
+    "description": "نبرد رستم با دیو سرکش اکوان که رستم را به دریا انداخت و بازگشت پیروزمندانه رستم.",
+    "cover_image": "/images/covers/rostam-akvan.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#7c3aed",
+      "secondaryColor": "#4c1d95",
+      "backgroundColor": "#0e0a14",
+      "textColor": "#f5f3ff",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T22:00:00.000Z"
+  },
+  {
+    "id": "hushang",
+    "genre": "epic",
+    "title": "هوشنگ و کشف آتش",
+    "author": "اسطوره‌های ایران باستان",
+    "description": "هوشنگ پیشدادی، شاه دانایی که آتش را کشف کرد و جشن سده را پایه‌گذاری نمود.",
+    "cover_image": "/images/covers/hushang.jpg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#f97316",
+      "secondaryColor": "#9a3412",
+      "backgroundColor": "#0f0a08",
+      "textColor": "#fff7ed",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T22:00:00.000Z"
+  },
+  {
+    "id": "jamshid",
+    "genre": "epic",
+    "title": "جمشید و عصر طلایی",
+    "author": "اسطوره‌های ایران باستان",
+    "description": "شکوه جمشید، ساخت تخت جمشید، عصر طلایی ایران و سقوط از فر ایزدی بر اثر غرور.",
+    "cover_image": "/images/covers/jamshid.jpg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#eab308",
+      "secondaryColor": "#854d0e",
+      "backgroundColor": "#0f0e08",
+      "textColor": "#fefce8",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T22:00:00.000Z"
+  },
+  {
+    "id": "anushirvan",
+    "genre": "history",
+    "title": "انوشیروان دادگر",
+    "author": "تاریخ ایران باستان",
+    "description": "خسرو انوشیروان، دادگرترین شاه ساسانی، وزیرش بزرگمهر، پیروزی بر روم و ایوان مدائن.",
+    "cover_image": "/images/covers/anushirvan.jpg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#06b6d4",
+      "secondaryColor": "#155e75",
+      "backgroundColor": "#0a0f12",
+      "textColor": "#ecfeff",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-06-04T22:00:00.000Z"
+  },
+  {
+    "id": "shangool",
+    "genre": "folklore",
+    "title": "شنگول و منگول",
+    "author": "قصه‌های عامیانه",
+    "description": "داستان دو بزغاله کوچولو که در خانه تنها می‌مانند و یک گرگ گرسنه سعی می‌کند آنها را فریب دهد.",
+    "cover_image": "/images/folktales/shangool.jpg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#10b981",
+      "secondaryColor": "#a7f3d0",
+      "backgroundColor": "#ecfdf5",
+      "textColor": "#064e3b",
+      "fontFamily": "sans"
+    },
+    "required_stars": 0,
+    "created_at": "2026-10-25T16:25:17.286Z"
+  },
+  {
+    "id": "kadoo",
+    "genre": "folklore",
+    "title": "کدو قلقله زن",
+    "author": "قصه‌های عامیانه",
+    "description": "ماجرای یک کدوکه در جاده می‌غلتید و با صدای قلقله‌اش همه حیوانات را می‌ترساند.",
+    "cover_image": "/images/folktales/kadoo.jpg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#f97316",
+      "secondaryColor": "#fed7aa",
+      "backgroundColor": "#fff7ed",
+      "textColor": "#7c2d12",
+      "fontFamily": "sans"
+    },
+    "required_stars": 0,
+    "created_at": "2026-10-25T16:25:17.288Z"
+  },
+  {
+    "id": "khoros",
+    "genre": "folklore",
+    "title": "خروس و روباه",
+    "author": "قصه‌های عامیانه",
+    "description": "یک خروس زرنگ با هوشیاری از چنگال روباه حیله‌گر فرار می‌کند و به او درس می‌دهد.",
+    "cover_image": "/images/folktales/khoros.jpg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#ef4444",
+      "secondaryColor": "#fecaca",
+      "backgroundColor": "#fef2f2",
+      "textColor": "#7f1d1d",
+      "fontFamily": "sans"
+    },
+    "required_stars": 0,
+    "created_at": "2026-10-25T16:25:17.288Z"
+  },
+  {
+    "id": "mahi",
+    "genre": "folklore",
+    "title": "ماهی سیاه کوچولو",
+    "author": "صمد بهرنگی",
+    "description": "یک ماهی سیاه کوچولوی شجاع برای کشف دنیای بزرگتر از رودخانه به سفر می‌رود.",
+    "cover_image": "/images/folktales/mahi.jpg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#0ea5e9",
+      "secondaryColor": "#bae6fd",
+      "backgroundColor": "#f0f9ff",
+      "textColor": "#0c4a6e",
+      "fontFamily": "sans"
+    },
+    "required_stars": 0,
+    "created_at": "2026-10-25T16:25:17.288Z"
+  },
+  {
+    "id": "boz",
+    "genre": "folklore",
+    "title": "بزبز قندی",
+    "author": "قصه‌های عامیانه",
+    "description": "یک بز کوچولوی شیرین و شجاع در کوهستان با گرگ روبرو می‌شود و از پس خود برمی‌آید.",
+    "cover_image": "/images/folktales/boz.jpg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#8b5cf6",
+      "secondaryColor": "#ddd6fe",
+      "backgroundColor": "#f5f3ff",
+      "textColor": "#4c1d95",
+      "fontFamily": "sans"
+    },
+    "required_stars": 0,
+    "created_at": "2026-10-25T16:25:17.288Z"
+  },
+  {
+    "id": "gonjeshk",
+    "genre": "folklore",
+    "title": "گنجشکک اشی مشی",
+    "author": "قصه‌های عامیانه",
+    "description": "دو گنجشک کوچولو یک سکه پیدا می‌کنند و با آن خانه‌ای نو می‌سازند.",
+    "cover_image": "/images/folktales/gonjeshk.jpg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#f59e0b",
+      "secondaryColor": "#fde68a",
+      "backgroundColor": "#fffbeb",
+      "textColor": "#78350f",
+      "fontFamily": "sans"
+    },
+    "required_stars": 0,
+    "created_at": "2026-10-25T16:25:17.288Z"
+  },
+  {
+    "id": "khaleh",
+    "genre": "folklore",
+    "title": "خاله سوسکه",
+    "author": "قصه‌های عامیانه",
+    "description": "خاله سوسکه تنها بود و تصمیم گرفت ازدواج کند. خواستگارهای زیادی آمدند اما او کبوتر سفید را انتخاب کرد.",
+    "cover_image": "/images/folktales/khaleh.jpg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#ec4899",
+      "secondaryColor": "#fbcfe8",
+      "backgroundColor": "#fdf2f8",
+      "textColor": "#831843",
+      "fontFamily": "sans"
+    },
+    "required_stars": 0,
+    "created_at": "2026-10-25T16:25:17.288Z"
+  },
+  {
+    "id": "mosh",
+    "genre": "folklore",
+    "title": "موش و گربه",
+    "author": "عبید زاکانی",
+    "description": "یک موش زرنگ همیشه از چنگال گربه تنبل فرار می‌کند و پنیر را می‌دزدد.",
+    "cover_image": "/images/folktales/mosh.jpg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#6b7280",
+      "secondaryColor": "#e5e7eb",
+      "backgroundColor": "#f9fafb",
+      "textColor": "#111827",
+      "fontFamily": "sans"
+    },
+    "required_stars": 0,
+    "created_at": "2026-10-25T16:25:17.289Z"
+  },
+  {
+    "id": "dokhtar",
+    "genre": "folklore",
+    "title": "دختر نارنج و ترنج",
+    "author": "قصه‌های عامیانه",
+    "description": "پیرزنی یک نارنج پیدا می‌کند و از داخل آن دختری زیبا بیرون می‌آید؛ از باغ نارنج تا شکستن طلسم کبوتر سپید.",
+    "cover_image": "/images/folktales/dokhtar.jpg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#f97316",
+      "secondaryColor": "#fed7aa",
+      "backgroundColor": "#fff7ed",
+      "textColor": "#7c2d12",
+      "fontFamily": "sans"
+    },
+    "required_stars": 0,
+    "created_at": "2026-10-25T16:25:17.289Z"
+  },
+  {
+    "id": "siah",
+    "genre": "folklore",
+    "title": "سیاه‌زنگی",
+    "author": "قصه‌های عامیانه",
+    "description": "داستان مردی مهربان که با وجود ظاهر متفاوتش، قلب پاکی داشت و به همه کمک می‌کرد.",
+    "cover_image": "/images/folktales/siah.jpg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#1f2937",
+      "secondaryColor": "#d1d5db",
+      "backgroundColor": "#f3f4f6",
+      "textColor": "#111827",
+      "fontFamily": "sans"
+    },
+    "required_stars": 0,
+    "created_at": "2026-10-25T16:25:17.289Z"
+  },
+  {
+    "id": "gorbeh",
+    "genre": "folklore",
+    "title": "گربه ناقلا",
+    "author": "قصه‌های عامیانه",
+    "description": "یک گربه زرنگ از دست روباه حیله‌گر فرار می‌کند و در چاه می‌افتد اما چوپان نجاتش می‌دهد.",
+    "cover_image": "/images/folktales/gorbeh.jpg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#d97706",
+      "secondaryColor": "#fde68a",
+      "backgroundColor": "#fffbeb",
+      "textColor": "#78350f",
+      "fontFamily": "sans"
+    },
+    "required_stars": 0,
+    "created_at": "2026-10-25T16:25:17.289Z"
+  },
+  {
+    "id": "div",
+    "genre": "folklore",
+    "title": "دیو و کچل",
+    "author": "قصه‌های عامیانه",
+    "description": "مرد کچل شجاع با هوشیاری و زرنگی، دیو بزرگی را شکست می‌دهد و روستا را نجات می‌دهد.",
+    "cover_image": "/images/folktales/div.jpg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#7c3aed",
+      "secondaryColor": "#ddd6fe",
+      "backgroundColor": "#f5f3ff",
+      "textColor": "#4c1d95",
+      "fontFamily": "sans"
+    },
+    "required_stars": 0,
+    "created_at": "2026-10-25T16:25:17.289Z"
+  },
+  {
+    "id": "shab",
+    "genre": "folklore",
+    "title": "شب‌های شیرین",
+    "author": "قصه‌های عامیانه",
+    "description": "مجموعه قصه‌های کوتاه شیرین برای شب‌های کودکانه، پر از مهتاب، ستاره و رویاهای زیبا.",
+    "cover_image": "/images/folktales/shab.jpg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#6366f1",
+      "secondaryColor": "#c7d2fe",
+      "backgroundColor": "#eef2ff",
+      "textColor": "#312e81",
+      "fontFamily": "sans"
+    },
+    "required_stars": 0,
+    "created_at": "2026-10-25T16:25:17.289Z"
+  },
+  {
+    "id": "gol",
+    "genre": "folklore",
+    "title": "گلی و کوزه",
+    "author": "قصه‌های عامیانه",
+    "description": "دختری به نام گلی با مادر بیمارش زندگی می‌کند و با مهربانی همسایه، کوزه شکسته‌اش نو می‌شود.",
+    "cover_image": "/images/folktales/gol.jpg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#84cc16",
+      "secondaryColor": "#d9f99d",
+      "backgroundColor": "#f7fee7",
+      "textColor": "#3f6212",
+      "fontFamily": "sans"
+    },
+    "required_stars": 0,
+    "created_at": "2026-10-25T16:25:17.289Z"
+  },
+  {
+    "id": "naneh",
+    "genre": "folklore",
+    "title": "نان و نمک",
+    "author": "قصه‌های عامیانه",
+    "description": "داستان دو دوست که در سفر نان و نمک خود را تقسیم می‌کنند و دوستی واقعی را معنا می‌بخشند.",
+    "cover_image": "/images/folktales/naneh.jpg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#f59e0b",
+      "secondaryColor": "#fef3c7",
+      "backgroundColor": "#fffbeb",
+      "textColor": "#78350f",
+      "fontFamily": "sans"
+    },
+    "required_stars": 0,
+    "created_at": "2026-10-25T16:25:17.289Z"
+  },
+  {
+    "id": "first_grade",
+    "genre": "education",
+    "title": "اول دبستان",
+    "author": "کتاب فارسی",
+    "description": "کلمات و داستان‌های فارسی پایه اول دبستان",
+    "cover_image": "/images/school/first_grade.svg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#0ea5e9",
+      "secondaryColor": "#38bdf8",
+      "backgroundColor": "#0c1929",
+      "textColor": "#f0f9ff",
+      "fontFamily": "sans-serif"
+    }
+  },
+  {
+    "id": "second_grade",
+    "genre": "education",
+    "title": "دوم دبستان",
+    "author": "کتاب فارسی",
+    "description": "کلمات و داستان‌های فارسی پایه دوم دبستان",
+    "cover_image": "/images/school/second_grade.svg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#10b981",
+      "secondaryColor": "#34d399",
+      "backgroundColor": "#0a1f14",
+      "textColor": "#ecfdf5",
+      "fontFamily": "sans-serif"
+    }
+  },
+  {
+    "id": "third_grade",
+    "genre": "education",
+    "title": "سوم دبستان",
+    "author": "کتاب فارسی",
+    "description": "کلمات و داستان‌های فارسی پایه سوم دبستان",
+    "cover_image": "/images/school/third_grade.svg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#f59e0b",
+      "secondaryColor": "#fbbf24",
+      "backgroundColor": "#1f1a0a",
+      "textColor": "#fffbeb",
+      "fontFamily": "sans-serif"
+    }
+  },
+  {
+    "id": "fourth_grade",
+    "genre": "education",
+    "title": "چهارم دبستان",
+    "author": "کتاب فارسی",
+    "description": "کلمات و داستان‌های فارسی پایه چهارم دبستان",
+    "cover_image": "/images/school/fourth_grade.svg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#ef4444",
+      "secondaryColor": "#f87171",
+      "backgroundColor": "#1f0c0c",
+      "textColor": "#fef2f2",
+      "fontFamily": "sans-serif"
+    }
+  },
+  {
+    "id": "fifth_grade",
+    "genre": "education",
+    "title": "پنجم دبستان",
+    "author": "کتاب فارسی",
+    "description": "کلمات و داستان‌های فارسی پایه پنجم دبستان",
+    "cover_image": "/images/school/fifth_grade.svg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#8b5cf6",
+      "secondaryColor": "#a78bfa",
+      "backgroundColor": "#140c1f",
+      "textColor": "#f5f3ff",
+      "fontFamily": "sans-serif"
+    }
+  },
+  {
+    "id": "sixth_grade",
+    "genre": "education",
+    "title": "ششم دبستان",
+    "author": "کتاب فارسی",
+    "description": "کلمات و داستان‌های فارسی پایه ششم دبستان",
+    "cover_image": "/images/school/sixth_grade.svg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#ec4899",
+      "secondaryColor": "#f472b6",
+      "backgroundColor": "#1f0a14",
+      "textColor": "#fdf2f8",
+      "fontFamily": "sans-serif"
+    }
+  },
+  {
+    "id": "seventh_grade",
+    "genre": "education",
+    "title": "هفتم متوسطه",
+    "author": "کتاب فارسی",
+    "description": "کلمات و داستان‌های فارسی پایه هفتم متوسطه",
+    "cover_image": "/images/school/seventh_grade.svg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#06b6d4",
+      "secondaryColor": "#22d3ee",
+      "backgroundColor": "#0a1a20",
+      "textColor": "#ecfeff",
+      "fontFamily": "sans-serif"
+    }
+  },
+  {
+    "id": "eighth_grade",
+    "genre": "education",
+    "title": "هشتم متوسطه",
+    "author": "کتاب فارسی",
+    "description": "کلمات و داستان‌های فارسی پایه هشتم متوسطه",
+    "cover_image": "/images/school/eighth_grade.svg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#84cc16",
+      "secondaryColor": "#a3e635",
+      "backgroundColor": "#121f0a",
+      "textColor": "#f7fee7",
+      "fontFamily": "sans-serif"
+    }
+  },
+  {
+    "id": "ninth_grade",
+    "genre": "education",
+    "title": "نهم متوسطه",
+    "author": "کتاب فارسی",
+    "description": "کلمات و داستان‌های فارسی پایه نهم متوسطه",
+    "cover_image": "/images/school/ninth_grade.svg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#f97316",
+      "secondaryColor": "#fb923c",
+      "backgroundColor": "#1f120a",
+      "textColor": "#fff7ed",
+      "fontFamily": "sans-serif"
+    }
+  },
+  {
+    "id": "tenth_grade",
+    "genre": "education",
+    "title": "دهم دبیرستان",
+    "author": "کتاب فارسی",
+    "description": "کلمات و داستان‌های فارسی پایه دهم دبیرستان",
+    "cover_image": "/images/school/tenth_grade.svg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#6366f1",
+      "secondaryColor": "#818cf8",
+      "backgroundColor": "#0c0a1f",
+      "textColor": "#eef2ff",
+      "fontFamily": "sans-serif"
+    }
+  },
+  {
+    "id": "eleventh_grade",
+    "genre": "education",
+    "title": "یازدهم دبیرستان",
+    "author": "کتاب فارسی",
+    "description": "کلمات و داستان‌های فارسی پایه یازدهم دبیرستان",
+    "cover_image": "/images/school/eleventh_grade.svg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#dc2626",
+      "secondaryColor": "#ef4444",
+      "backgroundColor": "#1f0808",
+      "textColor": "#fef2f2",
+      "fontFamily": "sans-serif"
+    }
+  },
+  {
+    "id": "twelfth_grade",
+    "genre": "education",
+    "title": "دوازدهم دبیرستان",
+    "author": "کتاب فارسی",
+    "description": "کلمات و داستان‌های فارسی پایه دوازدهم دبیرستان",
+    "cover_image": "/images/school/twelfth_grade.svg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#a855f7",
+      "secondaryColor": "#c084fc",
+      "backgroundColor": "#140a1f",
+      "textColor": "#faf5ff",
+      "fontFamily": "sans-serif"
+    }
+  },
+  {
+    "id": "farsi_aval",
+    "genre": "education",
+    "title": "فارسی اول دبستان",
+    "author": "کتاب درسی",
+    "description": "۱۰ درس جذاب برای تمرین املا و یادگیری کلمات زیبا.",
+    "cover_image": "/images/covers/farsi-aval.jpg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#0ea5e9",
+      "secondaryColor": "#e0f2fe",
+      "backgroundColor": "#f0f9ff",
+      "textColor": "#0c4a6e",
+      "fontFamily": "sans",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/notebook.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-11-11T20:36:48.890Z"
+  },
+  {
+    "id": "persepolis",
+    "genre": "history",
+    "title": "تخت جمشید و نوروز باستان",
+    "author": "تاریخ ایران باستان",
+    "description": "سفر به قلب پارسه؛ از تراشیدن صخره‌های کوه رحمت و ساخت تالار آپادانا و کاخ صدستون تا شکوه جشن نوروز در تخت جمشید.",
+    "cover_image": "/images/covers/persepolis.jpg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#d97706",
+      "secondaryColor": "#92400e",
+      "backgroundColor": "#14100a",
+      "textColor": "#fef3c7",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-11-11T20:36:48.891Z"
+  },
+  {
+    "id": "silk_road",
+    "genre": "history",
+    "title": "جادهٔ ابریشم و کاروان‌ها",
+    "author": "تاریخ تمدن ایران",
+    "description": "همسفر با کاروان‌های ابریشم و ادویه از سمرقند و نیشابور تا ری و تیسفون؛ کاروانسراهای کویر، چاپارخانه‌ها و پیوند تمدن‌های شرق و غرب.",
+    "cover_image": "/images/covers/silk-road.jpg",
+    "difficulty": "easy",
+    "style": {
+      "primaryColor": "#0284c7",
+      "secondaryColor": "#075985",
+      "backgroundColor": "#0a1017",
+      "textColor": "#e0f2fe",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-11-11T20:36:48.893Z"
+  },
+  {
+    "id": "dariush",
+    "genre": "history",
+    "title": "داریوش بزرگ و کتیبهٔ بیستون",
+    "author": "تاریخ ایران باستان",
+    "description": "کارنامهٔ داریوش بزرگ هخامنشی؛ از سرکوب شورش گئومات و حک سنگ‌نبشتهٔ بیستون تا ضرب سکهٔ دریک، راه شاهی و حفر آبراه نیل و دریای سرخ.",
+    "cover_image": "/images/covers/dariush.jpg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#eab308",
+      "secondaryColor": "#854d0e",
+      "backgroundColor": "#121008",
+      "textColor": "#fef9c3",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-11-11T20:36:48.893Z"
+  },
+  {
+    "id": "yaqub_laith",
+    "genre": "history",
+    "title": "یعقوب لیث و احیای زبان فارسی",
+    "author": "تاریخ ایران میانه",
+    "description": "خیزش رویگرزادهٔ جوانمرد سیستان؛ اتحاد عیاران، استقلال ایران و فرمان تاریخی «چیزی که من اندر نیابم، چرا باید گفت؟» برای زنده‌داشت زبان فارسی.",
+    "cover_image": "/images/covers/yaqub-laith.jpg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#ea580c",
+      "secondaryColor": "#9a3412",
+      "backgroundColor": "#140c08",
+      "textColor": "#ffedd5",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-11-11T20:36:48.893Z"
+  },
+  {
+    "id": "zandiyeh",
+    "genre": "history",
+    "title": "کریم‌خان زند و وکیل‌الرعایا",
+    "author": "تاریخ ایران",
+    "description": "فرمانروایی که لقب «وکیل‌الرعایا» را بر شاهی برگزید؛ آرامش و آبادانی شیراز با ارگ، بازار و حمام وکیل تا حماسهٔ لطفعلی‌خان زند.",
+    "cover_image": "/images/covers/zandiyeh.jpg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#0d9488",
+      "secondaryColor": "#115e59",
+      "backgroundColor": "#091413",
+      "textColor": "#ccfbf1",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-11-11T20:36:48.893Z"
+  },
+  {
+    "id": "amir_kabir",
+    "genre": "history",
+    "title": "امیرکبیر و دارالفنون",
+    "author": "تاریخ معاصر",
+    "description": "زندگی و اصلاحات میرزا تقی‌خان امیرکبیر؛ از مبارزه با رشوه و بنیان‌گذاری دارالفنون تا انتشار روزنامهٔ وقایع اتفاقیه، مایه‌کوبی آبله و حمام فین کاشان.",
+    "cover_image": "/images/covers/amir-kabir.jpg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#2563eb",
+      "secondaryColor": "#1e40af",
+      "backgroundColor": "#090d16",
+      "textColor": "#dbeafe",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-11-11T20:36:48.893Z"
+  },
+  {
+    "id": "nadershah",
+    "genre": "history",
+    "title": "نادرشاه افشار (شمشیر ایران)",
+    "author": "تاریخ ایران",
+    "description": "تندباد شرق؛ برخاستن نادرقلی از درگز و کلات، آزادی اصفهان، بیرون راندن عثمانی و روسیه، تاج‌گذاری در دشت مغان و فتح قندهار و کرنال.",
+    "cover_image": "/images/covers/nadershah.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#dc2626",
+      "secondaryColor": "#991b1b",
+      "backgroundColor": "#140909",
+      "textColor": "#fee2e2",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-11-11T20:36:48.893Z"
+  },
+  {
+    "id": "mashruteh",
+    "genre": "history",
+    "title": "مشروطه و ستارخان (سردار ملی)",
+    "author": "تاریخ معاصر",
+    "description": "انقلاب مشروطهٔ ایران؛ از عدالت‌خانه و گشایش مجلس بهارستان تا به توپ بستن مجلس، مقاومت یازده‌ماههٔ تبریز به رهبری ستارخان و باقرخان و فتح تهران.",
+    "cover_image": "/images/covers/mashruteh.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#16a34a",
+      "secondaryColor": "#166534",
+      "backgroundColor": "#09140c",
+      "textColor": "#dcfce7",
+      "fontFamily": "serif",
+      "backgroundImagePattern": "https://www.transparenttextures.com/patterns/aged-paper.png"
+    },
+    "required_stars": 0,
+    "created_at": "2026-11-11T20:36:48.893Z"
+  },
+  {
+    "id": "sindbad",
+    "genre": "folklore",
+    "title": "هفت سفر سندباد بحری",
+    "author": "هزار و یک شب",
+    "description": "ماجراجویی‌های شگفت‌انگیز سندباد دریانورد؛ از جزیرهٔ نهنگ غول‌پیکر و پرندهٔ رخ در درهٔ الماس تا غول یک‌چشم و جزیرهٔ سرندیب.",
+    "cover_image": "/images/folktales/sindbad.jpg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#0284c7",
+      "secondaryColor": "#bae6fd",
+      "backgroundColor": "#f0f9ff",
+      "textColor": "#0c4a6e",
+      "fontFamily": "sans"
+    },
+    "required_stars": 0,
+    "created_at": "2026-11-11T20:36:48.893Z"
+  },
+  {
+    "id": "aladdin",
+    "genre": "folklore",
+    "title": "علاءالدین و چراغ جادو",
+    "author": "هزار و یک شب",
+    "description": "داستان علاءالدین، ساحر مغربی و سرداب گوهرها؛ بیرون آمدن غول چراغ جادو، ساخت قصر مرمرین برای بدرالبدور و بازپس‌گیری چراغ.",
+    "cover_image": "/images/folktales/aladdin.jpg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#d97706",
+      "secondaryColor": "#fde68a",
+      "backgroundColor": "#fffbeb",
+      "textColor": "#78350f",
+      "fontFamily": "sans"
+    },
+    "required_stars": 0,
+    "created_at": "2026-11-11T20:36:48.893Z"
+  },
+  {
+    "id": "amir_arsalan",
+    "genre": "folklore",
+    "title": "امیر ارسلان نامدار",
+    "author": "نقیب‌الممالک",
+    "description": "داستان دلدادگی و پهلوانی امیر ارسلان رومی و فرخ‌لقا؛ نبرد با فولادزره دیو در قلعهٔ سنگباران به یاری قمر وزیر و شمشیر زمردنگار.",
+    "cover_image": "/images/folktales/amir_arsalan.jpg",
+    "difficulty": "medium",
+    "style": {
+      "primaryColor": "#9333ea",
+      "secondaryColor": "#e9d5ff",
+      "backgroundColor": "#faf5ff",
+      "textColor": "#581c87",
+      "fontFamily": "sans"
+    },
+    "required_stars": 0,
+    "created_at": "2026-11-11T20:36:48.893Z"
+  },
+  {
+    "id": "shahrzad",
+    "genre": "folklore",
+    "title": "شهرزاد قصه‌گو (هزار و یک شب)",
+    "author": "هزارافسان کهن",
+    "description": "ایثار و فرزانگی شهرزاد که هزار و یک شب با روایت قصه‌های شگفتِ بازرگان و عفریت، ماهیگیر، علی‌بابا و اسب آبنوس، دل شهریار را بیدار کرد.",
+    "cover_image": "/images/folktales/shahrzad.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#4f46e5",
+      "secondaryColor": "#c7d2fe",
+      "backgroundColor": "#eef2ff",
+      "textColor": "#312e81",
+      "fontFamily": "serif"
+    },
+    "required_stars": 0,
+    "created_at": "2026-11-11T20:36:48.893Z"
+  },
+  {
+    "id": "samak_ayyar",
+    "genre": "folklore",
+    "title": "سمک عیار (پهلوانِ جوانمرد)",
+    "author": "فرامرز ارجانی",
+    "description": "کهن‌ترین داستان پهلوانی و عیاری فارسی؛ پیمان برادری سمک عیار با خورشیدشاه و ماجراهای شغال پیل‌زور، آتشک و روزافزون در چین و ماچین.",
+    "cover_image": "/images/folktales/samak_ayyar.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#be123c",
+      "secondaryColor": "#fecdd3",
+      "backgroundColor": "#fff1f2",
+      "textColor": "#881337",
+      "fontFamily": "serif"
+    },
+    "required_stars": 0,
+    "created_at": "2026-11-11T20:36:48.893Z"
+  },
+  {
+    "id": "kalila_dimna",
+    "genre": "folklore",
+    "title": "کلیله و دمنه و منطق‌الطیر",
+    "author": "نصرالله منشی و عطار",
+    "description": "گنجینهٔ حکمت و تمثیل ایران؛ از سفر برزویهٔ طبیب، داستان شیر و گاو، کبوتران طوق‌دار و لاک‌پشت و دو بط تا پرواز سی مرغ به سوی سیمرغ.",
+    "cover_image": "/images/folktales/kalila_dimna.jpg",
+    "difficulty": "hard",
+    "style": {
+      "primaryColor": "#0f766e",
+      "secondaryColor": "#99f6e4",
+      "backgroundColor": "#f0fdfa",
+      "textColor": "#134e4a",
+      "fontFamily": "serif"
+    },
+    "required_stars": 0,
+    "created_at": "2026-11-11T20:36:48.893Z"
+  }
+]

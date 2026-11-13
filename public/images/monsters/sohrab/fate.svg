@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="mbg" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#0a0a0f" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" fill="#0a0a0f" rx="40" opacity="0.25"/>
+  <circle cx="100" cy="84" r="92" fill="url(#mbg)" stroke="#6b7280" stroke-width="1.5" opacity="0.5"/>
+  
+  <circle cx="100" cy="80" r="25" fill="#6b7280" opacity="0.05"/>
+  <circle cx="100" cy="80" r="15" fill="#9ca3af" opacity="0.08"/>
+  <circle cx="100" cy="80" r="5" fill="#fbbf24" opacity="0.2"/>
+  <path d="M75 100 Q100 115 125 100" fill="none" stroke="#6b7280" stroke-width="2" opacity="0.3"/>
+  <path d="M80 68 Q100 55 120 68" fill="none" stroke="#6b7280" stroke-width="1.5" opacity="0.2"/>
+
+  <rect x="0" y="176" width="200" height="24" fill="#6b7280" opacity="0.8" rx="0"/>
+  <text x="100" y="193" text-anchor="middle" fill="#fff" font-family="serif" font-size="10" font-weight="bold" dir="rtl">تقدیر</text>
+</svg>

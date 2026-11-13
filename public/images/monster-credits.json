@@ -1,0 +1,807 @@
+{
+  "rostam_7::1::khan1-lion.jpg": {
+    "book": "rostam_7",
+    "chapter": 1,
+    "out": "/images/monsters/rostam7/khan1-lion.jpg",
+    "raw": "public/images/_raw/monsters/rostam7/khan1-lion.jpg",
+    "title": "File:\"Rakhsh Kills a Lion while Rustam is Asleep\", Folio from a Shahnama (Book of Kings) of Firdausi MET DP159683.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:\"Rakhsh_Kills_a_Lion_while_Rustam_is_Asleep\",_Folio_from_a_Shahnama_(Book_of_Kings)_of_Firdausi_MET_DP159683.jpg",
+    "license": "CC0",
+    "artist": "Ferdowsi",
+    "fallback": false
+  },
+  "rostam_7::3::khan3-dragon.jpg": {
+    "book": "rostam_7",
+    "chapter": 3,
+    "out": "/images/monsters/rostam7/khan3-dragon.jpg",
+    "raw": "public/images/_raw/monsters/rostam7/khan3-dragon.jpg",
+    "title": "File:Rustam kills the dragon, folio from Shahnameh of Shah Ismail II, attrib. Sadegi (Beg), Iran, Tabriz, c. 1576 AD, view 1 - Aga Khan Museum - Toronto, Canada - DSC06935.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Rustam_kills_the_dragon,_folio_from_Shahnameh_of_Shah_Ismail_II,_attrib._Sadegi_(Beg),_Iran,_Tabriz,_c._1576_AD,_view_1_-_Aga_Khan_Museum_-_Toronto,_Canada_-_DSC06935.jpg",
+    "license": "Public domain",
+    "artist": "Daderot",
+    "fallback": false
+  },
+  "rostam_7::4::khan4-witch.jpg": {
+    "book": "rostam_7",
+    "chapter": 4,
+    "out": "/images/monsters/rostam7/khan4-witch.jpg",
+    "raw": "public/images/_raw/monsters/rostam7/khan4-witch.jpg",
+    "title": "File:\"Rustam's Fourth Course, He Cleaves a Witch\", Folio 120v from the Shahnama (Book of Kings) of Shah Tahmasp MET sf1970-301-17b.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:\"Rustam's_Fourth_Course,_He_Cleaves_a_Witch\",_Folio_120v_from_the_Shahnama_(Book_of_Kings)_of_Shah_Tahmasp_MET_sf1970-301-17b.jpg",
+    "license": "CC0",
+    "artist": "Qadimi / Ferdowsi",
+    "fallback": false
+  },
+  "rostam_7::6::khan6-demon.jpg": {
+    "book": "rostam_7",
+    "chapter": 6,
+    "out": "/images/monsters/rostam7/khan6-demon.jpg",
+    "raw": "public/images/_raw/monsters/rostam7/khan6-demon.jpg",
+    "title": "File:Rustam kills Arzhang Div.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Rustam_kills_Arzhang_Div.jpg",
+    "license": "Public domain",
+    "artist": "Ibrahim Sultan",
+    "fallback": false
+  },
+  "rostam_7::7::khan7-white-beast.jpg": {
+    "book": "rostam_7",
+    "chapter": 7,
+    "out": "/images/monsters/rostam7/khan7-white-beast.jpg",
+    "raw": "public/images/_raw/monsters/rostam7/khan7-white-beast.jpg",
+    "title": "File:Firdawsi - Rustam Slays the White Div (the 7th Feat) - Walters W60091A - Full Page.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Firdawsi_-_Rustam_Slays_the_White_Div_(the_7th_Feat)_-_Walters_W60091A_-_Full_Page.jpg",
+    "license": "Public domain",
+    "artist": "Ferdowsi",
+    "fallback": false
+  },
+  "rostam_7::2::khan2-skull.jpg": {
+    "book": "rostam_7",
+    "chapter": 2,
+    "out": "/images/monsters/rostam7/khan2-skull.jpg",
+    "raw": "public/images/_raw/monsters/rostam7/khan2-skull.jpg",
+    "title": "File:Folio 118r from the Shahnama of Shah Tahmasp.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Folio_118r_from_the_Shahnama_of_Shah_Tahmasp.jpg",
+    "license": "Public domain",
+    "artist": "Ferdowsi",
+    "fallback": true
+  },
+  "rostam_7::5::khan5-warrior.jpg": {
+    "book": "rostam_7",
+    "chapter": 5,
+    "out": "/images/monsters/rostam7/khan5-warrior.jpg",
+    "raw": "public/images/_raw/monsters/rostam7/khan5-warrior.jpg",
+    "title": "File:Abridgment of the Book of Kings (Shahnama), Rustam fights Avlād (the forth feat), Walters Art Museum Ms. W.597, fol. 45b.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Abridgment_of_the_Book_of_Kings_(Shahnama),_Rustam_fights_Avlād_(the_forth_feat),_Walters_Art_Museum_Ms._W.597,_fol._45b.jpg",
+    "license": "CC0",
+    "artist": "Walters Art Museum Illuminated Manuscripts",
+    "fallback": true
+  },
+  "rostam_sohrab::1::wolf.jpg": {
+    "book": "rostam_sohrab",
+    "chapter": 1,
+    "out": "/images/monsters/sohrab/wolf.jpg",
+    "raw": "public/images/_raw/monsters/sohrab/wolf.jpg",
+    "title": "File:Khalili Collection Islamic Art mss 1030 fol 135b.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Khalili_Collection_Islamic_Art_mss_1030_fol_135b.jpg",
+    "license": "CC BY-SA 3.0 igo",
+    "artist": "Khalili Collections",
+    "fallback": true
+  },
+  "rostam_sohrab::2::lion.jpg": {
+    "book": "rostam_sohrab",
+    "chapter": 2,
+    "out": "/images/monsters/sohrab/lion.jpg",
+    "raw": "public/images/_raw/monsters/sohrab/lion.jpg",
+    "title": "File:Tahmīna Visits Rustam in his Chamber, Shāh Ṭahmāsp Album, c. 1558, İÜK, F. 1422, fol.35r.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tahmīna_Visits_Rustam_in_his_Chamber,_Shāh_Ṭahmāsp_Album,_c._1558,_İÜK,_F._1422,_fol.35r.jpg",
+    "license": "Public domain",
+    "artist": "16th century",
+    "fallback": true
+  },
+  "rostam_sohrab::3::night-demon.jpg": {
+    "book": "rostam_sohrab",
+    "chapter": 3,
+    "out": "/images/monsters/sohrab/night-demon.jpg",
+    "raw": "public/images/_raw/monsters/sohrab/night-demon.jpg",
+    "title": "File:Tahminah.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tahminah.jpg",
+    "license": "Public domain",
+    "artist": "",
+    "fallback": false
+  },
+  "rostam_sohrab::4::dragon.jpg": {
+    "book": "rostam_sohrab",
+    "chapter": 4,
+    "out": "/images/monsters/sohrab/dragon.jpg",
+    "raw": "public/images/_raw/monsters/sohrab/dragon.jpg",
+    "title": "File:Untitled by Sohrab Sepehri.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Untitled_by_Sohrab_Sepehri.jpg",
+    "license": "Public domain",
+    "artist": "Sohrab Sepehri",
+    "fallback": false
+  },
+  "khosrow/ch3-monster.jpg": {
+    "out": "/images/monsters/khosrow/ch3-monster.jpg",
+    "raw": "public/images/_raw/monsters/khosrow/ch3-monster.jpg",
+    "title": "File:\"Farhad Carves a Milk Channel for Shirin\", Folio 74 from a Khamsa (Quintet) of Nizami MET DP159378.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:\"Farhad_Carves_a_Milk_Channel_for_Shirin\",_Folio_74_from_a_Khamsa_(Quintet)_of_Nizami_MET_DP159378.jpg",
+    "license": "CC0",
+    "artist": "Sultan Muhammad Nur / Mahmud Muzahhib / Sheikhzadeh / Nizami Ganjavi",
+    "fixed": true
+  },
+  "bizhan/ch1-monster.jpg": {
+    "out": "/images/monsters/bizhan/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/bizhan/ch1-monster.jpg",
+    "title": "File:\"Bizhan Slaughters the Wild Boars of Irman\", Folio from a Shahnama (Book of Kings) MET DT214817.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:\"Bizhan_Slaughters_the_Wild_Boars_of_Irman\",_Folio_from_a_Shahnama_(Book_of_Kings)_MET_DT214817.jpg",
+    "license": "CC0",
+    "artist": "Ferdowsi",
+    "fixed": true
+  },
+  "kaykhosrow/ch1-monster.jpg": {
+    "out": "/images/monsters/kaykhosrow/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/kaykhosrow/ch1-monster.jpg",
+    "title": "File:Kai Khusrau Enthroned Holding a Sword , Folio from a Shahnama (Book of Kings) MET DP215666-cropped.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Kai_Khusrau_Enthroned_Holding_a_Sword_,_Folio_from_a_Shahnama_(Book_of_Kings)_MET_DP215666-cropped.jpg",
+    "license": "CC0",
+    "artist": "Ferdusi",
+    "fixed": true
+  },
+  "kaykhosrow/ch6-monster.jpg": {
+    "out": "/images/monsters/kaykhosrow/ch6-monster.jpg",
+    "raw": "public/images/_raw/monsters/kaykhosrow/ch6-monster.jpg",
+    "title": "File:Kay Khusraw Welcomed by his Grandfather, Kay Kaus, King of Iran - detail 02.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Kay_Khusraw_Welcomed_by_his_Grandfather,_Kay_Kaus,_King_of_Iran_-_detail_02.jpg",
+    "license": "Public domain",
+    "artist": "",
+    "fixed": true
+  },
+  "esfandiyar/ch5-monster.jpg": {
+    "out": "/images/monsters/esfandiyar/ch5-monster.jpg",
+    "raw": "public/images/_raw/monsters/esfandiyar/ch5-monster.jpg",
+    "title": "File:Closeup of raging flames in a large bonfire. - Flickr - shixart1985.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Closeup_of_raging_flames_in_a_large_bonfire._-_Flickr_-_shixart1985.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Nenad Stojkovic",
+    "fixed": true
+  },
+  "afrasiab/monster6.jpg": {
+    "out": "/images/monsters/afrasiab/monster6.jpg",
+    "raw": "public/images/_raw/monsters/afrasiab/monster6.jpg",
+    "title": "File:Baysonghori Shahnameh battle-scene-cropped.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Baysonghori_Shahnameh_battle-scene-cropped.jpg",
+    "license": "Public domain",
+    "artist": "Ferdusi",
+    "fixed": true
+  },
+  "afrasiab/monster7.jpg": {
+    "out": "/images/monsters/afrasiab/monster7.jpg",
+    "raw": "public/images/_raw/monsters/afrasiab/monster7.jpg",
+    "title": "File:\"Kai Khusrau Slays Afrasiyab\", Folio from a Shahnama (Book of Kings) MET DP108570.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:\"Kai_Khusrau_Slays_Afrasiyab\",_Folio_from_a_Shahnama_(Book_of_Kings)_MET_DP108570.jpg",
+    "license": "CC0",
+    "artist": "Ferdowsi",
+    "fixed": true
+  },
+  "hushang/ch3-monster.jpg": {
+    "out": "/images/monsters/hushang/ch3-monster.jpg",
+    "raw": "public/images/_raw/monsters/hushang/ch3-monster.jpg",
+    "title": "File:Sadeh Iranian Festival - 31-01-2014 - No 3.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sadeh_Iranian_Festival_-_31-01-2014_-_No_3.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Fars News Agency",
+    "fixed": true
+  },
+  "anushirvan/ch1-monster.jpg": {
+    "out": "/images/monsters/anushirvan/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/anushirvan/ch1-monster.jpg",
+    "title": "File:King Khusraw Anushirvan Enthroned- Page from a Manuscript of the Shahnama (Book of Kings) of Firdawsi LACMA M.73.5.18.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:King_Khusraw_Anushirvan_Enthroned-_Page_from_a_Manuscript_of_the_Shahnama_(Book_of_Kings)_of_Firdawsi_LACMA_M.73.5.18.jpg",
+    "license": "Public domain",
+    "artist": "",
+    "fixed": true
+  },
+  "anushirvan/ch2-monster.jpg": {
+    "out": "/images/monsters/anushirvan/ch2-monster.jpg",
+    "raw": "public/images/_raw/monsters/anushirvan/ch2-monster.jpg",
+    "title": "File:\"Buzurjmihr Masters the Hindu Game of Chess\", Folio 639v from the Shahnama (Book of Kings) of Shah Tahmasp MET DP105221.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:\"Buzurjmihr_Masters_the_Hindu_Game_of_Chess\",_Folio_639v_from_the_Shahnama_(Book_of_Kings)_of_Shah_Tahmasp_MET_DP105221.jpg",
+    "license": "CC0",
+    "artist": "Ferdowsi",
+    "fixed": true
+  },
+  "anushirvan/ch4-monster.jpg": {
+    "out": "/images/monsters/anushirvan/ch4-monster.jpg",
+    "raw": "public/images/_raw/monsters/anushirvan/ch4-monster.jpg",
+    "title": "File:Taq Kasra.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Taq_Kasra.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Hassan Majed",
+    "fixed": true
+  },
+  "rostam-akvan/ch1-monster.jpg": {
+    "out": "/images/monsters/rostam-akvan/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/rostam-akvan/ch1-monster.jpg",
+    "title": "File:\"Rustam is Thrown into the Sea by the Div Akvan\", Folio from a Shahnama (Book of Kings) of Firdausi MET DP108566.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:\"Rustam_is_Thrown_into_the_Sea_by_the_Div_Akvan\",_Folio_from_a_Shahnama_(Book_of_Kings)_of_Firdausi_MET_DP108566.jpg",
+    "license": "CC0",
+    "artist": "Ferdowsi",
+    "fixed": true
+  },
+  "rostam-akvan/ch2-monster.jpg": {
+    "out": "/images/monsters/rostam-akvan/ch2-monster.jpg",
+    "raw": "public/images/_raw/monsters/rostam-akvan/ch2-monster.jpg",
+    "title": "File:Rustam Pursues Akvan, The Onager-Div, Folio from the Shahnameh (Book of Kings) of Shah Tahmasp.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Rustam_Pursues_Akvan,_The_Onager-Div,_Folio_from_the_Shahnameh_(Book_of_Kings)_of_Shah_Tahmasp.jpg",
+    "license": "Public domain",
+    "artist": "Attributed to Muzaffar Ali",
+    "fixed": true
+  },
+  "rostam-akvan/ch3-monster.jpg": {
+    "out": "/images/monsters/rostam-akvan/ch3-monster.jpg",
+    "raw": "public/images/_raw/monsters/rostam-akvan/ch3-monster.jpg",
+    "title": "File:Rakhsh Defends Rustam from the Div Akvan, India, Newark Museum.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Rakhsh_Defends_Rustam_from_the_Div_Akvan,_India,_Newark_Museum.JPG",
+    "license": "CC0",
+    "artist": "Wmpearl",
+    "fixed": true
+  },
+  "rostam-death/ch1-monster.jpg": {
+    "out": "/images/monsters/rostam-death/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/rostam-death/ch1-monster.jpg",
+    "title": "File:\"Rustam Shoots His Half-brother Shaghad through a Plane Tree\", Folio from a Shahnama (Book of Kings) of Firdausi MET DP215676.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:\"Rustam_Shoots_His_Half-brother_Shaghad_through_a_Plane_Tree\",_Folio_from_a_Shahnama_(Book_of_Kings)_of_Firdausi_MET_DP215676.jpg",
+    "license": "CC0",
+    "artist": "Ferdowsi",
+    "fixed": true
+  },
+  "rostam-esfandiyar/ch1-monster.jpg": {
+    "out": "/images/monsters/rostam-esfandiyar/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/rostam-esfandiyar/ch1-monster.jpg",
+    "title": "File:No. 55 Esfandiyar slays Arjasp in the Brazen Hold.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:No._55_Esfandiyar_slays_Arjasp_in_the_Brazen_Hold.jpg",
+    "license": "Public domain",
+    "artist": "Persian miniature",
+    "fixed": true
+  },
+  "rostam-esfandiyar/ch3-monster.jpg": {
+    "out": "/images/monsters/rostam-esfandiyar/ch3-monster.jpg",
+    "raw": "public/images/_raw/monsters/rostam-esfandiyar/ch3-monster.jpg",
+    "title": "File:\"Rustam Shoots Isfandiyar in the Eye\", Folio from a Shahnama (Book of Kings) MET DP215911.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:\"Rustam_Shoots_Isfandiyar_in_the_Eye\",_Folio_from_a_Shahnama_(Book_of_Kings)_MET_DP215911.jpg",
+    "license": "CC0",
+    "artist": "Ferdowsi",
+    "fixed": true
+  },
+  "rostam-esfandiyar/ch4-monster.jpg": {
+    "out": "/images/monsters/rostam-esfandiyar/ch4-monster.jpg",
+    "raw": "public/images/_raw/monsters/rostam-esfandiyar/ch4-monster.jpg",
+    "title": "File:The funeral of isfandiyar safavid shiraz с. 1580 detail.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:The_funeral_of_isfandiyar_safavid_shiraz_с._1580_detail.jpg",
+    "license": "Public domain",
+    "artist": "SAFAVID SHIRAZ, IRAN",
+    "fixed": true
+  },
+  "siavoshan/ch4-monster.jpg": {
+    "out": "/images/monsters/siavoshan/ch4-monster.jpg",
+    "raw": "public/images/_raw/monsters/siavoshan/ch4-monster.jpg",
+    "title": "File:\"The Fire Ordeal of Siyavush\", Folio from a Shahnama (Book of Kings) of Firdausi MET DP164658.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:\"The_Fire_Ordeal_of_Siyavush\",_Folio_from_a_Shahnama_(Book_of_Kings)_of_Firdausi_MET_DP164658.jpg",
+    "license": "CC0",
+    "artist": "Ferdowsi",
+    "fixed": true
+  },
+  "sohrab/fate.jpg": {
+    "out": "/images/monsters/sohrab/fate.jpg",
+    "raw": "public/images/_raw/monsters/sohrab/fate.jpg",
+    "title": "File:The Death of Sohrab by Joseph Rotter.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:The_Death_of_Sohrab_by_Joseph_Rotter.jpg",
+    "license": "Public domain",
+    "artist": "Ferdowsi",
+    "fixed": true
+  },
+  "sohrab/giant.jpg": {
+    "out": "/images/monsters/sohrab/giant.jpg",
+    "raw": "public/images/_raw/monsters/sohrab/giant.jpg",
+    "title": "File:Battle of Rostam and Sohrab by Joseph Rotter.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Rostam_and_Sohrab_by_Joseph_Rotter.jpg",
+    "license": "Public domain",
+    "artist": "Ferdowsi",
+    "fixed": true
+  },
+  "sohrab/lion.jpg": {
+    "out": "/images/monsters/sohrab/lion.jpg",
+    "raw": "public/images/_raw/monsters/sohrab/lion.jpg",
+    "title": "File:Tahminah.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tahminah.jpg",
+    "license": "Public domain",
+    "artist": "",
+    "fixed": true
+  },
+  "tahmineh/ch1-monster.jpg": {
+    "out": "/images/monsters/tahmineh/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/tahmineh/ch1-monster.jpg",
+    "title": "File:Tahminah.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tahminah.jpg",
+    "license": "Public domain",
+    "artist": "",
+    "fixed": true
+  },
+  "tahmineh/ch2-monster.jpg": {
+    "out": "/images/monsters/tahmineh/ch2-monster.jpg",
+    "raw": "public/images/_raw/monsters/tahmineh/ch2-monster.jpg",
+    "title": "File:Rostam and Tahmina by Joseph Rotter.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Rostam_and_Tahmina_by_Joseph_Rotter.jpg",
+    "license": "Public domain",
+    "artist": "Ferdowsi",
+    "fixed": true
+  },
+  "zahhak/ch3-monster.jpg": {
+    "out": "/images/monsters/zahhak/ch3-monster.jpg",
+    "raw": "public/images/_raw/monsters/zahhak/ch3-monster.jpg",
+    "title": "File:Baysonghori Shahnameh 6 The tyrant Zahhak is nailed to the walls of a cave in Mount Damavand.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Baysonghori_Shahnameh_6_The_tyrant_Zahhak_is_nailed_to_the_walls_of_a_cave_in_Mount_Damavand.jpg",
+    "license": "Public domain",
+    "artist": "ʿAbd al-Rashid Daylami",
+    "fixed": true
+  },
+  "zahhak/ch4-monster.jpg": {
+    "out": "/images/monsters/zahhak/ch4-monster.jpg",
+    "raw": "public/images/_raw/monsters/zahhak/ch4-monster.jpg",
+    "title": "File:Sultan Muhammad Tiran Zahhak.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sultan_Muhammad_Tiran_Zahhak.jpg",
+    "license": "Public domain",
+    "artist": "Attributed to Sultan Muhammad",
+    "fixed": true
+  },
+  "zal/ch3-monster.jpg": {
+    "out": "/images/monsters/zal/ch3-monster.jpg",
+    "raw": "public/images/_raw/monsters/zal/ch3-monster.jpg",
+    "title": "File:The wedding of Zal and Rudaba, Safavid Iran, circa 1650.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:The_wedding_of_Zal_and_Rudaba,_Safavid_Iran,_circa_1650.jpg",
+    "license": "Public domain",
+    "artist": "Christies.com",
+    "fixed": true
+  },
+  "kaveh/ch4-monster.jpg": {
+    "out": "/images/monsters/kaveh/ch4-monster.jpg",
+    "raw": "public/images/_raw/monsters/kaveh/ch4-monster.jpg",
+    "title": "File:Sultan Muhammad Tiran Zahhak.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sultan_Muhammad_Tiran_Zahhak.jpg",
+    "license": "Public domain",
+    "artist": "Attributed to Sultan Muhammad",
+    "fixed": true
+  },
+  "peykar/ch2-monster.jpg": {
+    "out": "/images/monsters/peykar/ch2-monster.jpg",
+    "raw": "public/images/_raw/monsters/peykar/ch2-monster.jpg",
+    "title": "File:Bahram Gur in the Black Pavilion.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Bahram_Gur_in_the_Black_Pavilion.jpg",
+    "license": "Public domain",
+    "artist": "Basawan / Manohar Das",
+    "fixed": true
+  },
+  "jamshid/ch5-monster.jpg": {
+    "out": "/images/monsters/jamshid/ch5-monster.jpg",
+    "raw": "public/images/_raw/monsters/jamshid/ch5-monster.jpg",
+    "title": "File:2018-09-21 Iran, Persepolis, Gate of All Nations (northwestern colossus).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2018-09-21_Iran,_Persepolis,_Gate_of_All_Nations_(northwestern_colossus).jpg",
+    "license": "CC BY 4.0",
+    "artist": "Laurens R. Krol",
+    "fixed": true
+  },
+  "qajars/monster1.jpg": {
+    "out": "/images/monsters/qajars/monster1.jpg",
+    "raw": "public/images/_raw/monsters/qajars/monster1.jpg",
+    "title": "File:Agha Mohammad Khan Qajar painting in Soleymaniyeh Palace cropped.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Agha_Mohammad_Khan_Qajar_painting_in_Soleymaniyeh_Palace_cropped.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Abdallah Khan",
+    "fixed": true
+  },
+  "qajars/monster3.jpg": {
+    "out": "/images/monsters/qajars/monster3.jpg",
+    "raw": "public/images/_raw/monsters/qajars/monster3.jpg",
+    "title": "File:Portrait of Amir Kabir - Hossein Arjangi (Mir Mosavvar) - Golestan Palace.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Portrait_of_Amir_Kabir_-_Hossein_Arjangi_(Mir_Mosavvar)_-_Golestan_Palace.jpg",
+    "license": "Public domain",
+    "artist": "Mir Hossein Arjangi",
+    "fixed": true
+  },
+  "qajars/monster5.jpg": {
+    "out": "/images/monsters/qajars/monster5.jpg",
+    "raw": "public/images/_raw/monsters/qajars/monster5.jpg",
+    "title": "File:Ahmad Shah Qajar (3x4 cropped).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Ahmad_Shah_Qajar_(3x4_cropped).jpg",
+    "license": "Public domain",
+    "artist": "Bain News Service",
+    "fixed": true
+  },
+  "medes/monster2.jpg": {
+    "out": "/images/monsters/medes/monster2.jpg",
+    "raw": "public/images/_raw/monsters/medes/monster2.jpg",
+    "title": "File:Tribute bearer from Persepolis, Iran. A Mede man holding a lamb. 5th century BCE Pergamon Museum, Berlin.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tribute_bearer_from_Persepolis,_Iran._A_Mede_man_holding_a_lamb._5th_century_BCE_Pergamon_Museum,_Berlin.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Osama Shukir Muhammed Amin FRCP(Glasg)",
+    "fixed": true
+  },
+  "safavids/monster1.jpg": {
+    "out": "/images/monsters/safavids/monster1.jpg",
+    "raw": "public/images/_raw/monsters/safavids/monster1.jpg",
+    "title": "File:Sheikh Safi-ad-din Ardabili Statue.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sheikh_Safi-ad-din_Ardabili_Statue.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Adl1995",
+    "fixed": true
+  },
+  "safavids/monster3.jpg": {
+    "out": "/images/monsters/safavids/monster3.jpg",
+    "raw": "public/images/_raw/monsters/safavids/monster3.jpg",
+    "title": "File:Portrait of Shah ‘Abbas I. Attributed to Bishandas, circa 1617 (cropped).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Portrait_of_Shah_‘Abbas_I._Attributed_to_Bishandas,_circa_1617_(cropped).jpg",
+    "license": "Public domain",
+    "artist": "c. 1617, attributed to Bishandas",
+    "fixed": true
+  },
+  "seljuks/monster4.jpg": {
+    "out": "/images/monsters/seljuks/monster4.jpg",
+    "raw": "public/images/_raw/monsters/seljuks/monster4.jpg",
+    "title": "File:Ahmad Sanjar detail. Adib Sabir receiving a robe of honour from Ahmad Sanjar. Copied by ʻAbd al-Muʼmin al-ʻAlavi al-Kashi between February 1314–February 1315.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Ahmad_Sanjar_detail._Adib_Sabir_receiving_a_robe_of_honour_from_Ahmad_Sanjar._Copied_by_%CA%BBAbd_al-Mu%CA%BCmin_al-%CA%BBAlavi_al-Kashi_between_February_1314%E2%80%93February_1315.jpg",
+    "license": "Public domain",
+    "artist": "Circa 1314-1315 artist",
+    "fixed": true
+  },
+  "khosrow/ch5-monster.jpg": {
+    "out": "/images/monsters/khosrow/ch5-monster.jpg",
+    "raw": "public/images/_raw/monsters/khosrow/ch5-monster.jpg",
+    "title": "File:Amir Khusraw Dihlavi - Farhad Hears the False News of Shirin?s Death - Walters W62466B - Full Page.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Amir_Khusraw_Dihlavi_-_Farhad_Hears_the_False_News_of_Shirin?s_Death_-_Walters_W62466B_-_Full_Page.jpg",
+    "license": "Public domain",
+    "artist": "Amir Khusrau",
+    "fixed": true
+  },
+  "achaemenids/monster1.jpg": {
+    "out": "/images/monsters/achaemenids/monster1.jpg",
+    "raw": "public/images/_raw/monsters/achaemenids/monster1.jpg",
+    "title": "File:Cyrus the great, persian achaemenid king of kings.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cyrus_the_great,_persian_achaemenid_king_of_kings.jpg",
+    "license": "CC0",
+    "artist": "Rowyn flowerdew",
+    "fixed": true
+  },
+  "arash/ch1-monster.jpg": {
+    "out": "/images/monsters/arash/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/arash/ch1-monster.jpg",
+    "title": "File:Arash the Archer.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Arash_the_Archer.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Asadi s",
+    "fixed": true
+  },
+  "safavids/monster5.jpg": {
+    "out": "/images/monsters/safavids/monster5.jpg",
+    "raw": "public/images/_raw/monsters/safavids/monster5.jpg",
+    "title": "File:Siege scene, Tarikh-i Jahanara. 1683, Iran (Chester Beatty Library, MS. Per. 278).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Siege_scene,_Tarikh-i_Jahanara._1683,_Iran_(Chester_Beatty_Library,_MS._Per._278).jpg",
+    "license": "Public domain",
+    "artist": "1683 artist",
+    "fixed": true
+  },
+  "sohrab/wolf.jpg": {
+    "out": "/images/monsters/sohrab/wolf.jpg",
+    "raw": "public/images/_raw/monsters/sohrab/wolf.jpg",
+    "title": "File:Sivayush and Afrasiyab in the hunting field, folio 182b of the Shahnameh of Shah Tahmasp.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Sivayush_and_Afrasiyab_in_the_hunting_field,_folio_182b_of_the_Shahnameh_of_Shah_Tahmasp.jpg",
+    "license": "Public domain",
+    "artist": "Attributed to Mir Musavvir, Qasim ibn Ali and Unknown",
+    "fixed": true
+  },
+  "sohrab/night-demon.jpg": {
+    "out": "/images/monsters/sohrab/night-demon.jpg",
+    "raw": "public/images/_raw/monsters/sohrab/night-demon.jpg",
+    "title": "File:Rostam and Tahmina by Joseph Rotter.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Rostam_and_Tahmina_by_Joseph_Rotter.jpg",
+    "license": "Public domain",
+    "artist": "Ferdowsi",
+    "fixed": true
+  },
+  "sohrab/dragon.jpg": {
+    "out": "/images/monsters/sohrab/dragon.jpg",
+    "raw": "public/images/_raw/monsters/sohrab/dragon.jpg",
+    "title": "File:The simurgh arrives to assist with the birth of Rustam.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:The_simurgh_arrives_to_assist_with_the_birth_of_Rustam.jpg",
+    "license": "Public domain",
+    "artist": "Mohammad Zaman",
+    "fixed": true
+  },
+  "sohrab/elephant.jpg": {
+    "out": "/images/monsters/sohrab/elephant.jpg",
+    "raw": "public/images/_raw/monsters/sohrab/elephant.jpg",
+    "title": "File:DiezAlbumsSchahnameGurdafarid.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:DiezAlbumsSchahnameGurdafarid.jpg",
+    "license": "Public domain",
+    "artist": "(of the reproduction) Staatsbibliothek Berlin/Schacht",
+    "fixed": true
+  },
+  "tahmineh/ch3-monster.jpg": {
+    "out": "/images/monsters/tahmineh/ch3-monster.jpg",
+    "raw": "public/images/_raw/monsters/tahmineh/ch3-monster.jpg",
+    "title": "File:The birth of Rustam, signed Hajji Muhammad, Safavid Iran, from a manuscript dated 1685-6.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:The_birth_of_Rustam,_signed_Hajji_Muhammad,_Safavid_Iran,_from_a_manuscript_dated_1685-6.jpg",
+    "license": "Public domain",
+    "artist": "Christies.com",
+    "fixed": true
+  },
+  "folktales/shangool/ch1-monster.jpg": {
+    "out": "/images/monsters/folktales/shangool/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/folktales/shangool/ch1-monster.jpg",
+    "title": "File:Portrait of a common european wolf.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Portrait_of_a_common_european_wolf.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Artur Galicki",
+    "fixed": true
+  },
+  "folktales/kadoo/ch1-monster.jpg": {
+    "out": "/images/monsters/folktales/kadoo/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/folktales/kadoo/ch1-monster.jpg",
+    "title": "File:Cordelia Wilson - Orange Gourd.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cordelia_Wilson_-_Orange_Gourd.jpg",
+    "license": "Public domain",
+    "artist": "Cordelia Wilson (1876-1953)",
+    "fixed": true
+  },
+  "folktales/khoros/ch1-monster.jpg": {
+    "out": "/images/monsters/folktales/khoros/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/folktales/khoros/ch1-monster.jpg",
+    "title": "File:Portrait of a red fox in Rautas fjällurskog.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Portrait_of_a_red_fox_in_Rautas_fjällurskog.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "ClaudiaTen",
+    "fixed": true
+  },
+  "folktales/mahi/ch1-monster.jpg": {
+    "out": "/images/monsters/folktales/mahi/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/folktales/mahi/ch1-monster.jpg",
+    "title": "File:Artis Pelican portrait (13011232595).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Artis_Pelican_portrait_(13011232595).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Kitty Terwolbeck from The Netherlands",
+    "fixed": true
+  },
+  "folktales/boz/ch1-monster.jpg": {
+    "out": "/images/monsters/folktales/boz/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/folktales/boz/ch1-monster.jpg",
+    "title": "File:Goat kid (6362697831).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Goat_kid_(6362697831).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Berit from Redhill/Surrey, UK",
+    "fixed": true
+  },
+  "folktales/gonjeshk/ch1-monster.jpg": {
+    "out": "/images/monsters/folktales/gonjeshk/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/folktales/gonjeshk/ch1-monster.jpg",
+    "title": "File:Cat portrait (31801560127).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Cat_portrait_(31801560127).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Kitty Terwolbeck from The Netherlands",
+    "fixed": true
+  },
+  "folktales/khaleh/ch1-monster.jpg": {
+    "out": "/images/monsters/folktales/khaleh/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/folktales/khaleh/ch1-monster.jpg",
+    "title": "File:Ladybug on apple blossoms in Visby, Gotland.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Ladybug_on_apple_blossoms_in_Visby,_Gotland.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "W.carter",
+    "fixed": true
+  },
+  "folktales/mosh/ch1-monster.jpg": {
+    "out": "/images/monsters/folktales/mosh/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/folktales/mosh/ch1-monster.jpg",
+    "title": "File:\"The Trapped Cat and the Frightened Mouse (Rat ?)\", Folio from a Kalila wa Dimna MET DP300779.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:\"The_Trapped_Cat_and_the_Frightened_Mouse_(Rat_?)\",_Folio_from_a_Kalila_wa_Dimna_MET_DP300779.jpg",
+    "license": "CC0",
+    "artist": "",
+    "fixed": true
+  },
+  "folktales/dokhtar/ch1-monster.jpg": {
+    "out": "/images/monsters/folktales/dokhtar/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/folktales/dokhtar/ch1-monster.jpg",
+    "title": "File:Citrus aurantium Blanco2.304.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Citrus_aurantium_Blanco2.304.jpg",
+    "license": "Public domain",
+    "artist": "Francisco Manuel Blanco (O.S.A.)",
+    "fixed": true
+  },
+  "folktales/siah/ch1-monster.jpg": {
+    "out": "/images/monsters/folktales/siah/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/folktales/siah/ch1-monster.jpg",
+    "title": "File:A rare Safavid oil painting of an African soldier, Persia, Isfahan, circa 1680-90.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:A_rare_Safavid_oil_painting_of_an_African_soldier,_Persia,_Isfahan,_circa_1680-90.jpg",
+    "license": "Public domain",
+    "artist": "Bonhams",
+    "fixed": true
+  },
+  "folktales/gorbeh/ch1-monster.jpg": {
+    "out": "/images/monsters/folktales/gorbeh/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/folktales/gorbeh/ch1-monster.jpg",
+    "title": "File:Portrait of a red fox in Rautas fjällurskog.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Portrait_of_a_red_fox_in_Rautas_fjällurskog.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "ClaudiaTen",
+    "fixed": true
+  },
+  "folktales/div/ch1-monster.jpg": {
+    "out": "/images/monsters/folktales/div/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/folktales/div/ch1-monster.jpg",
+    "title": "File:An illustrated leaf from a manuscript of Firdausi’s Shahnameh; Rustam killing the White Div, Persia, Shiraz, Safavid, circa 1560-80.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:An_illustrated_leaf_from_a_manuscript_of_Firdausi’s_Shahnameh;_Rustam_killing_the_White_Div,_Persia,_Shiraz,_Safavid,_circa_1560-80.jpg",
+    "license": "Public domain",
+    "artist": "Sotheby's",
+    "fixed": true
+  },
+  "folktales/shab/ch1-monster.jpg": {
+    "out": "/images/monsters/folktales/shab/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/folktales/shab/ch1-monster.jpg",
+    "title": "File:Beneath the Milky Way.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Beneath_the_Milky_Way.jpg",
+    "license": "CC BY 4.0",
+    "artist": "ESO/Luis Calçada/Herbert Zodet",
+    "fixed": true
+  },
+  "folktales/gol/ch1-monster.jpg": {
+    "out": "/images/monsters/folktales/gol/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/folktales/gol/ch1-monster.jpg",
+    "title": "File:Jug MET 203711.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Jug_MET_203711.jpg",
+    "license": "CC0",
+    "artist": "Rookwood Pottery Company",
+    "fixed": true
+  },
+  "folktales/naneh/ch1-monster.jpg": {
+    "out": "/images/monsters/folktales/naneh/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/folktales/naneh/ch1-monster.jpg",
+    "title": "File:Salt and bread on heirloom tablecloth with traditional embroidery.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Salt_and_bread_on_heirloom_tablecloth_with_traditional_embroidery.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Ioannes2909",
+    "fixed": true
+  },
+  "khosrow/ch1-monster.jpg": {
+    "out": "/images/monsters/khosrow/ch1-monster.jpg",
+    "raw": "public/images/_raw/monsters/khosrow/ch1-monster.jpg",
+    "title": "File:Nizami - Khusraw discovers Shirin bathing in a pool.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Nizami_-_Khusraw_discovers_Shirin_bathing_in_a_pool.jpg",
+    "license": "Public domain",
+    "artist": "Murshid al-Shirazi (calligrapher)",
+    "fixed": true
+  },
+  "siavoshan/ch3-monster.jpg": {
+    "out": "/images/monsters/siavoshan/ch3-monster.jpg",
+    "raw": "public/images/_raw/monsters/siavoshan/ch3-monster.jpg",
+    "title": "File:Shahnameh - Siyawakhsh in the bower of Sudaba.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Shahnameh_-_Siyawakhsh_in_the_bower_of_Sudaba.jpg",
+    "license": "Public domain",
+    "artist": "Unknown Calligrapher - Writer : Persian poet Ferdowsi",
+    "fixed": true
+  },
+  "qajars/monster4.jpg": {
+    "out": "/images/monsters/qajars/monster4.jpg",
+    "raw": "public/images/_raw/monsters/qajars/monster4.jpg",
+    "title": "File:Mozaffar ad-Din Shah Qajar portrait.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mozaffar_ad-Din_Shah_Qajar_portrait.jpg",
+    "license": "Public domain",
+    "artist": "Golestan Palace",
+    "fixed": true
+  },
+  "hushang/ch2-monster.jpg": {
+    "out": "/images/monsters/hushang/ch2-monster.jpg",
+    "raw": "public/images/_raw/monsters/hushang/ch2-monster.jpg",
+    "title": "File:Closeup of raging flames in a large bonfire. - Flickr - shixart1985.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Closeup_of_raging_flames_in_a_large_bonfire._-_Flickr_-_shixart1985.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Nenad Stojkovic",
+    "fixed": true
+  },
+  "anushirvan/ch3-monster.jpg": {
+    "out": "/images/monsters/anushirvan/ch3-monster.jpg",
+    "raw": "public/images/_raw/monsters/anushirvan/ch3-monster.jpg",
+    "title": "File:Mosaic of Justinianus I - Basilica San Vitale (Ravenna).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Mosaic_of_Justinianus_I_-_Basilica_San_Vitale_(Ravenna).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Petar Milošević",
+    "fixed": true
+  },
+  "siavoshan/sudabeh.jpg": {
+    "out": "/images/monsters/siavoshan/sudabeh.jpg",
+    "raw": "public/images/_raw/monsters/siavoshan/sudabeh.jpg",
+    "title": "File:\"Sudaba's Second Accusation Against Siyavush is Judged\", Folio 164v from the Shahnama (Book of Kings) of Shah Tahmasp MET DP107141.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:\"Sudaba's_Second_Accusation_Against_Siyavush_is_Judged\",_Folio_164v_from_the_Shahnama_(Book_of_Kings)_of_Shah_Tahmasp_MET_DP107141.jpg",
+    "license": "CC0",
+    "artist": "Qasim ibn 'Ali / Ferdowsi",
+    "fixed": true
+  },
+  "siavoshan/slaying.jpg": {
+    "out": "/images/monsters/siavoshan/slaying.jpg",
+    "raw": "public/images/_raw/monsters/siavoshan/slaying.jpg",
+    "title": "File:The slaying of Siyavash in Turan.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:The_slaying_of_Siyavash_in_Turan.jpg",
+    "license": "Public domain",
+    "artist": "Ibrahim Sultan",
+    "fixed": true
+  },
+  "rostam7/khan2-desert.jpg": {
+    "out": "/images/monsters/rostam7/khan2-desert.jpg",
+    "raw": "public/images/_raw/monsters/rostam7/khan2-desert.jpg",
+    "title": "File:2020-01-01 Iran, Kerman, Dasht-e Lut DSC 9191 DxO.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2020-01-01_Iran,_Kerman,_Dasht-e_Lut_DSC_9191_DxO.jpg",
+    "license": "CC BY 4.0",
+    "artist": "Lrkrol",
+    "fixed": true
+  },
+  "medes/monster1.jpg": {
+    "out": "/images/monsters/medes/monster1.jpg",
+    "raw": "public/images/_raw/monsters/medes/monster1.jpg",
+    "title": "File:Deioces.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Deioces.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Blacksuitdragon",
+    "fixed": true
+  },
+  "medes/monster3.jpg": {
+    "out": "/images/monsters/medes/monster3.jpg",
+    "raw": "public/images/_raw/monsters/medes/monster3.jpg",
+    "title": "File:Margaret Dovaston - The massacre of the Scythian chiefs by Cyaxares the Mede litho - MeisterDrucke-1550695.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Margaret_Dovaston_-_The_massacre_of_the_Scythian_chiefs_by_Cyaxares_the_Mede_litho_-_MeisterDrucke-1550695.jpg",
+    "license": "CC0",
+    "artist": "Samankurdoo (after Margaret Dovaston)",
+    "fixed": true
+  },
+  "achaemenids/monster4.jpg": {
+    "out": "/images/monsters/achaemenids/monster4.jpg",
+    "raw": "public/images/_raw/monsters/achaemenids/monster4.jpg",
+    "title": "File:Darius I (The Great).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Darius_I_(The_Great).jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Surenae",
+    "fixed": true
+  },
+  "medes/monster4.jpg": {
+    "out": "/images/monsters/medes/monster4.jpg",
+    "raw": "public/images/_raw/monsters/medes/monster4.jpg",
+    "title": "File:King Astyages submitting to Cyrus.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:King_Astyages_submitting_to_Cyrus.jpg",
+    "license": "Public domain",
+    "artist": "Designed by Maximilien de Haese, Woven by Jac. van der Borght (1771-1775)",
+    "fixed": true
+  },
+  "seljuks/monster1.jpg": {
+    "out": "/images/monsters/seljuks/monster1.jpg",
+    "raw": "public/images/_raw/monsters/seljuks/monster1.jpg",
+    "title": "File:Seljuk Sultan Tugrul Bey sitting on his throne. Topkapı Sarayı Müzesi 1653-3 (304 B).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Seljuk_Sultan_Tugrul_Bey_sitting_on_his_throne._Topkap%C4%B1_Saray%C4%B1_M%C3%BCzesi_1653-3_(304_B).jpg",
+    "license": "Public domain",
+    "artist": "1314 artist",
+    "fixed": true
+  },
+  "parthians/monster2.jpg": {
+    "out": "/images/monsters/parthians/monster2.jpg",
+    "raw": "public/images/_raw/monsters/parthians/monster2.jpg",
+    "title": "File:Tetradrachm of the Parthian king Mithridates II, Susa mint.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tetradrachm_of_the_Parthian_king_Mithridates_II,_Susa_mint.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Classical Numismatic Group",
+    "fixed": true
+  },
+  "parthians/monster4.jpg": {
+    "out": "/images/monsters/parthians/monster4.jpg",
+    "raw": "public/images/_raw/monsters/parthians/monster4.jpg",
+    "title": "File:Death of Crassus in the battle of Carrhae (Cassell's Illustrated Universal History, vol. 3, 1882).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Death_of_Crassus_in_the_battle_of_Carrhae_(Cassell%27s_Illustrated_Universal_History,_vol._3,_1882).jpg",
+    "license": "Public domain",
+    "artist": "Unknown author",
+    "fixed": true
+  }
+}

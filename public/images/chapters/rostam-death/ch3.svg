@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#181818"/>
+<stop offset="100%" stop-color="#000000"/>
+</linearGradient></defs>
+<rect width="500" height="600" fill="url(#bg)"/>
+<rect x="8" y="8" width="484" height="584" rx="12.5" fill="none" stroke="#1a1a1a" stroke-width="6.25" opacity="0.7"/>
+<path d="M 250 20.5 L 250 33 M 20.5 300 L 33 300 M 479.5 300 L 467 300" fill="none" stroke="#1a1a1a" stroke-width="3.75" opacity="0.4"/>
+<rect x="220" y="250" width="60" height="100" rx="3" fill="#000" opacity="0.9"/>
+<circle cx="250" cy="310.4" r="5.6000000000000005" fill="#222"/>
+<ellipse cx="250" cy="327.2" rx="8" ry="12.8" fill="#222"/>
+<line x1="245.2" y1="318" x2="238" y2="332" stroke="#222" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="254.8" y1="318" x2="262" y2="332" stroke="#222" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="243.6" y1="340" x2="250" y2="348" stroke="#222" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="256.4" y1="340" x2="250" y2="348" stroke="#222" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="250" y1="300" x2="370" y2="290" stroke="#ef4444" stroke-width="2" opacity="0.7"/>
+<circle cx="370" cy="290" r="3" fill="#ef4444"/>
+<polygon points="55,530 56.5,520 58,510 59.5,500 61,490 62.5,480 64,470 65.5,460 67,450 68.5,440 70,430 70,430 71.5,440 73,450 74.5,460 76,470 77.5,480 79,490 80.5,500 82,510 83.5,520 85,530" fill="#1a1a1a" opacity="0.8"/>
+<polygon points="415,530 416.5,520 418,510 419.5,500 421,490 422.5,480 424,470 425.5,460 427,450 428.5,440 430,430 430,430 431.5,440 433,450 434.5,460 436,470 437.5,480 439,490 440.5,500 442,510 443.5,520 445,530" fill="#1a1a1a" opacity="0.8"/>
+<rect x="100" y="520" width="300" height="36" rx="18" fill="#1a1a1a" opacity="0.85"/>
+<text x="250" y="543" text-anchor="middle" fill="#fff" font-family="serif" font-size="16" font-weight="bold">آخرین تیر</text>
+</svg>

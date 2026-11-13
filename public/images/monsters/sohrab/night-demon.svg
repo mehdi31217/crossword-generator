@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="mbg" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#0d0a1a" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" fill="#0d0a1a" rx="40" opacity="0.25"/>
+  <circle cx="100" cy="84" r="92" fill="url(#mbg)" stroke="#7c3aed" stroke-width="1.5" opacity="0.5"/>
+  
+  <circle cx="100" cy="85" r="25" fill="#7c3aed" opacity="0.06"/>
+  <circle cx="88" cy="82" r="5" fill="#a78bfa" opacity="0.7"/>
+    <circle cx="88" cy="82" r="1.75" fill="black"/>
+  <circle cx="112" cy="82" r="5" fill="#a78bfa" opacity="0.7"/>
+    <circle cx="112" cy="82" r="1.75" fill="black"/>
+  <path d="M75 95 Q100 105 125 95" fill="none" stroke="#a78bfa" stroke-width="2" opacity="0.3"/>
+  <polygon points="88,68 92,52 96,68" fill="#7c3aed" opacity="0.6"/>
+  <polygon points="104,68 108,52 112,68" fill="#7c3aed" opacity="0.6"/>
+  <path d="M80 65 Q100 52 120 65" fill="none" stroke="#a78bfa" stroke-width="1" opacity="0.2"/>
+
+  <rect x="0" y="176" width="200" height="24" fill="#7c3aed" opacity="0.8" rx="0"/>
+  <text x="100" y="193" text-anchor="middle" fill="#fff" font-family="serif" font-size="10" font-weight="bold" dir="rtl">اهریمن شب</text>
+</svg>

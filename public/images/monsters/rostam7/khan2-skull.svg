@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="mbg" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#1c1917" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" fill="#1c1917" rx="40" opacity="0.25"/>
+  <circle cx="100" cy="84" r="92" fill="url(#mbg)" stroke="#d4a574" stroke-width="1.5" opacity="0.5"/>
+  
+  <ellipse cx="100" cy="95" rx="28" ry="32" fill="#d4a574" opacity="0.12"/>
+  <circle cx="85" cy="90" r="6" fill="#ef4444" opacity="0.7"/>
+    <circle cx="85" cy="90" r="2.0999999999999996" fill="black"/>
+  <circle cx="115" cy="90" r="6" fill="#ef4444" opacity="0.7"/>
+    <circle cx="115" cy="90" r="2.0999999999999996" fill="black"/>
+  <ellipse cx="100" cy="100" rx="8" ry="4" fill="#d4a574" opacity="0.35"/>
+  <line x1="90" y1="115" x2="110" y2="128" stroke="#d4a574" stroke-width="1.5" opacity="0.3"/>
+  <line x1="110" y1="115" x2="90" y2="128" stroke="#d4a574" stroke-width="1.5" opacity="0.3"/>
+  <path d="M100 90 L100 75" stroke="#d4a574" stroke-width="2" opacity="0.3"/>
+  <circle cx="100" cy="72" r="4" fill="#d4a574" opacity="0.2"/>
+
+  <rect x="0" y="176" width="200" height="24" fill="#d4a574" opacity="0.8" rx="0"/>
+  <text x="100" y="193" text-anchor="middle" fill="#fff" font-family="serif" font-size="10" font-weight="bold" dir="rtl">جمجمه کویر</text>
+</svg>

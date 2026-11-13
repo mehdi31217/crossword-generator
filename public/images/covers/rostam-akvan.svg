@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#8644f7"/>
+<stop offset="100%" stop-color="#7c3aed"/>
+</linearGradient></defs>
+<rect width="400" height="600" fill="url(#bg)"/>
+<rect x="10" y="10" width="380" height="580" rx="10" fill="none" stroke="#4c1d95" stroke-width="5" opacity="0.7"/>
+<path d="M 200 20 L 200 30 M 20 300 L 30 300 M 380 300 L 370 300" fill="none" stroke="#4c1d95" stroke-width="3" opacity="0.4"/>
+
+
+
+
+
+
+
+
+<polygon points="50,400 200,280 350,400" fill="#1a0a2a" opacity="0.7"/>
+<polygon points="155,376 200,298 245,376" fill="#fff" opacity="0.25"/>
+<circle cx="200" cy="366.7" r="6.300000000000001" fill="#1a1a2e"/>
+<ellipse cx="200" cy="385.6" rx="9" ry="14.4" fill="#1a1a2e"/>
+<line x1="194.6" y1="375" x2="186.5" y2="391" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="205.4" y1="375" x2="213.5" y2="391" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="192.8" y1="400" x2="200" y2="409" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="207.2" y1="400" x2="200" y2="409" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+<circle cx="100" cy="280" r="15" fill="#7c3aed" opacity="0.4"/>
+
+
+
+
+
+
+<rect x="30" y="450" width="340" height="50" rx="10" fill="#4c1d95" opacity="0.85"/>
+<text x="200" y="482" text-anchor="middle" fill="#fff" font-family="serif" font-size="22" font-weight="bold">رستم و اکوان دیو</text>
+<text x="200" y="508" text-anchor="middle" fill="#fff" font-family="serif" font-size="13" opacity="0.8">فردوسی</text>
+</svg>

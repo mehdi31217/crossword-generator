@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#4a08bb"/>
+<stop offset="100%" stop-color="#2c009d"/>
+</linearGradient></defs>
+<rect width="500" height="600" fill="url(#bg)"/>
+<rect x="8" y="8" width="484" height="584" rx="12.5" fill="none" stroke="#4c1d95" stroke-width="6.25" opacity="0.7"/>
+<path d="M 250 20.5 L 250 33 M 20.5 300 L 33 300 M 479.5 300 L 467 300" fill="none" stroke="#4c1d95" stroke-width="3.75" opacity="0.4"/>
+<polygon points="75,320 250,200 425,320" fill="#1a0a2a" opacity="0.7"/>
+<polygon points="197.5,296 250,218 302.5,296" fill="#fff" opacity="0.25"/>
+<circle cx="150" cy="343" r="7.000000000000001" fill="#1a1a2e"/>
+<ellipse cx="150" cy="364" rx="10" ry="16" fill="#1a1a2e"/>
+<line x1="144" y1="352" x2="135" y2="370" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="156" y1="352" x2="165" y2="370" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="142" y1="380" x2="150" y2="390" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="158" y1="380" x2="150" y2="390" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+<rect x="220" y="180" width="60" height="40" rx="3" fill="#4c1d95" opacity="0.8"/>
+<line x1="220" y1="200" x2="250" y2="200" stroke="#fde047" stroke-width="2" opacity="0.5"/>
+<line x1="260" y1="200" x2="280" y2="200" stroke="#fde047" stroke-width="2" opacity="0.5"/>
+<polygon points="55,530 56.5,520 58,510 59.5,500 61,490 62.5,480 64,470 65.5,460 67,450 68.5,440 70,430 70,430 71.5,440 73,450 74.5,460 76,470 77.5,480 79,490 80.5,500 82,510 83.5,520 85,530" fill="#1a1a2a" opacity="0.8"/>
+<polygon points="415,530 416.5,520 418,510 419.5,500 421,490 422.5,480 424,470 425.5,460 427,450 428.5,440 430,430 430,430 431.5,440 433,450 434.5,460 436,470 437.5,480 439,490 440.5,500 442,510 443.5,520 445,530" fill="#1a1a2a" opacity="0.8"/>
+<rect x="100" y="520" width="300" height="36" rx="18" fill="#4c1d95" opacity="0.85"/>
+<text x="250" y="543" text-anchor="middle" fill="#fff" font-family="serif" font-size="16" font-weight="bold">پیروزی و بازگشت</text>
+</svg>

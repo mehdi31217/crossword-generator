@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#b45309"/>
+<stop offset="100%" stop-color="#822100"/>
+</linearGradient></defs>
+<rect width="400" height="600" fill="url(#bg)"/>
+<rect x="10" y="10" width="380" height="580" rx="12" fill="none" stroke="#78350f" stroke-width="6" opacity="0.7"/>
+<polygon points="224,300 210.39230484541326,306 212,320.7846096908265 200,312 188,320.7846096908265 189.60769515458674,306 176,300 189.60769515458674,294 188,279.2153903091735 200,288 212,279.2153903091735 210.39230484541326,294 " fill="none" stroke="#78350f" stroke-width="3.5999999999999996" opacity="0.4" transform="translate(0,0)"/>
+
+
+
+
+
+
+<polygon points="25,400 200,280 375,400" fill="#0a2a1a" opacity="0.7"/>
+<polygon points="77.5,388 200,262 322.5,388" fill="#fff" opacity="0.3"/>
+<circle cx="200" cy="362" r="8" fill="#1a3a2a"/>
+<ellipse cx="200" cy="388" rx="12" ry="22.5" fill="#1a3a2a"/>
+<line x1="192" y1="372" x2="180" y2="397" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<line x1="208" y1="372" x2="220" y2="397" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<line x1="194" y1="400" x2="194" y2="415" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<line x1="206" y1="415" x2="206" y2="400" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<path d="M 82 520 L 83.8 510 L 85.6 500 L 87.4 490 L 89.2 480 L 91 470 L 92.8 460 L 94.6 450 L 96.4 440 L 98.2 430 L 100 420 L 100 420 L 101.8 430 L 103.6 440 L 105.4 450 L 107.2 460 L 109 470 L 110.8 480 L 112.6 490 L 114.4 500 L 116.2 510 L 118 520 Z" fill="#0f3a2a" opacity="0.8"/>
+<path d="M 282 520 L 283.8 510 L 285.6 500 L 287.4 490 L 289.2 480 L 291 470 L 292.8 460 L 294.6 450 L 296.4 440 L 298.2 430 L 300 420 L 300 420 L 301.8 430 L 303.6 440 L 305.4 450 L 307.2 460 L 309 470 L 310.8 480 L 312.6 490 L 314.4 500 L 316.2 510 L 318 520 Z" fill="#0f3a2a" opacity="0.8"/>
+
+<circle cx="200" cy="330" r="30" fill="none" stroke="#b45309" stroke-width="2.5"/>
+<circle cx="200" cy="330" r="21" fill="none" stroke="#b45309" stroke-width="1.5"/>
+<circle cx="200" cy="330" r="10.5" fill="#b45309" opacity="0.4"/>
+<line x1="180" y1="300" x2="180" y2="342" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="171" y1="333.6" x2="189" y2="333.6" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/>
+<rect x="177" y="342" width="6" height="12" rx="1.5" fill="#9ca3af"/>
+<line x1="220" y1="300" x2="220" y2="342" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="211" y1="333.6" x2="229" y2="333.6" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/>
+<rect x="217" y="342" width="6" height="12" rx="1.5" fill="#9ca3af"/>
+
+
+
+
+
+<rect x="40" y="460" width="320" height="50" rx="10" fill="#78350f" opacity="0.85"/>
+<text x="200" y="492" text-anchor="middle" fill="#fff" font-family="serif" font-size="24" font-weight="bold">رستم و اسفندیار</text>
+<text x="200" y="518" text-anchor="middle" fill="#fff" font-family="serif" font-size="13" opacity="0.8">فردوسی</text>
+</svg>

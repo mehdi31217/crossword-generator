@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="cg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a140f"/>
+      <stop offset="100%" stop-color="#0a140fCC"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#cg)" rx="8"/>
+  <rect x="8" y="8" width="384" height="284" fill="none" stroke="#2d6a4f" stroke-width="2" rx="6" opacity="0.6"/>
+  <rect x="16" y="16" width="368" height="268" fill="none" stroke="#2d6a4f" stroke-width="1" rx="5" opacity="0.3"/>
+  
+    <circle cx="200" cy="115" r="55" fill="none" stroke="#2d6a4f" stroke-width="3" opacity="0.3"/>
+    <circle cx="200" cy="115" r="40" fill="none" stroke="#2d6a4f" stroke-width="2" opacity="0.2"/>
+    <circle cx="185" cy="106" r="3" fill="#86efac" opacity="0.6"/>
+    <circle cx="215" cy="106" r="3" fill="#86efac" opacity="0.6"/>
+    <path d="M185 120 Q200 134 215 120" fill="none" stroke="#2d6a4f" stroke-width="2" stroke-linecap="round"/>
+    <path d="M170 95 L185 70 L200 95 L200 138 Q185 148 170 138Z" fill="#2d6a4f" opacity="0.5"/>
+    <path d="M230 95 L215 70 L200 95 L200 138 Q215 148 230 138Z" fill="#2d6a4f" opacity="0.5"/>
+    <path d="M80 90 Q64.6 112 70.76 134 Q77.69 145 80 147.75 Q82.31 145 89.24 134 Q95.4 112 80 90Z" fill="#15803d" opacity="0.9"/>
+    <path d="M80 109.25 L76.92 125.75" stroke="#15803d" stroke-width="1" fill="none" opacity="0.3"/>
+    <path d="M80 120.25 L83.08 134" stroke="#15803d" stroke-width="1" fill="none" opacity="0.3"/>
+    <path d="M320 90 Q304.6 112 310.76 134 Q317.69 145 320 147.75 Q322.31 145 329.24 134 Q335.4 112 320 90Z" fill="#15803d" opacity="0.9"/>
+    <path d="M320 109.25 L316.92 125.75" stroke="#15803d" stroke-width="1" fill="none" opacity="0.3"/>
+    <path d="M320 120.25 L323.08 134" stroke="#15803d" stroke-width="1" fill="none" opacity="0.3"/>
+    <polygon points="65,148 110,108 155,148" fill="#2d6a4f" opacity="0.4"/>
+    <polygon points="245,148 290,108 335,148" fill="#2d6a4f" opacity="0.4"/>
+  
+  <rect x="48" y="235" width="304" height="45" rx="5" fill="black" opacity="0.45"/>
+  <text x="200" y="262" text-anchor="middle" fill="#e8f5e9" font-family="serif" font-size="20" font-weight="bold" dir="rtl">بیژن و منیژه</text>
+  <rect x="0" y="296" width="400" height="4" fill="#2d6a4f"/>
+  <rect x="0" y="0" width="400" height="4" fill="#2d6a4f"/>
+</svg>

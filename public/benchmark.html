@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <title>Grid Generation Benchmark</title>
+  <style>
+    body { font-family: monospace; background: #111; color: #eee; padding: 20px; font-size: 13px; }
+    .log { white-space: pre-wrap; word-break: break-all; line-height: 1.5; }
+    .ok { color: #4caf50; }
+    .fail { color: #f44336; }
+    .info { color: #888; }
+    .warn { color: #ff9800; }
+    h2 { margin: 0 0 10px; }
+    #log { height: 90vh; overflow-y: auto; border: 1px solid #333; padding: 10px; background: #0a0a0a; }
+    #log span { display: block; }
+    select, button { background: #333; color: #eee; border: 1px solid #555; padding: 4px 8px; margin: 2px; }
+  </style>
+</head>
+<body>
+  <h2>🧩 Benchmark</h2>
+  <div>
+    <select id="catSelect">
+      <option value="all">All categories</option>
+      <option value="general">general</option>
+      <option value="movies">movies</option>
+      <option value="cities">cities</option>
+      <option value="knowledge">knowledge</option>
+      <option value="food">food</option>
+      <option value="body">body</option>
+      <option value="jobs">jobs</option>
+      <option value="tech">tech</option>
+      <option value="nature">nature</option>
+      <option value="sports">sports</option>
+      <option value="art">art</option>
+    </select>
+    <button onclick="runOne(document.getElementById('catSelect').value)">▶ Run One</button>
+    <button onclick="runAll()">▶▶ Run All</button>
+    <button id="stopBtn" onclick="stopAll()" disabled style="background:#822">■ Stop</button>
+    <button onclick="showSummary()">📊 Summary</button>
+    <button onclick="showWordStats()">📖 Word Stats</button>
+    <button onclick="document.getElementById('log').innerHTML=''">Clear</button>
+  </div>
+  <div id="log"><span class="info">Ready. Choose category + size below.</span></div>
+  <div id="sizeBtns" style="margin-top:4px">
+    <button onclick="runSize(event, this.innerText)">5</button>
+    <button onclick="runSize(event, this.innerText)">6</button>
+    <button onclick="runSize(event, this.innerText)">7</button>
+    <button onclick="runSize(event, this.innerText)">8</button>
+    <button onclick="runSize(event, this.innerText)">9</button>
+    <button onclick="runSize(event, this.innerText)">10</button>
+  </div>
+
+  <script type="module">
+    import { fillGrid, createEmptyGrid } from '/utils/gridLogic.ts';
+    import { loadCategory, priorityWordSet } from '/utils/dictionary.ts';
+    import { MASSIVE_GLUE_FA } from '/utils/glueWords.ts';
+    import { CATEGORY_GLUE_MAP_FA, CATEGORY_GLUE_MAP_EN } from '/data/glueWords.ts';
+    import { SHORT_EXTRA_MAP } from '/data/glueWordsExtra.ts';
+    import * as WL from '/data/wordLists.ts';
+
+    const CATEGORIES = ['general', 'movies', 'cities', 'knowledge', 'food', 'body', 'jobs', 'tech', 'nature', 'sports', 'art'];
+    const SIZES = [5, 6, 7, 8, 9, 10];
+
+    // Maps category string to its word list
+    const WORD_LIST_MAP = {
+      general: [], movies: WL.MOVIES_FA, cities: WL.CITIES_FA, knowledge: WL.KNOWLEDGE_FA,
+      food: WL.FOOD_FA, body: WL.BODY_FA, jobs: WL.JOBS_FA, tech: WL.TECH_FA,
+      nature: WL.NATURE_FA, sports: WL.SPORTS_FA, art: WL.ART_FA,
+    };
+
+    const CATEGORY_LABEL = {
+      general: 'عمومی', movies: 'فیلم', cities: 'شهرها', knowledge: 'دانش', food: 'غذا',
+      body: 'بدن', jobs: 'مشاغل', tech: 'تکنولوژی', nature: 'طبیعت', sports: 'ورزش', art: 'هنر',
+    };
+
+    function $(s) { return document.querySelector(s); }
+    function log(msg, cls='info') {
+      const el = document.getElementById('log');
+      const span = document.createElement('span');
+      span.className = cls;
+      span.textContent = '[' + new Date().toLocaleTimeString() + '] ' + msg;
+      el.appendChild(span);
+      el.scrollTop = el.scrollHeight;
+    }
+
+    // For yield to event loop
+    const yieldToUI = () => new Promise(r => setTimeout(r, 0));
+
+    function extractWords(g) {
+      const size = g.length;
+      const words = [];
+      const normWord = (s) => s.toUpperCase().replace(/[\s-]/g,'').replace(/[آأإ]/g,'ا').replace(/[ئي]/g,'ی').replace(/ك/g,'ک');
+      for (let r = 0; r < size; r++) {
+        let c = 0;
+        while (c < size) {
+          if (g[r][c].isBlack) { c++; continue; }
+          let word = '';
+          while (c < size && !g[r][c].isBlack) { word += (g[r][c].value || ''); c++; }
+          if (word.length >= 2) words.push(normWord(word));
+        }
+      }
+      for (let c = 0; c < size; c++) {
+        let r = 0;
+        while (r < size) {
+          if (g[r][c].isBlack) { r++; continue; }
+          let word = '';
+          while (r < size && !g[r][c].isBlack) { word += (g[r][c].value || ''); r++; }
+          if (word.length >= 2) words.push(normWord(word));
+        }
+      }
+      return words;
+    }
+
+    function measurePurity(g) {
+      const words = extractWords(g);
+      if (words.length === 0) return 0;
+      const pCount = words.filter(w => priorityWordSet.has(w)).length;
+      return pCount / words.length;
+    }
+
+    // ── SUMMARY STORAGE ──
+    const allResults = [];
+
+    function addResult(category, size, ok, purity, timeMs, attempts, wasFallback) {
+      const existing = allResults.find(r => r.category === category && r.size === size);
+      if (existing) {
+        existing.successCount += ok ? 1 : 0;
+        existing.totalCount++;
+        if (ok) existing.purities.push(purity);
+        existing.times.push(timeMs);
+        existing.attempts += attempts;
+        if (wasFallback) existing.fallbackCount++;
+      } else {
+        allResults.push({
+          category, size,
+          successCount: ok ? 1 : 0,
+          totalCount: 1,
+          purities: ok ? [purity] : [],
+          times: [timeMs],
+          attempts: attempts,
+          fallbackCount: wasFallback ? 1 : 0,
+        });
+      }
+    }
+
+    // ── STOP LOGIC ──
+    let stopped = false;
+
+    window.stopAll = () => {
+      stopped = true;
+      document.getElementById('stopBtn').disabled = true;
+      log('⏹ Stopping...', 'warn');
+    };
+
+    // ── TEST ONE COMBO ──
+    async function testOne(category, size) {
+      if (stopped) return;
+      log(`Testing ${category} ${size}×${size}...`, 'info');
+
+      loadCategory(category, 'fa', [], []);
+      await yieldToUI();
+
+      // Size-dependent: smaller grids need fewer tries, larger grids get more time
+      const sizeRetries = size <= 6 ? 25 : size <= 8 ? 40 : 30;
+      const maxRetries = sizeRetries;
+      const sizeTimeout = size <= 6 ? 1000 : size <= 8 ? 1500 : 2000;
+      const timeoutMs = sizeTimeout;
+      const HIGH_PURITY_TARGET = 0.60;
+      const bannedWords = new Set();
+      let pruneCount = 0;
+      let successGrid = null, bestPurity = 0, bestCandidate = null, usedFallback = false;
+      const start = performance.now();
+      let totalAttempts = 0;
+
+      // Single phase: fast attempts with iterative supplement pruning
+      // Pruning removes non-priority words from found solutions, forcing higher-purity paths
+      for (let i = 1; i <= maxRetries; i++) {
+        if (stopped) return;
+        totalAttempts++;
+        const attemptStart = performance.now();
+        const cand = await fillGrid(createEmptyGrid(size), timeoutMs, { priorityOnly: false, bannedWords });
+        const elapsed = (performance.now() - attemptStart).toFixed(0);
+        await yieldToUI();
+        if (cand) {
+          const p = measurePurity(cand);
+          // For general/all categories (no priority set), accept any valid grid
+          if (priorityWordSet.size === 0 || p >= HIGH_PURITY_TARGET) {
+            log(`  ${i}: ✅ purity=${(p*100).toFixed(0)}% ${elapsed}ms`, 'ok');
+            successGrid = cand;
+            break;
+          }
+          if (p > bestPurity) { bestPurity = p; bestCandidate = cand; }
+          // Prune: remove non-priority words from this solution to find different paths
+          if (pruneCount < 15 && p > 0) {
+            const words = extractWords(cand);
+            for (const w of words) {
+              if (!priorityWordSet.has(w)) bannedWords.add(w);
+            }
+            pruneCount++;
+          }
+          if (i <= 5 || i === maxRetries || i % 10 === 0) {
+            log(`  ${i}: purity=${(p*100).toFixed(0)}% ${elapsed}ms`, 'warn');
+          }
+        } else {
+          if (i <= 5 || i === maxRetries) {
+            log(`  ${i}: ❌ ${elapsed}ms`, 'fail');
+          }
+        }
+      }
+
+      // Fallback at 35% (or immediately for general/all)
+      if (!successGrid && (priorityWordSet.size === 0 || bestPurity >= 0.35) && bestCandidate) {
+        successGrid = bestCandidate;
+        usedFallback = true;
+        log(`  ⚠ FALLBACK: purity=${(bestPurity*100).toFixed(0)}%`, 'warn');
+      }
+
+      const totalTime = (performance.now() - start);
+
+      if (successGrid) {
+        const finalPurity = measurePurity(successGrid);
+        const pct = (finalPurity*100).toFixed(0);
+        log(`✅ ${category} ${size}×${size}: purity=${pct}% time=${totalTime.toFixed(0)}ms att=${totalAttempts}${usedFallback ? ' fallback' : ''}`, 'ok');
+        addResult(category, size, true, finalPurity, totalTime, totalAttempts, usedFallback);
+      } else {
+        log(`❌ ${category} ${size}×${size}: FAILED (${totalTime.toFixed(0)}ms, ${totalAttempts} att)`, 'fail');
+        addResult(category, size, false, 0, totalTime, totalAttempts, false);
+      }
+    }
+
+    // ── SUMMARY TABLE ──
+    window.showSummary = () => {
+      const logEl = document.getElementById('log');
+      let html = '<span class="info">─── SUMMARY ───</span>';
+      html += '<span>Cat'.padEnd(12) + 'Sz'.padEnd(4) + 'OK'.padEnd(6) + 'Avg%'.padEnd(6) + 'Min%'.padEnd(6) + 'Max%'.padEnd(6) + 'AvgMs'.padEnd(8) + 'Atts'.padEnd(6) + 'Fall</span>';
+      html += '<span class="info">' + '─'.repeat(56) + '</span>';
+
+      let totalOK = 0, totalAll = 0;
+      let puritySum = 0, purityCount = 0;
+
+      for (const r of allResults) {
+        const avgPct = r.purities.length > 0 ? (r.purities.reduce((a,b)=>a+b,0)/r.purities.length*100).toFixed(0) : '-';
+        const minPct = r.purities.length > 0 ? (Math.min(...r.purities)*100).toFixed(0) : '-';
+        const maxPct = r.purities.length > 0 ? (Math.max(...r.purities)*100).toFixed(0) : '-';
+        const avgMs = (r.times.reduce((a,b)=>a+b,0)/r.times.length).toFixed(0);
+        const okStr = r.successCount + '/' + r.totalCount;
+        const cls = r.successCount === r.totalCount ? 'ok' : r.successCount > 0 ? 'warn' : 'fail';
+        html += `<span class="${cls}">${r.category.padEnd(12)}${String(r.size).padEnd(4)}${okStr.padEnd(6)}${avgPct.padEnd(6)}${minPct.padEnd(6)}${maxPct.padEnd(6)}${avgMs.padEnd(8)}${String(r.attempts).padEnd(6)}${r.fallbackCount}</span>`;
+        totalOK += r.successCount;
+        totalAll += r.totalCount;
+        puritySum += r.purities.reduce((a,b)=>a+b,0);
+        purityCount += r.purities.length;
+      }
+
+      if (totalAll > 0) {
+        const rate = (totalOK/totalAll*100).toFixed(0);
+        const overallPct = purityCount > 0 ? (puritySum/purityCount*100).toFixed(0) : '-';
+        html += '<span class="info">' + '─'.repeat(56) + '</span>';
+        html += `<span class="ok">✅ ${totalOK}/${totalAll} (${rate}%)  avg purity=${overallPct}%</span>`;
+      }
+
+      // Replace log with summary
+      logEl.innerHTML = html;
+    };
+
+    // ── WORD STATS ──
+    window.showWordStats = async () => {
+      const logEl = document.getElementById('log');
+      let html = '<span class="info">─── WORD STATS ───</span>';
+      html += '<span class="info">Counts by length: priority / total</span>';
+      let header = 'Cat'.padEnd(12) + 'P/Tot'.padEnd(7);
+      for (let len = 2; len <= 12; len++) header += String(len).padEnd(7);
+      html += '<span>' + header + '</span>';
+      html += '<span class="info">' + '─'.repeat(90) + '</span>';
+
+      for (const cat of CATEGORIES) {
+        loadCategory(cat, 'fa', [], []);
+        const counts = {};
+        for (let len = 2; len <= 12; len++) counts[len] = { priority: 0, total: 0 };
+
+        // Count raw category words
+        if (cat !== 'general') {
+          for (const w of (WORD_LIST_MAP[cat] || [])) {
+            const n = w.word.trim().length;
+            const len = n;
+            if (len >= 2 && len <= 12) counts[len].total++;
+          }
+        }
+
+        // Category glue
+        for (const w of (CATEGORY_GLUE_MAP_FA[cat] || [])) {
+          const len = w.word.trim().length;
+          if (len >= 2 && len <= 12) counts[len].total++;
+        }
+
+        // Short extra (DictionaryEntry objects, not strings)
+        for (const w of (SHORT_EXTRA_MAP[cat] || [])) {
+          const word = w.word;
+          const len = word.trim().length;
+          if (len >= 2 && len <= 12) { counts[len].total++; counts[len].priority++; }
+        }
+
+        // Count priority words
+        for (const w of priorityWordSet) {
+          const len = w.length;
+          if (len >= 2 && len <= 12) counts[len].priority++;
+        }
+
+        let totalP = 0, totalT = 0;
+        for (let len = 2; len <= 12; len++) { totalP += counts[len].priority; totalT += counts[len].total; }
+
+        let line = (CATEGORY_LABEL[cat] || cat).padEnd(12) + (totalP + '/' + totalT).padEnd(7);
+        for (let len = 2; len <= 12; len++) {
+          const p = counts[len].priority;
+          const t = counts[len].total;
+          if (t === 0) line += '-'.padEnd(7);
+          else line += (p > 0 ? p + '/' + t : String(t)).padEnd(7);
+        }
+        const cls = totalP === 0 ? 'warn' : totalP < 15 ? 'fail' : 'ok';
+        html += `<span class="${cls}">${line}</span>`;
+        await new Promise(r => setTimeout(r, 0));
+      }
+
+      html += '<span class="info">' + '─'.repeat(90) + '</span>';
+      html += `<span>Base glue (FA): ${MASSIVE_GLUE_FA.length} words</span>`;
+      for (const cat of CATEGORIES) {
+        const cg = CATEGORY_GLUE_MAP_FA[cat] || [];
+        if (cg.length > 0) html += `<span>  ${CATEGORY_LABEL[cat]||cat} glue: ${cg.length}</span>`;
+      }
+      logEl.innerHTML = html;
+    };
+
+    async function runSingle(category, size) {
+      stopped = false;
+      document.getElementById('stopBtn').disabled = false;
+      const startTime = Date.now();
+      await testOne(category, size);
+      document.getElementById('stopBtn').disabled = true;
+      log(`Elapsed: ${((Date.now() - startTime)/1000).toFixed(0)}s`, 'info');
+    }
+
+    // Expose to global scope for inline onclick
+    window.runOne = async (category) => {
+      if (category === 'all') { runAll(); return; }
+      document.getElementById('log').innerHTML = '';
+      await runSingle(category, 8);
+    };
+    window.runSize = async (event, sizeStr) => {
+      const size = parseInt(sizeStr);
+      const cat = document.getElementById('catSelect').value;
+      document.getElementById('log').innerHTML = '';
+      await runSingle(cat === 'all' ? 'general' : cat, size);
+    };
+    window.runAll = async () => {
+      stopped = false;
+      document.getElementById('stopBtn').disabled = false;
+      document.getElementById('log').innerHTML = '';
+      log('Starting full benchmark: 11 categories × 6 sizes...', 'info');
+      let totalElapsed = 0;
+      for (const cat of CATEGORIES) {
+        if (stopped) break;
+        for (const size of SIZES) {
+          if (stopped) break;
+          const start = Date.now();
+          await testOne(cat, size);
+          totalElapsed += Date.now() - start;
+        }
+        if (stopped) break;
+      }
+      document.getElementById('stopBtn').disabled = true;
+      if (stopped) log('⏹ Stopped.', 'warn');
+      else log(`🎉 DONE! Total: ${(totalElapsed/1000).toFixed(0)}s`, 'ok');
+      stopped = false;
+    };
+
+    log('Ready! Click buttons to test.', 'info');
+  </script>
+</body>
+</html>

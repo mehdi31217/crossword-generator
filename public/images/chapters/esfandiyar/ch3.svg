@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#005a2d"/>
+<stop offset="100%" stop-color="#004114"/>
+</linearGradient></defs>
+<rect width="500" height="600" fill="url(#bg)"/>
+<rect x="8" y="8" width="484" height="584" rx="15" fill="none" stroke="#064e3b" stroke-width="7.5" opacity="0.7"/>
+<polygon points="280,300 262.9903810567666,307.5 265,325.98076211353316 250,315 235,325.98076211353316 237.00961894323342,307.5 220,300 237.00961894323342,292.5 235,274.01923788646684 250,285 265,274.01923788646684 262.9903810567666,292.5 " fill="none" stroke="#064e3b" stroke-width="4.5" opacity="0.4" transform="translate(0,0)"/>
+<rect x="80" y="300" width="340" height="120" rx="8" fill="#1a1a2e" opacity="0.7"/>
+<text x="250" y="370" text-anchor="middle" fill="#a855f7" font-family="serif" font-size="14" opacity="0.6">طلسم جادو</text>
+<circle cx="250" cy="362" r="8" fill="#1a3a2a"/>
+<ellipse cx="250" cy="388" rx="12" ry="22.5" fill="#1a3a2a"/>
+<line x1="242" y1="372" x2="230" y2="397" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<line x1="258" y1="372" x2="270" y2="397" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<line x1="244" y1="400" x2="244" y2="415" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<line x1="256" y1="415" x2="256" y2="400" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<circle cx="130" cy="260" r="20" fill="#a855f7" opacity="0.3"/>
+<circle cx="370" cy="260" r="20" fill="#a855f7" opacity="0.3"/>
+<path d="M 250 65 L 253.52671151375483 75.14589803375031 M 264.2658477444273 75.36474508437578 L 255.70633909777092 81.85410196624969 M 258.8167787843871 92.13525491562422 L 250 86 M 241.18322121561292 92.13525491562422 L 244.29366090222908 81.85410196624969 M 235.7341522555727 75.36474508437578 L 246.47328848624517 75.14589803375031 Z" fill="#fde047" opacity="0.8"/>
+<path d="M 52 530 L 53.8 522 L 55.6 514 L 57.4 506 L 59.2 498 L 61 490 L 62.8 482 L 64.6 474 L 66.4 466 L 68.2 458 L 70 450 L 70 450 L 71.8 458 L 73.6 466 L 75.4 474 L 77.2 482 L 79 490 L 80.8 498 L 82.6 506 L 84.4 514 L 86.2 522 L 88 530 Z" fill="#0f3a2a" opacity="0.8"/>
+<path d="M 412 530 L 413.8 522 L 415.6 514 L 417.4 506 L 419.2 498 L 421 490 L 422.8 482 L 424.6 474 L 426.4 466 L 428.2 458 L 430 450 L 430 450 L 431.8 458 L 433.6 466 L 435.4 474 L 437.2 482 L 439 490 L 440.8 498 L 442.6 506 L 444.4 514 L 446.2 522 L 448 530 Z" fill="#0f3a2a" opacity="0.8"/>
+<rect x="100" y="520" width="300" height="36" rx="18" fill="#064e3b" opacity="0.85"/>
+<text x="250" y="543" text-anchor="middle" fill="#fff" font-family="serif" font-size="16" font-weight="bold">خوان سوم: زن جادوگر</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#781700"/>
+<stop offset="100%" stop-color="#5f0000"/>
+</linearGradient></defs>
+<rect width="500" height="600" fill="url(#bg)"/>
+<rect x="8" y="8" width="484" height="584" rx="15" fill="none" stroke="#78350f" stroke-width="7.5" opacity="0.7"/>
+<polygon points="280,300 262.9903810567666,307.5 265,325.98076211353316 250,315 235,325.98076211353316 237.00961894323342,307.5 220,300 237.00961894323342,292.5 235,274.01923788646684 250,285 265,274.01923788646684 262.9903810567666,292.5 " fill="none" stroke="#78350f" stroke-width="4.5" opacity="0.4" transform="translate(0,0)"/>
+<circle cx="150" cy="338.2" r="8.8" fill="#1a1a2e"/>
+<ellipse cx="150" cy="366.8" rx="13.2" ry="24.75" fill="#1a1a2e"/>
+<line x1="141.2" y1="349" x2="128" y2="376.7" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+<line x1="158.8" y1="349" x2="172" y2="376.7" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+<line x1="143.4" y1="380" x2="143.4" y2="396.5" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+<line x1="156.6" y1="396.5" x2="156.6" y2="380" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+<circle cx="350" cy="338.2" r="8.8" fill="#2a2a1e"/>
+<ellipse cx="350" cy="366.8" rx="13.2" ry="24.75" fill="#2a2a1e"/>
+<line x1="341.2" y1="349" x2="328" y2="376.7" stroke="#2a2a1e" stroke-width="3" stroke-linecap="round"/>
+<line x1="358.8" y1="349" x2="372" y2="376.7" stroke="#2a2a1e" stroke-width="3" stroke-linecap="round"/>
+<line x1="343.4" y1="380" x2="343.4" y2="396.5" stroke="#2a2a1e" stroke-width="3" stroke-linecap="round"/>
+<line x1="356.6" y1="396.5" x2="356.6" y2="380" stroke="#2a2a1e" stroke-width="3" stroke-linecap="round"/>
+<circle cx="150" cy="300" r="25" fill="none" stroke="#b45309" stroke-width="2.5"/>
+<circle cx="150" cy="300" r="17.5" fill="none" stroke="#b45309" stroke-width="1.5"/>
+<circle cx="150" cy="300" r="8.75" fill="#b45309" opacity="0.4"/>
+<circle cx="350" cy="300" r="25" fill="none" stroke="#78350f" stroke-width="2.5"/>
+<circle cx="350" cy="300" r="17.5" fill="none" stroke="#78350f" stroke-width="1.5"/>
+<circle cx="350" cy="300" r="8.75" fill="#78350f" opacity="0.4"/>
+<line x1="150" y1="280" x2="150" y2="336" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="138" y1="324.8" x2="162" y2="324.8" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/>
+<rect x="147" y="336" width="6" height="16" rx="1.5" fill="#9ca3af"/>
+<line x1="350" y1="280" x2="350" y2="336" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="338" y1="324.8" x2="362" y2="324.8" stroke="#9ca3af" stroke-width="2" stroke-linecap="round"/>
+<rect x="347" y="336" width="6" height="16" rx="1.5" fill="#9ca3af"/>
+<polygon points="75,400 250,300 425,400" fill="#1a1410" opacity="0.7"/>
+<polygon points="127.5,390 250,285 372.5,390" fill="#fff" opacity="0.3"/>
+<path d="M 52 530 L 53.8 522 L 55.6 514 L 57.4 506 L 59.2 498 L 61 490 L 62.8 482 L 64.6 474 L 66.4 466 L 68.2 458 L 70 450 L 70 450 L 71.8 458 L 73.6 466 L 75.4 474 L 77.2 482 L 79 490 L 80.8 498 L 82.6 506 L 84.4 514 L 86.2 522 L 88 530 Z" fill="#3a2a1a" opacity="0.8"/>
+<path d="M 412 530 L 413.8 522 L 415.6 514 L 417.4 506 L 419.2 498 L 421 490 L 422.8 482 L 424.6 474 L 426.4 466 L 428.2 458 L 430 450 L 430 450 L 431.8 458 L 433.6 466 L 435.4 474 L 437.2 482 L 439 490 L 440.8 498 L 442.6 506 L 444.4 514 L 446.2 522 L 448 530 Z" fill="#3a2a1a" opacity="0.8"/>
+<rect x="100" y="520" width="300" height="36" rx="18" fill="#78350f" opacity="0.85"/>
+<text x="250" y="543" text-anchor="middle" fill="#fff" font-family="serif" font-size="16" font-weight="bold">نبرد دو پهلوان</text>
+</svg>

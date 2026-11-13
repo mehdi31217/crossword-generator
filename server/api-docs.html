@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crossword API Docs</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;900&family=Fira+Code:wght@400;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Vazirmatn', sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+    line-height: 1.8;
+    padding: 0;
+  }
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e40af 100%);
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 4px solid #6366f1;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 50%, rgba(99,102,241,0.1) 0%, transparent 50%);
+    animation: pulse 8s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 1; }
+  }
+  .header h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+  }
+  .header p {
+    color: #a5b4fc;
+    font-size: 1rem;
+    margin-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .badge {
+    display: inline-block;
+    background: #22c55e;
+    color: #fff;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-top: 12px;
+    position: relative;
+    z-index: 1;
+  }
+  .header .base-url {
+    display: inline-block;
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 8px 24px;
+    border-radius: 12px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    margin-top: 16px;
+    border: 1px solid #334155;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px;
+  }
+
+  /* Stats */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .stat-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+  }
+  .stat-card .num {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #818cf8;
+  }
+  .stat-card .label {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    font-weight: 700;
+    margin-top: 4px;
+  }
+
+  /* TOC */
+  .toc {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 40px;
+  }
+  .toc h2 {
+    font-size: 1.1rem;
+    color: #818cf8;
+    margin-bottom: 16px;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 8px;
+  }
+  .toc a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .toc a:hover {
+    background: #334155;
+    color: #e2e8f0;
+  }
+  .toc .method {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    min-width: 48px;
+    text-align: center;
+  }
+  .method-get { background: #1e3a5f; color: #60a5fa; }
+  .method-post { background: #14532d; color: #4ade80; }
+  .method-put { background: #5b2e0b; color: #fb923c; }
+  .method-delete { background: #4c1111; color: #f87171; }
+
+  /* Endpoint */
+  .endpoint {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+  .endpoint:hover {
+    border-color: #6366f1;
+  }
+  .endpoint-header {
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #334155;
+    flex-wrap: wrap;
+  }
+  .endpoint-header .method {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 6px;
+    min-width: 60px;
+    text-align: center;
+  }
+  .endpoint-header .path {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.95rem;
+    color: #e2e8f0;
+    font-weight: 700;
+    direction: ltr;
+    text-align: left;
+  }
+  .endpoint-header .desc {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-right: auto;
+  }
+  .endpoint-header .tag {
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 10px;
+    background: #334155;
+    color: #94a3b8;
+  }
+
+  .endpoint-body {
+    padding: 20px 24px;
+  }
+  .endpoint-body h4 {
+    font-size: 0.75rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    margin-top: 16px;
+    font-weight: 700;
+  }
+  .endpoint-body h4:first-child {
+    margin-top: 0;
+  }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    margin-bottom: 12px;
+    direction: ltr;
+    text-align: left;
+  }
+  th {
+    background: #334155;
+    color: #94a3b8;
+    font-weight: 700;
+    padding: 8px 12px;
+    text-align: left;
+  }
+  td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #1e293b;
+    color: #cbd5e1;
+    font-size: 0.8rem;
+  }
+  td.req {
+    color: #f87171;
+    font-size: 0.65rem;
+    font-weight: 700;
+  }
+  td.opt {
+    color: #94a3b8;
+    font-size: 0.65rem;
+    font-weight: 700;
+  }
+  tr:hover td {
+    background: #0f172a;
+  }
+
+  /* Code blocks */
+  pre {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 16px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.78rem;
+    overflow-x: auto;
+    direction: ltr;
+    text-align: left;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  pre .lang-tag {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #64748b;
+    background: #1e293b;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .copy-btn {
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    background: #334155;
+    color: #94a3b8;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.65rem;
+    cursor: pointer;
+    font-family: 'Vazirmatn', sans-serif;
+    transition: all 0.2s;
+  }
+  .copy-btn:hover {
+    background: #475569;
+    color: #e2e8f0;
+  }
+
+  .json-string { color: #22c55e; }
+  .json-number { color: #60a5fa; }
+  .json-key { color: #c084fc; }
+  .json-bool { color: #fbbf24; }
+  .json-null { color: #94a3b8; }
+  .json-bracket { color: #e2e8f0; }
+
+  /* WebSocket Section */
+  .ws-section {
+    background: linear-gradient(135deg, #1e1b4b, #1e293b);
+    border: 1px solid #6366f1;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 40px;
+  }
+  .ws-section h2 {
+    color: #818cf8;
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+  }
+  .ws-section p {
+    color: #94a3b8;
+    font-size: 0.85rem;
+  }
+
+  /* Schema */
+  .schema-box {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 40px;
+  }
+  .schema-box h2 {
+    color: #818cf8;
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+  }
+  .schema-table {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+  .schema-table th {
+    background: #1e293b;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #475569;
+    font-size: 0.8rem;
+    border-top: 1px solid #1e293b;
+  }
+  .footer a { color: #6366f1; text-decoration: none; }
+
+  @media (max-width: 768px) {
+    .header h1 { font-size: 1.5rem; }
+    .endpoint-header { flex-direction: column; align-items: flex-start; }
+    .endpoint-header .desc { margin-right: 0; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* Badge animation */
+  .live-badge {
+    background: #22c55e;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    animation: blink 2s infinite;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🧩 Crossword API</h1>
+  <p>مستندات کامل APIهای بک‌اند لوکال</p>
+  <div class="badge">⚡ Local Mode</div>
+  <div class="base-url">http://localhost:4000/api</div>
+</div>
+
+<div class="container">
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat-card">
+      <div class="num">22</div>
+      <div class="label">Endpoint</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">8</div>
+      <div class="label">جداول دیتابیس</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">7,033</div>
+      <div class="label">کلمه دیکشنری</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">3</div>
+      <div class="label">کتاب داستانی</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">✔️</div>
+      <div class="label">WebSocket فعال</div>
+    </div>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <h2>📋 فهرست</h2>
+    <div class="toc-grid">
+      <a href="#health"><span class="method method-get">GET</span> /api/health</a>
+      <a href="#login"><span class="method method-post">POST</span> /api/login</a>
+      <a href="#profile"><span class="method method-put">PUT</span> /api/profile</a>
+      <a href="#match"><span class="method method-post">POST</span> /api/match</a>
+      <a href="#leaderboard"><span class="method method-get">GET</span> /api/leaderboard</a>
+      <a href="#friends"><span class="method method-get">GET</span> /api/friends</a>
+      <a href="#friend-request"><span class="method method-post">POST</span> /api/friends/request</a>
+      <a href="#friend-accept"><span class="method method-post">POST</span> /api/friends/accept</a>
+      <a href="#friend-delete"><span class="method method-delete">DELETE</span> /api/friends/:id</a>
+      <a href="#messages-get"><span class="method method-get">GET</span> /api/messages/:friendId</a>
+      <a href="#messages-send"><span class="method method-post">POST</span> /api/messages/send</a>
+      <a href="#messages-read"><span class="method method-post">POST</span> /api/messages/read</a>
+      <a href="#notifications-get"><span class="method method-get">GET</span> /api/notifications</a>
+      <a href="#notifications-delete"><span class="method method-delete">DELETE</span> /api/notifications/:id</a>
+      <a href="#dictionary"><span class="method method-get">GET</span> /api/dictionary</a>
+      <a href="#dictionary-stats"><span class="method method-get">GET</span> /api/dictionary/stats</a>
+      <a href="#story"><span class="method method-get">GET</span> /api/story/books</a>
+      <a href="#tower-ticket"><span class="method method-post">POST</span> /api/tower/consume-ticket</a>
+      <a href="#tower-stats"><span class="method method-post">POST</span> /api/tower/update-stats</a>
+      <a href="#dictionary-seed"><span class="method method-post">POST</span> /api/dictionary/seed</a>
+      <a href="#generic-table"><span class="method method-get">GET</span> /api/:table</a>
+      <a href="#generic-post"><span class="method method-post">POST</span> /api/:table</a>
+      <a href="#websocket"><span class="method method-get" style="background:#4c1d95;color:#c4b5fd;">WS</span> WebSocket</a>
+    </div>
+  </div>
+
+  <!-- ======================== ENDPOINTS ======================== -->
+
+  <!-- Health -->
+  <div class="endpoint" id="health">
+    <div class="endpoint-header">
+      <span class="method method-get">GET</span>
+      <span class="path">/api/health</span>
+      <span class="desc">بررسی سلامت سرور</span>
+      <span class="tag">system</span>
+    </div>
+    <div class="endpoint-body">
+      <h4>پاسخ</h4>
+      <pre><span class="lang-tag">JSON</span>{
+  "<span class="json-key">status</span>": "<span class="json-string">ok</span>",
+  "<span class="json-key">timestamp</span>": "<span class="json-string">2026-05-31T15:00:24.962Z</span>"
+}</pre>
+      <h4>cURL</h4>
+      <pre><span class="lang-tag">BASH</span><button class="copy-btn" onclick="copy(this)">📋</button>curl http://localhost:4000/api/health</pre>
+    </div>
+  </div>
+
+  <!-- Login -->
+  <div class="endpoint" id="login">
+    <div class="endpoint-header">
+      <span class="method method-post">POST</span>
+      <span class="path">/api/login</span>
+      <span class="desc">ورود یا ثبت‌نام کاربر (deviceId محور)</span>
+      <span class="tag">auth</span>
+    </div>
+    <div class="endpoint-body">
+      <h4>بدنه درخواست</h4>
+      <table>
+        <tr><th>فیلد</th><th>نوع</th><th>الزامی</th><th>توضیح</th></tr>
+        <tr><td>deviceId</td><td>string</td><td class="req">✅</td><td>شناسه یکتای دستگاه (uuid یا هر string)</td></tr>
+        <tr><td>username</td><td>string</td><td class="opt">❌</td><td>نام کاربری (پیش‌فرض: "کاربر {چهار رقم آخر}")</td></tr>
+      </table>
+      <pre><span class="lang-tag">JSON</span>{
+  "<span class="json-key">deviceId</span>": "<span class="json-string">abc123</span>",
+  "<span class="json-key">username</span>": "<span class="json-string">مهدی</span>"
+}</pre>
+      <h4>پاسخ (201)</h4>
+      <pre><span class="lang-tag">JSON</span>{
+  "<span class="json-key">id</span>": "<span class="json-string">abc123</span>",
+  "<span class="json-key">username</span>": "<span class="json-string">مهدی</span>",
+  "<span class="json-key">avatar_text</span>": "<span class="json-string">👤</span>",
+  "<span class="json-key">friend_code</span>": "<span class="json-string">XSBHYQ</span>",
+  "<span class="json-key">coins</span>": <span class="json-number">250</span>,
+  "<span class="json-key">score</span>": <span class="json-number">0</span>,
+  "<span class="json-key">level</span>": <span class="json-number">1</span>,
+  "<span class="json-key">high_score</span>": <span class="json-number">0</span>,
+  "<span class="json-key">epic_progress_map</span>": { "<span class="json-key">rostam_7</span>": <span class="json-number">1</span> },
+  "<span class="json-key">tower_tickets</span>": <span class="json-number">1</span>,
+  "<span class="json-key">last_ticket_refill</span>": "<span class="json-string">2026-05-31T...</span>",
+  "<span class="json-key">updated_at</span>": "<span class="json-string">2026-05-31T...</span>"
+}</pre>
+      <h4>cURL</h4>
+      <pre><span class="lang-tag">BASH</span><button class="copy-btn" onclick="copy(this)">📋</button>curl -X POST http://localhost:4000/api/login \
+  -H "Content-Type: application/json" \
+  -d '{"deviceId":"abc123","username":"مهدی"}'</pre>
+    </div>
+  </div>
+
+  <!-- Profile Update -->
+  <div class="endpoint" id="profile">
+    <div class="endpoint-header">
+      <span class="method method-put">PUT</span>
+      <span class="path">/api/profile</span>
+      <span class="desc">بروزرسانی پروفایل کاربر</span>
+      <span class="tag">user</span>
+    </div>
+    <div class="endpoint-body">
+      <table>
+        <tr><th>فیلد</th><th>نوع</th><th>الزامی</th><th>توضیح</th></tr>
+        <tr><td>deviceId</td><td>string</td><td class="req">✅</td><td>شناسه کاربر</td></tr>
+        <tr><td>username</td><td>string</td><td class="opt">❌</td><td>نام جدید</td></tr>
+        <tr><td>avatar_text</td><td>string</td><td class="opt">❌</td><td>اموجی آواتار جدید</td></tr>
+      </table>
+      <pre><span class="lang-tag">JSON</span>{
+  "<span class="json-key">deviceId</span>": "<span class="json-string">abc123</span>",
+  "<span class="json-key">username</span>": "<span class="json-string">مهدی</span>",
+  "<span class="json-key">avatar_text</span>": "<span class="json-string">🦊</span>"
+}</pre>
+      <pre><span class="lang-tag">JSON</span>{
+  "<span class="json-key">id</span>": "<span class="json-string">abc123</span>",
+  "<span class="json-key">username</span>": "<span class="json-string">مهدی</span>",
+  "<span class="json-key">avatar_text</span>": "<span class="json-string">🦊</span>",
+  "<span class="json-key">updated_at</span>": "<span class="json-string">2026-05-31T...</span>"
+}</pre>
+    </div>
+  </div>
+
+  <!-- Match -->
+  <div class="endpoint" id="match">
+    <div class="endpoint-header">
+      <span class="method method-post">POST</span>
+      <span class="path">/api/match</span>
+      <span class="desc">ذخیره نتیجه بازی</span>
+      <span class="tag">game</span>
+    </div>
+    <div class="endpoint-body">
+      <table>
+        <tr><th>فیلد</th><th>نوع</th><th>الزامی</th><th>توضیح</th></tr>
+        <tr><td>deviceId</td><td>string</td><td class="req">✅</td><td>شناسه کاربر</td></tr>
+        <tr><td>score</td><td>number</td><td class="req">✅</td><td>امتیاز این بازی</td></tr>
+        <tr><td>time_taken</td><td>number</td><td class="req">✅</td><td>زمان (ثانیه)</td></tr>
+        <tr><td>grid_size</td><td>number</td><td class="req">✅</td><td>۵ تا ۱۰</td></tr>
+        <tr><td>category</td><td>string</td><td class="req">✅</td><td>general, movies, cities, ...</td></tr>
+        <tr><td>date_played</td><td>string</td><td class="opt">❌</td><td>پیش‌فرض: now</td></tr>
+      </table>
+      <pre><span class="lang-tag">JSON</span>{
+  "<span class="json-key">deviceId</span>": "<span class="json-string">abc123</span>",
+  "<span class="json-key">score</span>": <span class="json-number">150</span>,
+  "<span class="json-key">time_taken</span>": <span class="json-number">120</span>,
+  "<span class="json-key">grid_size</span>": <span class="json-number">7</span>,
+  "<span class="json-key">category</span>": "<span class="json-string">general</span>"
+}</pre>
+      <p style="color:#94a3b8;font-size:0.8rem;">پاسخ: پروفایل بروزشده کاربر (مشابه /api/login)</p>
+    </div>
+  </div>
+
+  <!-- Leaderboard -->
+  <div class="endpoint" id="leaderboard">
+    <div class="endpoint-header">
+      <span class="method method-get">GET</span>
+      <span class="path">/api/leaderboard</span>
+      <span class="desc">۲۰ نفر برتر</span>
+      <span class="tag">game</span>
+    </div>
+    <div class="endpoint-body">
+      <pre><span class="lang-tag">JSON</span><button class="copy-btn" onclick="copy(this)">📋</button>curl http://localhost:4000/api/leaderboard</pre>
+      <pre><span class="lang-tag">JSON</span>[
+  {
+    "<span class="json-key">username</span>": "<span class="json-string">مهدی</span>",
+    "<span class="json-key">avatar_text</span>": "<span class="json-string">🦊</span>",
+    "<span class="json-key">score</span>": <span class="json-number">63537</span>,
+    "<span class="json-key">high_score</span>": <span class="json-number">6195</span>,
+    "<span class="json-key">level</span>": <span class="json-number">64</span>
+  },
+  {
+    "<span class="json-key">username</span>": "<span class="json-string">مهسا</span>",
+    "<span class="json-key">avatar_text</span>": "<span class="json-string">👾</span>",
+    "<span class="json-key">score</span>": <span class="json-number">12234</span>,
+    ...
+  }
+]</pre>
+    </div>
+  </div>
+
+  <!-- Friends -->
+  <div class="endpoint" id="friends">
+    <div class="endpoint-header">
+      <span class="method method-get">GET</span>
+      <span class="path">/api/friends?userId={id}</span>
+      <span class="desc">لیست دوستان کاربر</span>
+      <span class="tag">social</span>
+    </div>
+    <div class="endpoint-body">
+      <table><tr><th>پارامتر</th><th>نوع</th><th>توضیح</th></tr>
+      <tr><td>userId</td><td>string</td><td>شناسه کاربر</td></tr></table>
+      <pre><span class="lang-tag">JSON</span>[
+  {
+    "<span class="json-key">id</span>": "<span class="json-string">uuid-1</span>",
+    "<span class="json-key">friendId</span>": "<span class="json-string">user_0912...</span>",
+    "<span class="json-key">name</span>": "<span class="json-string">مهسا</span>",
+    "<span class="json-key">avatar</span>": "<span class="json-string">👾</span>",
+    "<span class="json-key">status</span>": "<span class="json-string">accepted</span>"
+  }
+]</pre>
+    </div>
+  </div>
+
+  <!-- Friend Request -->
+  <div class="endpoint" id="friend-request">
+    <div class="endpoint-header">
+      <span class="method method-post">POST</span>
+      <span class="path">/api/friends/request</span>
+      <span class="desc">ارسال درخواست دوستی</span>
+      <span class="tag">social</span>
+    </div>
+    <div class="endpoint-body">
+      <table>
+        <tr><th>فیلد</th><th>نوع</th><th>توضیح</th></tr>
+        <tr><td>myId</td><td>string</td><td>شناسه خودت</td></tr>
+        <tr><td>friend_code</td><td>string</td><td>کد ۶ حرفی دوست (ABCDEF)</td></tr>
+      </table>
+      <pre><span class="lang-tag">JSON</span>{
+  "<span class="json-key">myId</span>": "<span class="json-string">abc123</span>",
+  "<span class="json-key">friend_code</span>": "<span class="json-string">XSBHYQ</span>"
+}</pre>
+      <pre><span class="lang-tag">JSON</span>{ "<span class="json-key">success</span>": <span class="json-bool">true</span> }</pre>
+    </div>
+  </div>
+
+  <!-- Friend Accept -->
+  <div class="endpoint" id="friend-accept">
+    <div class="endpoint-header">
+      <span class="method method-post">POST</span>
+      <span class="path">/api/friends/accept</span>
+      <span class="desc">قبول درخواست دوستی</span>
+      <span class="tag">social</span>
+    </div>
+    <div class="endpoint-body">
+      <pre><span class="lang-tag">JSON</span>{
+  "<span class="json-key">sender_id</span>": "<span class="json-string">user_0912...</span>",
+  "<span class="json-key">receiver_id</span>": "<span class="json-string">abc123</span>",
+  "<span class="json-key">notification_id</span>": "<span class="json-string">uuid-notif</span>"
+}</pre>
+      <pre><span class="lang-tag">JSON</span>{ "<span class="json-key">success</span>": <span class="json-bool">true</span> }</pre>
+    </div>
+  </div>
+
+  <!-- Friend Delete -->
+  <div class="endpoint" id="friend-delete">
+    <div class="endpoint-header">
+      <span class="method method-delete">DELETE</span>
+      <span class="path">/api/friends/:id</span>
+      <span class="desc">حذف دوست</span>
+      <span class="tag">social</span>
+    </div>
+    <div class="endpoint-body">
+      <p style="color:#94a3b8;font-size:0.85rem;">:id = شناسه رابطه دوستی (friendship id)</p>
+      <pre><span class="lang-tag">BASH</span><button class="copy-btn" onclick="copy(this)">📋</button>curl -X DELETE http://localhost:4000/api/friends/uuid-1</pre>
+      <pre><span class="lang-tag">JSON</span>{ "<span class="json-key">success</span>": <span class="json-bool">true</span> }</pre>
+    </div>
+  </div>
+
+  <!-- Messages GET -->
+  <div class="endpoint" id="messages-get">
+    <div class="endpoint-header">
+      <span class="method method-get">GET</span>
+      <span class="path">/api/messages/:friendId?myId={id}</span>
+      <span class="desc">تاریخچه چت با یک دوست</span>
+      <span class="tag">social</span>
+    </div>
+    <div class="endpoint-body">
+      <table><tr><th>پارامتر</th><th>نوع</th><th>توضیح</th></tr>
+      <tr><td>myId</td><td>string</td><td>شناسه خودت</td></tr>
+      <tr><td>:friendId</td><td>string</td><td>شناسه دوست</td></tr></table>
+      <pre><span class="lang-tag">JSON</span><button class="copy-btn" onclick="copy(this)">📋</button>curl "http://localhost:4000/api/messages/user_0912...?myId=abc123"</pre>
+      <pre><span class="lang-tag">JSON</span>[
+  {
+    "<span class="json-key">id</span>": "<span class="json-string">uuid-msg</span>",
+    "<span class="json-key">senderId</span>": "<span class="json-string">abc123</span>",
+    "<span class="json-key">receiverId</span>": "<span class="json-string">user_0912...</span>",
+    "<span class="json-key">content</span>": "<span class="json-string">سلام!</span>",
+    "<span class="json-key">createdAt</span>": "<span class="json-string">2026-05-31T...</span>",
+    "<span class="json-key">read</span>": <span class="json-bool">true</span>,
+    "<span class="json-key">isMine</span>": <span class="json-bool">true</span>
+  }
+]</pre>
+    </div>
+  </div>
+
+  <!-- Messages Send -->
+  <div class="endpoint" id="messages-send">
+    <div class="endpoint-header">
+      <span class="method method-post">POST</span>
+      <span class="path">/api/messages/send</span>
+      <span class="desc">ارسال پیام چت</span>
+      <span class="tag">social</span>
+    </div>
+    <div class="endpoint-body">
+      <pre><span class="lang-tag">JSON</span>{
+  "<span class="json-key">sender_id</span>": "<span class="json-string">abc123</span>",
+  "<span class="json-key">receiver_id</span>": "<span class="json-string">user_0912...</span>",
+  "<span class="json-key">content</span>": "<span class="json-string">سلام!</span>"
+}</pre>
+      <pre><span class="lang-tag">JSON</span>{
+  "<span class="json-key">id</span>": "<span class="json-string">uuid-msg</span>",
+  "<span class="json-key">sender_id</span>": "<span class="json-string">abc123</span>",
+  "<span class="json-key">content</span>": "<span class="json-string">سلام!</span>",
+  "<span class="json-key">created_at</span>": "<span class="json-string">2026-05-31T...</span>"
+}</pre>
+    </div>
+  </div>
+
+  <!-- Messages Read -->
+  <div class="endpoint" id="messages-read">
+    <div class="endpoint-header">
+      <span class="method method-post">POST</span>
+      <span class="path">/api/messages/read</span>
+      <span class="desc">علامت خوانده شده برای پیام‌ها</span>
+      <span class="tag">social</span>
+    </div>
+    <div class="endpoint-body">
+      <pre><span class="lang-tag">JSON</span>{
+  "<span class="json-key">myId</span>": "<span class="json-string">abc123</span>",
+  "<span class="json-key">sender_id</span>": "<span class="json-string">user_0912...</span>"
+}</pre>
+      <pre><span class="lang-tag">JSON</span>{ "<span class="json-key">success</span>": <span class="json-bool">true</span> }</pre>
+    </div>
+  </div>
+
+  <!-- Notifications GET -->
+  <div class="endpoint" id="notifications-get">
+    <div class="endpoint-header">
+      <span class="method method-get">GET</span>
+      <span class="path">/api/notifications?userId={id}</span>
+      <span class="desc">دریافت نوتیفیکیشن‌های کاربر</span>
+      <span class="tag">social</span>
+    </div>
+    <div class="endpoint-body">
+      <p style="color:#94a3b8;font-size:0.85rem;">پارامتر: userId یا user_id</p>
+      <pre><span class="lang-tag">JSON</span>[
+  {
+    "<span class="json-key">id</span>": "<span class="json-string">uuid</span>",
+    "<span class="json-key">senderId</span>": "<span class="json-string">user_0912...</span>",
+    "<span class="json-key">senderName</span>": "<span class="json-string">مهسا</span>",
+    "<span class="json-key">senderAvatar</span>": "<span class="json-string">👾</span>",
+    "<span class="json-key">type</span>": "<span class="json-string">friend_req</span>",
+    "<span class="json-key">payload</span>": {},
+    "<span class="json-key">createdAt</span>": "<span class="json-string">2026-05-31T...</span>"
+  }
+]</pre>
+    </div>
+  </div>
+
+  <!-- Notifications DELETE -->
+  <div class="endpoint" id="notifications-delete">
+    <div class="endpoint-header">
+      <span class="method method-delete">DELETE</span>
+      <span class="path">/api/notifications/:id</span>
+      <span class="desc">حذف نوتیفیکیشن</span>
+      <span class="tag">social</span>
+    </div>
+    <div class="endpoint-body">
+      <pre><span class="lang-tag">JSON</span>{ "<span class="json-key">success</span>": <span class="json-bool">true</span> }</pre>
+    </div>
+  </div>
+
+  <!-- Dictionary -->
+  <div class="endpoint" id="dictionary">
+    <div class="endpoint-header">
+      <span class="method method-get">GET</span>
+      <span class="path">/api/dictionary?category=&amp;language=&amp;limit=</span>
+      <span class="desc">دریافت کلمات دیکشنری</span>
+      <span class="tag">data</span>
+    </div>
+    <div class="endpoint-body">
+      <table>
+        <tr><th>پارامتر</th><th>نوع</th><th>پیش‌فرض</th><th>توضیح</th></tr>
+        <tr><td>category</td><td>string</td><td>all</td><td>general, movies, cities, food, body, jobs, tech, nature, shahnameh</td></tr>
+        <tr><td>language</td><td>string</td><td>-</td><td>fa یا en</td></tr>
+        <tr><td>limit</td><td>number</td><td>10000</td><td>تعداد کلمات</td></tr>
+      </table>
+      <pre><span class="lang-tag">JSON</span><button class="copy-btn" onclick="copy(this)">📋</button>curl "http://localhost:4000/api/dictionary?language=fa&category=food&limit=3"</pre>
+      <pre><span class="lang-tag">JSON</span>[
+  { "<span class="json-key">word</span>": "<span class="json-string">پیتزا</span>", "<span class="json-key">clue</span>": "<span class="json-string">غذای ایتالیایی</span>" },
+  { "<span class="json-key">word</span>": "<span class="json-string">ماست</span>", "<span class="json-key">clue</span>": "<span class="json-string">فرآورده لبنی سفت</span>" },
+  { "<span class="json-key">word</span>": "<span class="json-string">کباب</span>", "<span class="json-key">clue</span>": "<span class="json-string">گوشت پخته روی آتش</span>" }
+]</pre>
+    </div>
+  </div>
+
+  <!-- Dictionary Stats -->
+  <div class="endpoint" id="dictionary-stats">
+    <div class="endpoint-header">
+      <span class="method method-get">GET</span>
+      <span class="path">/api/dictionary/stats</span>
+      <span class="desc">تعداد کل کلمات دیکشنری</span>
+      <span class="tag">data</span>
+    </div>
+    <div class="endpoint-body">
+      <pre><span class="lang-tag">JSON</span>{ "<span class="json-key">count</span>": <span class="json-number">7033</span> }</pre>
+    </div>
+  </div>
+
+  <!-- Story Books -->
+  <div class="endpoint" id="story">
+    <div class="endpoint-header">
+      <span class="method method-get">GET</span>
+      <span class="path">/api/story/books</span>
+      <span class="desc">کتاب‌ها و فصل‌های داستانی</span>
+      <span class="tag">story</span>
+    </div>
+    <div class="endpoint-body">
+      <pre><span class="lang-tag">JSON</span><button class="copy-btn" onclick="copy(this)">📋</button>curl http://localhost:4000/api/story/books</pre>
+      <pre><span class="lang-tag">JSON</span>[
+  {
+    "<span class="json-key">id</span>": "<span class="json-string">rostam_7</span>",
+    "<span class="json-key">title</span>": "<span class="json-string">هفت خوان رستم</span>",
+    "<span class="json-key">genre</span>": "<span class="json-string">epic</span>",
+    "<span class="json-key">difficulty</span>": "<span class="json-string">medium</span>",
+    "<span class="json-key">chapters</span>": [
+      {
+        "<span class="json-key">chapter_index</span>": <span class="json-number">1</span>,
+        "<span class="json-key">title</span>": "<span class="json-string">خوان اول</span>",
+        "<span class="json-key">words</span">: [...]
+      }
+    ]
+  }
+]</pre>
+    </div>
+  </div>
+
+  <!-- Tower Ticket -->
+  <div class="endpoint" id="tower-ticket">
+    <div class="endpoint-header">
+      <span class="method method-post">POST</span>
+      <span class="path">/api/tower/consume-ticket</span>
+      <span class="desc">مصرف یک بلیط تاور</span>
+      <span class="tag">tower</span>
+    </div>
+    <div class="endpoint-body">
+      <pre><span class="lang-tag">JSON</span>{
+  "<span class="json-key">deviceId</span>": "<span class="json-string">abc123</span>"
+}</pre>
+      <p style="color:#94a3b8;font-size:0.85rem;">پاسخ: پروفایل با tower_tickets کاهش یافته</p>
+    </div>
+  </div>
+
+  <!-- Tower Stats -->
+  <div class="endpoint" id="tower-stats">
+    <div class="endpoint-header">
+      <span class="method method-post">POST</span>
+      <span class="path">/api/tower/update-stats</span>
+      <span class="desc">بروزرسانی آمار تاور</span>
+      <span class="tag">tower</span>
+    </div>
+    <div class="endpoint-body">
+      <pre><span class="lang-tag">JSON</span>{
+  "<span class="json-key">deviceId</span>": "<span class="json-string">abc123</span>",
+  "<span class="json-key">coins_earned</span>": <span class="json-number">50</span>,
+  "<span class="json-key">floor_reached</span>": <span class="json-number">5</span>
+}</pre>
+    </div>
+  </div>
+
+  <!-- Dictionary Seed -->
+  <div class="endpoint" id="dictionary-seed">
+    <div class="endpoint-header">
+      <span class="method method-post">POST</span>
+      <span class="path">/api/dictionary/seed</span>
+      <span class="desc">اضافه کردن کلمات جدید به دیکشنری</span>
+      <span class="tag">data</span>
+    </div>
+    <div class="endpoint-body">
+      <pre><span class="lang-tag">JSON</span>{
+  "<span class="json-key">words</span>": [
+    { "<span class="json-key">word</span>": "<span class="json-string">تست</span>", "<span class="json-key">clue</span>": "<span class="json-string">آزمایش</span>" }
+  ],
+  "<span class="json-key">category</span>": "<span class="json-string">general</span>",
+  "<span class="json-key">language</span>": "<span class="json-string">fa</span>"
+}</pre>
+      <pre><span class="lang-tag">JSON</span>{ "<span class="json-key">success</span>": <span class="json-bool">true</span>, "<span class="json-key">added</span>": <span class="json-number">1</span> }</pre>
+    </div>
+  </div>
+
+  <!-- Generic GET -->
+  <div class="endpoint" id="generic-table">
+    <div class="endpoint-header">
+      <span class="method method-get">GET</span>
+      <span class="path">/api/:table?col=val&amp;sort=x&amp;limit=n</span>
+      <span class="desc">دسترسی generic به هر جدول</span>
+      <span class="tag">system</span>
+    </div>
+    <div class="endpoint-body">
+      <p style="color:#94a3b8;font-size:0.85rem;">جدول‌های مجاز:</p>
+      <pre><span class="lang-tag">TABLES</span>profiles, matches, friendships, notifications, messages, dictionary, story_books, story_chapters</pre>
+      <pre><span class="lang-tag">BASH</span><button class="copy-btn" onclick="copy(this)">📋</button># پروفایل خاص
+curl "http://localhost:4000/api/profiles?id=abc123"
+
+# همه پیام‌ها
+curl "http://localhost:4000/api/messages"
+
+# دوستی‌های پذیرفته شده
+curl "http://localhost:4000/api/friendships?status=accepted"</pre>
+    </div>
+  </div>
+
+  <!-- Generic POST -->
+  <div class="endpoint" id="generic-post">
+    <div class="endpoint-header">
+      <span class="method method-post">POST</span>
+      <span class="path">/api/:table</span>
+      <span class="desc">درج رکورد جدید در هر جدول</span>
+      <span class="tag">system</span>
+    </div>
+    <div class="endpoint-body">
+      <pre><span class="lang-tag">BASH</span><button class="copy-btn" onclick="copy(this)">📋</button>curl -X POST http://localhost:4000/api/notifications \
+  -H "Content-Type: application/json" \
+  -d '{"user_id":"abc123","sender_id":"def","type":"test"}'</pre>
+      <pre><span class="lang-tag">JSON</span>{
+  "<span class="json-key">user_id</span>": "<span class="json-string">abc123</span>",
+  "<span class="json-key">type</span>": "<span class="json-string">test</span>",
+  "<span class="json-key">id</span>": "<span class="json-string">uuid-new</span>",
+  "<span class="json-key">created_at</span>": "<span class="json-string">2026-05-31T...</span>"
+}</pre>
+    </div>
+  </div>
+
+  <!-- ======================== WEB SOCKET ======================== -->
+
+  <div class="ws-section" id="websocket">
+    <h2>🔌 WebSocket — ws://localhost:4000</h2>
+    <p>برای قابلیت‌های بلادرنگ: حضور آنلاین، تایپ کردن، و اتاق‌های مولتی‌پلیر</p>
+  </div>
+
+  <div class="endpoint">
+    <div class="endpoint-header">
+      <span class="method method-get" style="background:#4c1d95;color:#c4b5fd;">WS →</span>
+      <span class="path">channel:join</span>
+      <span class="desc">ورود به یک کانال (اتاق)</span>
+    </div>
+    <div class="endpoint-body">
+      <pre><span class="lang-tag">JSON</span>{
+  "<span class="json-key">type</span>": "<span class="json-string">channel:join</span>",
+  "<span class="json-key">channel</span>": "<span class="json-string">global_social</span>",
+  "<span class="json-key">data</span>": {
+    "<span class="json-key">userId</span>": "<span class="json-string">abc123</span>",
+    "<span class="json-key">name</span>": "<span class="json-string">مهدی</span>",
+    "<span class="json-key">avatar</span>": "<span class="json-string">🦊</span>"
+  }
+}</pre>
+    </div>
+  </div>
+
+  <div class="endpoint">
+    <div class="endpoint-header">
+      <span class="method method-get" style="background:#4c1d95;color:#c4b5fd;">WS →</span>
+      <span class="path">channel:broadcast</span>
+      <span class="desc">ارسال رویداد به همه اعضای کانال</span>
+    </div>
+    <div class="endpoint-body">
+      <pre><span class="lang-tag">JSON</span>{
+  "<span class="json-key">type</span>": "<span class="json-string">channel:broadcast</span>",
+  "<span class="json-key">channel</span>": "<span class="json-string">room_123456</span>",
+  "<span class="json-key">event</span>": "<span class="json-string">start_game</span>",
+  "<span class="json-key">payload</span>": { "<span class="json-key">grid</span>": [...], "<span class="json-key">clues</span>": {...} },
+  "<span class="json-key">senderId</span>": "<span class="json-string">abc123</span>"
+}</pre>
+    </div>
+  </div>
+
+  <div class="endpoint">
+    <div class="endpoint-header">
+      <span class="method method-get" style="background:#4c1d95;color:#c4b5fd;">← WS</span>
+      <span class="path">presence_sync</span>
+      <span class="desc">بروزرسانی لیست افراد آنلاین در کانال (دریافتی از سرور)</span>
+    </div>
+    <div class="endpoint-body">
+      <pre><span class="lang-tag">JSON</span>{
+  "<span class="json-key">type</span>": "<span class="json-string">presence_sync</span>",
+  "<span class="json-key">channel</span>": "<span class="json-string">global_social</span>",
+  "<span class="json-key">users</span>": [
+    { "<span class="json-key">userId</span>": "<span class="json-string">def456</span>", "<span class="json-key">name</span>": "<span class="json-string">مهسا</span>", "<span class="json-key">avatar</span>": "<span class="json-string">👾</span>" }
+  ]
+}</pre>
+    </div>
+  </div>
+
+  <div class="endpoint">
+    <div class="endpoint-header">
+      <span class="method method-get" style="background:#4c1d95;color:#c4b5fd;">← WS</span>
+      <span class="path">channel:event</span>
+      <span class="desc">رویداد دریافتی از کانال (broadcast از کاربر دیگر)</span>
+    </div>
+    <div class="endpoint-body">
+      <pre><span class="lang-tag">JSON</span>{
+  "<span class="json-key">type</span>": "<span class="json-string">channel:event</span>",
+  "<span class="json-key">channel</span>": "<span class="json-string">room_123456</span>",
+  "<span class="json-key">event</span>": "<span class="json-string">progress</span>",
+  "<span class="json-key">payload</span>": { "<span class="json-key">id</span>": "<span class="json-string">def456</span>", "<span class="json-key">progress</span>": <span class="json-number">50</span> },
+  "<span class="json-key">senderId</span>": "<span class="json-string">def456</span>"
+}</pre>
+    </div>
+  </div>
+
+
+  <!-- ======================== DATABASE SCHEMA ======================== -->
+
+  <h2 style="color:#818cf8;font-size:1.4rem;margin:40px 0 20px;">🗂️ ساختار دیتابیس</h2>
+
+  <div class="schema-box">
+    <h2>👤 profiles</h2>
+    <table class="schema-table">
+      <tr><th>ستون</th><th>نوع</th><th>توضیح</th></tr>
+      <tr><td>id</td><td>string</td><td>شناسه یکتا (deviceId)</td></tr>
+      <tr><td>username</td><td>string</td><td>نام کاربری</td></tr>
+      <tr><td>avatar_text</td><td>string</td><td>اموجی آواتار</td></tr>
+      <tr><td>friend_code</td><td>string</td><td>کد ۶ رقمی دوستان</td></tr>
+      <tr><td>coins</td><td>number</td><td>سکه</td></tr>
+      <tr><td>score</td><td>number</td><td>مجموع امتیاز</td></tr>
+      <tr><td>level</td><td>number</td><td>سطح</td></tr>
+      <tr><td>high_score</td><td>number</td><td>بیشترین امتیاز</td></tr>
+      <tr><td>epic_progress_map</td><td>object</td><td>پیشرفت داستانی</td></tr>
+      <tr><td>tower_tickets</td><td>number</td><td>بلیط تاور</td></tr>
+      <tr><td>tower_high_floor</td><td>number</td><td>بالاترین طبقه تاور</td></tr>
+    </table>
+  </div>
+
+  <div class="schema-box">
+    <h2>📝 matches</h2>
+    <table class="schema-table">
+      <tr><th>ستون</th><th>نوع</th><th>توضیح</th></tr>
+      <tr><td>id</td><td>string</td><td>شناسه یکتا</td></tr>
+      <tr><td>user_id</td><td>string</td><td>ارجاع به profiles.id</td></tr>
+      <tr><td>score</td><td>number</td><td>امتیاز بازی</td></tr>
+      <tr><td>time_taken</td><td>number</td><td>زمان (ثانیه)</td></tr>
+      <tr><td>grid_size</td><td>number</td><td>سایز جدول</td></tr>
+      <tr><td>category</td><td>string</td><td>دسته‌بندی</td></tr>
+    </table>
+  </div>
+
+  <div class="schema-box">
+    <h2>📖 dictionary</h2>
+    <table class="schema-table">
+      <tr><th>ستون</th><th>نوع</th><th>توضیح</th></tr>
+      <tr><td>id</td><td>number</td><td>شناسه</td></tr>
+      <tr><td>word</td><td>string</td><td>کلمه</td></tr>
+      <tr><td>clue</td><td>string</td><td>سرنخ</td></tr>
+      <tr><td>category</td><td>string</td><td>دسته‌بندی</td></tr>
+      <tr><td>language</td><td>string</td><td>fa یا en</td></tr>
+      <tr><td>length</td><td>number</td><td>طول کلمه</td></tr>
+    </table>
+  </div>
+
+  <div class="schema-box">
+    <h2>💬 messages</h2>
+    <table class="schema-table">
+      <tr><th>ستون</th><th>نوع</th><th>توضیح</th></tr>
+      <tr><td>id</td><td>string</td><td>شناسه</td></tr>
+      <tr><td>sender_id</td><td>string</td><td>فرستنده</td></tr>
+      <tr><td>receiver_id</td><td>string</td><td>گیرنده</td></tr>
+      <tr><td>content</td><td>string</td><td>متن پیام</td></tr>
+      <tr><td>read</td><td>boolean</td><td>خوانده شده؟</td></tr>
+    </table>
+  </div>
+
+  <div class="schema-box">
+    <h2>👥 friendships</h2>
+    <table class="schema-table">
+      <tr><th>ستون</th><th>نوع</th><th>توضیح</th></tr>
+      <tr><td>id</td><td>string</td><td>شناسه</td></tr>
+      <tr><td>user_id</td><td>string</td><td>کاربر درخواست‌دهنده</td></tr>
+      <tr><td>friend_id</td><td>string</td><td>کاربر هدف</td></tr>
+      <tr><td>status</td><td>string</td><td>pending / accepted</td></tr>
+    </table>
+  </div>
+
+  <div class="schema-box">
+    <h2>🔔 notifications</h2>
+    <table class="schema-table">
+      <tr><th>ستون</th><th>نوع</th><th>توضیح</th></tr>
+      <tr><td>id</td><td>string</td><td>شناسه</td></tr>
+      <tr><td>user_id</td><td>string</td><td>گیرنده</td></tr>
+      <tr><td>sender_id</td><td>string</td><td>فرستنده</td></tr>
+      <tr><td>type</td><td>string</td><td>friend_req / challenge</td></tr>
+      <tr><td>payload</td><td>object</td><td>اطلاعات اضافی</td></tr>
+    </table>
+  </div>
+
+  <div class="schema-box">
+    <h2>📚 story_books & story_chapters</h2>
+    <table class="schema-table">
+      <tr><th>جدول</th><th>ستون</th><th>توضیح</th></tr>
+      <tr><td>story_books</td><td>id, title, genre, difficulty</td><td>کتاب داستانی</td></tr>
+      <tr><td>story_chapters</td><td>book_id, chapter_index, title, words</td><td>فصل‌های کتاب</td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    Crossword Gen Pro — ساخته شده با ❤️<br>
+    <a href="http://localhost:4000/api/health">http://localhost:4000/api/health</a>
+  </div>
+
+</div>
+
+<script>
+function copy(btn) {
+  const pre = btn.closest('pre');
+  const code = pre.textContent.replace('📋', '').trim();
+  navigator.clipboard.writeText(code);
+  btn.textContent = '✅';
+  setTimeout(() => btn.textContent = '📋', 1500);
+}
+</script>
+
+</body>
+</html>

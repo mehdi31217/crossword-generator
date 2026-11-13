@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="mbg" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#0f0f0f" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" fill="#0f0f0f" rx="40" opacity="0.25"/>
+  <circle cx="100" cy="84" r="92" fill="url(#mbg)" stroke="#dc2626" stroke-width="1.5" opacity="0.5"/>
+  
+  <path d="M55 100 Q100 65 145 100 Q120 120 100 130 Q80 120 55 100" fill="#dc2626" opacity="0.08"/>
+  <circle cx="85" cy="90" r="8" fill="#ef4444" opacity="0.7"/>
+    <circle cx="85" cy="90" r="2.8" fill="black"/>
+  <circle cx="115" cy="90" r="8" fill="#ef4444" opacity="0.7"/>
+    <circle cx="115" cy="90" r="2.8" fill="black"/>
+  <path d="M75 80 Q100 65 125 80" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M80 115 Q100 125 120 115" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <path d="M90 105 L85 120" stroke="#ef4444" stroke-width="1" opacity="0.4"/>
+  <path d="M110 105 L115 120" stroke="#ef4444" stroke-width="1" opacity="0.4"/>
+  <path d="M65 100 Q55 90 50 95" fill="none" stroke="#dc2626" stroke-width="1.5" opacity="0.3"/>
+
+  <rect x="0" y="176" width="200" height="24" fill="#dc2626" opacity="0.8" rx="0"/>
+  <text x="100" y="193" text-anchor="middle" fill="#fff" font-family="serif" font-size="10" font-weight="bold" dir="rtl">اژدها</text>
+</svg>

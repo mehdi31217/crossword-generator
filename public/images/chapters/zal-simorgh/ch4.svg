@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#0073b7"/>
+<stop offset="100%" stop-color="#005599"/>
+</linearGradient></defs>
+<rect width="500" height="600" fill="url(#bg)"/>
+<rect x="8" y="8" width="484" height="584" rx="12.5" fill="none" stroke="#075985" stroke-width="6.25" opacity="0.7"/>
+<path d="M 250 20.5 L 250 33 M 20.5 300 L 33 300 M 479.5 300 L 467 300" fill="none" stroke="#075985" stroke-width="3.75" opacity="0.4"/>
+<path d="M 180 70 Q 250 30 320 70" fill="#075985" opacity="0.8" stroke="#00315d" stroke-width="1.5"/>
+<rect x="180" y="70" width="140" height="6" fill="#004571" opacity="0.6" stroke="#00315d" stroke-width="1"/>
+<circle cx="160" cy="346.7" r="6.300000000000001" fill="#1a3a4a"/>
+<ellipse cx="160" cy="365.6" rx="9" ry="14.4" fill="#1a3a4a"/>
+<line x1="154.6" y1="355" x2="146.5" y2="371" stroke="#1a3a4a" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="165.4" y1="355" x2="173.5" y2="371" stroke="#1a3a4a" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="152.8" y1="380" x2="160" y2="389" stroke="#1a3a4a" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="167.2" y1="380" x2="160" y2="389" stroke="#1a3a4a" stroke-width="2.5" stroke-linecap="round"/>
+<circle cx="340" cy="346.7" r="6.300000000000001" fill="#0f3a2a"/>
+<ellipse cx="340" cy="365.6" rx="9" ry="14.4" fill="#0f3a2a"/>
+<line x1="334.6" y1="355" x2="326.5" y2="371" stroke="#0f3a2a" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="345.4" y1="355" x2="353.5" y2="371" stroke="#0f3a2a" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="332.8" y1="380" x2="340" y2="389" stroke="#0f3a2a" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="347.2" y1="380" x2="340" y2="389" stroke="#0f3a2a" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="200" y1="330" x2="300" y2="330" stroke="#0ea5e9" stroke-width="2" opacity="0.5"/>
+<polygon points="55,530 56.5,520 58,510 59.5,500 61,490 62.5,480 64,470 65.5,460 67,450 68.5,440 70,430 70,430 71.5,440 73,450 74.5,460 76,470 77.5,480 79,490 80.5,500 82,510 83.5,520 85,530" fill="#0f3a4a" opacity="0.8"/>
+<polygon points="415,530 416.5,520 418,510 419.5,500 421,490 422.5,480 424,470 425.5,460 427,450 428.5,440 430,430 430,430 431.5,440 433,450 434.5,460 436,470 437.5,480 439,490 440.5,500 442,510 443.5,520 445,530" fill="#0f3a4a" opacity="0.8"/>
+<circle cx="420" cy="55" r="25" fill="#fde047" opacity="0.5"/>
+<rect x="100" y="520" width="300" height="36" rx="18" fill="#075985" opacity="0.85"/>
+<text x="250" y="543" text-anchor="middle" fill="#fff" font-family="serif" font-size="16" font-weight="bold">بازگشت به وطن</text>
+</svg>

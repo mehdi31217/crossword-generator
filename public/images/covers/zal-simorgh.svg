@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#18aff3"/>
+<stop offset="100%" stop-color="#0ea5e9"/>
+</linearGradient></defs>
+<rect width="400" height="600" fill="url(#bg)"/>
+<rect x="10" y="10" width="380" height="580" rx="10" fill="none" stroke="#075985" stroke-width="5" opacity="0.7"/>
+<path d="M 200 20 L 200 30 M 20 300 L 30 300 M 380 300 L 370 300" fill="none" stroke="#075985" stroke-width="3" opacity="0.4"/>
+<polygon points="185,400 186.5,390 188,380 189.5,370 191,360 192.5,350 194,340 195.5,330 197,320 198.5,310 200,300 200,300 201.5,310 203,320 204.5,330 206,340 207.5,350 209,360 210.5,370 212,380 213.5,390 215,400" fill="#075985" opacity="0.8"/>
+<polygon points="75,400 200,300 325,400" fill="#0f2a3a" opacity="0.7"/>
+<polygon points="162.5,380 200,315 237.5,380" fill="#fff" opacity="0.25"/>
+<path d="M 150 200 Q 200 160 250 200 Q 200 180 150 200" fill="#0ea5e9" opacity="0.6"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<rect x="30" y="450" width="340" height="50" rx="10" fill="#075985" opacity="0.85"/>
+<text x="200" y="482" text-anchor="middle" fill="#fff" font-family="serif" font-size="22" font-weight="bold">زال و سیمرغ</text>
+<text x="200" y="508" text-anchor="middle" fill="#fff" font-family="serif" font-size="13" opacity="0.8">فردوسی</text>
+</svg>

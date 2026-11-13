@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#d946ef"/>
+<stop offset="100%" stop-color="#a714bd"/>
+</linearGradient></defs>
+<rect width="400" height="600" fill="url(#bg)"/>
+<rect x="10" y="10" width="380" height="580" rx="12" fill="none" stroke="#86198f" stroke-width="6" opacity="0.7"/>
+<polygon points="224,300 210.39230484541326,306 212,320.7846096908265 200,312 188,320.7846096908265 189.60769515458674,306 176,300 189.60769515458674,294 188,279.2153903091735 200,288 212,279.2153903091735 210.39230484541326,294 " fill="none" stroke="#86198f" stroke-width="3.5999999999999996" opacity="0.4" transform="translate(0,0)"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<circle cx="200" cy="360" r="40" fill="#fde047" opacity="0.8"/>
+<circle cx="212" cy="352" r="34" fill="#1a1a2e" opacity="0.9"/>
+<path d="M 130 150 Q 200 110 270 150" fill="#86198f" opacity="0.8" stroke="#78350f" stroke-width="1.5"/>
+<rect x="130" y="150" width="140" height="8" fill="#86198f" opacity="0.6" stroke="#78350f" stroke-width="1"/>
+<path d="M 200 260 L 204.7022820183398 273.5278640450004 M 219.02113032590307 273.819660112501 L 207.60845213036123 282.4721359549996 M 211.75570504584945 296.180339887499 L 200 288 M 188.24429495415055 296.180339887499 L 192.39154786963877 282.4721359549996 M 180.97886967409693 273.8196601125011 L 195.2977179816602 273.5278640450004 Z" fill="#fde047" opacity="0.8"/>
+<path d="M 82 520 L 83.8 510 L 85.6 500 L 87.4 490 L 89.2 480 L 91 470 L 92.8 460 L 94.6 450 L 96.4 440 L 98.2 430 L 100 420 L 100 420 L 101.8 430 L 103.6 440 L 105.4 450 L 107.2 460 L 109 470 L 110.8 480 L 112.6 490 L 114.4 500 L 116.2 510 L 118 520 Z" fill="#2a1a2a" opacity="0.8"/>
+<path d="M 282 520 L 283.8 510 L 285.6 500 L 287.4 490 L 289.2 480 L 291 470 L 292.8 460 L 294.6 450 L 296.4 440 L 298.2 430 L 300 420 L 300 420 L 301.8 430 L 303.6 440 L 305.4 450 L 307.2 460 L 309 470 L 310.8 480 L 312.6 490 L 314.4 500 L 316.2 510 L 318 520 Z" fill="#2a1a2a" opacity="0.8"/>
+<rect x="40" y="460" width="320" height="50" rx="10" fill="#86198f" opacity="0.85"/>
+<text x="200" y="492" text-anchor="middle" fill="#fff" font-family="serif" font-size="24" font-weight="bold">تهمینه</text>
+<text x="200" y="518" text-anchor="middle" fill="#fff" font-family="serif" font-size="13" opacity="0.8">فردوسی</text>
+</svg>

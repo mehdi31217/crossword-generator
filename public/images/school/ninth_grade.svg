@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420">
+<defs><linearGradient id="g9" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1f120a"/><stop offset="100%" stop-color="#f9731622"/></linearGradient></defs>
+<rect width="300" height="420" rx="24" fill="url(#g9)"/>
+<rect x="3" y="3" width="294" height="414" rx="22" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+<rect x="0" y="0" width="300" height="8" fill="#f97316" rx="4"/>
+<circle cx="150" cy="85" r="38" fill="none" stroke="#f9731630" stroke-width="2"/>
+<path d="M136,75 L150,67 L164,75 L164,91 Q150,103 136,91 Z" fill="none" stroke="#f97316" stroke-width="2"/><line x1="144" y1="79" x2="156" y2="79" stroke="#f97316" stroke-width="1.5"/><line x1="144" y1="85" x2="156" y2="85" stroke="#f97316" stroke-width="1.5"/><line x1="150" y1="79" x2="150" y2="93" stroke="#f97316" stroke-width="1.5"/>
+<text x="150" y="135" text-anchor="middle" fill="#f97316" font-size="16" font-weight="bold" font-family="sans-serif">پایه نهم</text>
+<text x="150" y="155" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="10" font-family="sans-serif">————— ۴ فصل —————</text>
+<rect x="50" y="165" width="200" height="32" rx="8" fill="#f9731615" stroke="#f9731630" stroke-width="1"/><text x="150" y="186" text-anchor="middle" fill="#f97316" font-size="11" font-family="sans-serif">حماسه</text><rect x="50" y="207" width="200" height="32" rx="8" fill="#f9731615" stroke="#f9731630" stroke-width="1"/><text x="150" y="228" text-anchor="middle" fill="#f97316" font-size="11" font-family="sans-serif">عرفان</text><rect x="50" y="249" width="200" height="32" rx="8" fill="#f9731615" stroke="#f9731630" stroke-width="1"/><text x="150" y="270" text-anchor="middle" fill="#f97316" font-size="11" font-family="sans-serif">انسان</text><rect x="50" y="291" width="200" height="32" rx="8" fill="#f9731615" stroke="#f9731630" stroke-width="1"/><text x="150" y="312" text-anchor="middle" fill="#f97316" font-size="11" font-family="sans-serif">جهان</text>
+</svg>

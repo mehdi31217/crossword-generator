@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>پیشنهادهای طراحی صفحه اصلی — کارتهای سه‌بعدی با المان بیرون‌زده</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #2b1810;
+    --ink-muted: #735342;
+    --clay-dark: #8E4E37;
+    --clay-mid: #C97B5A;
+    --clay-warm: #E6A888;
+    --sand-bg: #F5E8D3;
+    --paper: #FAF2E3;
+    --gold: #D4A359;
+    --gold-deep: #B07F22;
+    --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  body {
+    font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: radial-gradient(1200px 800px at 80% -10%, #E6C29E 0%, transparent 60%),
+                radial-gradient(1000px 700px at 10% 110%, #D49D7A 0%, transparent 55%),
+                #BA7858;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 24px 16px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Presentation Bar */
+  .header-intro {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 24px;
+    background: rgba(250, 242, 227, 0.92);
+    backdrop-filter: blur(12px);
+    border: 2px solid rgba(142, 78, 55, 0.3);
+    border-radius: 20px;
+    padding: 20px 24px;
+    box-shadow: 0 16px 32px -10px rgba(70, 35, 20, 0.35);
+  }
+  .header-intro h1 {
+    font-size: 22px;
+    font-weight: 900;
+    color: #5C2D1E;
+    margin-bottom: 6px;
+  }
+  .header-intro p {
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  /* Tab Concept Switcher */
+  .concept-tabs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 14px;
+  }
+  .tab-btn {
+    background: #EFE2CF;
+    border: 1.5px solid rgba(142, 78, 55, 0.25);
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    color: #6A3A28;
+    cursor: pointer;
+    transition: all 0.25s var(--spring);
+    box-shadow: 0 4px 10px -4px rgba(70, 35, 20, 0.2);
+  }
+  .tab-btn:hover {
+    transform: translateY(-2px);
+    background: #FFF8EE;
+    border-color: #C97B5A;
+  }
+  .tab-btn.active {
+    background: linear-gradient(135deg, #B25A38, #86361C);
+    color: #FFF2E6;
+    border-color: #662510;
+    box-shadow: 0 8px 18px -4px rgba(110, 40, 20, 0.5);
+    transform: translateY(-2px);
+  }
+
+  /* Container for 4 views */
+  .concepts-showcase {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  /* Phone Stage Mockup */
+  .concept-card-deck {
+    width: 100%;
+    max-width: 395px;
+    background: #FDF7ED;
+    border: 3px solid rgba(92, 45, 30, 0.35);
+    border-radius: 38px;
+    box-shadow: 0 35px 70px -20px rgba(50, 20, 10, 0.65), 0 0 0 8px rgba(255, 240, 220, 0.4);
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 20px;
+    display: none;
+  }
+  .concept-card-deck.is-visible {
+    display: block;
+    animation: fadeIn 0.4s ease both;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .deck-header {
+    padding: 16px 18px 10px;
+    background: linear-gradient(180deg, #F5E5CF, #FDF7ED);
+    border-bottom: 1px solid rgba(142, 78, 55, 0.15);
+  }
+  .deck-title-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    color: #8C4728;
+    background: rgba(142, 78, 55, 0.12);
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-bottom: 6px;
+  }
+  .deck-header h2 {
+    font-size: 17px;
+    font-weight: 900;
+    color: #4A2214;
+  }
+  .deck-header p {
+    font-size: 11.5px;
+    color: #7A533E;
+    margin-top: 2px;
+  }
+
+  /* Top Stat Bar */
+  .mini-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background: rgba(235, 215, 190, 0.5);
+    border-radius: 16px;
+    margin: 12px 14px 6px;
+    border: 1px solid rgba(142, 78, 55, 0.2);
+  }
+  .mini-stat {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #4A2818;
+  }
+  .stat-coin-flower {
+    width: 22px;
+    height: 22px;
+    background: radial-gradient(circle, #FFE17D 30%, #D49D34 70%, #9E6B15 100%);
+    border: 1.5px solid #FFF2BF;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(110, 70, 15, 0.4);
+    display: grid;
+    place-items: center;
+    font-size: 10px;
+  }
+
+  /* CARDS AREA WITH BREAKOUT HEADROOM */
+  .cards-stage {
+    padding: 34px 14px 18px; /* Crucial: 34px top padding gives space for breakout elements! */
+    display: flex;
+    flex-direction: column;
+    gap: 36px; /* spacing between cards to allow breakout */
+  }
+
+  /* -------------------------------------------------------------
+     STYLE A: PERSIAN MINIATURE & TOWER BREAKOUT (پیشنهاد ۱)
+     ------------------------------------------------------------- */
+  .card-miniature {
+    position: relative;
+    background: #FAF3E6;
+    border: 2px solid #C49856;
+    border-radius: 22px;
+    padding: 16px 14px 14px;
+    box-shadow: 0 14px 28px -10px rgba(90, 50, 25, 0.25),
+                inset 0 0 0 4px #F7ECDA,
+                inset 0 0 0 5px #D8B273;
+    overflow: visible; /* KEY: Lets art poke out! */
+    transition: transform 0.3s var(--spring);
+    cursor: pointer;
+  }
+  .card-miniature:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Breakout Topper - Tower */
+  .tower-breakout-wrapper {
+    position: absolute;
+    top: -46px; /* Pops 46px above the card border! */
+    left: 20px;
+    width: 90px;
+    height: 110px;
+    pointer-events: none;
+    z-index: 5;
+  }
+  .tower-breakout-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 20px 20px 10px 10px;
+    border: 2.5px solid #D4A359;
+    box-shadow: 0 12px 20px -6px rgba(40, 20, 10, 0.5), 0 0 0 3px #FAF3E6;
+    clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+  }
+  .tower-flame-beacon {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    background: radial-gradient(circle, #FFF4A3 20%, #FF9020 80%, transparent 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 12px #FFA834;
+    animation: flamePulse 1.8s infinite ease-in-out;
+  }
+  @keyframes flamePulse {
+    0%, 100% { transform: translateX(-50%) scale(0.9); opacity: 0.8; }
+    50% { transform: translateX(-50%) scale(1.2); opacity: 1; }
+  }
+
+  .card-inner-content {
+    margin-right: 0;
+    padding-left: 95px; /* makes room on the left side where tower rises */
+  }
+  .card-badge-gold {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    color: #7A4B10;
+    background: #F3DCAC;
+    border: 1px solid #D4A359;
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-bottom: 4px;
+  }
+  .card-title-persian {
+    font-size: 16px;
+    font-weight: 900;
+    color: #4A2515;
+    line-height: 1.3;
+  }
+  .card-desc-persian {
+    font-size: 11px;
+    color: #7D5943;
+    margin-top: 3px;
+    line-height: 1.4;
+  }
+  .card-mini-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dashed rgba(196, 152, 86, 0.4);
+  }
+  .btn-enter-gold {
+    background: linear-gradient(135deg, #C98836, #9C5E18);
+    color: #FFF7EC;
+    border: none;
+    border-radius: 12px;
+    padding: 6px 14px;
+    font-family: inherit;
+    font-size: 11.5px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 10px -2px rgba(130, 70, 15, 0.4);
+  }
+
+  /* Breakout Topper - Battle / Warriors */
+  .battle-breakout-wrapper {
+    position: absolute;
+    top: -42px;
+    left: 18px;
+    width: 95px;
+    height: 105px;
+    pointer-events: none;
+    z-index: 5;
+  }
+  .battle-breakout-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    border-radius: 16px;
+    border: 2px solid #C46E56;
+    box-shadow: 0 10px 20px -5px rgba(60, 20, 15, 0.45), 0 0 0 3px #FAF3E6;
+  }
+
+  /* Breakout Topper - Treasure Crossword Book */
+  .treasure-breakout-wrapper {
+    position: absolute;
+    top: -44px;
+    left: 20px;
+    width: 95px;
+    height: 108px;
+    pointer-events: none;
+    z-index: 5;
+  }
+  .treasure-breakout-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 65%;
+    border-radius: 16px;
+    border: 2px solid #5A8F76;
+    box-shadow: 0 10px 20px -5px rgba(25, 55, 40, 0.45), 0 0 0 3px #FAF3E6;
+  }
+
+  /* -------------------------------------------------------------
+     STYLE B: CLAY TABLETS & 3D CRENELLATION (پیشنهاد ۲)
+     ------------------------------------------------------------- */
+  .card-clay-tablet {
+    position: relative;
+    background: linear-gradient(160deg, #F3E6D3, #E4D0B8);
+    border: 2.5px solid #9C5B42;
+    border-radius: 20px;
+    padding: 16px 14px 14px;
+    box-shadow: 0 8px 0 #7A3F29, 0 16px 26px -8px rgba(70, 30, 15, 0.5),
+                inset 0 2px 0 rgba(255, 255, 255, 0.6);
+    overflow: visible;
+  }
+  /* Clay Turret / Fortress Breakout Crest */
+  .clay-turret-crest {
+    position: absolute;
+    top: -24px;
+    right: 18px;
+    background: #8E4E37;
+    border: 2px solid #6E3320;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    padding: 4px 12px;
+    color: #FFE6D5;
+    font-size: 11px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 -4px 10px rgba(70, 30, 15, 0.35);
+  }
+  .clay-turret-crest::before {
+    content: "🏰";
+    font-size: 13px;
+  }
+  .clay-protruding-tile {
+    position: absolute;
+    top: -32px;
+    left: 20px;
+    width: 58px;
+    height: 58px;
+    background: #FAF0DF;
+    border: 3px solid #8E4E37;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    font-weight: 900;
+    color: #8E4E37;
+    box-shadow: 0 6px 0 #6E3320, 0 10px 18px rgba(50, 20, 10, 0.4);
+    transform: rotate(-6deg);
+  }
+
+  /* -------------------------------------------------------------
+     STYLE C: ROYAL DIWAN & ILLUMINATED ARCH (پیشنهاد ۳)
+     ------------------------------------------------------------- */
+  .card-royal-diwan {
+    position: relative;
+    background: radial-gradient(circle at top right, #242A4A, #14182E);
+    border: 2px solid #D4A359;
+    border-radius: 24px;
+    padding: 20px 16px 16px;
+    color: #FFF5E8;
+    box-shadow: 0 14px 30px -10px rgba(10, 15, 40, 0.6), inset 0 0 0 1px rgba(212, 163, 89, 0.4);
+    overflow: visible;
+  }
+  .royal-arch-crest {
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #E6BA6E, #B07F22);
+    border: 2px solid #FFF2BF;
+    border-radius: 999px;
+    padding: 4px 16px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11.5px;
+    font-weight: 900;
+    color: #382108;
+    box-shadow: 0 6px 16px rgba(180, 120, 20, 0.5);
+    white-space: nowrap;
+  }
+  .royal-breakout-art {
+    position: absolute;
+    top: -36px;
+    left: 16px;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    border: 3px solid #D4A359;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5), 0 0 0 3px #14182E;
+    overflow: hidden;
+  }
+  .royal-breakout-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* -------------------------------------------------------------
+     STYLE D: CROSSWORD GRID DIORAMA (پیشنهاد ۴)
+     ------------------------------------------------------------- */
+  .card-diorama {
+    position: relative;
+    background: #FFFDF9;
+    border: 2px solid #D9C4A6;
+    border-radius: 22px;
+    padding: 16px;
+    box-shadow: 0 12px 24px -8px rgba(80, 50, 30, 0.2);
+    overflow: visible;
+  }
+  /* Floating Crossword Grid Tiles popping out above */
+  .floating-crossword-cluster {
+    position: absolute;
+    top: -26px;
+    left: 20px;
+    display: flex;
+    gap: 3px;
+    transform: rotate(4deg);
+    filter: drop-shadow(0 8px 12px rgba(60, 30, 15, 0.35));
+  }
+  .crossword-box-protruding {
+    width: 28px;
+    height: 28px;
+    background: #F8ECD6;
+    border: 2px solid #8E4E37;
+    border-radius: 6px;
+    display: grid;
+    place-items: center;
+    font-size: 13px;
+    font-weight: 900;
+    color: #612D1C;
+  }
+  .crossword-box-protruding.black-tile {
+    background: #4A2818;
+    border-color: #31160C;
+    color: #E6A888;
+  }
+
+  /* Explanation box */
+  .concept-notes {
+    margin: 18px 14px 4px;
+    padding: 12px 14px;
+    background: rgba(142, 78, 55, 0.08);
+    border-radius: 14px;
+    border-right: 4px solid #8E4E37;
+    font-size: 11.5px;
+    color: #5A3525;
+    line-height: 1.6;
+  }
+  .concept-notes b {
+    color: #381B10;
+  }
+</style>
+</head>
+<body>
+
+<div class="header-intro">
+  <h1>طرح‌های پیشنهادی صفحه اصلی (Menu) با کارت‌های سه‌بعدی پاپ‌اوت</h1>
+  <p>بر اساس تم اصلی بازی (سفال پخته، دست‌نویس کهن و شاهنامه)، ۴ کانسپت بصری آماده شده که در آن‌ها عناصر کلیدی بازی (سر برج مارپیچ، شمشیر پهلوانان و طومار جدول) از کادر کارت‌ها بیرون زده‌اند.</p>
+
+  <div class="concept-tabs">
+    <button class="tab-btn active" onclick="switchDeck('deck-a', this)">پیشنهاد ۱: نگارگری مینیاتور و برج مارپیچ</button>
+    <button class="tab-btn" onclick="switchDeck('deck-b', this)">پیشنهاد ۲: کتیبه‌های سفالی و دژ کنگره‌دار</button>
+    <button class="tab-btn" onclick="switchDeck('deck-c', this)">پیشنهاد ۳: دیوان شاهانه و آرک فیروزه‌ای</button>
+    <button class="tab-btn" onclick="switchDeck('deck-d', this)">پیشنهاد ۴: دیورامای مدرن با حروف شناور جدول</button>
+  </div>
+</div>
+
+<div class="concepts-showcase">
+
+  <!-- ==================== PROPOSAL 1 ==================== -->
+  <div id="deck-a" class="concept-card-deck is-visible">
+    <div class="deck-header">
+      <span class="deck-title-badge">پیشنهاد برگزیده ۱</span>
+      <h2>نگارگری مینیاتور و برج مارپیچ</h2>
+      <p>کارت‌های پوست‌آهو با لبه‌های اسلیمی طلا؛ سر برج و شمشیر پهلوانان ۳۵ تا ۴۵ پیکسل از کادر کارت فراتر رفته‌اند.</p>
+    </div>
+
+    <div class="mini-topbar">
+      <div class="mini-stat">
+        <span class="stat-coin-flower">🌸</span>
+        <span>۱,۲۵۰ سکه</span>
+      </div>
+      <div class="mini-stat">
+        <span style="color:#B07F22;">🏆</span>
+        <span>سطح ۱۲ · زال</span>
+      </div>
+    </div>
+
+    <div class="cards-stage">
+
+      <!-- CARD 1: TOWER -->
+      <div class="card-miniature">
+        <!-- THE PROTRUDING ELEMENT (TOWER HEAD) -->
+        <div class="tower-breakout-wrapper">
+          <div class="tower-flame-beacon"></div>
+          <img class="tower-breakout-img" src="/images/ui/hero-tower.jpg" alt="سر برج بیرون‌زده">
+        </div>
+
+        <div class="card-inner-content">
+          <span class="card-badge-gold">طبقهٔ ۱۸ · نامحدود</span>
+          <div class="card-title-persian">برج هزار چالش</div>
+          <div class="card-desc-persian">صعود پله‌به‌پله با جدول‌های سرعتی و جایزه سکه در هر طبقه</div>
+          <div class="card-mini-action">
+            <span style="font-size:10.5px;color:#8C5D38;">ورود: ۲ بلیط</span>
+            <button class="btn-enter-gold">صعود به برج</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2: BATTLE -->
+      <div class="card-miniature">
+        <!-- THE PROTRUDING ELEMENT (BATTLE WARRIORS) -->
+        <div class="battle-breakout-wrapper">
+          <img class="battle-breakout-img" src="/images/ui/hero-battle.jpg" alt="شمشیرهای پهلوانان بیرون‌زده">
+        </div>
+
+        <div class="card-inner-content">
+          <span class="card-badge-gold" style="background:#FAD9D0;border-color:#C46E56;color:#7A2616;">دوئل زنده PvP</span>
+          <div class="card-title-persian">نبرد آنلاین پهلوانان</div>
+          <div class="card-desc-persian">رویارویی کلمه‌ای هم‌زمان با دوستان و حریفان برتر کشور</div>
+          <div class="card-mini-action">
+            <span style="font-size:10.5px;color:#8C5D38;">رتبه: گردآفرید</span>
+            <button class="btn-enter-gold" style="background:linear-gradient(135deg,#B54F38,#842B18);">ورود به میدان</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3: TREASURE -->
+      <div class="card-miniature">
+        <!-- THE PROTRUDING ELEMENT (CROSSWORD BOOK & CHEST) -->
+        <div class="treasure-breakout-wrapper">
+          <img class="treasure-breakout-img" src="/images/ui/hero-treasure.jpg" alt="گنجینه و کتاب جدول">
+        </div>
+
+        <div class="card-inner-content">
+          <span class="card-badge-gold" style="background:#D8EDE2;border-color:#5A8F76;color:#185438;">داستان و ماجراجویی</span>
+          <div class="card-title-persian">گنجینه داستان‌های حماسی</div>
+          <div class="card-desc-persian">هفت‌خوان رستم، سیاوش، زال و اسطوره‌های کهن پارسی</div>
+          <div class="card-mini-action">
+            <span style="font-size:10.5px;color:#8C5D38;">۴۸ فصل قابل‌بازی</span>
+            <button class="btn-enter-gold" style="background:linear-gradient(135deg,#3B7A5D,#1B5238);">گشودن کتاب</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="concept-notes">
+      <b>چرا این طرح کار می‌کند؟</b><br>
+      سر برج با گنبد فیروزه‌ای و مشعل سوزان آن از سقف کادر بالا می‌زند و حس بلندی برج را ناخودآگاه به بازیکن القا می‌کند. حاشیه‌های زرین هماهنگ با خط نستعلیق و متریال پوستی است.
+    </div>
+  </div>
+
+  <!-- ==================== PROPOSAL 2 ==================== -->
+  <div id="deck-b" class="concept-card-deck">
+    <div class="deck-header">
+      <span class="deck-title-badge">پیشنهاد ۲</span>
+      <h2>کتیبه‌های سفالی و دژ کنگره‌دار</h2>
+      <p>کارت‌های سنگین خشتی پخته شده در کوره، با سر کنگره‌های تخت جمشیدی و مکعب‌های کلمات برجسته.</p>
+    </div>
+
+    <div class="mini-topbar">
+      <div class="mini-stat">
+        <span class="stat-coin-flower">🌸</span>
+        <span>۱,۲۵۰ سکه</span>
+      </div>
+      <div class="mini-stat">
+        <span>🏺 لوح باستانی</span>
+      </div>
+    </div>
+
+    <div class="cards-stage">
+
+      <!-- CARD 1 -->
+      <div class="card-clay-tablet">
+        <div class="clay-turret-crest">باروی قلعه</div>
+        <div class="clay-protruding-tile">ب</div>
+        <div style="padding-top:12px;padding-left:65px;">
+          <h3 style="font-size:16px;color:#592211;font-weight:900;">برج دیده‌بانی</h3>
+          <p style="font-size:11.5px;color:#7A402D;margin-top:4px;">حل کلمات پله به پله روی دیواره‌های خشتی برج</p>
+          <div style="margin-top:12px;display:flex;justify-content:flex-end;">
+            <button style="background:#8E4E37;color:#FFF;border:none;border-radius:10px;padding:6px 14px;font-weight:800;font-family:inherit;">آغاز صعود</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="card-clay-tablet" style="background:linear-gradient(160deg,#F5EBE1,#DCCDC0);">
+        <div class="clay-turret-crest" style="background:#5C3A28;">پیکار خشتی</div>
+        <div class="clay-protruding-tile" style="background:#FCEFE8;border-color:#A8583B;color:#A8583B;">ن</div>
+        <div style="padding-top:12px;padding-left:65px;">
+          <h3 style="font-size:16px;color:#452718;font-weight:900;">میدان سنگی دوئل</h3>
+          <p style="font-size:11.5px;color:#694738;margin-top:4px;">رقابت نفس‌گیر آنلاین در کتیبه مشترک</p>
+          <div style="margin-top:12px;display:flex;justify-content:flex-end;">
+            <button style="background:#A8583B;color:#FFF;border:none;border-radius:10px;padding:6px 14px;font-weight:800;font-family:inherit;">یافتن حریف</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="concept-notes">
+      <b>چرا این طرح کار می‌کند؟</b><br>
+      کاشی‌های سفالی برجسته الفبا به صورت زاویه‌دار از لبه کادر آویزان یا بیرون زده‌اند؛ حس یک دست‌ساخته فیزیکی چکش‌خورده را به بازی می‌دهد.
+    </div>
+  </div>
+
+  <!-- ==================== PROPOSAL 3 ==================== -->
+  <div id="deck-c" class="concept-card-deck">
+    <div class="deck-header">
+      <span class="deck-title-badge">پیشنهاد ۳</span>
+      <h2>دیوان شاهانه و آرک فیروزه‌ای</h2>
+      <p>کارت‌های لاجوردی درباری با آرک‌های اسلامی طلایی که تاج کارت را می‌شکنند و به بیرون سرایت می‌کنند.</p>
+    </div>
+
+    <div class="mini-topbar" style="background:#1B213B;border-color:rgba(212,163,89,0.3);color:#FFF;">
+      <div class="mini-stat" style="color:#FFE49E;">
+        <span class="stat-coin-flower">🌸</span>
+        <span>۱,۲۵۰ سکه</span>
+      </div>
+      <div class="mini-stat" style="color:#7FE8D8;">
+        <span>👑 دیوان عالی</span>
+      </div>
+    </div>
+
+    <div class="cards-stage">
+
+      <!-- CARD 1 -->
+      <div class="card-royal-diwan">
+        <div class="royal-arch-crest">👑 شاه‌برج اسرار</div>
+        <div class="royal-breakout-art">
+          <img src="/images/ui/hero-tower.jpg" alt="برج">
+        </div>
+        <div style="padding-top:10px;padding-left:80px;">
+          <h3 style="font-size:16px;color:#FFE6B8;font-weight:900;">برج هفت‌اقلیم</h3>
+          <p style="font-size:11.5px;color:#B9C0E0;margin-top:4px;">معماهای سخت و جدول‌های سلطنتی شاهان</p>
+          <div style="margin-top:12px;display:flex;justify-content:flex-end;">
+            <button style="background:linear-gradient(135deg,#D4A359,#8F6218);color:#2A1B05;border:none;border-radius:12px;padding:6px 14px;font-weight:900;font-family:inherit;">گشایش طبقه</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="card-royal-diwan" style="background:radial-gradient(circle at top right,#3D1E28,#1F1018);border-color:#E07A5F;">
+        <div class="royal-arch-crest" style="background:linear-gradient(135deg,#E07A5F,#8E3B27);color:#FFF;">⚔️ هماورد پهلوانان</div>
+        <div class="royal-breakout-art" style="border-color:#E07A5F;">
+          <img src="/images/ui/hero-battle.jpg" alt="نبرد">
+        </div>
+        <div style="padding-top:10px;padding-left:80px;">
+          <h3 style="font-size:16px;color:#FFD2C4;font-weight:900;">آوردگاه آنلاین</h3>
+          <p style="font-size:11.5px;color:#D8B6BE;margin-top:4px;">پیکار کلمات در صحن دارالخلافه با حریفان برتر</p>
+          <div style="margin-top:12px;display:flex;justify-content:flex-end;">
+            <button style="background:linear-gradient(135deg,#E07A5F,#943A23);color:#FFF;border:none;border-radius:12px;padding:6px 14px;font-weight:900;font-family:inherit;">ورود به نبرد</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="concept-notes">
+      <b>چرا این طرح کار می‌کند؟</b><br>
+      مدال‌های مدور و تاج‌های طلاکوب با آرک ایرانی مستقیماً ۳۰ پیکسل به سمت هدر کشیده شده‌اند و حال و هوای نسخ خطی بسیار مجلل به منو می‌بخشند.
+    </div>
+  </div>
+
+  <!-- ==================== PROPOSAL 4 ==================== -->
+  <div id="deck-d" class="concept-card-deck">
+    <div class="deck-header">
+      <span class="deck-title-badge">پیشنهاد ۴</span>
+      <h2>دیورامای مدرن با حروف شناور جدول</h2>
+      <p>ترکیب خانه‌های مشکی و سفید جدول کلمات متقاطع که به صورت معلق از بالای کارت‌ها بیرون زده‌اند.</p>
+    </div>
+
+    <div class="mini-topbar">
+      <div class="mini-stat">
+        <span class="stat-coin-flower">🌸</span>
+        <span>۱,۲۵۰ سکه</span>
+      </div>
+      <div class="mini-stat">
+        <span>✏️ معما ساز</span>
+      </div>
+    </div>
+
+    <div class="cards-stage">
+
+      <!-- CARD 1 -->
+      <div class="card-diorama">
+        <div class="floating-crossword-cluster">
+          <div class="crossword-box-protruding">ب</div>
+          <div class="crossword-box-protruding black-tile">■</div>
+          <div class="crossword-box-protruding">ج</div>
+        </div>
+
+        <div style="padding-top:14px;">
+          <span style="font-size:10px;font-weight:800;color:#944E39;background:#FDECE7;padding:2px 8px;border-radius:999px;">طبقات صعودی</span>
+          <h3 style="font-size:16px;color:#381E15;font-weight:900;margin-top:4px;">برج بی‌نهایت کلمات</h3>
+          <p style="font-size:11.5px;color:#785344;margin-top:3px;">خانه‌های جدول کلمات یکی‌یکی به آسمان برج متصل می‌شوند.</p>
+          <div style="margin-top:12px;display:flex;justify-content:flex-end;">
+            <button style="background:#5C2E20;color:#FFF;border:none;border-radius:10px;padding:6px 14px;font-weight:800;font-family:inherit;">شروع بازی</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="card-diorama">
+        <div class="floating-crossword-cluster" style="transform:rotate(-4deg);left:auto;right:20px;">
+          <div class="crossword-box-protruding" style="background:#E2EDF8;border-color:#3E6A90;color:#1B4568;">ن</div>
+          <div class="crossword-box-protruding" style="background:#E2EDF8;border-color:#3E6A90;color:#1B4568;">ب</div>
+          <div class="crossword-box-protruding" style="background:#E2EDF8;border-color:#3E6A90;color:#1B4568;">ر</div>
+          <div class="crossword-box-protruding" style="background:#E2EDF8;border-color:#3E6A90;color:#1B4568;">د</div>
+        </div>
+
+        <div style="padding-top:14px;">
+          <span style="font-size:10px;font-weight:800;color:#2B557A;background:#E7F2FD;padding:2px 8px;border-radius:999px;">سرعتی و آنلاین</span>
+          <h3 style="font-size:16px;color:#1F384F;font-weight:900;margin-top:4px;">دوئل سریع متقاطع</h3>
+          <p style="font-size:11.5px;color:#506B82;margin-top:3px;">چه کسی زودتر خانه‌های اشتراکی حریف را پر می‌کند؟</p>
+          <div style="margin-top:12px;display:flex;justify-content:flex-end;">
+            <button style="background:#2B557A;color:#FFF;border:none;border-radius:10px;padding:6px 14px;font-weight:800;font-family:inherit;">پیوستن به مسابقه</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="concept-notes">
+      <b>چرا این طرح کار می‌کند؟</b><br>
+      مستقیماً از هویت جدول متقاطع (سلول‌های حرفی و سلول‌های سیاه) به عنوان دکور سه‌بعدی بیرون‌زده استفاده می‌کند تا فوراً ماهیت معمایی بازی به چشم بیاید.
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function switchDeck(deckId, btn) {
+    document.querySelectorAll('.concept-card-deck').forEach(d => d.classList.remove('is-visible'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(deckId).classList.add('is-visible');
+    btn.classList.add('active');
+  }
+</script>
+
+</body>
+</html>

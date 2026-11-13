@@ -1,0 +1,163 @@
+{
+  "football": {
+    "maradona": [
+      "maradona_villa",
+      "maradona_debut",
+      "maradona_barcelona",
+      "maradona_napoli",
+      "maradona_1986",
+      "maradona_legacy"
+    ],
+    "messi": [
+      "messi_rosario",
+      "messi_napkin",
+      "messi_number10",
+      "messi_91goals",
+      "messi_copa",
+      "messi_worldcup",
+      "messi_miami"
+    ],
+    "pele": [
+      "pele_bauru",
+      "pele_santos",
+      "pele_1958",
+      "pele_triple",
+      "pele_rei"
+    ],
+    "ronaldo": [
+      "ronaldo_madeira",
+      "ronaldo_sporting",
+      "ronaldo_united",
+      "ronaldo_real",
+      "ronaldo_euro",
+      "ronaldo_nasr"
+    ],
+    "zidane": [
+      "zidane_marseille",
+      "zidane_juventus",
+      "zidane_1998",
+      "zidane_galacticos",
+      "zidane_coach"
+    ],
+    "cruyff": [
+      "cruyff_betondorp",
+      "cruyff_ajax",
+      "cruyff_barcelona",
+      "cruyff_dreamteam"
+    ],
+    "beckenbauer": [
+      "beckenbauer_munich",
+      "beckenbauer_bayern",
+      "beckenbauer_1974",
+      "beckenbauer_coach"
+    ],
+    "ronaldinho": [
+      "ronaldinho_porto_alegre",
+      "ronaldinho_gremio_psg",
+      "ronaldinho_barcelona",
+      "ronaldinho_samba"
+    ],
+    "ronaldo9": [
+      "ronaldo9_cruzeiro",
+      "ronaldo9_europe",
+      "ronaldo9_return",
+      "ronaldo9_legacy"
+    ],
+    "maldini": [
+      "maldini_debut",
+      "maldini_sacchi",
+      "maldini_captain",
+      "maldini_legacy"
+    ],
+    "eusebio": [
+      "eusebio_mozambique",
+      "eusebio_benfica",
+      "eusebio_1966",
+      "eusebio_legacy"
+    ],
+    "puskas": [
+      "puskas_budapest",
+      "puskas_honved",
+      "puskas_1954",
+      "puskas_real"
+    ],
+    "yashin": [
+      "yashin_moscow",
+      "yashin_dynamo",
+      "yashin_ballon",
+      "yashin_legacy"
+    ],
+    "best": [
+      "best_belfast",
+      "best_united",
+      "best_twilight",
+      "best_legacy"
+    ],
+    "platini": [
+      "platini_joeuf",
+      "platini_juve",
+      "platini_euro84",
+      "platini_legacy"
+    ],
+    "neymar": [
+      "neymar_santos",
+      "neymar_santos_star",
+      "neymar_barcelona",
+      "neymar_psg"
+    ],
+    "mbappe": [
+      "mbappe_bondy",
+      "mbappe_monaco",
+      "mbappe_2018",
+      "mbappe_real"
+    ],
+    "haaland": [
+      "haaland_bryne",
+      "haaland_salzburg",
+      "haaland_dortmund",
+      "haaland_city"
+    ],
+    "debruyne": [
+      "debruyne_genk",
+      "debruyne_chelsea",
+      "debruyne_city",
+      "debruyne_belgium"
+    ],
+    "modric": [
+      "modric_zadar",
+      "modric_dinamo",
+      "modric_real",
+      "modric_legacy"
+    ],
+    "salah": [
+      "salah_nagrig",
+      "salah_basel",
+      "salah_roma",
+      "salah_liverpool"
+    ],
+    "lewandowski": [
+      "lewandowski_warsaw",
+      "lewandowski_dortmund",
+      "lewandowski_bayern",
+      "lewandowski_barca"
+    ],
+    "iniesta": [
+      "iniesta_fuentealbilla",
+      "iniesta_barca",
+      "iniesta_2010",
+      "iniesta_legacy"
+    ],
+    "son": [
+      "son_chuncheon",
+      "son_hamburg",
+      "son_leverkusen",
+      "son_tottenham"
+    ],
+    "vandijk": [
+      "vandijk_breda",
+      "vandijk_celtic",
+      "vandijk_southampton",
+      "vandijk_liverpool"
+    ]
+  }
+}

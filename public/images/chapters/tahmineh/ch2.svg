@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#9d0ab3"/>
+<stop offset="100%" stop-color="#84009a"/>
+</linearGradient></defs>
+<rect width="500" height="600" fill="url(#bg)"/>
+<rect x="8" y="8" width="484" height="584" rx="15" fill="none" stroke="#86198f" stroke-width="7.5" opacity="0.7"/>
+<polygon points="280,300 262.9903810567666,307.5 265,325.98076211353316 250,315 235,325.98076211353316 237.00961894323342,307.5 220,300 237.00961894323342,292.5 235,274.01923788646684 250,285 265,274.01923788646684 262.9903810567666,292.5 " fill="none" stroke="#86198f" stroke-width="4.5" opacity="0.4" transform="translate(0,0)"/>
+<path d="M 185 60 Q 250 25 315 60" fill="#86198f" opacity="0.8" stroke="#78350f" stroke-width="1.5"/>
+<rect x="185" y="60" width="130" height="7" fill="#86198f" opacity="0.6" stroke="#78350f" stroke-width="1"/>
+<circle cx="180" cy="335.8" r="7.2" fill="#1a1a2e"/>
+<ellipse cx="180" cy="359.2" rx="10.799999999999999" ry="20.25" fill="#1a1a2e"/>
+<line x1="172.8" y1="345" x2="162" y2="367.3" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+<line x1="187.2" y1="345" x2="198" y2="367.3" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+<line x1="174.6" y1="370" x2="174.6" y2="383.5" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+<line x1="185.4" y1="383.5" x2="185.4" y2="370" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+<circle cx="330" cy="310" r="12" fill="#d946ef" opacity="0.25"/>
+<circle cx="330" cy="310" r="12" fill="none" stroke="#d946ef" stroke-width="2" opacity="0.6"/>
+<line x1="180" y1="310" x2="320" y2="310" stroke="#d946ef" stroke-width="2" opacity="0.5"/>
+<circle cx="370" cy="50" r="25" fill="#fde047" opacity="0.8"/>
+<circle cx="377.5" cy="45" r="21.25" fill="#1a1a2e" opacity="0.9"/>
+<path d="M 52 530 L 53.8 522 L 55.6 514 L 57.4 506 L 59.2 498 L 61 490 L 62.8 482 L 64.6 474 L 66.4 466 L 68.2 458 L 70 450 L 70 450 L 71.8 458 L 73.6 466 L 75.4 474 L 77.2 482 L 79 490 L 80.8 498 L 82.6 506 L 84.4 514 L 86.2 522 L 88 530 Z" fill="#2a1a2a" opacity="0.8"/>
+<path d="M 412 530 L 413.8 522 L 415.6 514 L 417.4 506 L 419.2 498 L 421 490 L 422.8 482 L 424.6 474 L 426.4 466 L 428.2 458 L 430 450 L 430 450 L 431.8 458 L 433.6 466 L 435.4 474 L 437.2 482 L 439 490 L 440.8 498 L 442.6 506 L 444.4 514 L 446.2 522 L 448 530 Z" fill="#2a1a2a" opacity="0.8"/>
+<path d="M 250 80 L 252.35114100916988 86.76393202250021 M 259.51056516295154 86.90983005625053 L 253.80422606518061 91.23606797749979 M 255.87785252292474 98.09016994374947 L 250 94 M 244.12214747707526 98.09016994374947 L 246.19577393481939 91.23606797749979 M 240.48943483704846 86.90983005625053 L 247.64885899083012 86.76393202250021 Z" fill="#fde047" opacity="0.8"/>
+<rect x="100" y="520" width="300" height="36" rx="18" fill="#86198f" opacity="0.85"/>
+<text x="250" y="543" text-anchor="middle" fill="#fff" font-family="serif" font-size="16" font-weight="bold">شب وصال</text>
+</svg>

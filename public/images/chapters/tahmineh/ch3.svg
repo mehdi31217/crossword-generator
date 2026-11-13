@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#9d0ab3"/>
+<stop offset="100%" stop-color="#84009a"/>
+</linearGradient></defs>
+<rect width="500" height="600" fill="url(#bg)"/>
+<rect x="8" y="8" width="484" height="584" rx="15" fill="none" stroke="#86198f" stroke-width="7.5" opacity="0.7"/>
+<polygon points="280,300 262.9903810567666,307.5 265,325.98076211353316 250,315 235,325.98076211353316 237.00961894323342,307.5 220,300 237.00961894323342,292.5 235,274.01923788646684 250,285 265,274.01923788646684 262.9903810567666,292.5 " fill="none" stroke="#86198f" stroke-width="4.5" opacity="0.4" transform="translate(0,0)"/>
+<path d="M 180 70 Q 250 30 320 70" fill="#86198f" opacity="0.8" stroke="#78350f" stroke-width="1.5"/>
+<rect x="180" y="70" width="140" height="8" fill="#86198f" opacity="0.6" stroke="#78350f" stroke-width="1"/>
+<circle cx="250" cy="300" r="30" fill="#d946ef" opacity="0.15"/>
+<circle cx="250" cy="300" r="15" fill="#d946ef" opacity="0.3"/>
+<text x="250" y="298" text-anchor="middle" fill="#d946ef" font-family="serif" font-size="10" font-weight="bold">سهراب</text>
+<circle cx="250" cy="295" r="3" fill="#fff" opacity="0.8"/>
+<circle cx="170" cy="345.8" r="7.2" fill="#1a1a2e"/>
+<ellipse cx="170" cy="369.2" rx="10.799999999999999" ry="20.25" fill="#1a1a2e"/>
+<line x1="162.8" y1="355" x2="152" y2="377.3" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+<line x1="177.2" y1="355" x2="188" y2="377.3" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+<line x1="164.6" y1="380" x2="164.6" y2="393.5" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+<line x1="175.4" y1="393.5" x2="175.4" y2="380" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+<path d="M 52 530 L 53.8 521 L 55.6 512 L 57.4 503 L 59.2 494 L 61 485 L 62.8 476 L 64.6 467 L 66.4 458 L 68.2 449 L 70 440 L 70 440 L 71.8 449 L 73.6 458 L 75.4 467 L 77.2 476 L 79 485 L 80.8 494 L 82.6 503 L 84.4 512 L 86.2 521 L 88 530 Z" fill="#2a1a2a" opacity="0.8"/>
+<path d="M 412 530 L 413.8 521 L 415.6 512 L 417.4 503 L 419.2 494 L 421 485 L 422.8 476 L 424.6 467 L 426.4 458 L 428.2 449 L 430 440 L 430 440 L 431.8 449 L 433.6 458 L 435.4 467 L 437.2 476 L 439 485 L 440.8 494 L 442.6 503 L 444.4 512 L 446.2 521 L 448 530 Z" fill="#2a1a2a" opacity="0.8"/>
+<circle cx="420" cy="55" r="25" fill="#fde047" opacity="0.5"/>
+<rect x="100" y="520" width="300" height="36" rx="18" fill="#86198f" opacity="0.85"/>
+<text x="250" y="543" text-anchor="middle" fill="#fff" font-family="serif" font-size="16" font-weight="bold">تولد سهراب</text>
+</svg>

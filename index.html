@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Crossword Gen Pro</title>
+    <meta name="description" content="Crossword puzzle game featuring multiplayer battles, Persian epic Shahnameh stories, and AI crossword generation." />
+    <meta property="og:title" content="Crossword Gen Pro" />
+    <meta property="og:description" content="Crossword puzzle game featuring multiplayer battles, Persian epic Shahnameh stories, and AI crossword generation." />
+    <meta name="theme-color" content="#8A4224" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="گنجینه جدول" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <script>
+      // Ignore WebSocket and Vite HMR errors in environments where HMR is disabled
+      window.addEventListener('unhandledrejection', function(event) {
+        var msg = (event && event.reason && (event.reason.message || event.reason.stack || '')) || '';
+        if (typeof msg === 'string' && (msg.includes('WebSocket') || msg.includes('@vite/client') || msg.includes('vite:ws'))) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+        }
+      }, true);
+      window.addEventListener('error', function(event) {
+        var msg = (event && (event.message || '')) || '';
+        if (typeof msg === 'string' && (msg.includes('WebSocket') || msg.includes('@vite/client') || msg.includes('vite:ws'))) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+        }
+      }, true);
+    </script>
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/dark-mode.css">
+    <!-- Preload critical maps, menu chassis, and in-game console backgrounds at HTML parse time -->
+    <link rel="preload" as="image" href="/images/d9/h-tablet-only.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/images/map-iran-clay.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/images/map-world-clay.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/images/game/room-bg.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/images/game/board-frame.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/images/game/keyboard-panel.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/images/game/topbar.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/images/game/clue-panel.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/images/d9/h-builder-slab.webp" type="image/webp">
+    <link rel="preload" as="image" href="/images/d9/h-sage-tray.webp" type="image/webp">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        overscroll-behavior: none;
+        background-color: var(--bg-body);
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        position: fixed;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      #root {
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .safe-bottom {
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+      
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+        20%, 40%, 60%, 80% { transform: translateX(4px); }
+      }
+      .animate-shake {
+        animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+      }
+
+      @keyframes monster-hit {
+        0% { transform: scale(1); filter: brightness(1) sepia(0); }
+        10% { transform: scale(0.95); filter: brightness(2) sepia(1) hue-rotate(-50deg) saturate(5); }
+        30% { transform: scale(1.05); }
+        100% { transform: scale(1); filter: brightness(1) sepia(0); }
+      }
+      .animate-monster-hit {
+        animation: monster-hit 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      @keyframes monster-death {
+        0% { transform: scale(1) translateY(0); opacity: 1; filter: grayscale(0); }
+        20% { transform: scale(1.1) translateY(-10px); filter: brightness(3) grayscale(1); }
+        100% { transform: scale(0) translateY(50px); opacity: 0; filter: grayscale(1); }
+      }
+      .animate-monster-death {
+        animation: monster-death 1.5s ease-in forwards;
+      }
+
+      @keyframes roar-vibrate {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2) rotate(5deg); }
+        100% { transform: scale(1); }
+      }
+      .animate-roar {
+        animation: roar-vibrate 0.3s ease-in-out infinite;
+      }
+
+      /* SWORD SLASH ANIMATION */
+      @keyframes slash-expand {
+        0% { width: 0; opacity: 0; left: 50%; }
+        20% { width: 140%; opacity: 1; left: -20%; }
+        80% { width: 140%; opacity: 1; left: -20%; }
+        100% { width: 140%; opacity: 0; left: -20%; }
+      }
+      .animate-slash-fast {
+        animation: slash-expand 0.25s ease-out forwards;
+      }
+
+      @keyframes damage-pop {
+        0% { transform: translateY(0) scale(0.5); opacity: 0; }
+        20% { opacity: 1; transform: translateY(-20px) scale(1.5); }
+        80% { opacity: 1; transform: translateY(-40px) scale(1); }
+        100% { transform: translateY(-60px) scale(0.8); opacity: 0; }
+      }
+      .animate-damage-pop {
+        animation: damage-pop 1s ease-out forwards;
+      }
+
+      @keyframes heal-pop {
+        0% { transform: translateY(0) scale(0.5); opacity: 0; }
+        30% { opacity: 1; transform: translateY(-15px) scale(1.2); }
+        100% { transform: translateY(-40px) scale(1); opacity: 0; }
+      }
+      .animate-heal-pop {
+        animation: heal-pop 1s ease-out forwards;
+      }
+
+      @keyframes combo-slam {
+        0% { transform: scale(3) rotate(-15deg); opacity: 0; }
+        20% { transform: scale(1) rotate(5deg); opacity: 1; }
+        30% { transform: scale(1.2) rotate(-5deg); opacity: 1; }
+        45% { transform: scale(1.1) rotate(-6deg); opacity: 1; }
+        100% { transform: scale(1.1) rotate(-6deg); opacity: 0; }
+      }
+      .animate-combo-slam {
+        animation: combo-slam 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      }
+
+      /* --- BROKEN COMBO ANIMATIONS --- */
+      @keyframes break-left {
+        0% { transform: translate(0, 0) rotate(0); opacity: 1; }
+        30% { transform: translate(-10px, 10px) rotate(-15deg); opacity: 1; }
+        100% { transform: translate(-50px, 150px) rotate(-90deg); opacity: 0; }
+      }
+      .animate-break-left {
+        animation: break-left 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+      }
+
+      @keyframes break-right {
+        0% { transform: translate(0, 0) rotate(0); opacity: 1; }
+        30% { transform: translate(10px, 10px) rotate(15deg); opacity: 1; }
+        100% { transform: translate(50px, 150px) rotate(90deg); opacity: 0; }
+      }
+      .animate-break-right {
+        animation: break-right 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards;
+      }
+
+      @keyframes slash-flash {
+        0% { width: 0; opacity: 0; left: 50%; transform: translate(-50%, -50%) rotate(-15deg); }
+        40% { width: 150%; opacity: 1; left: 50%; transform: translate(-50%, -50%) rotate(-15deg); }
+        100% { width: 150%; opacity: 0; left: 50%; transform: translate(-50%, -50%) rotate(-15deg); }
+      }
+      .animate-slash {
+        height: 4px;
+        background: white;
+        box-shadow: 0 0 15px white, 0 0 5px cyan;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        animation: slash-flash 0.3s ease-out forwards;
+        z-index: 60;
+        pointer-events: none;
+      }
+
+      .level-card-shadow {
+        box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.1), 0 8px 10px -6px rgba(59, 130, 246, 0.1);
+      }
+
+      /* GLOSSY BAR EFFECT */
+      .glass-bar {
+        background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 51%, rgba(0,0,0,0.2) 100%);
+      }
+
+      [dir='rtl'] .ml-auto { margin-left: 0; margin-right: auto; }
+      
+      ::-webkit-scrollbar { width: 0px; height: 0px; }
+
+      /* TOWER MODE LIVES ANIMATIONS */
+      @keyframes heart-shake {
+        0%, 100% { transform: rotate(0deg) scale(1); }
+        25% { transform: rotate(-10deg) scale(1.2); }
+        50% { transform: rotate(10deg) scale(1.2); }
+        75% { transform: rotate(-10deg) scale(1.2); }
+      }
+
+      @keyframes heart-break {
+        0% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.3) rotate(20deg); opacity: 0.5; }
+        100% { transform: scale(0) rotate(45deg); opacity: 0; }
+      }
+
+      @keyframes lives-container-shake {
+        0%, 100% { transform: translateX(0) scale(1); }
+        10%, 30%, 50%, 70%, 90% { transform: translateX(-8px) scale(1.05); }
+        20%, 40%, 60%, 80% { transform: translateX(8px) scale(1.05); }
+      }
+
+      /* Heartbeat animations with different speeds */
+      @keyframes heartbeat-slow {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+
+      @keyframes heartbeat-medium {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.08); }
+      }
+
+      @keyframes heartbeat-fast {
+        0%, 100% { transform: scale(1); }
+        25%, 75% { transform: scale(1.12); }
+        50% { transform: scale(1.15); }
+      }
+
+      @keyframes heartbeat-critical {
+        0%, 100% { transform: scale(1); }
+        10%, 30%, 50%, 70%, 90% { transform: scale(1.2); }
+        20%, 40%, 60%, 80% { transform: scale(1.15); }
+      }
+
+      /* Apply animation when life is lost */
+      .tower-lives-container.life-lost {
+        animation: lives-container-shake 0.5s cubic-bezier(.36,.07,.19,.97);
+      }
+
+      .tower-heart.heart-lost {
+        animation: heart-break 0.6s cubic-bezier(.36,.07,.19,.97) forwards;
+      }
+
+      .tower-heart.heart-shake {
+        animation: heart-shake 0.4s cubic-bezier(.36,.07,.19,.97);
+      }
+
+      /* Lives container heartbeat based on remaining lives */
+      .lives-heartbeat-3 {
+        animation: heartbeat-slow 2s ease-in-out infinite;
+      }
+
+      .lives-heartbeat-2 {
+        animation: heartbeat-medium 1.5s ease-in-out infinite;
+      }
+
+      .lives-heartbeat-1 {
+        animation: heartbeat-fast 1s ease-in-out infinite;
+      }
+
+      .lives-heartbeat-0-5 {
+        animation: heartbeat-critical 0.6s ease-in-out infinite;
+      }
+
+      /* --- THEME TRANSITION --- */
+      .theme-transition, .theme-transition * {
+        transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease !important;
+      }
+
+      /* --- MENU ANIMATIONS --- */
+      @keyframes card-enter {
+        0% { opacity: 0; transform: translateY(20px) scale(0.96); }
+        100% { opacity: 1; transform: translateY(0) scale(1); }
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+      }
+
+      @keyframes glow-pulse {
+        0%, 100% { box-shadow: 0 0 5px rgba(99, 102, 241, 0.3); }
+        50% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.6), 0 0 40px rgba(99, 102, 241, 0.2); }
+      }
+
+      @keyframes shimmer {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
+
+      .animate-card-enter { animation: card-enter 0.5s ease-out both; }
+      .animate-card-enter-delay-1 { animation: card-enter 0.5s ease-out 0.1s both; }
+      .animate-card-enter-delay-2 { animation: card-enter 0.5s ease-out 0.18s both; }
+      .animate-card-enter-delay-3 { animation: card-enter 0.5s ease-out 0.26s both; }
+      .animate-card-enter-delay-4 { animation: card-enter 0.5s ease-out 0.34s both; }
+      .animate-float { animation: float 4s ease-in-out infinite; }
+      .animate-glow-pulse { animation: glow-pulse 2s ease-in-out infinite; }
+      .animate-shimmer {
+        background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%);
+        background-size: 200% 100%;
+        animation: shimmer 3s ease-in-out infinite;
+      }
+    </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-50 text-slate-900">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" fill="#0f0a09" rx="6"/>
+  <rect x="6" y="6" width="388" height="388" fill="none" stroke="#f59e0b" stroke-width="1.5" rx="4" opacity="0.4"/>
+  <path d="M200 49 A16 16 0 1 1 200 81 A12 12 0 1 0 200 49Z" fill="#e2e8f0" opacity="0.85"/>
+    <circle cx="200" cy="58.6" r="0.96" fill="white" opacity="0.3"/>
+    <circle cx="205.6" cy="65" r="0.64" fill="white" opacity="0.2"/><circle cx="277.47527629304193" cy="50" r="2.364752060098386" fill="#fff" opacity="0.30794698040388196"/><circle cx="232.49581502804554" cy="106.2844026619351" r="1.2902313625128234" fill="#fff" opacity="0.35413295270353756"/><circle cx="160.31351409088893" cy="118.73900996844672" r="2.336918203241428" fill="#fff" opacity="0.4383858694283801"/><circle cx="121.93189116009972" cy="50.00000000000001" r="1.3754689696867957" fill="#fff" opacity="0.37114981976328987"/><circle cx="162.81378039716714" cy="-14.40842169352021" r="1.4865194373857362" fill="#fff" opacity="0.5293815780882681"/><circle cx="228.85146365070375" cy="0.027799084254475304" r="1.1473842970915973" fill="#fff" opacity="0.4116059510086202"/><path d="M160 235 L160 193 Q200 165 240 193 L240 235Z" fill="none" stroke="#86efac" stroke-width="2" opacity="0.5"/>
+    <path d="M173.33333333333334 235 L173.33333333333334 203.5 Q200 186 226.66666666666666 203.5 L226.66666666666666 235Z" fill="none" stroke="#86efac" stroke-width="1" opacity="0.3"/><circle cx="104.9" cy="260" r="1.68" fill="#fca5a5" opacity="0.3"/>
+      <circle cx="104.9" cy="260" r="0.84" fill="white" opacity="0.3"/><circle cx="101.51418327243724" cy="264.6601769298463" r="1.68" fill="#fca5a5" opacity="0.5"/>
+      <circle cx="101.51418327243724" cy="264.6601769298463" r="0.84" fill="white" opacity="0.3"/><circle cx="96.03581672756276" cy="262.88014773623314" r="1.68" fill="#fca5a5" opacity="0.3"/>
+      <circle cx="96.03581672756276" cy="262.88014773623314" r="0.84" fill="white" opacity="0.3"/><circle cx="96.03581672756276" cy="257.11985226376686" r="1.68" fill="#fca5a5" opacity="0.5"/>
+      <circle cx="96.03581672756276" cy="257.11985226376686" r="0.84" fill="white" opacity="0.3"/><circle cx="101.51418327243724" cy="255.33982307015376" r="1.68" fill="#fca5a5" opacity="0.3"/>
+      <circle cx="101.51418327243724" cy="255.33982307015376" r="0.84" fill="white" opacity="0.3"/><circle cx="100" cy="260" r="1.4000000000000001" fill="#fca5a5" opacity="0.5"/><circle cx="304.9" cy="260" r="1.68" fill="#fca5a5" opacity="0.3"/>
+      <circle cx="304.9" cy="260" r="0.84" fill="white" opacity="0.3"/><circle cx="301.51418327243726" cy="264.6601769298463" r="1.68" fill="#fca5a5" opacity="0.5"/>
+      <circle cx="301.51418327243726" cy="264.6601769298463" r="0.84" fill="white" opacity="0.3"/><circle cx="296.03581672756275" cy="262.88014773623314" r="1.68" fill="#fca5a5" opacity="0.3"/>
+      <circle cx="296.03581672756275" cy="262.88014773623314" r="0.84" fill="white" opacity="0.3"/><circle cx="296.03581672756275" cy="257.11985226376686" r="1.68" fill="#fca5a5" opacity="0.5"/>
+      <circle cx="296.03581672756275" cy="257.11985226376686" r="0.84" fill="white" opacity="0.3"/><circle cx="301.51418327243726" cy="255.33982307015376" r="1.68" fill="#fca5a5" opacity="0.3"/>
+      <circle cx="301.51418327243726" cy="255.33982307015376" r="0.84" fill="white" opacity="0.3"/><circle cx="300" cy="260" r="1.4000000000000001" fill="#fca5a5" opacity="0.5"/>
+  <rect x="0" y="362" width="400" height="38" fill="rgba(0,0,0,0.5)"/>
+  <text x="200" y="386" text-anchor="middle" fill="#fff" font-family="serif" font-size="16" font-weight="bold" dir="rtl">فتح لیدیه</text>
+</svg>

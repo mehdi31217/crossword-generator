@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-page-node-id="nsWSwqM99uTmxTED4aXK5r">
+<head data-page-node-id="YZPTj9lu63sUyMm0ccghvu">
+<meta charset="utf-8" data-page-node-id="KM2NFnTt5J1QV4RhzIFAnT">
+<meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="qa9kvCwGMGrwGkP6EBzdBj">
+<title>Crossword Gen Pro — پیش‌نمایش شیشه‌ای</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" data-page-node-id="3mGrfRKcKBthMHwrZBOhtu">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin data-page-node-id="Q2Ors7oXFlIiykqy8RI5AD">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" data-page-node-id="wyF2OQigXM9YrfQX87HYDD">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --ink:#11131a;
+    --ink-2:#5b6070;
+    --ink-3:#8b90a0;
+    --blue:#0a84ff;
+    --indigo:#5e5ce6;
+    --green:#30d158;
+    --teal:#32c5d6;
+    --orange:#ff9f0a;
+    --pink:#ff375f;
+    --purple:#bf5af2;
+    --yellow:#ffd60a;
+    --glass:rgba(255,255,255,.56);
+    --glass-2:rgba(255,255,255,.72);
+    --hair:rgba(255,255,255,.85);
+    --shadow:0 12px 34px -14px rgba(28,36,80,.28);
+    --spring:cubic-bezier(.34,1.5,.5,1);
+    --apple:cubic-bezier(.22,1,.36,1);
+  }
+  html,body{height:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,'Vazirmatn','SF Pro Display',system-ui,sans-serif;
+    color:var(--ink);
+    display:flex;align-items:center;justify-content:center;min-height:100vh;padding:26px 16px;
+    overflow-x:hidden;
+    background:
+      radial-gradient(900px 700px at 88% -8%, #cfe6ff 0%, transparent 58%),
+      radial-gradient(760px 620px at 6% 106%, #d8fbef 0%, transparent 55%),
+      linear-gradient(180deg,#f3f7ff 0%,#f7f4ff 46%,#fff4f8 100%);
+  }
+  .stage{display:flex;flex-direction:column;align-items:center;gap:14px;width:100%}
+  .caption{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;font-size:13px;color:#6b7285}
+  .caption b{color:#1a1d26;font-weight:700}
+  .caption .dot{width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 12px rgba(10,132,255,.7)}
+  .caption .hint{font-size:11.5px;color:#7b8296;border:1px solid rgba(20,30,70,.12);padding:2px 9px;border-radius:999px;background:rgba(255,255,255,.6)}
+
+  .phone{
+    position:relative;width:100%;max-width:432px;height:min(93vh,900px);
+    border-radius:40px;overflow:hidden;
+    background:linear-gradient(180deg,#f6f9ff,#fbf7ff 55%,#fff6fa);
+    border:1px solid rgba(255,255,255,.9);
+    box-shadow:0 50px 100px -40px rgba(30,40,90,.45), 0 0 0 9px rgba(255,255,255,.5), 0 0 0 10px rgba(20,30,70,.06);
+    display:flex;flex-direction:column;
+  }
+  .bg{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+  .orb{position:absolute;border-radius:50%;filter:blur(44px);opacity:.75;mix-blend-mode:normal}
+  .o1{width:280px;height:280px;background:#8fc7ff;top:-90px;right:-80px;animation:float1 13s ease-in-out infinite}
+  .o2{width:250px;height:250px;background:#9df0d5;bottom:60px;left:-100px;animation:float2 17s ease-in-out infinite}
+  .o3{width:220px;height:220px;background:#ffc7de;top:42%;right:-90px;opacity:.6;animation:float3 20s ease-in-out infinite}
+  .o4{width:190px;height:190px;background:#d8c9ff;bottom:-70px;right:20%;opacity:.6;animation:float2 15s ease-in-out infinite reverse}
+  @keyframes float1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-22px,26px) scale(1.12)}}
+  @keyframes float2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(26px,-20px) scale(1.1)}}
+  @keyframes float3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-16px,-24px) scale(1.14)}}
+
+  .screen{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;min-height:0}
+  .scroll{flex:1;overflow-y:auto;padding:16px 16px 104px;display:flex;flex-direction:column;gap:14px}
+  .scroll::-webkit-scrollbar{width:0}
+  .scroll > *{flex-shrink:0}
+
+  .glass{
+    background:var(--glass);
+    backdrop-filter:blur(22px) saturate(180%);
+    -webkit-backdrop-filter:blur(22px) saturate(180%);
+    border:1px solid var(--hair);
+    box-shadow:var(--shadow), inset 0 1px 0 rgba(255,255,255,.95);
+    border-radius:24px;
+  }
+
+  .hello{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .hello h1{font-size:23px;font-weight:800;letter-spacing:-.4px;line-height:1.25}
+  .hello p{font-size:12.5px;color:var(--ink-2);margin-top:3px}
+  .avatar{width:48px;height:48px;border-radius:50%;flex:0 0 48px;display:grid;place-items:center;
+    background:linear-gradient(150deg,#8fc7ff,#bf5af2);color:#fff;font-weight:800;font-size:17px;
+    border:2px solid rgba(255,255,255,.9);box-shadow:0 8px 20px -8px rgba(94,92,230,.6)}
+
+  .stats{display:flex;gap:9px}
+  .pill{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:11px 10px;border-radius:18px;
+    font-size:14px;font-weight:800}
+  .pill .ic{width:22px;height:22px;border-radius:8px;display:grid;place-items:center;flex:0 0 22px}
+  .pill .ic svg{width:14px;height:14px;color:#fff}
+  .pill.c .ic{background:linear-gradient(150deg,#ffd60a,#ff9f0a)}
+  .pill.c{color:#8a5a00}
+  .pill.g .ic{background:linear-gradient(150deg,#64d2ff,#0a84ff)}
+  .pill.g{color:#0a5f9e}
+  .pill.s .ic{background:linear-gradient(150deg,#ff9f0a,#ff375f)}
+  .pill.s{color:#b02a44}
+
+  .hero{position:relative;overflow:hidden;padding:17px;border-radius:26px;
+    background:linear-gradient(135deg,rgba(10,132,255,.16),rgba(191,90,242,.14) 55%,rgba(50,197,214,.14));
+    border:1px solid rgba(255,255,255,.85);
+    backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);
+    box-shadow:var(--shadow), inset 0 1px 0 rgba(255,255,255,.95)}
+  .hero .sheen{position:absolute;inset:0;background:linear-gradient(115deg,transparent 38%,rgba(255,255,255,.6) 50%,transparent 62%);
+    transform:translateX(-130%);animation:sheen 5s ease-in-out infinite}
+  @keyframes sheen{0%{transform:translateX(-130%)}58%,100%{transform:translateX(130%)}}
+  .hero-top{display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;color:#0a6fd6;
+    background:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.9);padding:5px 10px;border-radius:999px}
+  .hero h2{font-size:21px;font-weight:900;margin:10px 0 3px;letter-spacing:-.3px}
+  .hero .sub{font-size:12.5px;color:var(--ink-2)}
+  .ring{position:relative;flex:0 0 76px;width:76px;height:76px;display:grid;place-items:center}
+  .ring svg{position:absolute;inset:0;transform:rotate(-90deg)}
+  .ring .val{font-size:17px;font-weight:900}
+  .ring .cap{font-size:9.5px;color:var(--ink-3);margin-top:1px}
+  .chips{display:flex;gap:7px;margin-top:12px;flex-wrap:wrap}
+  .chip{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;color:#3c4256;
+    background:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.9);padding:6px 10px;border-radius:12px}
+  .chip.gold{color:#8a5a00;background:rgba(255,214,10,.28);border-color:rgba(255,214,10,.55)}
+  .cta{margin-top:14px;width:100%;border:0;cursor:pointer;border-radius:17px;padding:14px;
+    font-family:inherit;font-size:15px;font-weight:800;color:#fff;
+    background:linear-gradient(135deg,#0a84ff,#5e5ce6);
+    box-shadow:0 14px 28px -12px rgba(10,132,255,.75);
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    transition:transform .22s var(--spring),box-shadow .3s var(--apple),filter .2s}
+  .cta:hover{transform:translateY(-2px);filter:brightness(1.05)}
+  .cta:active{transform:scale(.965)}
+  .cta svg{width:18px;height:18px}
+
+  .label{display:flex;align-items:center;gap:9px;margin-top:2px}
+  .label h3{font-size:13.5px;font-weight:800;color:#2a2f3f}
+  .label i{flex:1;height:1px;background:linear-gradient(90deg,rgba(20,30,70,.14),transparent)}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+  .tile{position:relative;overflow:hidden;cursor:pointer;font-family:inherit;text-align:right;color:var(--ink);
+    border-radius:22px;padding:14px;min-height:122px;display:flex;flex-direction:column;justify-content:space-between;
+    transition:transform .24s var(--spring),box-shadow .3s var(--apple)}
+  .tile:hover{transform:translateY(-5px)}
+  .tile:active{transform:scale(.97)}
+  .tile .ic{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;color:#fff;
+    box-shadow:0 10px 20px -10px rgba(20,30,70,.5)}
+  .tile .ic svg{width:22px;height:22px}
+  .tile .txt b{display:block;font-size:14.5px;font-weight:800;line-height:1.25}
+  .tile .txt span{display:block;font-size:11.5px;color:var(--ink-2);margin-top:2px}
+  .tile .corner{position:absolute;top:13px;left:13px;font-size:10.5px;font-weight:800;padding:4px 9px;border-radius:999px;
+    background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.9);color:#3c4256}
+  .t-blue .ic{background:linear-gradient(150deg,#64d2ff,#0a84ff)}
+  .t-violet .ic{background:linear-gradient(150deg,#bf5af2,#5e5ce6)}
+  .t-teal .ic{background:linear-gradient(150deg,#7ce8d8,#32c5d6)}
+  .t-pink .ic{background:linear-gradient(150deg,#ff7a9c,#ff375f)}
+  .tile.locked{opacity:.92}
+  .tile.locked .ic{background:linear-gradient(150deg,#c9cdd8,#9aa0b0);box-shadow:none}
+  .tile .lock{position:absolute;top:13px;left:13px;display:inline-flex;align-items:center;gap:4px;
+    font-size:10.5px;font-weight:800;padding:4px 9px;border-radius:999px;color:#a32a45;
+    background:rgba(255,55,95,.14);border:1px solid rgba(255,55,95,.3)}
+  .tile .lock svg{width:11px;height:11px}
+  .shake{animation:shake .42s cubic-bezier(.36,.07,.19,.97)}
+  @keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-7px)}40%{transform:translateX(7px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+
+  .strip{display:flex;gap:11px;overflow-x:auto;padding:2px 16px 6px;margin:0 -16px}
+  .strip::-webkit-scrollbar{height:0}
+  .lcard{flex:0 0 94px;height:128px;border-radius:18px;position:relative;overflow:hidden;padding:9px;
+    display:flex;flex-direction:column;justify-content:flex-end;
+    transition:transform .26s var(--spring)}
+  .lcard:hover{transform:translateY(-6px) scale(1.02)}
+  .lcard .top{position:absolute;inset:0 0 auto;height:52%;opacity:.9}
+  .lcard .n{position:relative;font-size:12px;font-weight:800}
+  .lcard .c{position:relative;font-size:10px;color:var(--ink-2);margin-top:1px}
+  .lcard .rar{position:absolute;top:8px;right:8px;font-size:9.5px;font-weight:800;color:#7a5200;
+    background:rgba(255,214,10,.85);padding:2px 7px;border-radius:7px}
+  .lcard.locked{filter:grayscale(.55) opacity(.7)}
+  .lcard.locked .top{background:#c9cdd8!important}
+
+  .tabbar{position:absolute;left:12px;right:12px;bottom:12px;z-index:6;
+    border-radius:26px;padding:8px;display:flex;
+    background:rgba(255,255,255,.6);
+    backdrop-filter:blur(26px) saturate(200%);-webkit-backdrop-filter:blur(26px) saturate(200%);
+    border:1px solid rgba(255,255,255,.9);
+    box-shadow:0 18px 40px -18px rgba(28,36,80,.5), inset 0 1px 0 rgba(255,255,255,.95)}
+  .tabbar .slide{position:absolute;top:8px;bottom:8px;width:calc(20% - 6px);border-radius:19px;
+    background:rgba(255,255,255,.95);box-shadow:0 8px 18px -8px rgba(28,36,80,.35);
+    transition:transform .46s var(--spring);pointer-events:none}
+  .tabbar button{flex:1;position:relative;z-index:2;background:0;border:0;cursor:pointer;font-family:inherit;
+    display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 0;border-radius:18px;
+    color:#8b90a0;font-size:10px;font-weight:700;transition:color .25s}
+  .tabbar button svg{width:22px;height:22px;transition:transform .3s var(--spring)}
+  .tabbar button.on{color:var(--blue)}
+  .tabbar button.on svg{transform:translateY(-1px) scale(1.1)}
+  .tabbar button:active svg{transform:scale(.86)}
+
+  .toast{position:absolute;left:50%;bottom:100px;transform:translate(-50%,26px);z-index:9;
+    display:flex;align-items:center;gap:8px;padding:11px 15px;border-radius:16px;font-size:12.5px;font-weight:700;
+    color:#8f2338;background:rgba(255,255,255,.85);border:1px solid rgba(255,55,95,.35);
+    backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+    box-shadow:0 14px 30px -14px rgba(255,55,95,.5);
+    opacity:0;pointer-events:none;transition:all .38s var(--spring);white-space:nowrap}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+  .toast svg{width:15px;height:15px}
+
+  .rise{animation:rise .68s var(--spring) both}
+  @keyframes rise{from{opacity:0;transform:translateY(22px) scale(.965)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  }
+</style>
+</head>
+<body data-page-node-id="HcSBkBY2ARjewF3FFAYmF7">
+<div class="stage" data-page-node-id="c1pfn3H9UHgBI9M3YHB7k7">
+  <div class="caption" data-page-node-id="9UQPzSiGUWwfpD3TpM1iuW">
+    <span class="dot" data-page-node-id="AMmDRpnJMQN17u5Jn0NTxt"></span>
+    <span data-page-node-id="sjMTnL5jYrC4Hf4bo3ZBSB">پیش‌نمایش شیشه‌ای <b data-page-node-id="hMGe9pnojpRjsXFafzcwPt">Crossword Gen Pro</b></span>
+    <span class="hint" data-page-node-id="ebV1f5KXqKDG89PJ25rAuI">ماکت زنده — حرکت‌ها فعال‌اند</span>
+  </div>
+
+  <div class="phone" data-page-node-id="E80Z5E5WTSemSwHSlb3tnF">
+    <div class="bg" data-page-node-id="yzgidZdYCfem3BPDZtRke2"><span class="orb o1" data-page-node-id="zAZbnGVnGUzIfM9E5IHDwQ"></span><span class="orb o2" data-page-node-id="rOs7Ag8z5nC2oDOtjFkHMr"></span><span class="orb o3" data-page-node-id="ZQ1x0VgaHWmtHXwFpkaGC7"></span><span class="orb o4" data-page-node-id="vd1DAFOaQ1HiMnLi3GDnn9"></span></div>
+
+    <div class="screen" data-page-node-id="5YQPxAM5xqwO1BRYE9VjxK">
+      <div class="scroll" data-page-node-id="FzVquQChE4W06GqXFlZ8Dr">
+
+        <header class="hello rise" style="animation-delay:.04s" data-page-node-id="fCBtG3HrOuSt6fSNSd8ny2">
+          <div data-page-node-id="ihtGC2bCXoVPhKy2BvqMP6">
+            <h1 data-page-node-id="eH7sqX956lOxm0M2cNTZPR">سلام، مهدی</h1>
+            <p data-page-node-id="mTACriM1FD37kEYk6oCV8f">آماده‌ای امروز رکورد بزنی؟</p>
+          </div>
+          <div class="avatar" data-page-node-id="Up7UiXBX0lDJ8NVCEYezxR">م</div>
+        </header>
+
+        <div class="stats rise" style="animation-delay:.1s" data-page-node-id="rvPUl2HBXhq71GuPESG9ox">
+          <div class="pill c glass" data-page-node-id="Eh1ZFhtTc59xLYn8rMWZtk"><span class="ic" data-page-node-id="jBX0RG1ieZnBFK3cDaHwDK"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" data-page-node-id="sEFAlUE9JNX4OD8YGrzjKj"><circle cx="12" cy="12" r="9" data-page-node-id="rDnAtLIAM6FKwtnknYBh5N"/><path d="M12 7v10M9.5 9.5h4a2 2 0 010 4h-4" data-page-node-id="hMKJK7ud5Yg11cQ2od65DU"/></svg></span><b data-count="1060" data-page-node-id="HYJIWVH56mTGuKARHnjHgk">۰</b></div>
+          <div class="pill g glass" data-page-node-id="QQ9l7WW9n4k5NzzBxV1aDG"><span class="ic" data-page-node-id="jPhAdDwW88y4rmyHoVVC5n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" data-page-node-id="Xm6ens447iBwKIosisuvuP"><path d="M6 3h12l3 6-9 12L3 9z" data-page-node-id="OtNLOS5vKkYyNmF1BAZWvX"/></svg></span><b data-page-node-id="3HhXsYaJjmdKnIIWkpC9xw">۸</b></div>
+          <div class="pill s glass" data-page-node-id="cnzV2lNvm6LSjfoeoCibDA"><span class="ic" data-page-node-id="lvmvBJUlcJEKVpljLaoHyr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" data-page-node-id="QIxvBVGBtQRC4AsvMZcFEG"><path d="M12 3c3 4 5 7 5 10a5 5 0 01-10 0c0-3 2-6 5-10z" data-page-node-id="rP1PZK5BErSbOncsZvOHpD"/></svg></span><b data-page-node-id="RCeMqf5yyHAWxIh73Pn2E1">۳</b></div>
+        </div>
+
+        <section class="hero rise" style="animation-delay:.17s" data-page-node-id="KfR9pxKpWpIucNtvmMXtBQ">
+          <div class="sheen" data-page-node-id="vrGdd49fTcfXhpUDMFisab"></div>
+          <div class="hero-top" data-page-node-id="aW0SKwoktEBPPEVMP8CzGB">
+            <div data-page-node-id="chJ9cXKkTe8SCVqNHhTIFV">
+              <span class="tag" data-page-node-id="mDvs9byAsZEnzCzk1rjAfq">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" data-page-node-id="rBArFcm4TvqVyRngXjwXL0"><path d="M8 2v3M16 2v3M3 9h18M5 5h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z" data-page-node-id="UXzeFHknBqMCO07elOkqxa"/></svg>
+                چالش امروز
+              </span>
+              <h2 data-page-node-id="ec00krS8wLzy5SRCDFts4N">معمای روزانه</h2>
+              <p class="sub" data-page-node-id="lqb6FBwRH40RLG4ljyKYhI">۱۰×۱۰ · فقط یک تلاش</p>
+            </div>
+            <div class="ring" data-page-node-id="9HCNdq9i5BaQQxNJMDyY9J">
+              <svg viewBox="0 0 76 76" width="76" height="76" data-page-node-id="kfYjKfSYzpi7c0KyCJBlFB">
+                <circle cx="38" cy="38" r="32" fill="none" stroke="rgba(20,30,70,.1)" stroke-width="6" data-page-node-id="vTyAnl1N2usGYsSYzD1fao"/>
+                <circle id="ringArc" cx="38" cy="38" r="32" fill="none" stroke="#0a84ff" stroke-width="6"
+                        stroke-linecap="round" stroke-dasharray="201" stroke-dashoffset="201" data-page-node-id="AT3OYHJlRqQJX6oUlfRVRM"/>
+              </svg>
+              <div style="text-align:center" data-page-node-id="q3jiExqOiwA8YzT9AoUPOw"><div class="val" data-page-node-id="xQSvNXHsa65ADj8qT2EjTM">۰/۱</div><div class="cap" data-page-node-id="y6L3Ev6UENYfJWppNpxfA4">امروز</div></div>
+            </div>
+          </div>
+          <div class="chips" data-page-node-id="YbBgWYOMOTL9I2hcH9Sz2D">
+            <span class="chip gold" data-page-node-id="n8NAkmrDHqVM41LpExFyxl">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" data-page-node-id="jT7tjVwwj6lJaq9G25tCJL"><circle cx="12" cy="12" r="9" data-page-node-id="dC94XUoCPikHEgqaTMqE4C"/><path d="M12 7v10M9.5 9.5h4a2 2 0 010 4h-4" data-page-node-id="76cSgF1VZG51HR1wm0FPYD"/></svg>
+              جایزه ۲۵۰ سکه
+            </span>
+            <span class="chip" data-page-node-id="KNemrg56jqlTCz8nmFK6dl">زنجیره ۳ روز</span>
+          </div>
+          <button class="cta" onclick="pulse(this)" data-page-node-id="lW2oBFJUHk0N8iSgE6uueQ">
+            <svg viewBox="0 0 24 24" fill="currentColor" data-page-node-id="ZyOxjvzyyLTB2L2UmYKfqK"><path d="M8 5v14l11-7z" data-page-node-id="uCgV7AKOTccBcKzovyhS04"/></svg>
+            شروع کن
+          </button>
+        </section>
+
+        <div class="label rise" style="animation-delay:.24s" data-page-node-id="obKPEdfP0blyDcxCDgMkj7"><h3 data-page-node-id="wOjdzz4xYn0gfFRR8QgGEX">حالت‌های بازی</h3><i data-page-node-id="IKpqBPTJJUIH2UL6bV0fRg"></i></div>
+
+        <div class="grid" data-page-node-id="42iFoOpVk9s4HghrRcLbHD">
+          <button class="tile t-blue glass rise" style="animation-delay:.3s" onclick="pulse(this)" data-page-node-id="7zAvURdnYDUCZ5MTSxFA0s">
+            <span class="corner" data-page-node-id="7DcGFAmtyrs9bwDDfGsruy">طبقهٔ ۲۴</span>
+            <span class="ic" data-page-node-id="dthhGOVcFNAzFdnqXWHEfW"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="tDGjAHjI62EQJmTscpBISY"><path d="M3 17l6-6 4 4 8-8" data-page-node-id="l56nfblBMW68DWaQ4xqnuq"/><path d="M21 7h-5v5" data-page-node-id="Ljagsg0hhlVVd0MIolIH2e"/></svg></span>
+            <span class="txt" data-page-node-id="aXX8VsbJ4G95bVDhTjbQcy"><b data-page-node-id="sSH5GgIUDDIBiomVPmVVss">برج بی‌نهایت</b><span data-page-node-id="nVshDEZqdc8Wi7ENoTpzbS">صعود کن، سکه ببر</span></span>
+          </button>
+
+          <button class="tile t-violet glass rise" style="animation-delay:.36s" onclick="pulse(this)" data-page-node-id="dZjedH8xegGBA5nBXKirqb">
+            <span class="corner" data-page-node-id="cSOkVCVETYXwqm9TlQb68t">۳ / ۳۲</span>
+            <span class="ic" data-page-node-id="avhRIeHJHXWZHOPp6eHk55"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="x4kik05n4gDh5WbOItpXAu"><path d="M4 19.5A2.5 2.5 0 016.5 17H20V3H6.5A2.5 2.5 0 004 5.5z" data-page-node-id="TITwIUFwZzBslPmuGIng7H"/></svg></span>
+            <span class="txt" data-page-node-id="nC5Db1es8CTIRFFUTfjePu"><b data-page-node-id="ZE4VvzmvOfeU3FyByO2AYu">داستان</b><span data-page-node-id="CNQBkENCdUune3QtVaOVuB">سفر قهرمان</span></span>
+          </button>
+
+          <button class="tile t-teal glass rise" style="animation-delay:.42s" onclick="pulse(this)" data-page-node-id="47HkcGY7EdjuwG2Ljt8blA">
+            <span class="corner" data-page-node-id="aT5SasTPPdzAmltytXiyzJ">۷ / ۲۵</span>
+            <span class="ic" data-page-node-id="a7JK7jlQAAYpHykxwpm3be"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="qR5lltHEIKi5odB3bxPo7T"><circle cx="12" cy="12" r="9" data-page-node-id="j8qieXnkUAhPfooRHw01R2"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18" data-page-node-id="EsHncVpAnPCjraBNNo9lq7"/></svg></span>
+            <span class="txt" data-page-node-id="jaFKwmGwWdMNBcgmsoV0vG"><b data-page-node-id="TyruM8YBJkSPG4oIXBRx2Z">نقشهٔ جهان</b><span data-page-node-id="5gR9wQToESN8jXEUPvteFY">اسطوره‌های فوتبال</span></span>
+          </button>
+
+          <button class="tile t-pink glass locked rise" style="animation-delay:.48s" onclick="locked(this)" data-page-node-id="Eafz9KWRyTkTkS3KHvWhid">
+            <span class="lock" data-page-node-id="oHWIXXpdF1Pf3aIZPAJ4AT">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" data-page-node-id="vbxTYprudLIFn0jS2wi7ZD"><rect x="4" y="10" width="16" height="11" rx="2" data-page-node-id="wMBZcDlJITL9KXBnBUuzf1"/><path d="M8 10V7a4 4 0 018 0v3" data-page-node-id="wolWKvbGKBVFE7X5EYIuSK"/></svg>
+              ورود لازم است
+            </span>
+            <span class="ic" data-page-node-id="3dJ3hGvmmwzujYCBzzlCK8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="oVIG4ttjjg7CKeDGeEyNnH"><path d="M14.5 17.5L3 6V3h3l11.5 11.5M13 19l6-6M16 16l4 4M19 21l2-2" data-page-node-id="BCLyg1DSqBcmhrWXg2bO4X"/></svg></span>
+            <span class="txt" data-page-node-id="UmKtbOF6QGPrCfpRlJktOZ"><b data-page-node-id="pCZ9TloHycSWCqtsGmScbg">نبرد آنلاین</b><span data-page-node-id="u75KJVhVoUJP0VgTSU75rf">رقابت زندهٔ PvP</span></span>
+          </button>
+        </div>
+
+        <div class="label rise" style="animation-delay:.54s" data-page-node-id="AGVr2k7g0pdn9N5EBcwmcB"><h3 data-page-node-id="zEcp7fAlwT8zJ0yAClbw3G">مجموعهٔ اسطوره‌ها</h3><i data-page-node-id="dqkThzGBrkj7eGaWiFA6iO"></i></div>
+
+        <div class="strip rise" style="animation-delay:.6s" data-page-node-id="Fu7Fa0bRSoByjIDeGOxFlM">
+          <div class="lcard glass" data-page-node-id="OWZOElGPVthq8UGnt2VZQA"><span class="top" style="background:linear-gradient(160deg,#7ce8d8,#32c5d6)" data-page-node-id="J5YqGHjVi0oKXaNXUXzA0P"></span><span class="rar" data-page-node-id="9BUtLHWwNaju3rT4M6HWI0">اسطوره</span><div class="n" data-page-node-id="BGiBdhvDBSmMg4dNBB5vf5">پله</div><div class="c" data-page-node-id="VGIR5NWBYEr0FA6vefNdQv">برزیل</div></div>
+          <div class="lcard glass" data-page-node-id="IUgKCFyzVlFDExIwAzUJby"><span class="top" style="background:linear-gradient(160deg,#8fc7ff,#5e5ce6)" data-page-node-id="dNf5Vu5EvcrZGqavlJX51N"></span><span class="rar" data-page-node-id="qfn9FMoWMVlGMP2bJUxVf6">اسطوره</span><div class="n" data-page-node-id="hXSXtmWODciGtE0HrTFRbu">مارادونا</div><div class="c" data-page-node-id="g347rg0vgdBnp6bgP8VNdI">آرژانتین</div></div>
+          <div class="lcard glass" data-page-node-id="oJ16uJ0rt1Nr1t8rZOrgz4"><span class="top" style="background:linear-gradient(160deg,#ffd60a,#ff9f0a)" data-page-node-id="0GRoMgPCxY3znsvIZ1u6xv"></span><span class="rar" data-page-node-id="gTzgoNXoDPi0uGMxtRBDVY">طلایی</span><div class="n" data-page-node-id="GkNCE2E95eHQEergtGteuJ">زیدان</div><div class="c" data-page-node-id="TdmbiyV0pvrzmkj3u05yOq">فرانسه</div></div>
+          <div class="lcard glass locked" data-page-node-id="MfI23Fatmwlk9k8VMKhSXe"><span class="top" data-page-node-id="p7JpuVrQAXdFEwFG8CcwEp"></span><span class="rar" style="background:rgba(255,255,255,.8);color:#6b7285" data-page-node-id="BNUp53OfulYyFW6i8SXXxY">؟</span><div class="n" data-page-node-id="Y0NQ2diwvb1SaL6CvPSfAx">قفل</div><div class="c" data-page-node-id="fhAjVmWWmfHk8c7Zlg1w3Z">نامعلوم</div></div>
+          <div class="lcard glass locked" data-page-node-id="vpJ9aYQHBULWSWDycyXrhA"><span class="top" data-page-node-id="YF40RoXGU6GGZ8uIGhSInv"></span><span class="rar" style="background:rgba(255,255,255,.8);color:#6b7285" data-page-node-id="ASgfhvSfXEheVxkxZP0Kw1">؟</span><div class="n" data-page-node-id="RVZ7ca7wX2IJdekdUGSTO9">قفل</div><div class="c" data-page-node-id="Awrb6XLaITgNsvYzB9WaBY">نامعلوم</div></div>
+        </div>
+
+      </div>
+
+      <nav class="tabbar" data-page-node-id="K5SC27oFNVuYUSbaD9EUau">
+        <span class="slide" id="slide" data-page-node-id="3iQx4OKxvzEG7qD5PYFg6R"></span>
+        <button class="on" onclick="setTab(this,0)" data-page-node-id="QaR5YRH3UlCd1VOHcYQiK2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="unTxn7SauN9iRkbM9wSqa2"><path d="M3 10l9-7 9 7v10a2 2 0 01-2 2H5a2 2 0 01-2-2z" data-page-node-id="pTfx6PzvSTALs8rEu2Ljp4"/></svg>خانه</button>
+        <button onclick="setTab(this,1)" data-page-node-id="Wk1fNFfR0GU5IX9nAYrcj3">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="sPUKobErZfWceVpmyHD4l0"><rect x="3" y="3" width="7" height="7" rx="2" data-page-node-id="Q4F74A2xMwvErplDpupB7t"/><rect x="14" y="3" width="7" height="7" rx="2" data-page-node-id="fmLNj6D6dcGJ7tbMWTeP57"/><rect x="3" y="14" width="7" height="7" rx="2" data-page-node-id="qwUFYm540BsDFUq7OcIhLp"/><rect x="14" y="14" width="7" height="7" rx="2" data-page-node-id="yWmBJWqy5DGcUq717ntTuA"/></svg>مجموعه</button>
+        <button onclick="setTab(this,2)" data-page-node-id="jIv8i46jzVLzIMO9qJ2hPt">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="wlHo5N6Rw5crdmAq3VNMTg"><path d="M8 21h8M12 17v4M6 4h12v5a6 6 0 01-12 0z" data-page-node-id="fiWeCwUBm3vnwh6BHmcuSH"/><path d="M6 6H3v1a4 4 0 004 4M18 6h3v1a4 4 0 01-4 4" data-page-node-id="0SwzIPTpsnZOSLykiD6yKd"/></svg>رتبه</button>
+        <button onclick="setTab(this,3)" data-page-node-id="zwQexBwVgAdyvKDbQT8Nga">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="EO9wQeBzFM3A3USvSWBENr"><path d="M16 20v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2" data-page-node-id="MFHkGb8mQjN1uVYy4sWjkr"/><circle cx="9" cy="7" r="4" data-page-node-id="rfG41tldobs72dQgtzSPDx"/><path d="M22 20v-2a4 4 0 00-3-3.87" data-page-node-id="yn90c4m5s60RZoy1IzbFBg"/></svg>دوستان</button>
+        <button onclick="setTab(this,4)" data-page-node-id="POyDu4IoMYmnhXE7JG1kqc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="OnISrOx2GGq49qOvDzYEVX"><circle cx="12" cy="8" r="4" data-page-node-id="tQZO8LACkPiiwSLxc6CKmm"/><path d="M4 21a8 8 0 0116 0" data-page-node-id="Xq1n75eU6QKrE8AXRFMcDQ"/></svg>من</button>
+      </nav>
+    </div>
+
+    <div class="toast" id="toast" data-page-node-id="ACfIa96HkBoiCWWdWFSnK1">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" data-page-node-id="xrdMk5gXf4KhA1w91V4K6F"><rect x="4" y="10" width="16" height="11" rx="2" data-page-node-id="2xKfrITGZ6xZQCDPV97hJd"/><path d="M8 10V7a4 4 0 018 0v3" data-page-node-id="O2uF6RPHu012f3NPw9qS0X"/></svg>
+      برای «نبرد آنلاین» ابتدا وارد شوید
+    </div>
+  </div>
+</div>
+
+<script>
+  const fa = n => String(n).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+
+  document.querySelectorAll('[data-count]').forEach(el => {
+    const target = +el.dataset.count, dur = 1100, t0 = performance.now();
+    (function tick(now){
+      const p = Math.min(1, (now - t0) / dur);
+      const e = 1 - Math.pow(1 - p, 3);
+      el.textContent = fa(Math.round(target * e));
+      if (p < 1) requestAnimationFrame(tick);
+    })(t0);
+  });
+
+  const arc = document.getElementById('ringArc');
+  setTimeout(() => { arc.style.transition = 'stroke-dashoffset 1.15s cubic-bezier(.22,1,.36,1)';
+                     arc.style.strokeDashoffset = '152'; }, 460);
+
+  const slide = document.getElementById('slide');
+  function setTab(btn, i){
+    btn.parentElement.querySelectorAll('button').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    slide.style.transform = `translateX(${i * -100}%)`;
+  }
+
+  function pulse(el){
+    el.animate([{transform:'scale(1)'},{transform:'scale(.955)'},{transform:'scale(1)'}],
+               {duration:280, easing:'cubic-bezier(.34,1.5,.5,1)'});
+  }
+
+  let tt;
+  function locked(el){
+    el.classList.remove('shake'); void el.offsetWidth; el.classList.add('shake');
+    const t = document.getElementById('toast');
+    t.classList.add('show'); clearTimeout(tt);
+    tt = setTimeout(() => t.classList.remove('show'), 2400);
+  }
+</script>
+</body>
+</html>

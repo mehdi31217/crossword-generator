@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="mbg" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#0f0f12" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" fill="#0f0f12" rx="40" opacity="0.25"/>
+  <circle cx="100" cy="84" r="92" fill="url(#mbg)" stroke="#475569" stroke-width="1.5" opacity="0.5"/>
+  
+  <ellipse cx="100" cy="100" rx="40" ry="30" fill="#475569" opacity="0.1"/>
+  <circle cx="85" cy="90" r="6" fill="#94a3b8" opacity="0.7"/>
+    <circle cx="85" cy="90" r="2.0999999999999996" fill="black"/>
+  <circle cx="115" cy="90" r="6" fill="#94a3b8" opacity="0.7"/>
+    <circle cx="115" cy="90" r="2.0999999999999996" fill="black"/>
+  <path d="M60 90 Q100 70 140 90" fill="none" stroke="#475569" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M80 120 Q100 130 120 120" fill="none" stroke="#475569" stroke-width="2"/>
+  <ellipse cx="100" cy="108" rx="15" ry="6" fill="#475569" opacity="0.3"/>
+
+  <rect x="0" y="176" width="200" height="24" fill="#475569" opacity="0.8" rx="0"/>
+  <text x="100" y="193" text-anchor="middle" fill="#fff" font-family="serif" font-size="10" font-weight="bold" dir="rtl">پیل سپید</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420">
+<defs><linearGradient id="g12" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#140a1f"/><stop offset="100%" stop-color="#a855f722"/></linearGradient></defs>
+<rect width="300" height="420" rx="24" fill="url(#g12)"/>
+<rect x="3" y="3" width="294" height="414" rx="22" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+<rect x="0" y="0" width="300" height="8" fill="#a855f7" rx="4"/>
+<circle cx="150" cy="85" r="38" fill="none" stroke="#a855f730" stroke-width="2"/>
+<polygon points="150,67 155,79 168,79 158,88 161,101 150,93 139,101 142,88 132,79 145,79" fill="none" stroke="#a855f7" stroke-width="1.5"/>
+<text x="150" y="135" text-anchor="middle" fill="#a855f7" font-size="16" font-weight="bold" font-family="sans-serif">پایه دوازدهم</text>
+<text x="150" y="155" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="10" font-family="sans-serif">————— ۴ فصل —————</text>
+<rect x="50" y="165" width="200" height="32" rx="8" fill="#a855f715" stroke="#a855f730" stroke-width="1"/><text x="150" y="186" text-anchor="middle" fill="#a855f7" font-size="11" font-family="sans-serif">معرفت</text><rect x="50" y="207" width="200" height="32" rx="8" fill="#a855f715" stroke="#a855f730" stroke-width="1"/><text x="150" y="228" text-anchor="middle" fill="#a855f7" font-size="11" font-family="sans-serif">ایمان</text><rect x="50" y="249" width="200" height="32" rx="8" fill="#a855f715" stroke="#a855f730" stroke-width="1"/><text x="150" y="270" text-anchor="middle" fill="#a855f7" font-size="11" font-family="sans-serif">فداکاری</text><rect x="50" y="291" width="200" height="32" rx="8" fill="#a855f715" stroke="#a855f730" stroke-width="1"/><text x="150" y="312" text-anchor="middle" fill="#a855f7" font-size="11" font-family="sans-serif">رستاخیز</text>
+</svg>

@@ -1,0 +1,572 @@
+[
+  {
+    "id": 1,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 2167,
+    "time_taken": 433,
+    "grid_size": 10,
+    "category": "all",
+    "date_played": "۱۴۰۴/۱۱/۲۲",
+    "created_at": "2026-02-11T07:34:03.72914+00:00"
+  },
+  {
+    "id": 2,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 735,
+    "time_taken": 115,
+    "grid_size": 5,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۲",
+    "created_at": "2026-02-11T08:01:48.98189+00:00"
+  },
+  {
+    "id": 3,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 787,
+    "time_taken": 63,
+    "grid_size": 5,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۲",
+    "created_at": "2026-02-11T08:05:37.095719+00:00"
+  },
+  {
+    "id": 4,
+    "user_id": "79eda334-9b3c-4de7-b6ad-dd681ce3521d",
+    "score": 2000,
+    "time_taken": 633,
+    "grid_size": 10,
+    "category": "all",
+    "date_played": "۱۴۰۴/۱۱/۲۲",
+    "created_at": "2026-02-11T08:17:20.044905+00:00"
+  },
+  {
+    "id": 5,
+    "user_id": "79eda334-9b3c-4de7-b6ad-dd681ce3521d",
+    "score": 642,
+    "time_taken": 208,
+    "grid_size": 5,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۲",
+    "created_at": "2026-02-11T08:55:55.59256+00:00"
+  },
+  {
+    "id": 6,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 787,
+    "time_taken": 163,
+    "grid_size": 7,
+    "category": "all",
+    "date_played": "۱۴۰۴/۱۱/۲۲",
+    "created_at": "2026-02-11T17:38:46.39508+00:00"
+  },
+  {
+    "id": 7,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 898,
+    "time_taken": 102,
+    "grid_size": 5,
+    "category": "jobs",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-11T21:02:38.274168+00:00"
+  },
+  {
+    "id": 8,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 1229,
+    "time_taken": 171,
+    "grid_size": 9,
+    "category": "tech",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-11T21:22:02.743129+00:00"
+  },
+  {
+    "id": 9,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 1015,
+    "time_taken": 385,
+    "grid_size": 9,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-11T21:28:42.65832+00:00"
+  },
+  {
+    "id": 10,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 1217,
+    "time_taken": 183,
+    "grid_size": 9,
+    "category": "jobs",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-12T09:30:59.269332+00:00"
+  },
+  {
+    "id": 11,
+    "user_id": "79eda334-9b3c-4de7-b6ad-dd681ce3521d",
+    "score": 1000,
+    "time_taken": 0,
+    "grid_size": 5,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-12T10:31:06.952765+00:00"
+  },
+  {
+    "id": 12,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 1200,
+    "time_taken": 0,
+    "grid_size": 7,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-12T10:38:59.200392+00:00"
+  },
+  {
+    "id": 13,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 987,
+    "time_taken": 213,
+    "grid_size": 7,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-12T12:23:34.26266+00:00"
+  },
+  {
+    "id": 14,
+    "user_id": "79eda334-9b3c-4de7-b6ad-dd681ce3521d",
+    "score": 778,
+    "time_taken": 222,
+    "grid_size": 5,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-12T12:23:42.60324+00:00"
+  },
+  {
+    "id": 15,
+    "user_id": "79eda334-9b3c-4de7-b6ad-dd681ce3521d",
+    "score": 754,
+    "time_taken": 246,
+    "grid_size": 5,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-12T12:55:32.144098+00:00"
+  },
+  {
+    "id": 16,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 1030,
+    "time_taken": 270,
+    "grid_size": 8,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-12T12:55:54.80408+00:00"
+  },
+  {
+    "id": 17,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 893,
+    "time_taken": 107,
+    "grid_size": 5,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-12T13:03:30.507734+00:00"
+  },
+  {
+    "id": 18,
+    "user_id": "79eda334-9b3c-4de7-b6ad-dd681ce3521d",
+    "score": 885,
+    "time_taken": 115,
+    "grid_size": 5,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-12T13:03:37.810118+00:00"
+  },
+  {
+    "id": 19,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 1034,
+    "time_taken": 66,
+    "grid_size": 6,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-12T13:12:01.583699+00:00"
+  },
+  {
+    "id": 20,
+    "user_id": "79eda334-9b3c-4de7-b6ad-dd681ce3521d",
+    "score": 921,
+    "time_taken": 79,
+    "grid_size": 5,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-12T13:12:13.523404+00:00"
+  },
+  {
+    "id": 21,
+    "user_id": "79eda334-9b3c-4de7-b6ad-dd681ce3521d",
+    "score": 865,
+    "time_taken": 135,
+    "grid_size": 5,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-12T13:28:21.02764+00:00"
+  },
+  {
+    "id": 22,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 1060,
+    "time_taken": 140,
+    "grid_size": 7,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-12T13:28:24.044844+00:00"
+  },
+  {
+    "id": 23,
+    "user_id": "79eda334-9b3c-4de7-b6ad-dd681ce3521d",
+    "score": 913,
+    "time_taken": 87,
+    "grid_size": 5,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-12T13:30:25.879362+00:00"
+  },
+  {
+    "id": 24,
+    "user_id": "79eda334-9b3c-4de7-b6ad-dd681ce3521d",
+    "score": 945,
+    "time_taken": 55,
+    "grid_size": 5,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-12T13:31:52.211404+00:00"
+  },
+  {
+    "id": 25,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 1065,
+    "time_taken": 135,
+    "grid_size": 7,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-12T13:34:51.405442+00:00"
+  },
+  {
+    "id": 26,
+    "user_id": "79eda334-9b3c-4de7-b6ad-dd681ce3521d",
+    "score": 430,
+    "time_taken": 156,
+    "grid_size": 6,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-12T14:03:52.488045+00:00"
+  },
+  {
+    "id": 27,
+    "user_id": "79eda334-9b3c-4de7-b6ad-dd681ce3521d",
+    "score": 741,
+    "time_taken": 188,
+    "grid_size": 5,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-12T14:38:22.389246+00:00"
+  },
+  {
+    "id": 28,
+    "user_id": "79eda334-9b3c-4de7-b6ad-dd681ce3521d",
+    "score": 399,
+    "time_taken": 225,
+    "grid_size": 5,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۳",
+    "created_at": "2026-02-12T16:08:42.004016+00:00"
+  },
+  {
+    "id": 29,
+    "user_id": "79eda334-9b3c-4de7-b6ad-dd681ce3521d",
+    "score": 515,
+    "time_taken": 207,
+    "grid_size": 5,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۴",
+    "created_at": "2026-02-13T12:24:23.351579+00:00"
+  },
+  {
+    "id": 30,
+    "user_id": "79eda334-9b3c-4de7-b6ad-dd681ce3521d",
+    "score": 446,
+    "time_taken": 106,
+    "grid_size": 5,
+    "category": "knowledge",
+    "date_played": "۱۴۰۴/۱۱/۲۴",
+    "created_at": "2026-02-13T12:27:05.625475+00:00"
+  },
+  {
+    "id": 31,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 771,
+    "time_taken": 181,
+    "grid_size": 5,
+    "category": "jobs",
+    "date_played": "۱۴۰۴/۱۱/۲۴",
+    "created_at": "2026-02-13T12:36:32.441096+00:00"
+  },
+  {
+    "id": 32,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 2905,
+    "time_taken": 233,
+    "grid_size": 10,
+    "category": "all",
+    "date_played": "۱۴۰۴/۱۱/۲۴",
+    "created_at": "2026-02-13T12:40:44.655195+00:00"
+  },
+  {
+    "id": 33,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 6195,
+    "time_taken": 177,
+    "grid_size": 7,
+    "category": "shahnameh",
+    "date_played": "۱۴۰۴/۱۱/۲۵",
+    "created_at": "2026-02-13T23:24:07.557974+00:00"
+  },
+  {
+    "id": 34,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 3961,
+    "time_taken": 352,
+    "grid_size": 7,
+    "category": "shahnameh",
+    "date_played": "۱۴۰۴/۱۱/۲۵",
+    "created_at": "2026-02-14T11:07:30.599922+00:00"
+  },
+  {
+    "id": 35,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 3882,
+    "time_taken": 280,
+    "grid_size": 7,
+    "category": "shahnameh",
+    "date_played": "۱۴۰۴/۱۱/۲۵",
+    "created_at": "2026-02-14T11:13:33.087202+00:00"
+  },
+  {
+    "id": 36,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 775,
+    "time_taken": 64,
+    "grid_size": 7,
+    "category": "shahnameh",
+    "date_played": "۱۴۰۴/۱۱/۲۵",
+    "created_at": "2026-02-14T18:04:43.828101+00:00"
+  },
+  {
+    "id": 37,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 2528,
+    "time_taken": 153,
+    "grid_size": 7,
+    "category": "shahnameh",
+    "date_played": "۱۴۰۴/۱۱/۲۶",
+    "created_at": "2026-02-14T22:06:43.062605+00:00"
+  },
+  {
+    "id": 38,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 2508,
+    "time_taken": 127,
+    "grid_size": 7,
+    "category": "shahnameh",
+    "date_played": "۱۴۰۴/۱۱/۲۶",
+    "created_at": "2026-02-14T22:21:21.389106+00:00"
+  },
+  {
+    "id": 39,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 2350,
+    "time_taken": 107,
+    "grid_size": 7,
+    "category": "shahnameh",
+    "date_played": "۱۴۰۴/۱۱/۲۶",
+    "created_at": "2026-02-14T22:37:07.907169+00:00"
+  },
+  {
+    "id": 40,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 2576,
+    "time_taken": 114,
+    "grid_size": 7,
+    "category": "shahnameh",
+    "date_played": "۱۴۰۴/۱۱/۲۶",
+    "created_at": "2026-02-14T22:52:29.537991+00:00"
+  },
+  {
+    "id": 41,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 1717,
+    "time_taken": 154,
+    "grid_size": 7,
+    "category": "shahnameh",
+    "date_played": "۱۴۰۴/۱۱/۲۶",
+    "created_at": "2026-02-14T22:55:13.479414+00:00"
+  },
+  {
+    "id": 42,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 449,
+    "time_taken": 34,
+    "grid_size": 7,
+    "category": "shahnameh",
+    "date_played": "۱۴۰۴/۱۱/۲۶",
+    "created_at": "2026-02-15T19:46:43.813541+00:00"
+  },
+  {
+    "id": 43,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 505,
+    "time_taken": 39,
+    "grid_size": 7,
+    "category": "shahnameh",
+    "date_played": "۱۴۰۴/۱۱/۲۶",
+    "created_at": "2026-02-15T19:47:29.466645+00:00"
+  },
+  {
+    "id": 44,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 436,
+    "time_taken": 23,
+    "grid_size": 7,
+    "category": "shahnameh",
+    "date_played": "۱۴۰۴/۱۱/۲۶",
+    "created_at": "2026-02-15T19:48:03.54386+00:00"
+  },
+  {
+    "id": 45,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 3451,
+    "time_taken": 229,
+    "grid_size": 10,
+    "category": "all",
+    "date_played": "۱۴۰۴/۱۲/۴",
+    "created_at": "2026-02-22T20:31:04.992134+00:00"
+  },
+  {
+    "id": 46,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 1619,
+    "time_taken": 158,
+    "grid_size": 7,
+    "category": "shahnameh",
+    "date_played": "۱۴۰۴/۱۲/۴",
+    "created_at": "2026-02-22T20:33:56.816137+00:00"
+  },
+  {
+    "id": 47,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 3714,
+    "time_taken": 304,
+    "grid_size": 10,
+    "category": "all",
+    "date_played": "۱۴۰۴/۱۲/۴",
+    "created_at": "2026-02-23T16:25:27.933935+00:00"
+  },
+  {
+    "id": 48,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 1711,
+    "time_taken": 152,
+    "grid_size": 9,
+    "category": "body",
+    "date_played": "۱۴۰۴/۱۲/۷",
+    "created_at": "2026-02-26T17:36:02.871529+00:00"
+  },
+  {
+    "id": 49,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 682,
+    "time_taken": 97,
+    "grid_size": 5,
+    "category": "body",
+    "date_played": "۱۴۰۴/۱۲/۷",
+    "created_at": "2026-02-26T17:37:55.099843+00:00"
+  },
+  {
+    "id": 50,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 2967,
+    "time_taken": 149,
+    "grid_size": 7,
+    "category": "shahnameh",
+    "date_played": "۱۴۰۴/۱۲/۷",
+    "created_at": "2026-02-26T17:40:38.08333+00:00"
+  },
+  {
+    "id": 51,
+    "user_id": "88a55a64-bfb8-482f-9606-0213504c63d1",
+    "score": 446,
+    "time_taken": 64,
+    "grid_size": 5,
+    "category": "all",
+    "date_played": "۱۴۰۴/۱۲/۸",
+    "created_at": "2026-02-27T16:28:53.16011+00:00"
+  },
+  {
+    "id": 52,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 1016,
+    "time_taken": 814,
+    "grid_size": 9,
+    "category": "body",
+    "date_played": "۱۴۰۴/۱۲/۸",
+    "created_at": "2026-02-27T16:51:35.816018+00:00"
+  },
+  {
+    "id": 53,
+    "user_id": "88a55a64-bfb8-482f-9606-0213504c63d1",
+    "score": 1026,
+    "time_taken": 166,
+    "grid_size": 9,
+    "category": "body",
+    "date_played": "۱۴۰۴/۱۲/۸",
+    "created_at": "2026-02-27T16:56:08.344198+00:00"
+  },
+  {
+    "id": 54,
+    "user_id": "3022b7b5-2f83-448d-904c-62b08746c992",
+    "score": 715,
+    "time_taken": 136,
+    "grid_size": 7,
+    "category": "body",
+    "date_played": "۱۴۰۴/۱۲/۸",
+    "created_at": "2026-02-27T18:04:37.16132+00:00"
+  },
+  {
+    "user_id": "user_09385019630",
+    "score": 615,
+    "time_taken": 44,
+    "grid_size": 5,
+    "category": "all",
+    "date_played": "۱۴۰۵/۳/۱۱",
+    "id": "de9e7e5b-dfff-413c-8f39-d4c3d839631d",
+    "created_at": "2026-05-31T20:50:49.849Z"
+  },
+  {
+    "user_id": "user_09385019630",
+    "score": 1051,
+    "time_taken": 158,
+    "grid_size": 6,
+    "category": "movies",
+    "date_played": "۱۴۰۵/۳/۱۱",
+    "id": "4cd75a6e-70d7-4ccc-8efa-6a83f8c1815d",
+    "created_at": "2026-05-31T20:53:40.252Z"
+  },
+  {
+    "user_id": "user_09387595499",
+    "score": 1705,
+    "time_taken": 310,
+    "grid_size": 9,
+    "category": "all",
+    "date_played": "۱۴۰۵/۳/۱۱",
+    "id": "adf8c3d5-06a1-4e9a-a3d6-64663aa0c57d",
+    "created_at": "2026-05-31T21:00:13.726Z"
+  }
+]

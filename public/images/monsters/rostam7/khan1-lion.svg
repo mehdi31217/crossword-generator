@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="mbg" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#1c1917" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" fill="#1c1917" rx="40" opacity="0.25"/>
+  <circle cx="100" cy="84" r="92" fill="url(#mbg)" stroke="#c2410c" stroke-width="1.5" opacity="0.5"/>
+  
+  <ellipse cx="100" cy="98" rx="45" ry="35" fill="#c2410c" opacity="0.12"/>
+  <circle cx="85" cy="93" r="10" fill="#fb923c" opacity="0.7"/>
+    <circle cx="85" cy="93" r="3.5" fill="black"/>
+  <circle cx="115" cy="93" r="10" fill="#fb923c" opacity="0.7"/>
+    <circle cx="115" cy="93" r="3.5" fill="black"/>
+  <ellipse cx="100" cy="112" rx="30" ry="12" fill="#c2410c" opacity="0.45"/>
+  <circle cx="90" cy="106" r="3" fill="#fef08a" opacity="0.4"/>
+  <circle cx="110" cy="106" r="3" fill="#fef08a" opacity="0.4"/>
+  <path d="M70 88 Q100 68 130 88" fill="none" stroke="#c2410c" stroke-width="3" stroke-linecap="round"/>
+  <path d="M80 128 Q100 138 120 128" fill="none" stroke="#ea580c" stroke-width="2"/>
+
+  <rect x="0" y="176" width="200" height="24" fill="#c2410c" opacity="0.8" rx="0"/>
+  <text x="100" y="193" text-anchor="middle" fill="#fff" font-family="serif" font-size="10" font-weight="bold" dir="rtl">شیر بیشه</text>
+</svg>

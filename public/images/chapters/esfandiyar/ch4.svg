@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#005a2d"/>
+<stop offset="100%" stop-color="#004114"/>
+</linearGradient></defs>
+<rect width="500" height="600" fill="url(#bg)"/>
+<rect x="8" y="8" width="484" height="584" rx="15" fill="none" stroke="#064e3b" stroke-width="7.5" opacity="0.7"/>
+<polygon points="280,300 262.9903810567666,307.5 265,325.98076211353316 250,315 235,325.98076211353316 237.00961894323342,307.5 220,300 237.00961894323342,292.5 235,274.01923788646684 250,285 265,274.01923788646684 262.9903810567666,292.5 " fill="none" stroke="#064e3b" stroke-width="4.5" opacity="0.4" transform="translate(0,0)"/>
+<polygon points="50,320 250,170 450,320" fill="#0a2a1a" opacity="0.7"/>
+<polygon points="110,305 250,147.5 390,305" fill="#fff" opacity="0.3"/>
+<path d="M 200 80 Q 250 40 300 80 Q 320 60 340 80 Q 300 100 250 90 Q 200 100 200 80" fill="#475569" opacity="0.7"/>
+<path d="M 180 90 Q 150 150 120 200" fill="none" stroke="#475569" stroke-width="3" opacity="0.6"/>
+<circle cx="250" cy="342" r="8" fill="#1a3a2a"/>
+<ellipse cx="250" cy="368" rx="12" ry="22.5" fill="#1a3a2a"/>
+<line x1="242" y1="352" x2="230" y2="377" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<line x1="258" y1="352" x2="270" y2="377" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<line x1="244" y1="380" x2="244" y2="395" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<line x1="256" y1="395" x2="256" y2="380" stroke="#1a3a2a" stroke-width="3" stroke-linecap="round"/>
+<path d="M 42 520 L 43.8 512 L 45.6 504 L 47.4 496 L 49.2 488 L 51 480 L 52.8 472 L 54.6 464 L 56.4 456 L 58.2 448 L 60 440 L 60 440 L 61.8 448 L 63.6 456 L 65.4 464 L 67.2 472 L 69 480 L 70.8 488 L 72.6 496 L 74.4 504 L 76.2 512 L 78 520 Z" fill="#0f3a2a" opacity="0.8"/>
+<path d="M 422 520 L 423.8 512 L 425.6 504 L 427.4 496 L 429.2 488 L 431 480 L 432.8 472 L 434.6 464 L 436.4 456 L 438.2 448 L 440 440 L 440 440 L 441.8 448 L 443.6 456 L 445.4 464 L 447.2 472 L 449 480 L 450.8 488 L 452.6 496 L 454.4 504 L 456.2 512 L 458 520 Z" fill="#0f3a2a" opacity="0.8"/>
+<rect x="100" y="520" width="300" height="36" rx="18" fill="#064e3b" opacity="0.85"/>
+<text x="250" y="543" text-anchor="middle" fill="#fff" font-family="serif" font-size="16" font-weight="bold">خوان چهارم: مرغ سهمگین</text>
+</svg>

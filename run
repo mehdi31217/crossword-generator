@@ -1,0 +1,27 @@
+#!/bin/bash
+
+cd "$(dirname "$0")"
+source ./پیش_اجرا.sh
+
+# بررسی می‌کنیم که آیا سرور در حال اجراست یا خیر
+if ! lsof -Pi :8082 -sTCP:LISTEN -t >/dev/null ; then
+    echo "سرور fcc-server یافت نشد. در حال راه‌اندازی..."
+    # فعال کردن محیط مجازی و اجرای سرور در پس‌زمینه
+    source free-claude-code/.venv/bin/activate
+    fcc-server &
+    SERVER_PID=$!
+    echo "سرور با شناسه $SERVER_PID در پس‌زمینه اجرا می‌شود."
+    sleep 3
+else
+    echo "سرور fcc-server در حال اجراست."
+fi
+
+# اجرای مستقیم کلاینت برای ورود به محیط چت
+echo "در حال ورود به محیط Claude Code..."
+fcc-claude
+
+# در صورت بستن کلاینت، این خط سرور را هم می‌بندد (اختیاری)
+if [ ! -z "$SERVER_PID" ]; then
+    kill $SERVER_PID 2>/dev/null
+    echo "سرور متوقف شد."
+fi

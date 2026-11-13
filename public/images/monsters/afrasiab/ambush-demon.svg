@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="mbg" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#0a0a1a" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+  </defs>
+  <rect width="200" height="200" fill="#0a0a1a" rx="40" opacity="0.25"/>
+  <circle cx="100" cy="84" r="92" fill="url(#mbg)" stroke="#4f46e5" stroke-width="1.5" opacity="0.5"/>
+  
+  <path d="M50 95 Q100 55 150 95 Q130 115 100 120 Q70 115 50 95" fill="#4f46e5" opacity="0.05"/>
+  <circle cx="85" cy="82" r="6" fill="#818cf8" opacity="0.7"/>
+    <circle cx="85" cy="82" r="2.0999999999999996" fill="black"/>
+  <circle cx="115" cy="82" r="6" fill="#818cf8" opacity="0.7"/>
+    <circle cx="115" cy="82" r="2.0999999999999996" fill="black"/>
+  <path d="M75 72 Q100 58 125 72" fill="none" stroke="#818cf8" stroke-width="2" opacity="0.3"/>
+  <path d="M80 108 Q100 118 120 108" fill="none" stroke="#818cf8" stroke-width="2" opacity="0.3"/>
+
+  <rect x="0" y="176" width="200" height="24" fill="#4f46e5" opacity="0.8" rx="0"/>
+  <text x="100" y="193" text-anchor="middle" fill="#fff" font-family="serif" font-size="10" font-weight="bold" dir="rtl">دیو کمین</text>
+</svg>

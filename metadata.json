@@ -1,0 +1,8 @@
+{
+  "name": "Crossword Gen Pro",
+  "description": "بازی پیشرفته جدول کلمات متقاطع فارسی و انگلیسی با حالت داستانی شاهنامه، اسطوره‌های فوتبال، نبرد آنلاین و تولید هوشمند جدول",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" fill="#0a0f14" rx="6"/>
+  <rect x="6" y="6" width="388" height="388" fill="none" stroke="#06b6d4" stroke-width="1.5" rx="4" opacity="0.4"/>
+  <path d="M200 44 A16 16 0 1 1 200 76 A12 12 0 1 0 200 44Z" fill="#e2e8f0" opacity="0.85"/>
+    <circle cx="200" cy="53.6" r="0.96" fill="white" opacity="0.3"/>
+    <circle cx="205.6" cy="60" r="0.64" fill="white" opacity="0.2"/><circle cx="264.3496325240586" cy="50" r="1.600053423507278" fill="#fff" opacity="0.6240086054220365"/><circle cx="238.0044723977495" cy="115.82567710775113" r="2.200340684933551" fill="#fff" opacity="0.6589233310928717"/><circle cx="168.92043612806668" cy="103.8313837032706" r="2.2526215596407297" fill="#fff" opacity="0.3948984452830483"/><circle cx="126.23975542524593" cy="50.00000000000001" r="1.5841335852972698" fill="#fff" opacity="0.3302078680985558"/><circle cx="159.01689115500096" cy="-20.98482677166369" r="1.0422991241584199" fill="#fff" opacity="0.4895121430779411"/><circle cx="229.70723929062524" cy="-1.4544478039692876" r="2.2885116852815806" fill="#fff" opacity="0.3771986407802954"/><path d="M145 235 L145 184 Q200 150 255 184 L255 235Z" fill="#67e8f9" opacity="0.6"/>
+    <rect x="145" y="184" width="110" height="1.7" fill="#67e8f9" opacity="0.7"/>
+    <line x1="183.5" y1="165.3" x2="216.5" y2="165.3" stroke="#67e8f9" stroke-width="1.5" opacity="0.5"/><circle cx="104.9" cy="260" r="1.68" fill="#fca5a5" opacity="0.3"/>
+      <circle cx="104.9" cy="260" r="0.84" fill="white" opacity="0.3"/><circle cx="101.51418327243724" cy="264.6601769298463" r="1.68" fill="#fca5a5" opacity="0.5"/>
+      <circle cx="101.51418327243724" cy="264.6601769298463" r="0.84" fill="white" opacity="0.3"/><circle cx="96.03581672756276" cy="262.88014773623314" r="1.68" fill="#fca5a5" opacity="0.3"/>
+      <circle cx="96.03581672756276" cy="262.88014773623314" r="0.84" fill="white" opacity="0.3"/><circle cx="96.03581672756276" cy="257.11985226376686" r="1.68" fill="#fca5a5" opacity="0.5"/>
+      <circle cx="96.03581672756276" cy="257.11985226376686" r="0.84" fill="white" opacity="0.3"/><circle cx="101.51418327243724" cy="255.33982307015376" r="1.68" fill="#fca5a5" opacity="0.3"/>
+      <circle cx="101.51418327243724" cy="255.33982307015376" r="0.84" fill="white" opacity="0.3"/><circle cx="100" cy="260" r="1.4000000000000001" fill="#fca5a5" opacity="0.5"/><circle cx="304.9" cy="260" r="1.68" fill="#fca5a5" opacity="0.3"/>
+      <circle cx="304.9" cy="260" r="0.84" fill="white" opacity="0.3"/><circle cx="301.51418327243726" cy="264.6601769298463" r="1.68" fill="#fca5a5" opacity="0.5"/>
+      <circle cx="301.51418327243726" cy="264.6601769298463" r="0.84" fill="white" opacity="0.3"/><circle cx="296.03581672756275" cy="262.88014773623314" r="1.68" fill="#fca5a5" opacity="0.3"/>
+      <circle cx="296.03581672756275" cy="262.88014773623314" r="0.84" fill="white" opacity="0.3"/><circle cx="296.03581672756275" cy="257.11985226376686" r="1.68" fill="#fca5a5" opacity="0.5"/>
+      <circle cx="296.03581672756275" cy="257.11985226376686" r="0.84" fill="white" opacity="0.3"/><circle cx="301.51418327243726" cy="255.33982307015376" r="1.68" fill="#fca5a5" opacity="0.3"/>
+      <circle cx="301.51418327243726" cy="255.33982307015376" r="0.84" fill="white" opacity="0.3"/><circle cx="300" cy="260" r="1.4000000000000001" fill="#fca5a5" opacity="0.5"/>
+  <rect x="0" y="362" width="400" height="38" fill="rgba(0,0,0,0.5)"/>
+  <text x="200" y="386" text-anchor="middle" fill="#fff" font-family="serif" font-size="16" font-weight="bold" dir="rtl">هفت گنبد</text>
+</svg>
